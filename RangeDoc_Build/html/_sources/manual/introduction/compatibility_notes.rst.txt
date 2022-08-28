@@ -3,12 +3,12 @@
 Compatibility Notes
 *******************
 
-UPBGE VS Blender
+RanGE VS Blender
 ================
 
-UPBGE is fully integrated into Blender environment, but it doesn't mean it supports 
+Range Game Engine is fully integrated into Blender environment, but it doesn't mean it supports 
 all the features that Blender provides. Here's some compatibility info about various 
-features present in Blender relative to UPBGE.
+features present in Blender relative to Range.
 
 .. _compatibility-supported-objects:
 
@@ -47,18 +47,3 @@ features present in Blender relative to UPBGE.
 .. note:: Any other data-block type (like Line Styles, Particles, Brushes, etc) have no use or will not be rendered into game.
 
 .. note:: :ref:`datablock-text` only work partially, with advanced formatting features currently not supported.
-
-UPBGE VS BGE
-================
-
-BGE also have some incompatibilities with UPBGE. UPBGE can partially load and execute games made 
-in BGE, but a game made in UPBGE can't be executed in BGE, resulting in several 
-issues like:
-
-- Logic can't run most of the times.
-- Materials get messed up.
-- UPBGE do not support Multitexture material mode anymore. Set to GLSL when in vanilla BGE.
-- Sometimes physics simulation get messed up.
-
-Along with this compatibility with BGE, UPBGE comes with features not supported by 
-BGE, like Modifiers applied automatically at game start (instead of discarded, as in BGE).

@@ -47,8 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="briefing.html">Briefing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deeper_look.html">A Deeper Look</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compatibility Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#upbge-vs-blender">UPBGE VS Blender</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#upbge-vs-bge">UPBGE VS BGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range-vs-blender">RanGE VS Blender</a></li>
 </ul>
 </li>
 </ul>
@@ -62,7 +61,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Range Game Engine Modules (bge)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
@@ -97,11 +96,11 @@
              
   <div class="section" id="compatibility-notes">
 <h1>Compatibility Notes<a class="headerlink" href="#compatibility-notes" title="Permalink to this heading"></a></h1>
-<div class="section" id="upbge-vs-blender">
-<h2>UPBGE VS Blender<a class="headerlink" href="#upbge-vs-blender" title="Permalink to this heading"></a></h2>
-<p>UPBGE is fully integrated into Blender environment, but it doesn’t mean it supports
+<div class="section" id="range-vs-blender">
+<h2>RanGE VS Blender<a class="headerlink" href="#range-vs-blender" title="Permalink to this heading"></a></h2>
+<p>Range Game Engine is fully integrated into Blender environment, but it doesn’t mean it supports
 all the features that Blender provides. Here’s some compatibility info about various
-features present in Blender relative to UPBGE.</p>
+features present in Blender relative to Range.</p>
 <p class="rubric" id="compatibility-supported-objects">Object types supported</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../datablocks/armature.html#datablock-armature"><span class="std std-ref">Armature</span></a></p></li>
@@ -142,20 +141,6 @@ features present in Blender relative to UPBGE.</p>
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="../datablocks/text.html#datablock-text"><span class="std std-ref">Text</span></a> only work partially, with advanced formatting features currently not supported.</p>
 </div>
-</div>
-<div class="section" id="upbge-vs-bge">
-<h2>UPBGE VS BGE<a class="headerlink" href="#upbge-vs-bge" title="Permalink to this heading"></a></h2>
-<p>BGE also have some incompatibilities with UPBGE. UPBGE can partially load and execute games made
-in BGE, but a game made in UPBGE can’t be executed in BGE, resulting in several
-issues like:</p>
-<ul class="simple">
-<li><p>Logic can’t run most of the times.</p></li>
-<li><p>Materials get messed up.</p></li>
-<li><p>UPBGE do not support Multitexture material mode anymore. Set to GLSL when in vanilla BGE.</p></li>
-<li><p>Sometimes physics simulation get messed up.</p></li>
-</ul>
-<p>Along with this compatibility with BGE, UPBGE comes with features not supported by
-BGE, like Modifiers applied automatically at game start (instead of discarded, as in BGE).</p>
 </div>
 </div>
 

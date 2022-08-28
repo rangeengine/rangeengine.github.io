@@ -50,24 +50,24 @@ Here are some examples of games made with UPBGE/Range.
 Under The Hood
 ==============
 
-UPBGE oversees a game loop, which processes logic, sound, physics and rendering 
+Range oversees a game loop, which processes logic, sound, physics and rendering 
 simulations in sequential order. The engine is written in C++.
 
 By default, the user has access to a powerful and high-level visual logic programming 
-interface. The visual programming in UPBGE provides deep interaction with the simulation, 
+interface. The visual programming in Range provides deep interaction with the simulation, 
 and its functionality can be extended through Python scripting. It is designed to abstract 
 the complex engine features into a simple user interface, which does not require experience 
 with Programming.
 
-UPBGE is closely integrated with the existing code base of Blender, which permits quick 
+Range is closely integrated with the existing code base of Blender, which permits quick 
 transitions between the traditional modeling feature set and game-specific functionality
-provided by the program. In this sense, the UPBGE can be efficiently used in all areas of 
+provided by the program. In this sense, the Range can be efficiently used in all areas of 
 game design, from prototyping to final release.
 
-UPBGE can simulate content within Blender, however it also includes the ability to export 
+Range can simulate content within Blender, however it also includes the ability to export 
 a binary run-time to Linux, macOS, and MS-Windows.
 
-There are a number of powerful libraries the UPBGE takes advantage of:
+There are a number of powerful libraries the Range takes advantage of:
 
 - `Audaspace <https://audaspace.github.io/>`__: A sound library for control of audio. Uses OpenAL or SDL.
 - `Bullet <http://bulletphysics.org/wordpress/>`__: A physics engine featuring 3D collision detection, soft body dynamics and rigid body dynamics.
@@ -77,7 +77,7 @@ There are a number of powerful libraries the UPBGE takes advantage of:
 Project Development Process
 ===========================
 
-When creating a game or simulation in UPBGE, there are four essential steps:
+When creating a game or simulation in Range, there are four essential steps:
 
 #. Create visual elements that can be rendered. Usually, 3D models.
 #. Enable interaction within the scene using logic to enable custom behavior and 

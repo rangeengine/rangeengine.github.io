@@ -104,22 +104,38 @@ Mouse Keys
 .. data:: RIGHTMOUSE
    
    :value: 118
+
+.. data:: LEFTTHUMBMOUSE
+
+   :value: 119
+
+.. data:: RIGHTTHUMBMOUSE
+
+   :value: 120
+
+.. data:: BUTTON6MOUSE
+
+   :value: 121
+
+.. data:: BUTTON7MOUSE
+
+   :value: 122
    
 .. data:: WHEELUPMOUSE
    
-   :value: 120
+   :value: 124
    
 .. data:: WHEELDOWNMOUSE
    
-   :value: 121
+   :value: 125
    
 .. data:: MOUSEX
    
-   :value: 122
+   :value: 126
    
 .. data:: MOUSEY
    
-   :value: 123
+   :value: 127
    
 
 .. _keyboard-keys:

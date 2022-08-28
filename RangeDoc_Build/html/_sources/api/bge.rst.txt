@@ -1,5 +1,5 @@
 =========================
-Game Engine Modules (bge)
+Range Game Engine Modules (bge)
 =========================
 
 .. toctree::

@@ -64,7 +64,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Range Game Engine Modules (bge)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
@@ -142,20 +142,20 @@ life with UPBGE, using its features and abilities to be extended.</p>
 </div>
 <div class="section" id="under-the-hood">
 <h2>Under The Hood<a class="headerlink" href="#under-the-hood" title="Permalink to this heading"></a></h2>
-<p>UPBGE oversees a game loop, which processes logic, sound, physics and rendering
+<p>Range oversees a game loop, which processes logic, sound, physics and rendering
 simulations in sequential order. The engine is written in C++.</p>
 <p>By default, the user has access to a powerful and high-level visual logic programming
-interface. The visual programming in UPBGE provides deep interaction with the simulation,
+interface. The visual programming in Range provides deep interaction with the simulation,
 and its functionality can be extended through Python scripting. It is designed to abstract
 the complex engine features into a simple user interface, which does not require experience
 with Programming.</p>
-<p>UPBGE is closely integrated with the existing code base of Blender, which permits quick
+<p>Range is closely integrated with the existing code base of Blender, which permits quick
 transitions between the traditional modeling feature set and game-specific functionality
-provided by the program. In this sense, the UPBGE can be efficiently used in all areas of
+provided by the program. In this sense, the Range can be efficiently used in all areas of
 game design, from prototyping to final release.</p>
-<p>UPBGE can simulate content within Blender, however it also includes the ability to export
+<p>Range can simulate content within Blender, however it also includes the ability to export
 a binary run-time to Linux, macOS, and MS-Windows.</p>
-<p>There are a number of powerful libraries the UPBGE takes advantage of:</p>
+<p>There are a number of powerful libraries the Range takes advantage of:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://audaspace.github.io/">Audaspace</a>: A sound library for control of audio. Uses OpenAL or SDL.</p></li>
 <li><p><a class="reference external" href="http://bulletphysics.org/wordpress/">Bullet</a>: A physics engine featuring 3D collision detection, soft body dynamics and rigid body dynamics.</p></li>
@@ -165,7 +165,7 @@ a binary run-time to Linux, macOS, and MS-Windows.</p>
 </div>
 <div class="section" id="project-development-process">
 <h2>Project Development Process<a class="headerlink" href="#project-development-process" title="Permalink to this heading"></a></h2>
-<p>When creating a game or simulation in UPBGE, there are four essential steps:</p>
+<p>When creating a game or simulation in Range, there are four essential steps:</p>
 <ol class="arabic simple">
 <li><p>Create visual elements that can be rendered. Usually, 3D models.</p></li>
 <li><p>Enable interaction within the scene using logic to enable custom behavior and

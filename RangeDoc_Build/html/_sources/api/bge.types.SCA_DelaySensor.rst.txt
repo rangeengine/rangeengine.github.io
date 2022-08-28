@@ -34,3 +34,9 @@ base class --- :class:`SCA_ISensor`
       1 if the OFF-ON cycle should be repeated indefinately, 0 if it should run once.
 
       :type: integer
+
+   .. attribute:: repeatTimes
+
+   Number of times the actuator will repeat.
+
+   :type: integer.

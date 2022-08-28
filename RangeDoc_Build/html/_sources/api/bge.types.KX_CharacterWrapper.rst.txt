@@ -73,6 +73,18 @@ base class --- :class:`EXP_PyObjectPlus`
          * True: you get the "local" velocity ie: relative to object orientation.
       :type local: boolean
 
+   .. attribute:: jumpDirection
+
+      The direction the character is jumping.
+
+      :type: Vector((x, y, z))
+
+   .. attribute:: smoothMovement
+
+      Smooth movement caused by walking direction.
+
+      :type: float (0.0 to 1.0)
+
    .. method:: reset()
 
       Resets the character velocity and walk direction.

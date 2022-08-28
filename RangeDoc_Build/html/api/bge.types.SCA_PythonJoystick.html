@@ -53,7 +53,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="bge.html">Game Engine Modules (bge)</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="bge.types.html">Game Types (bge.types)</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="bge.types.html#introduction">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bge.types.html#categories">Categories</a></li>
@@ -183,7 +183,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="bge.html">Game Engine Modules (bge)</a> &raquo;</li>
+          <li><a href="bge.html">Range Game Engine Modules (bge)</a> &raquo;</li>
           <li><a href="bge.types.html">Game Types (bge.types)</a> &raquo;</li>
       <li>SCA_PythonJoystick(EXP_PyObjectPlus)</li>
       <li class="wy-breadcrumbs-aside">
@@ -300,8 +300,85 @@ The first 2 values are used by most joysticks and gamepads for directional contr
 <dd class="field-odd"><p>integer</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="SCA_PythonJoystick.startVibration">
+<span class="sig-name descname"><span class="pre">startVibration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SCA_PythonJoystick.startVibration" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
+<p>Starts the vibration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="stopVibration">
+<span class="sig-name descname"><span class="pre">stopVibration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stopVibration" title="Permalink to this definition"></a></dt>
+<dd><p>Stops the vibration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="strengthLeft">
+<span class="sig-name descname"><span class="pre">strengthLeft</span></span><a class="headerlink" href="#strengthLeft" title="Permalink to this definition"></a></dt>
+<dd><p>Strength of the Low frequency joystick’s motor (placed at left position usually).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float (0.0 to 1.0)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="strengthRight">
+<span class="sig-name descname"><span class="pre">strengthRight</span></span><a class="headerlink" href="#strengthRight" title="Permalink to this definition"></a></dt>
+<dd><p>Strength of the High frequency joystick’s motor (placed at right position usually).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float (0.0 to 1.0)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="duration">
+<span class="sig-name descname"><span class="pre">duration</span></span><a class="headerlink" href="#duration" title="Permalink to this definition"></a></dt>
+<dd><p>Duration of the vibration in milliseconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer (0 to infinite)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="isVibrating">
+<span class="sig-name descname"><span class="pre">isVibrating</span></span><a class="headerlink" href="#isVibrating" title="Permalink to this definition"></a></dt>
+<dd><p>Check status of joystick vibration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool (true vibrating and false stopped)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="hasVibration">
+<span class="sig-name descname"><span class="pre">hasVibration</span></span><a class="headerlink" href="#hasVibration" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the joystick supports vibration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool (true supported and false not supported)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
