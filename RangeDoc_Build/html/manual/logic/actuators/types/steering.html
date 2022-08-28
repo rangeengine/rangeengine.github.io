@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steering Actuator &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Sound Actuator" href="sound.html" />
+    <link rel="prev" title="Scene Actuator" href="scene.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Actuators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Actuator Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#actuators-types">Actuators Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">Armature Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="action.html">Action Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camera.html">Camera Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constraint.html">Constraints Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit_object.html">Edit Object Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filter_2d.html">Filter 2D Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.html">Game Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="message.html">Message Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mouse.html">Mouse Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="motion.html">Motion Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parent.html">Parent Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property.html">Property Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="random.html">Random Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scene.html">Scene Actuator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Steering Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sound.html">Sound Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="state.html">State Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="visibility.html">Visibility Actuator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Logic</a> &raquo;</li>
+          <li><a href="../index.html">Actuators</a> &raquo;</li>
+      <li>Steering Actuator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/actuators/types/steering.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="steering-actuator">
+<span id="bpy-types-steeringactuator"></span><h1>Steering Actuator<a class="headerlink" href="#steering-actuator" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.KX_SteeringActuator.html#KX_SteeringActuator" title="KX_SteeringActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_SteeringActuator</span></code></a>.</p>
+</div>
+<p>The <em>Steering Actuator</em> provides simple pathfinding for an object by moving it towards a target object,
+with options to seek, flee, or follow a path. This actuator will not actually try to avoid obstacles
+by deviating the objects course.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/logic-actuators-types-steering-node.jpg" src="../../../../_images/logic-actuators-types-steering-node.jpg" />
+<p class="caption"><span class="caption-text">Steering Actuator.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<dl>
+<dt>Behavior</dt><dd><p>Seek, Flee or Path following</p>
+</dd>
+<dt>Target Object</dt><dd><p>The game object to seek.</p>
+</dd>
+<dt>Navigation Mesh Object</dt><dd><p>The name of the navigation mesh object used by the Steering Actuator when in Path following behavior.
+The game object will use the Navigation Mesh to create a path to follow the Target Object.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can create your own mesh to use for navigation and make it a Navigation Mesh in:
+<span class="menuselection">Properties editor ‣ Physics ‣ Physics panel ‣ choosing Physics Type: Navigation Mesh</span>
+Or you can let Blender create a Navigation Mesh, then select a mesh. (Floor, or ground, or etc.):
+<span class="menuselection">Properties editor ‣ Scene ‣ Navigation mesh object panel ‣ Build navigation mesh</span></p>
+</div>
+</dd>
+<dt>Distance</dt><dd><p>The maximum distance for the game object approach the Target Object.</p>
+</dd>
+<dt>Velocity</dt><dd><p>The velocity used to seek the Target Object.</p>
+</dd>
+<dt>Acceleration</dt><dd><p>The maximum acceleration to use when seeking the Target Object.</p>
+</dd>
+<dt>Turn Speed</dt><dd><p>The maximum turning speed to use when seeking the Target Object.</p>
+</dd>
+<dt>Facing</dt><dd><p>Set a game object axis that always faces the Target Object.</p>
+</dd>
+<dt>Axis</dt><dd><p>The game object axis that always faces the Target Object.
+Options are: Positive (X, Y, Z) and Negative (-X, -Y, -Z).</p>
+</dd>
+<dt>Axis N</dt><dd><p>Use the Normal of the Navigation Mesh to align the up vector of the game object.</p>
+</dd>
+</dl>
+<p class="rubric">Self Terminated</p>
+<dl class="simple">
+<dt>Disabled</dt><dd><p>Stops moving toward the Target Object once it reaches the maximum distance to approach the Target Object.
+Will follow the Target Object if it moves further away than the maximum distance.</p>
+</dd>
+<dt>Enabled</dt><dd><p>Stops moving toward the Target Object once it reaches the maximum distance to approach the Target Object.
+Will not follow even if the Target Object moves further away than the maximum distance.</p>
+</dd>
+<dt>Visualize</dt><dd><p>This checkbox let the user specify whether to show or not the debug informations of the actuator.
+It is also necessary to enable Debug Properties in the Display menu of the <em>Render</em> tab.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scene.html" class="btn btn-neutral float-left" title="Scene Actuator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sound.html" class="btn btn-neutral float-right" title="Sound Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

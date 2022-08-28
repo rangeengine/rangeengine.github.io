@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Deeper Look &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Compatibility Notes" href="compatibility_notes.html" />
+    <link rel="prev" title="Briefing" href="briefing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="briefing.html">Briefing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">A Deeper Look</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-cases">Use Cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-games">Sample Games</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#under-the-hood">Under The Hood</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project-development-process">Project Development Process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility_notes.html">Compatibility Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+      <li>A Deeper Look</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/introduction/deeper_look.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="a-deeper-look">
+<h1>A Deeper Look<a class="headerlink" href="#a-deeper-look" title="Permalink to this heading"></a></h1>
+<div class="section" id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this heading"></a></h2>
+<p>UPBGE allows you to create real-time interactive 3D applications or simulations. This
+allows you to create almost any type of interactive project, like architectural
+presentations, virtual prototypes for robotic projects, physics simulation projects,
+simple and complex games, and much more.</p>
+<p>Much can be achieved through UPBGE by default, as it provides a blank canvas full of
+features to be used, and even more can be acomplished by extending these features
+according to your needs.
+For example, if you’re working with robotics and needs to send or receive commands
+through a USB port, you can install the
+<a class="reference external" href="https://pypi.org/project/pyserial/">PySerial</a> Python module for use with UPBGE.
+Or if you need a graphical feature that can’t be acomplished through the default UPBGE’s
+capabilities, you can write your own OpenGL shaders.
+The list goes on, and there’s a big chance that the project you aim to can be brought to
+life with UPBGE, using its features and abilities to be extended.</p>
+</div>
+<div class="section" id="sample-games">
+<h2>Sample Games<a class="headerlink" href="#sample-games" title="Permalink to this heading"></a></h2>
+<p>Here are some examples of games made with UPBGE/Range.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/introduction-deeper_look-thefutureends.png" src="../../_images/introduction-deeper_look-thefutureends.png" />
+<p class="caption"><span class="caption-text">Screenshot from The Future Ends, produced with UPBGE/Range.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/introduction-deeper_look-screenshot_3.jpg" src="../../_images/introduction-deeper_look-screenshot_3.jpg" />
+<p class="caption"><span class="caption-text">Screenshot from <a class="reference external" href="http://engineroargame.blogspot.com/">“Engine Roar”</a>, produced with UPBGE.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/introduction-deeper_look-screenshot_4.jpg" src="../../_images/introduction-deeper_look-screenshot_4.jpg" />
+<p class="caption"><span class="caption-text">Screenshot from <a class="reference external" href="https://blenderartists.org/t/bgmc22-cave-miner/679472">“Cave Miner”</a>, produced with UPBGE.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-default" id="id4">
+<img alt="../../_images/introduction-deeper_look-screenshot_2.jpg" src="../../_images/introduction-deeper_look-screenshot_2.jpg" />
+<p class="caption"><span class="caption-text">Screenshot from <a class="reference external" href="http://www.deadcyborg.com/">“Dead Cyborg”</a>, produced with Blender Game Engine.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-default" id="id5">
+<img alt="../../_images/introduction-deeper_look-screenshot_1.jpg" src="../../_images/introduction-deeper_look-screenshot_1.jpg" />
+<p class="caption"><span class="caption-text">Screenshot from <a class="reference external" href="https://apricot.blender.org/">“Yo Frankie”</a>, produced with Blender Game Engine.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="under-the-hood">
+<h2>Under The Hood<a class="headerlink" href="#under-the-hood" title="Permalink to this heading"></a></h2>
+<p>UPBGE oversees a game loop, which processes logic, sound, physics and rendering
+simulations in sequential order. The engine is written in C++.</p>
+<p>By default, the user has access to a powerful and high-level visual logic programming
+interface. The visual programming in UPBGE provides deep interaction with the simulation,
+and its functionality can be extended through Python scripting. It is designed to abstract
+the complex engine features into a simple user interface, which does not require experience
+with Programming.</p>
+<p>UPBGE is closely integrated with the existing code base of Blender, which permits quick
+transitions between the traditional modeling feature set and game-specific functionality
+provided by the program. In this sense, the UPBGE can be efficiently used in all areas of
+game design, from prototyping to final release.</p>
+<p>UPBGE can simulate content within Blender, however it also includes the ability to export
+a binary run-time to Linux, macOS, and MS-Windows.</p>
+<p>There are a number of powerful libraries the UPBGE takes advantage of:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://audaspace.github.io/">Audaspace</a>: A sound library for control of audio. Uses OpenAL or SDL.</p></li>
+<li><p><a class="reference external" href="http://bulletphysics.org/wordpress/">Bullet</a>: A physics engine featuring 3D collision detection, soft body dynamics and rigid body dynamics.</p></li>
+<li><p><a class="reference external" href="http://masagroup.github.io/recastdetour/">Detour</a>: A pathfinding and spatial reasoning toolkit.</p></li>
+<li><p><a class="reference external" href="http://masagroup.github.io/recastdetour/">Recast</a>: A state of the art navigation mesh construction tool set for games.</p></li>
+</ul>
+</div>
+<div class="section" id="project-development-process">
+<h2>Project Development Process<a class="headerlink" href="#project-development-process" title="Permalink to this heading"></a></h2>
+<p>When creating a game or simulation in UPBGE, there are four essential steps:</p>
+<ol class="arabic simple">
+<li><p>Create visual elements that can be rendered. Usually, 3D models.</p></li>
+<li><p>Enable interaction within the scene using logic to enable custom behavior and
+determine how it is invoked.</p></li>
+<li><p>Create one (or more) camera to give a frustum from which to render the scene, and
+modify the parameters to support the environment in which the game will be displayed,
+such as Stereo rendering.</p></li>
+<li><p>Launch the game, using the internal player or exporting a runtime to the appropriate platform.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="briefing.html" class="btn btn-neutral float-left" title="Briefing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="compatibility_notes.html" class="btn btn-neutral float-right" title="Compatibility Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

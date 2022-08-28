@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KX_Camera(KX_GameObject) &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KX_CameraActuator(SCA_IActuator)" href="bge.types.KX_CameraActuator.html" />
+    <link rel="prev" title="KX_BoundingBox(EXP_PyObjectPlus)" href="bge.types.KX_BoundingBox.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="bge.html">Game Engine Modules (bge)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="bge.types.html">Game Types (bge.types)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bge.types.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.html#categories">Categories</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="bge.types.html#index">Index</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ActionActuator.html">BL_ActionActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureActuator.html">BL_ArmatureActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureBone.html">BL_ArmatureBone(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureChannel.html">BL_ArmatureChannel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureConstraint.html">BL_ArmatureConstraint(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureObject.html">BL_ArmatureObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_Shader.html">BL_Shader(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_Texture.html">BL_Texture(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_ListValue.html">EXP_ListValue(EXP_PropValue)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_PropValue.html">EXP_PropValue(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_PyObjectPlus.html">EXP_PyObjectPlus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_Value.html">EXP_Value(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_2DFilter.html">KX_2DFilter(BL_Shader)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_2DFilterManager.html">KX_2DFilterManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_2DFilterOffScreen.html">KX_2DFilterOffScreen(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ArmatureSensor.html">KX_ArmatureSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BatchGroup.html">KX_BatchGroup(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BlenderMaterial.html">KX_BlenderMaterial(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BoundingBox.html">KX_BoundingBox(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">KX_Camera(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CameraActuator.html">KX_CameraActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CharacterWrapper.html">KX_CharacterWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CollisionContactPoint.html">KX_CollisionContactPoint(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CollisionSensor.html">KX_CollisionSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ConstraintActuator.html">KX_ConstraintActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ConstraintWrapper.html">KX_ConstraintWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CubeMap.html">KX_CubeMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_FontObject.html">KX_FontObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_GameActuator.html">KX_GameActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_GameObject.html">KX_GameObject(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LibLoadStatus.html">KX_LibLoadStatus(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LightObject.html">KX_LightObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LodLevel.html">KX_LodLevel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LodManager.html">KX_LodManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_Mesh.html">KX_Mesh(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MouseActuator.html">KX_MouseActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MouseFocusSensor.html">KX_MouseFocusSensor(SCA_MouseSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MovementSensor.html">KX_MovementSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NavMeshObject.html">KX_NavMeshObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NearSensor.html">KX_NearSensor(KX_CollisionSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NetworkMessageActuator.html">KX_NetworkMessageActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NetworkMessageSensor.html">KX_NetworkMessageSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ObjectActuator.html">KX_ObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ParentActuator.html">KX_ParentActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PlanarMap.html">KX_PlanarMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PolyProxy.html">KX_PolyProxy(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PythonComponent.html">KX_PythonComponent(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_RadarSensor.html">KX_RadarSensor(KX_NearSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_RaySensor.html">KX_RaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_AddObjectActuator.html">KX_SCA_AddObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_DynamicActuator.html">KX_SCA_DynamicActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_EndObjectActuator.html">KX_SCA_EndObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_ReplaceMeshActuator.html">KX_SCA_ReplaceMeshActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_Scene.html">KX_Scene(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SceneActuator.html">KX_SceneActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SoundActuator.html">KX_SoundActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_StateActuator.html">KX_StateActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SteeringActuator.html">KX_SteeringActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_TextureRenderer.html">KX_TextureRenderer(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_TrackToActuator.html">KX_TrackToActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VehicleWrapper.html">KX_VehicleWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VertexProxy.html">KX_VertexProxy(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VisibilityActuator.html">KX_VisibilityActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_WorldInfo.html">KX_WorldInfo(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_2DFilterActuator.html">SCA_2DFilterActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ANDController.html">SCA_ANDController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ActuatorSensor.html">SCA_ActuatorSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_AlwaysSensor.html">SCA_AlwaysSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_DelaySensor.html">SCA_DelaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IActuator.html">SCA_IActuator(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IController.html">SCA_IController(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ILogicBrick.html">SCA_ILogicBrick(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IObject.html">SCA_IObject(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ISensor.html">SCA_ISensor(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_InputEvent.html">SCA_InputEvent(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_JoystickSensor.html">SCA_JoystickSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_KeyboardSensor.html">SCA_KeyboardSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_MouseSensor.html">SCA_MouseSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_NANDController.html">SCA_NANDController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_NORController.html">SCA_NORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ORController.html">SCA_ORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PropertyActuator.html">SCA_PropertyActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PropertySensor.html">SCA_PropertySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonController.html">SCA_PythonController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonJoystick.html">SCA_PythonJoystick(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonKeyboard.html">SCA_PythonKeyboard(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonMouse.html">SCA_PythonMouse(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_RandomActuator.html">SCA_RandomActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_RandomSensor.html">SCA_RandomSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_VibrationActuator.html">SCA_VibrationActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_XNORController.html">SCA_XNORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_XORController.html">SCA_XORController(SCA_IController)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bge.logic.html">Game Logic (bge.logic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.render.html">Rasterizer (bge.render)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.texture.html">Video Texture (bge.texture)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.events.html">Game Keys (bge.events)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.constraints.html">Physics Constraints (bge.constraints)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.app.html">Application Data (bge.app)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="bge.html">Game Engine Modules (bge)</a> &raquo;</li>
+          <li><a href="bge.types.html">Game Types (bge.types)</a> &raquo;</li>
+      <li>KX_Camera(KX_GameObject)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/bge.types.KX_Camera.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="kx-camera-kx-gameobject">
+<h1>KX_Camera(KX_GameObject)<a class="headerlink" href="#kx-camera-kx-gameobject" title="Permalink to this heading"></a></h1>
+<p>base class — <a class="reference internal" href="bge.types.KX_GameObject.html#KX_GameObject" title="KX_GameObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_GameObject</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="KX_Camera">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KX_Camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">KX_GameObject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera" title="Permalink to this definition"></a></dt>
+<dd><p>A Camera object.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="KX_Camera.INSIDE">
+<span class="sig-name descname"><span class="pre">INSIDE</span></span><a class="headerlink" href="#KX_Camera.INSIDE" title="Permalink to this definition"></a></dt>
+<dd><p>See <a class="reference internal" href="#KX_Camera.sphereInsideFrustum" title="KX_Camera.sphereInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">sphereInsideFrustum</span></code></a> and <a class="reference internal" href="#KX_Camera.boxInsideFrustum" title="KX_Camera.boxInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">boxInsideFrustum</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="KX_Camera.INTERSECT">
+<span class="sig-name descname"><span class="pre">INTERSECT</span></span><a class="headerlink" href="#KX_Camera.INTERSECT" title="Permalink to this definition"></a></dt>
+<dd><p>See <a class="reference internal" href="#KX_Camera.sphereInsideFrustum" title="KX_Camera.sphereInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">sphereInsideFrustum</span></code></a> and <a class="reference internal" href="#KX_Camera.boxInsideFrustum" title="KX_Camera.boxInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">boxInsideFrustum</span></code></a></p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="KX_Camera.OUTSIDE">
+<span class="sig-name descname"><span class="pre">OUTSIDE</span></span><a class="headerlink" href="#KX_Camera.OUTSIDE" title="Permalink to this definition"></a></dt>
+<dd><p>See <a class="reference internal" href="#KX_Camera.sphereInsideFrustum" title="KX_Camera.sphereInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">sphereInsideFrustum</span></code></a> and <a class="reference internal" href="#KX_Camera.boxInsideFrustum" title="KX_Camera.boxInsideFrustum"><code class="xref py py-data docutils literal notranslate"><span class="pre">boxInsideFrustum</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.lens">
+<span class="sig-name descname"><span class="pre">lens</span></span><a class="headerlink" href="#KX_Camera.lens" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s lens value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.lodDistanceFactor">
+<span class="sig-name descname"><span class="pre">lodDistanceFactor</span></span><a class="headerlink" href="#KX_Camera.lodDistanceFactor" title="Permalink to this definition"></a></dt>
+<dd><p>The factor to multiply distance to camera to adjust levels of detail.
+A float &lt; 1.0f will make the distance to camera used to compute
+levels of detail decrease.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.fov">
+<span class="sig-name descname"><span class="pre">fov</span></span><a class="headerlink" href="#KX_Camera.fov" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s field of view value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.ortho_scale">
+<span class="sig-name descname"><span class="pre">ortho_scale</span></span><a class="headerlink" href="#KX_Camera.ortho_scale" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s view scale when in orthographic mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.near">
+<span class="sig-name descname"><span class="pre">near</span></span><a class="headerlink" href="#KX_Camera.near" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s near clip distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.far">
+<span class="sig-name descname"><span class="pre">far</span></span><a class="headerlink" href="#KX_Camera.far" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s far clip distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.shift_x">
+<span class="sig-name descname"><span class="pre">shift_x</span></span><a class="headerlink" href="#KX_Camera.shift_x" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s horizontal shift.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.shift_y">
+<span class="sig-name descname"><span class="pre">shift_y</span></span><a class="headerlink" href="#KX_Camera.shift_y" title="Permalink to this definition"></a></dt>
+<dd><p>The camera’s vertical shift.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.perspective">
+<span class="sig-name descname"><span class="pre">perspective</span></span><a class="headerlink" href="#KX_Camera.perspective" title="Permalink to this definition"></a></dt>
+<dd><p>True if this camera has a perspective transform, False for an orthographic projection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.frustum_culling">
+<span class="sig-name descname"><span class="pre">frustum_culling</span></span><a class="headerlink" href="#KX_Camera.frustum_culling" title="Permalink to this definition"></a></dt>
+<dd><p>True if this camera is frustum culling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.activityCulling">
+<span class="sig-name descname"><span class="pre">activityCulling</span></span><a class="headerlink" href="#KX_Camera.activityCulling" title="Permalink to this definition"></a></dt>
+<dd><p>True if this camera is used to compute object distance for object activity culling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.projection_matrix">
+<span class="sig-name descname"><span class="pre">projection_matrix</span></span><a class="headerlink" href="#KX_Camera.projection_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>This camera’s 4x4 projection matrix.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the identity matrix prior to rendering the first frame (any Python done on frame 1).</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>4x4 Matrix [[float]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.modelview_matrix">
+<span class="sig-name descname"><span class="pre">modelview_matrix</span></span><a class="headerlink" href="#KX_Camera.modelview_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>This camera’s 4x4 model view matrix. (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>4x4 Matrix [[float]]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This matrix is regenerated every frame from the camera’s position and orientation. Also, this is the identity matrix prior to rendering the first frame (any Python done on frame 1).</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.camera_to_world">
+<span class="sig-name descname"><span class="pre">camera_to_world</span></span><a class="headerlink" href="#KX_Camera.camera_to_world" title="Permalink to this definition"></a></dt>
+<dd><p>This camera’s camera to world transform. (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>4x4 Matrix [[float]]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This matrix is regenerated every frame from the camera’s position and orientation.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.world_to_camera">
+<span class="sig-name descname"><span class="pre">world_to_camera</span></span><a class="headerlink" href="#KX_Camera.world_to_camera" title="Permalink to this definition"></a></dt>
+<dd><p>This camera’s world to camera transform. (read-only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>4x4 Matrix [[float]]</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regenerated every frame from the camera’s position and orientation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is camera_to_world inverted.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="KX_Camera.useViewport">
+<span class="sig-name descname"><span class="pre">useViewport</span></span><a class="headerlink" href="#KX_Camera.useViewport" title="Permalink to this definition"></a></dt>
+<dd><p>True when the camera is used as a viewport, set True to enable a viewport for this camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.sphereInsideFrustum">
+<span class="sig-name descname"><span class="pre">sphereInsideFrustum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">centre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.sphereInsideFrustum" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the given sphere against the view frustum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>centre</strong> (<em>list</em><em> [</em><em>x</em><em>, </em><em>y</em><em>, </em><em>z</em><em>]</em>) – The centre of the sphere (in world coordinates.)</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – the radius of the sphere</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">INSIDE</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">OUTSIDE</span></code> or <code class="xref py py-data docutils literal notranslate"><span class="pre">INTERSECT</span></code></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the camera is first initialized the result will be invalid because the projection matrix has not been set.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bge</span> <span class="kn">import</span> <span class="n">logic</span>
+<span class="n">cont</span> <span class="o">=</span> <span class="n">logic</span><span class="o">.</span><span class="n">getCurrentController</span><span class="p">()</span>
+<span class="n">cam</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">owner</span>
+
+<span class="c1"># A sphere of radius 4.0 located at [x, y, z] = [1.0, 1.0, 1.0]</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">sphereInsideFrustum</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span> <span class="o">!=</span> <span class="n">cam</span><span class="o">.</span><span class="n">OUTSIDE</span><span class="p">):</span>
+    <span class="c1"># Sphere is inside frustum !</span>
+    <span class="c1"># Do something useful !</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Sphere is outside frustum</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.boxInsideFrustum">
+<span class="sig-name descname"><span class="pre">boxInsideFrustum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.boxInsideFrustum" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the given box against the view frustum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>box</strong> (<em>list of lists</em>) – Eight (8) corner points of the box (in world coordinates.)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">INSIDE</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">OUTSIDE</span></code> or <code class="xref py py-data docutils literal notranslate"><span class="pre">INTERSECT</span></code></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the camera is first initialized the result will be invalid because the projection matrix has not been set.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bge</span> <span class="kn">import</span> <span class="n">logic</span>
+<span class="n">cont</span> <span class="o">=</span> <span class="n">logic</span><span class="o">.</span><span class="n">getCurrentController</span><span class="p">()</span>
+<span class="n">cam</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">owner</span>
+
+<span class="c1"># Box to test...</span>
+<span class="n">box</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">box</span><span class="o">.</span><span class="n">append</span><span class="p">([</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">boxInsideFrustum</span><span class="p">(</span><span class="n">box</span><span class="p">)</span> <span class="o">!=</span> <span class="n">cam</span><span class="o">.</span><span class="n">OUTSIDE</span><span class="p">):</span>
+  <span class="c1"># Box is inside/intersects frustum !</span>
+  <span class="c1"># Do something useful !</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="c1"># Box is outside the frustum !</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.pointInsideFrustum">
+<span class="sig-name descname"><span class="pre">pointInsideFrustum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.pointInsideFrustum" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the given point against the view frustum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>3D Vector</em>) – The point to test (in world coordinates.)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the given point is inside this camera’s viewing frustum.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the camera is first initialized the result will be invalid because the projection matrix has not been set.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bge</span> <span class="kn">import</span> <span class="n">logic</span>
+<span class="n">cont</span> <span class="o">=</span> <span class="n">logic</span><span class="o">.</span><span class="n">getCurrentController</span><span class="p">()</span>
+<span class="n">cam</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">owner</span>
+
+<span class="c1"># Test point [0.0, 0.0, 0.0]</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">pointInsideFrustum</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])):</span>
+  <span class="c1"># Point is inside frustum !</span>
+  <span class="c1"># Do something useful !</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="c1"># Box is outside the frustum !</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.getCameraToWorld">
+<span class="sig-name descname"><span class="pre">getCameraToWorld</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.getCameraToWorld" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the camera-to-world transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the camera-to-world transform matrix.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>matrix (4x4 list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.getWorldToCamera">
+<span class="sig-name descname"><span class="pre">getWorldToCamera</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.getWorldToCamera" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the world-to-camera transform.</p>
+<p>This returns the inverse matrix of getCameraToWorld().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the world-to-camera transform matrix.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>matrix (4x4 list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.setOnTop">
+<span class="sig-name descname"><span class="pre">setOnTop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.setOnTop" title="Permalink to this definition"></a></dt>
+<dd><p>Set this cameras viewport ontop of all other viewport.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.setViewport">
+<span class="sig-name descname"><span class="pre">setViewport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bottom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.setViewport" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the region of this viewport on the screen in pixels.</p>
+<p>Use <a class="reference internal" href="bge.render.html#bge.render.getWindowHeight" title="bge.render.getWindowHeight"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.render.getWindowHeight</span></code></a> and <a class="reference internal" href="bge.render.html#bge.render.getWindowWidth" title="bge.render.getWindowWidth"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.render.getWindowWidth</span></code></a> to calculate values relative to the entire display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left</strong> (<em>integer</em>) – left pixel coordinate of this viewport</p></li>
+<li><p><strong>bottom</strong> (<em>integer</em>) – bottom pixel coordinate of this viewport</p></li>
+<li><p><strong>right</strong> (<em>integer</em>) – right pixel coordinate of this viewport</p></li>
+<li><p><strong>top</strong> (<em>integer</em>) – top pixel coordinate of this viewport</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.getScreenPosition">
+<span class="sig-name descname"><span class="pre">getScreenPosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.getScreenPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the position of an object projected on screen space.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For an object in the middle of the screen, coord = [0.5, 0.5]</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">getScreenPosition</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>object</strong> (<a class="reference internal" href="bge.types.KX_GameObject.html#KX_GameObject" title="KX_GameObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_GameObject</span></code></a> or 3D Vector) – object name or list [x, y, z]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the object’s position in screen coordinates.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list [x, y]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.getScreenVect">
+<span class="sig-name descname"><span class="pre">getScreenVect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.getScreenVect" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the vector from the camera position in the screen coordinate direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X Axis</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y Axis</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>3D Vector</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The vector from screen coordinate.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gets the vector of the camera front direction:</span>
+<span class="n">m_vect</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">getScreenVect</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_Camera.getScreenRay">
+<span class="sig-name descname"><span class="pre">getScreenRay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_Camera.getScreenRay" title="Permalink to this definition"></a></dt>
+<dd><p>Look towards a screen coordinate (x, y) and find first object hit within dist that matches prop.
+The ray is similar to KX_GameObject-&gt;rayCastTo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – X Axis</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y Axis</p></li>
+<li><p><strong>dist</strong> (<em>float</em>) – max distance to look (can be negative =&gt; look behind); 0 or omitted =&gt; detect up to other</p></li>
+<li><p><strong>property</strong> (<em>string</em>) – property name that object must have; can be omitted =&gt; detect any object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="bge.types.KX_GameObject.html#KX_GameObject" title="KX_GameObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_GameObject</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the first object hit or None if no object or object does not match prop</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gets an object with a property &quot;wall&quot; in front of the camera within a distance of 100:</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">getScreenRay</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;wall&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bge.types.KX_BoundingBox.html" class="btn btn-neutral float-left" title="KX_BoundingBox(EXP_PyObjectPlus)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bge.types.KX_CameraActuator.html" class="btn btn-neutral float-right" title="KX_CameraActuator(SCA_IActuator)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

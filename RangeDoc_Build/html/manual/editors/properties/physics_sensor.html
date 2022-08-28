@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sensor Physics &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Navigation Mesh Physics" href="physics_navigation_mesh.html" />
+    <link rel="prev" title="Occlude Object Physics" href="physics_occluder.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="physics.html">Physics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="physics.html#id1">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#collision-bounds">Collision Bounds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#create-obstacle">Create Obstacle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Editors</a> &raquo;</li>
+          <li><a href="index.html">Properties Editor</a> &raquo;</li>
+          <li><a href="physics.html">Physics</a> &raquo;</li>
+      <li>Sensor Physics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/physics_sensor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="sensor-physics">
+<h1>Sensor Physics<a class="headerlink" href="#sensor-physics" title="Permalink to this heading"></a></h1>
+<p>The object detects static and dynamic objects but not other collisions sensors objects.
+The Sensor is similar to the physics objects that underlie the Near and Radar sensors.
+Like the Near and Radar object it is:</p>
+<ul class="simple">
+<li><p>Static and ghost.</p></li>
+<li><p>Invisible by default.</p></li>
+<li><p>Always active to ensure correct collision detection.</p></li>
+<li><p>Capable of detecting both static and dynamic objects.</p></li>
+<li><p>Ignoring collision with their parent.</p></li>
+<li><p>Capable of broadphase filtering based on:</p>
+<ul>
+<li><p>Actor option: the colliding object must have the Actor flag set to be detected.</p></li>
+<li><p>Property/material: as specified in the collision sensors attached to it.</p></li>
+</ul>
+</li>
+</ul>
+<p>Broadphase filtering is important for performance reason:
+the collision points will be computed only for the objects that pass the broadphase filter.</p>
+<ul class="simple">
+<li><p>Automatically removed from the simulation when no collision sensor is active on it.</p></li>
+</ul>
+<p>Unlike the Near and Radar object it can:</p>
+<ul class="simple">
+<li><p>Take any shape, including triangle mesh.</p></li>
+<li><p>Be made visible for debugging (just use the Visible actuator).</p></li>
+<li><p>Have multiple collision sensors using it.</p></li>
+</ul>
+<p>Other than that, the sensor objects are ordinary objects.
+You can move them freely or parent them. When parented to a dynamic object,
+they can provide advanced collision control to this object.</p>
+<p>The type of collision capability depends on the shape:</p>
+<ul class="simple">
+<li><p>Box, sphere, cylinder, cone, convex hull provide volume detection.</p></li>
+<li><p>Triangle mesh provides surface detection but you can give some volume to
+the surface by increasing the margin in the Advanced Settings panel.
+The margin applies on both sides of the surface.</p></li>
+</ul>
+<p class="rubric">Performance tip</p>
+<ul class="simple">
+<li><p>Sensor objects perform better than Near and Radar:
+they do less synchronizations because of the Scenegraph optimizations and they can
+have multiple collision sensors on them (with different property filtering for example).</p></li>
+<li><p>Always prefer simple shape (box, sphere) to complex shape whenever possible.</p></li>
+<li><p>Always use broadphase filtering (avoid collision sensor with empty property/material).</p></li>
+<li><p>Use collision sensor only when you need them. When no collision sensor is active on the sensor object,
+it is removed from the simulation and consume no CPU.</p></li>
+</ul>
+<p class="rubric">Known limitations</p>
+<ul>
+<li><p>When running Blender in debug mode, you will see one warning line of the console:</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>warning btCollisionDispatcher::needsCollision: static-static collision!
+In release mode this message is not printed.
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Collision margin has no effect on sphere, cone and cylinder shape.</p></li>
+</ul>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Invisible</dt><dd><p>See <a class="reference internal" href="physics_static.html"><span class="doc">Here</span></a>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="collision-bounds">
+<h2>Collision Bounds<a class="headerlink" href="#collision-bounds" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="physics.html#game-engine-physics-object-collision-bounds"><span class="std std-ref">Here</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="physics_occluder.html" class="btn btn-neutral float-left" title="Occlude Object Physics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="physics_navigation_mesh.html" class="btn btn-neutral float-right" title="Navigation Mesh Physics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

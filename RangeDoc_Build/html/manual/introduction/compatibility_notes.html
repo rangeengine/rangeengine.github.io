@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compatibility Notes &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="A Deeper Look" href="deeper_look.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="briefing.html">Briefing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deeper_look.html">A Deeper Look</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Compatibility Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upbge-vs-blender">UPBGE VS Blender</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#upbge-vs-bge">UPBGE VS BGE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+      <li>Compatibility Notes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/introduction/compatibility_notes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="compatibility-notes">
+<h1>Compatibility Notes<a class="headerlink" href="#compatibility-notes" title="Permalink to this heading"></a></h1>
+<div class="section" id="upbge-vs-blender">
+<h2>UPBGE VS Blender<a class="headerlink" href="#upbge-vs-blender" title="Permalink to this heading"></a></h2>
+<p>UPBGE is fully integrated into Blender environment, but it doesn’t mean it supports
+all the features that Blender provides. Here’s some compatibility info about various
+features present in Blender relative to UPBGE.</p>
+<p class="rubric" id="compatibility-supported-objects">Object types supported</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../datablocks/armature.html#datablock-armature"><span class="std std-ref">Armature</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/camera.html#datablock-camera"><span class="std std-ref">Camera</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/empty.html#datablock-empty"><span class="std std-ref">Empty</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/lamp.html#datablock-lamp"><span class="std std-ref">Lamp</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/mesh.html#datablock-mesh"><span class="std std-ref">Mesh</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/text.html#datablock-text"><span class="std std-ref">Text</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any other object type (like Curve, Speaker, Force Field, etc) will not be rendered into game. A Curve Object can be converted to <a class="reference internal" href="../datablocks/mesh.html#datablock-mesh"><span class="std std-ref">Mesh</span></a> though.</p>
+</div>
+<p class="rubric" id="compatibility-supported-datablocks">Data-blocks supported</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../datablocks/action.html#datablock-action"><span class="std std-ref">Action</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/armature.html#datablock-armature"><span class="std std-ref">Armature</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/camera.html#datablock-camera"><span class="std std-ref">Camera</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/group.html#datablock-group"><span class="std std-ref">Group</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/image.html#datablock-image"><span class="std std-ref">Image</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/lamp.html#datablock-lamp"><span class="std std-ref">Lamp</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/library.html#datablock-library"><span class="std std-ref">Library</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/material.html#datablock-material"><span class="std std-ref">Material</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/mesh.html#datablock-mesh"><span class="std std-ref">Mesh</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/object.html#datablock-object"><span class="std std-ref">Object</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/scene.html#datablock-scene"><span class="std std-ref">Scene</span></a></p></li>
+<li><p>Shapekey (along with <a class="reference internal" href="../datablocks/action.html#datablock-action"><span class="std std-ref">Action</span></a>, otherwise unused)</p></li>
+<li><p><a class="reference internal" href="../datablocks/sound.html#datablock-sound"><span class="std std-ref">Sound</span></a></p></li>
+<li><p><a class="reference internal" href="../datablocks/text.html#datablock-text"><span class="std std-ref">Text</span></a> (partially)</p></li>
+<li><p><a class="reference internal" href="../datablocks/texture.html#datablock-texture"><span class="std std-ref">Texture</span></a> (only <a class="reference internal" href="../datablocks/image.html#datablock-image"><span class="std std-ref">Image</span></a> based, procedural not supported)</p></li>
+<li><p><a class="reference internal" href="../datablocks/world.html#datablock-world"><span class="std std-ref">World</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any other data-block type (like Line Styles, Particles, Brushes, etc) have no use or will not be rendered into game.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../datablocks/text.html#datablock-text"><span class="std std-ref">Text</span></a> only work partially, with advanced formatting features currently not supported.</p>
+</div>
+</div>
+<div class="section" id="upbge-vs-bge">
+<h2>UPBGE VS BGE<a class="headerlink" href="#upbge-vs-bge" title="Permalink to this heading"></a></h2>
+<p>BGE also have some incompatibilities with UPBGE. UPBGE can partially load and execute games made
+in BGE, but a game made in UPBGE can’t be executed in BGE, resulting in several
+issues like:</p>
+<ul class="simple">
+<li><p>Logic can’t run most of the times.</p></li>
+<li><p>Materials get messed up.</p></li>
+<li><p>UPBGE do not support Multitexture material mode anymore. Set to GLSL when in vanilla BGE.</p></li>
+<li><p>Sometimes physics simulation get messed up.</p></li>
+</ul>
+<p>Along with this compatibility with BGE, UPBGE comes with features not supported by
+BGE, like Modifiers applied automatically at game start (instead of discarded, as in BGE).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="deeper_look.html" class="btn btn-neutral float-left" title="A Deeper Look" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

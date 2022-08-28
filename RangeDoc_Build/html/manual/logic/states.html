@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>States &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Release" href="../release/index.html" />
+    <link rel="prev" title="Properties" href="properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers/index.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actuators/index.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html">Properties</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">States</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-states-operate">How States Operate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-states">Editing States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visible-states">Visible States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-state">Initial State</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Logic</a> &raquo;</li>
+      <li>States</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/logic/states.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="states">
+<span id="logic-states"></span><h1>States<a class="headerlink" href="#states" title="Permalink to this heading"></a></h1>
+<p>In the BGE, an object can have different “states”. At any time while the game is playing,
+the current state of the object defines its behavior. For instance,
+a character in your game may have states representing awake, sleeping or dead. At any moment
+their behavior in response to a loud bang will be dependent on their current state;
+they may crouch down (awake); wake up (asleep) or do nothing (dead).</p>
+<div class="section" id="how-states-operate">
+<h2>How States Operate<a class="headerlink" href="#how-states-operate" title="Permalink to this heading"></a></h2>
+<p>States are set up and used through controllers: note that only controllers,
+not actuators and sensors, are directly controlled by the state system.
+Each object has a number of states (up to 30; default = 1),
+and can only be in one state at any particular time.
+A controller must always specify the state for which it will operate – it will only give an output pulse
+if a) its logic conditions are met, and b) the object is currently in the specified State.
+States are set up and edited in the object’s Controller settings (for details see below).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>State settings are automatic in simple games. By default,
+the number of states for each object is 1, and all controllers are set to use State 1. So,
+if a game does not need multiple states, everything will work without explicitly setting
+states – you do not need to bother about states at all.</p>
+</div>
+<p>One of the actuators, the State actuator, can set or unset the object’s State bits,
+and so allow the object’s reaction to a sensor signal to depend on its current state. So,
+in the above example, the actor will have a number of controllers connected to the “loud bang”
+sensor, for each of the “awake”, “asleep” or “dead” states.
+These will operate different actuators depending on the current state of the actor,
+and some of these actuators may switch the actor’s state under appropriate conditions.</p>
+</div>
+<div class="section" id="editing-states">
+<h2>Editing States<a class="headerlink" href="#editing-states" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/logic-states-panel.png" src="../../_images/logic-states-panel.png" />
+<p class="caption"><span class="caption-text">State Panel button.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>States are set up and edited using the Controller (center) column of the Game Logic Panel.
+To see the State panel, click on the State Panel Button shown.
+The panel shows two areas for each of the 30 available states; these show Visible states,
+and Initial states (see below). Setting up the State system for a game is performed by
+choosing the appropriate state for each controller in the object’s logic.</p>
+<p>The display of an object’s state logic, and other housekeeping,
+is carried out using the State Panel for the object,
+which is switched on and off using the button shown. The panel is divided into two halves,
+Visible and Initial.</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/logic-states-panel1.png" src="../../_images/logic-states-panel1.png" />
+<p class="caption"><span class="caption-text">State Panel visible.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="visible-states">
+<h2>Visible States<a class="headerlink" href="#visible-states" title="Permalink to this heading"></a></h2>
+<p>In the Visible area, each of the 30 available states is represented by a light-gray square.
+This panel shows what logic is visible for the logic brick displayed for the object.
+At the right is the All button; if clicked, then all the object’s logic bricks are displayed
+(this is a toggle), and all State Panel squares are light gray. Otherwise,
+individual states can be clicked to make their logic visible.
+(Note that you can click more than one square). Clicking the square again deselects the state.</p>
+<p>States for the object that are in use
+(i.e. the object has controllers which operate in that state) have dots in them,
+and squares are dark gray if these controllers are shown in the Game Logic display.
+The display of their connected sensors and actuators can also be controlled
+if the State buttons at the head of their columns are ticked.</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/logic-states-panel2.png" src="../../_images/logic-states-panel2.png" />
+<p class="caption"><span class="caption-text">State Panel initial.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="initial-state">
+<h2>Initial State<a class="headerlink" href="#initial-state" title="Permalink to this heading"></a></h2>
+<p>In the Initial area, each of the 30 available states is again represented by a light-gray square.
+One of these states may be clicked as the state in which the object starts when the game is run.</p>
+<p>At the right is the <a class="reference internal" href="../../_images/logic-states-icon_info.png"><img alt="info-button" src="../../_images/logic-states-icon_info.png" style="width: 1.1em;" /></a> button; if clicked,
+and the <span class="menuselection">Game ‣ Show Debug Properties</span> is clicked,
+the current state of the object is shown in the top left-hand corner of the display
+while the game is running.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="properties.html" class="btn btn-neutral float-left" title="Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../release/index.html" class="btn btn-neutral float-right" title="Release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

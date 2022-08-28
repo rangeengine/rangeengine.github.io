@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controller Editing &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AND Controller" href="types/and.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Controller Editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#column-heading">Column Heading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers">Controllers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#object-heading">Object Heading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-controller-parts">Standard Controller Parts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#controller-types">Controller Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../actuators/index.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Logic</a> &raquo;</li>
+          <li><a href="index.html">Controllers</a> &raquo;</li>
+      <li>Controller Editing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/logic/controllers/editing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="controller-editing">
+<h1>Controller Editing<a class="headerlink" href="#controller-editing" title="Permalink to this heading"></a></h1>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/logic-controllers-editing-column.jpg"><img alt="../../../_images/logic-controllers-editing-column.jpg" src="../../../_images/logic-controllers-editing-column.jpg" style="width: 292px;" /></a>
+<p class="caption"><span class="caption-text">Controller Column with a typical sensor.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>Blender controllers can be set up and edited in the central column of the Logic Panel.
+This page describes the general column controls,
+those parameters which are common to all individual controller types,
+and how different states for the objects in the logic system can be set up and edited.</p>
+<p>The image shows a typical controller column with a single controller.
+At the top of this column, and for sensors and actuators, the column heading includes menus
+and buttons to control which of all the controllers in the current Game Logic are displayed.</p>
+<div class="section" id="column-heading">
+<h2>Column Heading<a class="headerlink" href="#column-heading" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/logic-controllers-editing-column1.png" src="../../../_images/logic-controllers-editing-column1.png" />
+<p class="caption"><span class="caption-text">Controller Column headings.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<p>The column headings contain controls to set which controllers appear,
+and the level of detail given, in the controller column. This is very useful for hiding
+unnecessary controllers so that the necessary ones are visible and easier to reach.
+Both these can be controlled individually.</p>
+</div>
+<div class="section" id="controllers">
+<h2>Controllers<a class="headerlink" href="#controllers" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Show Objects</dt><dd><p>Expands all objects.</p>
+</dd>
+<dt>Hide Objects</dt><dd><p>Collapses all objects to just a bar with their name.</p>
+</dd>
+<dt>Show Controllers</dt><dd><p>Expands all Controllers.</p>
+</dd>
+<dt>Hide Controllers</dt><dd><p>Collapses all Controllers to bars with their names.</p>
+</dd>
+</dl>
+<p>It is also possible to filter which controllers are viewed using the three heading buttons:</p>
+<dl class="simple">
+<dt>Sel</dt><dd><p>Shows all controllers for selected objects.</p>
+</dd>
+<dt>Act</dt><dd><p>Shows only controllers belonging to the active object.</p>
+</dd>
+<dt>Link</dt><dd><p>Shows controllers which have a link to actuators/sensors.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="object-heading">
+<h2>Object Heading<a class="headerlink" href="#object-heading" title="Permalink to this heading"></a></h2>
+<div class="figure align-default">
+<img alt="../../../_images/logic-controllers-editing-column2.png" src="../../../_images/logic-controllers-editing-column2.png" />
+</div>
+<div class="figure align-default">
+<img alt="../../../_images/logic-controllers-editing-column4.png" src="../../../_images/logic-controllers-editing-column4.png" />
+</div>
+<p>In the column list, controllers are grouped by object. By default, controllers for every
+selected object appear in the list, but this may be modified by the column heading filters.</p>
+<dl class="simple">
+<dt>At the head of each displayed object controller list, three entries appear:</dt><dd><p><em>Used States Button</em> Shows which states are in use for the object.
+Detailed description of the marked panel is given in <a class="reference internal" href="../states.html"><span class="doc">States</span></a>.</p>
+</dd>
+<dt>Name</dt><dd><p>The name of the object.</p>
+</dd>
+<dt>Add Controller</dt><dd><p>When clicked, a menu appears with the available controller types. Selecting an entry
+adds a new controller to the object. See
+<a class="reference internal" href="index.html"><span class="doc">Controllers</span></a>
+for a list of available controller types.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="standard-controller-parts">
+<h2>Standard Controller Parts<a class="headerlink" href="#standard-controller-parts" title="Permalink to this heading"></a></h2>
+<p id="id1">The controller heading is standard to every controller.</p>
+<div class="figure align-default">
+<img alt="../../../_images/logic-controllers-editing-controller_parts.png" src="../../../_images/logic-controllers-editing-controller_parts.png" />
+</div>
+<dl class="simple">
+<dt>Controller Type menu</dt><dd><p>Specifies the type of the controller.</p>
+</dd>
+<dt>Controller Name</dt><dd><p>The name of the controller. This can be selected by the user. It is used to access
+controllers with Python; it needs to be unique among the selected objects.</p>
+</dd>
+<dt>State Index</dt><dd><p>Sets the designated state for which this controller will operate.</p>
+</dd>
+<dt>Preference Button</dt><dd><p>If on, this controller will operate before all other non-preference controllers
+(useful for start-up scripts).</p>
+</dd>
+<dt>Active Checkbox</dt><dd><p>When unchecked the controller is deactivated, no pulses will be sent to the connect
+actuators.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">X</span></code> Button</dt><dd><p>Deletes the sensor.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="types/and.html" class="btn btn-neutral float-right" title="AND Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

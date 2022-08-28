@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Object Actuator &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Filter 2D Actuator" href="filter_2d.html" />
+    <link rel="prev" title="Constraints Actuator" href="constraint.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Actuators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Actuator Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#actuators-types">Actuators Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">Armature Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="action.html">Action Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camera.html">Camera Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constraint.html">Constraints Actuator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Edit Object Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filter_2d.html">Filter 2D Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.html">Game Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="message.html">Message Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mouse.html">Mouse Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="motion.html">Motion Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parent.html">Parent Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property.html">Property Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="random.html">Random Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scene.html">Scene Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="steering.html">Steering Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sound.html">Sound Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="state.html">State Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="visibility.html">Visibility Actuator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Logic</a> &raquo;</li>
+          <li><a href="../index.html">Actuators</a> &raquo;</li>
+      <li>Edit Object Actuator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/actuators/types/edit_object.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="edit-object-actuator">
+<span id="bpy-types-editobjectactuator"></span><h1>Edit Object Actuator<a class="headerlink" href="#edit-object-actuator" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.KX_SCA_AddObjectActuator.html#KX_SCA_AddObjectActuator" title="KX_SCA_AddObjectActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_SCA_AddObjectActuator</span></code></a>, <a class="reference internal" href="../../../../api/bge.types.KX_SCA_DynamicActuator.html#KX_SCA_DynamicActuator" title="KX_SCA_DynamicActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_SCA_DynamicActuator</span></code></a>, <a class="reference internal" href="../../../../api/bge.types.KX_SCA_EndObjectActuator.html#KX_SCA_EndObjectActuator" title="KX_SCA_EndObjectActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_SCA_EndObjectActuator</span></code></a> and <a class="reference internal" href="../../../../api/bge.types.KX_SCA_ReplaceMeshActuator.html#KX_SCA_ReplaceMeshActuator" title="KX_SCA_ReplaceMeshActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_SCA_ReplaceMeshActuator</span></code></a>.</p>
+</div>
+<p>The <em>Edit Object Actuator</em> allows the user to edit settings of objects in-game.
+In example edits the object’s mesh, adds objects, or destroys them.
+It can also change the mesh of an object (and soon also recreate the collision mesh).</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Edit Object</dt><dd><p>How the object is modified, each is described below.</p>
+</dd>
+</dl>
+<div class="section" id="dynamics">
+<h3>Dynamics<a class="headerlink" href="#dynamics" title="Permalink to this heading"></a></h3>
+<p>Provides a menu of <em>Dynamic Operations</em> to set up dynamics options for object.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/logic-actuators-types-edit_object-dynamics.png" src="../../../../_images/logic-actuators-types-edit_object-dynamics.png" />
+<p class="caption"><span class="caption-text">Edit Object: Dynamics.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Set Mass</dt><dd><p>Enables the user to set the mass of the current object for Physics.</p>
+</dd>
+<dt>Disable Rigid Body</dt><dd><p>Disables the Rigid Body state of the object – disables collision.</p>
+</dd>
+<dt>Enable Rigid Body</dt><dd><p>Disables the Rigid Body state of the object – enables collision.</p>
+</dd>
+<dt>Suspend Dynamics</dt><dd><p>Suspends the object dynamics (object velocity).</p>
+</dd>
+<dt>Restore Dynamics</dt><dd><p>Resumes the object dynamics (object velocity).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="track-to">
+<h3>Track To<a class="headerlink" href="#track-to" title="Permalink to this heading"></a></h3>
+<p>Makes the object “look at” another object, in 2D or 3D.
+The Y axis is considered the front of the object.</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../../_images/logic-actuators-types-edit_object-track_to.jpg" src="../../../../_images/logic-actuators-types-edit_object-track_to.jpg" />
+<p class="caption"><span class="caption-text">Edit Object: Track To.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Object</dt><dd><p>Object to follow.</p>
+</dd>
+<dt>Time</dt><dd><p>Number of frames it will take to turn towards the target object.</p>
+</dd>
+<dt>3D Button (toggle).</dt><dd><p>Enable 2D (X, Y) or 3D (X, Y, Z) tracking.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="replace-mesh">
+<h3>Replace Mesh<a class="headerlink" href="#replace-mesh" title="Permalink to this heading"></a></h3>
+<p>Replace mesh with another. Both the mesh and/or its physics can be replaced,
+together or independently.</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../../_images/logic-actuators-types-edit_object-replace_mesh.jpg" src="../../../../_images/logic-actuators-types-edit_object-replace_mesh.jpg" />
+<p class="caption"><span class="caption-text">Edit Object: Replace Mesh.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Mesh</dt><dd><p>Name of mesh to replace the current mesh.</p>
+</dd>
+<dt>Gfx Button</dt><dd><p>Replace visible mesh.</p>
+</dd>
+<dt>Phys Button</dt><dd><p>Replace physics mesh (not compound shapes).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="end-object">
+<h3>End Object<a class="headerlink" href="#end-object" title="Permalink to this heading"></a></h3>
+<p>Destroy the current object (note, debug properties will display error Zombie Object in console).</p>
+<div class="figure align-default" id="id4">
+<img alt="../../../../_images/logic-actuators-types-edit_object-end_object.png" src="../../../../_images/logic-actuators-types-edit_object-end_object.png" />
+<p class="caption"><span class="caption-text">Edit Object: End Object.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="add-object">
+<h3>Add Object<a class="headerlink" href="#add-object" title="Permalink to this heading"></a></h3>
+<p>Adds an object at the center of the current object.
+The object that is added needs to be on another, hidden, layer.</p>
+<div class="figure align-default" id="id5">
+<img alt="../../../../_images/logic-actuators-types-edit_object-add_object.png" src="../../../../_images/logic-actuators-types-edit_object-add_object.png" />
+<p class="caption"><span class="caption-text">Edit Object: Add Object.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Object</dt><dd><p>The name of the object that is going to be added.</p>
+</dd>
+<dt>Time</dt><dd><p>The time (in frames) the object stays alive before it disappears.
+Zero makes it stay forever.</p>
+</dd>
+<dt>Linear Velocity</dt><dd><p>Linear Velocity, works like in the motion actuator but on the created object instead of the object itself.
+Useful for shooting objects, create them with an initial speed.</p>
+</dd>
+<dt>Angular Velocity</dt><dd><p>Angular velocity, works like in the motion actuator but on the created object instead of the object itself.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="constraint.html" class="btn btn-neutral float-left" title="Constraints Actuator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="filter_2d.html" class="btn btn-neutral float-right" title="Filter 2D Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

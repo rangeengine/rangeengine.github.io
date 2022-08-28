@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standalone Player &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Release Procedure" href="release_procedure.html" />
+    <link rel="prev" title="Performance Considerations" href="performance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/index.html">Logic</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Release</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="licensing.html">Licensing of Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance.html">Performance Considerations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Standalone Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_procedure.html">Release Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Release</a> &raquo;</li>
+      <li>Standalone Player</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/release/blender_player.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="standalone-player">
+<h1>Standalone Player<a class="headerlink" href="#standalone-player" title="Permalink to this heading"></a></h1>
+<p>The standalone player allows a Blender game to be run without having to load the Blender system.
+This allows games to be distributed to other users, without requiring them a detailed knowledge of Blender
+(and also without the possibility of unauthorized modification). Note that the Game Engine
+<em>Save as Runtime</em> is an add-on facility which must be pre-loaded before use.</p>
+<p>The following procedure will give a standalone version of a working game.</p>
+<ol class="arabic simple">
+<li><p><span class="menuselection">File ‣ User Preferences ‣ Add-ons ‣ Game Engine ‣ Save As Game Engine Runtime</span>
+enable the checkbox. (You can also <em>Save User Settings</em>,
+in which case the add-on will always be present whenever Blender is re-loaded).</p></li>
+<li><p><span class="menuselection">File ‣ Export ‣ Save As Game Engine Runtime</span>
+(give appropriate directory/filename) confirm with <em>Save as Game Engine Runtime</em>.</p></li>
+</ol>
+<p>The game can then be executed by running the appropriate <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.
+Note that all appropriate libraries are automatically loaded by the add-on.</p>
+<p>If you are interested in licensing your game,
+read <a class="reference external" href="https://www.blender.org/about/license/">Licensing</a>
+for a discussion of the issues involved.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Exporting…</p>
+<p>If the game is to be exported to other computers,
+make a new empty directory for the game runtime and all its ancillary libraries, etc.
+Then make sure the <strong>whole</strong> directory is transferred to the target computer.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="performance.html" class="btn btn-neutral float-left" title="Performance Considerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="release_procedure.html" class="btn btn-neutral float-right" title="Release Procedure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

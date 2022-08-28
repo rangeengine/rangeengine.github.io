@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Text" href="text.html" />
+    <link rel="prev" title="Mesh" href="mesh.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">Editors</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Datablocks</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="armature.html">Armature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="empty.html">Empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group.html">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lamp.html">Lamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mesh.html">Mesh</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mesh.html">Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="armature.html">Armature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="empty.html">Empty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lamp.html">Lamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sound.html">Sound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="action.html">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="material.html">Material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="world.html">World</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Datablocks</a> &raquo;</li>
+      <li>Object</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/datablocks/object.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="object">
+<span id="datablock-object"></span><h1>Object<a class="headerlink" href="#object" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of common objects in <a class="reference internal" href="../../api/bge.types.KX_GameObject.html#KX_GameObject" title="KX_GameObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_GameObject</span></code></a>.</p>
+</div>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/objects-index-supported_types_highlighted.png" src="../../_images/objects-index-supported_types_highlighted.png" />
+<p class="caption"><span class="caption-text">Supported object types in Add menu.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>UPBGE supports several object types from Blender, as listed below. The unsupported object
+types (like Curve, Metaball, Lattice, etc) can be present at Blender scene, but will be
+removed automatically at game start, so they should not be taken in account in game
+development process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Definitions present in this section are related to object’s behavior at game runtime.
+For definitions about object editing inside Blender editor, refer to
+<a class="reference internal" href="../editors/properties/index.html"><span class="doc">Properties Editor</span></a>.</p>
+</div>
+<p>Each object type will be explained at its respective page, but all of them have common
+attributes and features which will be explained in this page. Those attributes and
+features are:</p>
+<dl class="simple">
+<dt>Ability to contain logic and game properties</dt><dd><p>This means that logic and property changing is not bound to specific object types: any
+object can run logic. This should be used with caution, as scattering logic and
+properties across multiple objects can turn any project into a mess.</p>
+</dd>
+<dt>Ability to have a physics type</dt><dd><p>This means that any object can react to physics, even if this object can’t be visible
+at runtime (as any object other than Mesh objects). However, only Mesh objects can
+benefit from certain collision bounds, like Triangle Mesh and Convex Hull.</p>
+</dd>
+<dt>World and local transformation values</dt><dd><p>Even non-visible objects fit a point in scene space. These transformation values are
+stored in object in a form of world and local transforms (like position, scale and
+orientation). Note that local transforms are relative to object’s parent (or world
+center, if it lacks a parent).</p>
+</dd>
+<dt>Ability to have animations playing on it</dt><dd><p>Although Mesh and Armature objects benefits more from this feature (with Shape Keys
+and Armature actions, respectively), any object can be animated at runtime, from
+transformations to some specific object attributes.</p>
+</dd>
+<dt>General object values</dt><dd><p>These general values varies from object color, slow parent’s time offset, etc.</p>
+</dd>
+</dl>
+<p>Those attributes and features are present in every object type, with no exception. Other
+attributes depends on specific object types, like Lamps or Cameras.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Object Types</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="armature.html">Armature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="empty.html">Empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lamp.html">Lamp</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mesh.html" class="btn btn-neutral float-left" title="Mesh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="text.html" class="btn btn-neutral float-right" title="Text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

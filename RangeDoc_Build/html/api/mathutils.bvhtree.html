@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BVHTree Utilities (mathutils.bvhtree) &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Geometry Utilities (mathutils.geometry)" href="mathutils.geometry.html" />
+    <link rel="prev" title="Math Types &amp; Utilities (mathutils)" href="mathutils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bge.html">Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BVHTree Utilities (mathutils.bvhtree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.geometry.html">Geometry Utilities (mathutils.geometry)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.interpolate.html">Interpolation Utilities (mathutils.interpolate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.kdtree.html">KDTree Utilities (mathutils.kdtree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.noise.html">Noise Utilities (mathutils.noise)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.html#color">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.html#euler">Euler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.html#matrix">Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.html#quaternion">Quaternion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.html#vector">Vector</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="mathutils.html">Math Types &amp; Utilities (mathutils)</a> &raquo;</li>
+      <li>BVHTree Utilities (mathutils.bvhtree)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/mathutils.bvhtree.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-mathutils.bvhtree">
+<span id="bvhtree-utilities-mathutils-bvhtree"></span><h1>BVHTree Utilities (mathutils.bvhtree)<a class="headerlink" href="#module-mathutils.bvhtree" title="Permalink to this heading"></a></h1>
+<p>BVH tree structures for proximity searches and ray casts on geometry.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathutils.bvhtree.</span></span><span class="sig-name descname"><span class="pre">BVHTree</span></span><a class="headerlink" href="#mathutils.bvhtree.BVHTree" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.FromBMesh">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FromBMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bmesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.FromBMesh" title="Permalink to this definition"></a></dt>
+<dd><p>BVH tree based on <code class="xref py py-class docutils literal notranslate"><span class="pre">BMesh</span></code> data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bmesh</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">BMesh</span></code>) – BMesh data.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Increase the threshold for detecting overlap and raycast hits.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.FromObject">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FromObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scene</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">render</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.FromObject" title="Permalink to this definition"></a></dt>
+<dd><p>BVH tree based on <code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code> data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Object</span></code>) – Object data.</p></li>
+<li><p><strong>scene</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code>) – Scene data to use for evaluating the mesh.</p></li>
+<li><p><strong>deform</strong> (<em>bool</em>) – Use mesh with deformations.</p></li>
+<li><p><strong>render</strong> (<em>bool</em>) – Use render settings.</p></li>
+<li><p><strong>cage</strong> (<em>bool</em>) – Use render settings.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Increase the threshold for detecting overlap and raycast hits.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.FromPolygons">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FromPolygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_triangles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.FromPolygons" title="Permalink to this definition"></a></dt>
+<dd><p>BVH tree constructed geometry passed in as arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vertices</strong> (<em>float triplet sequence</em>) – float triplets each representing <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code></p></li>
+<li><p><strong>polygons</strong> (<em>Sequence of sequences containing ints</em>) – Sequence of polyugons, each containing indices to the vertices argument.</p></li>
+<li><p><strong>all_triangles</strong> (<em>bool</em>) – Use when all <strong>polygons</strong> are triangles for more efficient conversion.</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em>) – Increase the threshold for detecting overlap and raycast hits.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.find_nearest">
+<span class="sig-name descname"><span class="pre">find_nearest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.84467e+19</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.find_nearest" title="Permalink to this definition"></a></dt>
+<dd><p>Find the nearest element (typically face index) to a point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>co</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code>) – Find nearest element to this point.</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – Maximum distance threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a tuple
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> location, <code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> normal, int index, float distance),
+Values will all be None if no hit is found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.find_nearest_range">
+<span class="sig-name descname"><span class="pre">find_nearest_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.84467e+19</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.find_nearest_range" title="Permalink to this definition"></a></dt>
+<dd><p>Find the nearest elements (typically face index) to a point in the distance range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>co</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code>) – Find nearest elements to this point.</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – Maximum distance threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of tuples
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> location, <code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> normal, int index, float distance),</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.overlap">
+<span class="sig-name descname"><span class="pre">overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other_tree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.overlap" title="Permalink to this definition"></a></dt>
+<dd><p>Find overlapping indices between 2 trees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other_tree</strong> (<a class="reference internal" href="#mathutils.bvhtree.BVHTree" title="mathutils.bvhtree.BVHTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">BVHTree</span></code></a>) – Other tree to preform overlap test on.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a list of unique index pairs,      the first index referencing this tree, the second referencing the <strong>other_tree</strong>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathutils.bvhtree.BVHTree.ray_cast">
+<span class="sig-name descname"><span class="pre">ray_cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sys.float_info.max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mathutils.bvhtree.BVHTree.ray_cast" title="Permalink to this definition"></a></dt>
+<dd><p>Cast a ray onto the mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>co</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code>) – Start location of the ray in object space.</p></li>
+<li><p><strong>direction</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code>) – Direction of the ray in object space.</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – Maximum distance threshold.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a tuple
+(<code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> location, <code class="xref py py-class docutils literal notranslate"><span class="pre">Vector</span></code> normal, int index, float distance),
+Values will all be None if no hit is found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mathutils.html" class="btn btn-neutral float-left" title="Math Types &amp; Utilities (mathutils)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mathutils.geometry.html" class="btn btn-neutral float-right" title="Geometry Utilities (mathutils.geometry)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
