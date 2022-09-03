@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+body{
+	color: white;
+	font-family: Titillium Web, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	background-color: #2c2c2c;
+	text-align: center;
+	margin: 0px;
+	background-image: url('../img/backgif.gif');
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+hr{
+	border-color: rgba(255, 83, 83, 0.322);
+	box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.178);
+}
+.logo{
+	max-width: 150px;
+	transition: all 0.15s ease-in;
+}
+.logo:hover{
+	filter: brightness(200%);
+	transition: all 0.15s ease-in-out;
+}
+.togglebutton{
+	position: absolute;
+	top: .75rem;
+	right: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+	padding-top: 15px;
+	transition: all 0.2s ease-in;
+}
+.togglebutton .bar{
+	height: 3px;
+	width: 100%;
+	background-color: white;
+	border-radius: 10px;
+}
+
+/* HEADER */
+
+.header{
+	background-color: transparent;
+	box-shadow: 10px;
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	z-index: 10000;
+	transition: all 0.25s ease-in-out;
+}
+.activeh{
+	background-color: #111111;
+}
+.title{
+	margin: 0px;
+	max-width: 100%;
+	margin-top: 15px;
+	margin-left: 20px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+.healinks{
+	text-decoration: none;
+}
+.healinks:hover{
+	text-decoration: underline #fd4f4f;
+}
+.headerlinks{
+	margin-right: 20px;
+}
+a.suppus{
+	background-color: rgb(230, 45, 45);
+	border-color: rgb(230, 45, 45);
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 2px;
+	padding: 5px;
+	transition: all 0.20s ease-in;
+}
+a.suppus:hover{
+	background-color: rgba(197, 0, 0, 0);
+	transition: all 0.20s ease-in-out;
+}
+.headerlis{
+	margin-left: 20px;
+	padding: 2px;
+	display: inline-flex;
+}
+.apresentacao{
+	display: inline-flex;
+	background-color: rgba(26, 26, 26, 0.6);
+	border-radius: 50px;
+	padding: 20px;
+}
+.downnabout{
+	margin-top: 25px;
+}
+.downabout{
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 30px;
+	padding-bottom: 25px;
+}
+.artigos{
+	display: inline-flex;
+}
+
+/* SECTION */
+section{
+	background-color: rgba(0, 0, 0, 0.411);
+}
+a.downnow{
+	background-color: rgb(255, 45, 45);
+	border-color: rgb(255, 45, 45);
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 2px;
+	padding: 10px;
+	transition: all 0.15s ease-in;
+	white-space: nowrap;
+}
+a.downnow:hover{
+	background-color: rgba(197, 0, 0, 0);
+	transition: all 0.15s ease-in-out;
+}
+a.knowmore{
+	background-color: #4d4d4d67;
+	border-style: solid;
+	border-color: rgb(117, 117, 117);
+	border-width: 2px;
+	border-radius: 5px;
+	padding: 10px;
+	transition: all 0.15s ease-in;
+	white-space: nowrap;
+}
+a.knowmore:hover{
+	background-color: #4d4d4d00;
+	border-color: rgb(150, 150, 150);
+}
+.indexsec{
+	display: block;
+	padding-top: 280px;
+	padding-bottom: 220px;
+	background-color: 0, 0, 0, 0.5;
+}
+.downsec{
+	display: block;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	background-color: 0, 0, 0, 0.5;
+}
+.whatsxbge{
+	font-size: 13px;
+	margin: 3px;
+}
+.articlechanges, h3, p{
+	text-decoration: none;
+	margin: 0;
+}
+
+/* ARTICLE */
+article{
+	background-color: rgba(0, 0, 0, 0.952);
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.aboutxbge{
+	background-color: rgba(41, 41, 41, 0.753);
+	border-radius: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: 30px;
+	margin-right: 70px;
+	margin-bottom: 30px;
+	max-width: 400px;
+	max-height: 400px;
+	white-space: nowrap;
+}
+.funcs{
+	width: 90%;
+	border-radius: 30px;
+	text-decoration: none;
+}
+.funcssplash{
+	width: 70%;
+	border-radius: 20px;
+	text-decoration: none;
+}
+.learnmorearticle{
+	background-color: #181818fd;
+	display: inline-block;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.lmarticle{
+	display: inline-flex;
+}
+/* FOOTER */
+footer{
+	background-color: #111111;
+	margin: 0px;
+	width: 100%;
+}
+.footerobjs{
+	display: inline-flex;
+}
+.spanrange{
+	padding-right: 500px;
+	padding-top: 40px;
+	font-style: italic;
+	font-size: 13px;
+}
+@media (max-width: 850px){
+	.spanrange{
+		padding-right: 50px;
+	}
+}
+.ftlinks{
+	font-size: 13px;
+	text-transform: uppercase;
+	text-align: right;
+}
+.ftlink{
+	color: rgb(170, 170, 170);
+}
+.ftlink:hover{
+	text-decoration: underline;
+}
+
+/* DOWNLOAD PAGE */
+
+.articledownload{
+	text-align: left;
+	display: inline-flex;
+}
+@media (max-width: 850px) {
+	.articledownload{
+		display: inline-block;
+	}
+}
+.linksites{
+	text-decoration: underline;
+	color: orange;
+}
+.joindc{
+	background-color: rgb(46, 155, 83);
+	padding: 8px;
+	padding-left: 182px;
+	padding-right: 180px;
+	border-radius: 5px;
+	transition: all 0.15s ease-in;
+}
+.joindc:hover{
+	background-color: rgb(80, 158, 106);
+	transition: all 0.15s ease-in-out;
+}
+.dclink{
+	display: inline-block;
+}
+@media (max-width: 500px){
+	.dclink, img, a{
+		max-width: 330px;
+		white-space: nowrap;
+	}
+	.dclink a{
+		padding-left: 142px;
+		padding-right: 142px;
+	}
+}
+.artigoscontrib{
+	background-color: rgba(41, 41, 41, 0.753);
+	border-radius: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 22px;
+	padding-right: 22px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+.artigoschanges{
+	background-color: rgba(22, 22, 22, 0.753);
+	border-radius: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+/* CHANGELOG */
+
+.articlechanges{
+	text-align: left;
+	display: inline-block;
+	text-decoration: none;
+}
+.funcsch{
+	max-width: 40%;
+	border-radius: 10px;
+}
+.changelogdiv, ul{
+	list-style-type: none;
+}
+.changestitle{
+	font-size: 25px;
+	font-weight: bold;
+}
+.changestitle:hover{
+	list-style: circle;
+}
+.releasename{
+	text-align: center;
+}
+@media (max-width: 850px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .togglebutton {
+        display: flex;
+    }
+    .headerlinks {
+        display: none;
+        width: 100%;
+    }
+    .headerlinks .heaul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .headerlinks .heaul .headerlis {
+        text-align: center;
+    }
+    .headerlinks .heaul .headerlis .healinks .suppus{
+        padding: .5rem 1rem;
+    }
+    .headerlinks.active {
+        display: flex;
+    }
+	.togglebutton.active{
+		transition: all 0.2s ease-in-out;
+		padding-top: 30px;
+		transform: rotate(90deg);
+	}
+	.apresentacao{
+		display: inherit;
+	}
+	.artigoscontrib{
+		margin: 0;
+		margin-bottom: 30px;
+		padding-right: 0;
+	}
+}
