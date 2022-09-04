@@ -185,7 +185,7 @@ article{
 	margin-bottom: 30px;
 	max-width: 400px;
 	max-height: 400px;
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 .funcs{
 	width: 90%;
