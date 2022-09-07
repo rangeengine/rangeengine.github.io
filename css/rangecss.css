@@ -12,7 +12,7 @@ body{
     height: 100vh;
     padding: 0;
     margin: 0;
-	backdrop-filter: blur(2px);
+	backdrop-filter: blur(1px);
 }
 hr{
 	border-color: rgba(255, 83, 83, 0.322);
