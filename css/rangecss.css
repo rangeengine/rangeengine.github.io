@@ -7,11 +7,12 @@ body{
 	background-color: #2c2c2c;
 	text-align: center;
 	margin: 0px;
-	background-image: url('../img/backgif.gif');
+	background-image: url('../img/backgif.webp');
     background-size: cover;
     height: 100vh;
     padding: 0;
     margin: 0;
+	backdrop-filter: blur(2px);
 }
 hr{
 	border-color: rgba(255, 83, 83, 0.322);
