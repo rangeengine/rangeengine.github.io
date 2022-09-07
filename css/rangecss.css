@@ -192,7 +192,6 @@ article{
 	margin-bottom: 30px;
 	max-width: 400px;
 	max-height: 400px;
-	/*white-space: nowrap;*/
 }
 .funcs{
 	width: 90%;
@@ -211,8 +210,22 @@ article{
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+.rangverarticle{
+	background-color: #381515fd;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 2px;
+}
 .lmarticle{
 	display: inline-flex;
+}
+.praav{
+	margin-top: 12px;
+}
+.rangver{
+	margin-left: 5px;
+	max-width: 50px;
+	max-height: 50px;
 }
 /* FOOTER */
 footer{
@@ -284,6 +297,9 @@ footer{
 	.dclink a{
 		padding-left: 142px;
 		padding-right: 142px;
+	}
+	.praav{
+		margin-top: 0px;
 	}
 }
 .artigoscontrib{
