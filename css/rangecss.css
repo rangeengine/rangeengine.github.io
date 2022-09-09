@@ -367,6 +367,7 @@ footer{
     }
     .togglebutton {
         display: flex;
+	cursor: pointer;
     }
     .headerlinks {
         display: none;
