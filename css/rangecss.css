@@ -37,6 +37,7 @@ hr{
 	height: 21px;
 	padding-top: 15px;
 	transition: all 0.2s ease-in;
+	cursor: pointer;
 }
 .togglebutton .bar{
 	height: 3px;
@@ -315,6 +316,16 @@ footer{
 	margin-bottom: 30px;
 }
 .artigoschanges{
+	background-color: rgba(22, 22, 22, 0.753);
+	border-radius: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.artigoschangess{
 	background-color: rgba(22, 22, 22, 0.753);
 	border-radius: 50px;
 	padding-top: 50px;
