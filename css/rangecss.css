@@ -257,7 +257,7 @@ footer{
 .ftlink{
 	color: rgb(170, 170, 170);
 }
-.ftlink:hover{
+.ftlink:hover:not(#no_underline) {
 	text-decoration: underline;
 }
 
