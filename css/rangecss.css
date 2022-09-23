@@ -402,7 +402,7 @@ footer{
 		transform: rotate(90deg);
 	}
 	.apresentacao{
-		display: inherit;
+		display: inline-block;
 	}
 	.artigoscontrib{
 		margin: 0;
