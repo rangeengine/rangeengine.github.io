@@ -12,7 +12,6 @@ body{
     height: 100vh;
     padding: 0;
     margin: 0;
-	/*backdrop-filter: blur(1px);*/
 }
 hr{
 	border-color: rgba(255, 83, 83, 0.322);
@@ -47,7 +46,6 @@ hr{
 }
 
 /* HEADER */
-
 .header{
 	background-color: transparent;
 	box-shadow: 10px;
@@ -244,11 +242,6 @@ footer{
 	font-style: italic;
 	font-size: 13px;
 }
-@media (max-width: 850px){
-	.spanrange{
-		padding-right: 50px;
-	}
-}
 .ftlinks{
 	font-size: 13px;
 	text-transform: uppercase;
@@ -262,15 +255,9 @@ footer{
 }
 
 /* DOWNLOAD PAGE */
-
 .articledownload{
 	text-align: left;
 	display: inline-flex;
-}
-@media (max-width: 850px) {
-	.articledownload{
-		display: inline-block;
-	}
 }
 .linksites{
 	text-decoration: underline;
@@ -326,18 +313,42 @@ footer{
 	margin-right: 40px;
 }
 .artigoschangess{
-	background-color: rgba(22, 22, 22, 0.753);
+	background-color: rgba(41, 41, 41, 0.753);
 	border-radius: 50px;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	padding-left: 22px;
+	padding-right: 22px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+
+/* CHANGELOG */
+.chglogmenu{
+	background-color: rgba(22, 22, 22, 0.753);
+	border-radius: 50px;
 	padding-left: 30px;
 	padding-right: 30px;
 	margin-left: 40px;
 	margin-right: 40px;
+	margin-bottom: 20px;
+	text-align: center;
 }
-
-/* CHANGELOG */
-
+.chgmli{
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0);
+	border-width: 2px;
+	border-radius: 10px;
+	padding: 10px;
+	transition: all 0.15s ease-in;
+	display: inline-flex;
+}
+.chgmli:hover{
+	background-color: #4d4d4d00;
+	border-style: solid;
+	border-color: rgb(150, 150, 150);
+}
 .articlechanges{
 	text-align: left;
 	display: inline-block;
@@ -398,5 +409,11 @@ footer{
 		margin: 0;
 		margin-bottom: 30px;
 		padding-right: 0;
+	}
+	.articledownload{
+		display: inline-block;
+	}
+	.spanrange{
+		padding-right: 50px;
 	}
 }
