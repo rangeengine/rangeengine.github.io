@@ -46,21 +46,21 @@
       </div>
     </section>
     <article>
-      <!--div class="chglogmenu">
+      <div class="chglogmenu">
         <ul class="chgulmenu">
           <h3 style="padding:12px;">Range Engine Releases:</h3>
-          <li class="chgmli"><a href="changelog">RanGE 1.0</a></li>
-          <li class="chgmli"><a href="changelog">RanGE 1.2</a></li>
+          <li class="chgmli"><a href="changelog10">RanGE 1.0</a></li>
+          <li class="chgmli" style="border-color: rgba(145, 30, 30, 0.582);"><a>RanGE 1.2</a></li>
         </ul>
-      </div-->
+      </div>
       <div class="articlechanges">
         <div class="changelogdiv">
           <div class="artigoschanges">
-            <h3 class="changestitle">RanGE 1.0</h3>
+            <h3 class="changestitle">RanGE 1.2</h3>
             <p class="whatsxbge"><i>Principal Changes</i></p>
             <hr>
             <br>
-            <img class="funcssplash" src="/img/changelog/1.0/splash.png" alt="Splash">
+            <img class="funcssplash" src="https://camo.githubusercontent.com/c145a55fddf38abf8525c6b766e04f9453c50b3a8a9e861486a18b798772cd57/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333934343038353132393539323836322f756e6b6e6f776e2e706e67" alt="Splash">
             <a href="#" class="togglechalog">
               <span class="bar"></span>
               <span class="bar"></span>
@@ -68,85 +68,56 @@
             </a>
           </div>
           <ul class="artigoschanges">
-            <li class="changestitle">Area Light</li>
+            <li class="changestitle">Python 3.10</li>
             <hr>
-            <p>New Lamp Illumination Type.</p>
-            <img class="funcsch" src="/img/changelog/1.0/arealight.png" alt="Area Light">
+            <p>RanGE 1.2 has the latest stable version of python with all new features and improvements.
+            <br><strong>Added Postponed annotations support.</strong></p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/81b1fd1918b86ada404c7cc55457b6d72fd2d834aba5e48e860c6c05052b0bff/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333934343835333435303539363432332f756e6b6e6f776e2e706e67" alt="Python 3.10">
             <br>
             <br>
-            <li class="changestitle">Responsive Profiler</li>
+            <li class="changestitle">GameEngine DeltaTime</li>
             <hr>
-            <p>Best Engine Depuration.</p>
-            <img class="funcsch" src="/img/changelog/1.0/profiler.gif" alt="Profiler">
+            <p>You can now apply framerate independence.
+            <br><strong>We recommend starting using this in your games from now on.</strong></p>
+            <p class="whatsxbge" style="color: rgb(194, 36, 36);"><strong>- Warning: DeltaTime was also applied to logic bricks in motionActuator. this will change your speed to the time scale.
+            <br>- So it's normal when migrating your project the character to be very slow.</strong></p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/8c6839c1210e5c4514578977bc4bbbefdd1dfa2742be2a09feaba9fbdb124e95/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333935303530383533343230363535342f44656c746154696d6556332e676966" alt="DeltaTime">
             <br>
             <br>
-            <li class="changestitle">Layer Weight</li>
+            <li class="changestitle">Range Armor</li>
             <hr>
-            <p>Now You Can Control The Layer Weight Of Each Layer, Allowing For More Complex Animations.</p>
-            <img class="funcsch" src="/img/changelog/1.0/layerweight.gif" alt="Layer Weight">
+            <p>Finally a new exporter integrated into the engine.
+            <br>You can export your game to several different platforms at once (Windows x64 and Linux).</p>
+            <p class="whatsxbge"><i>RangeArmor is a fork from the BGArmor project.</i></p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/30b3d162f3cfdb84b59835e725b85e738445dc8edf3c16525ed3b2a23a9cdf53/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333935323133333037363232363034382f52616e676541726d6f722e676966" alt="Range Armor">
             <br>
             <br>
-            <li class="changestitle">Character Physics Update</li>
+            <li class="changestitle">Enable/Disable Python Component Execution in interface</li>
             <hr>
-            <p>Character Physics Now Has Smooth Movement And Jump Direction.</p>
-            <img class="funcsch" src="/img/changelog/1.0/jumpdir.gif" alt="Jump Direction">
-            <img class="funcsch" src="/img/changelog/1.0/smoothmov.gif" alt="Smooth Movement">
+            <p>Extremely useful for debug your game.</p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/b4a9e36bbaaea2f52bf15272ceb1982f85f5d58fe09e1c81416254e9b6d2cda6/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333935313530323530303336383431342f507974686f6e436f6d706f6e656e7445786563427574746f6e2e676966" alt="On/Off Components">
             <br>
             <br>
-            <li class="changestitle">Text Resolution</li>
+            <li class="changestitle">New MouseLook Method</li>
             <hr>
-            <p>Change The In-Game Text Resolution (High Resolution Can Slow Performance)</p>
-            <img class="funcsch" src="/img/changelog/1.0/textres.gif" alt="Text Resolution">
+            <p>Now there is a new method to create a mouselook, using mouseDelta, one of the most current ways to make a mouselook. only 3 lines are needed to create!</p>
+            <p class="whatsxbge">Without the famous sliding bug when creating a mouseLook or something like that.</p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/cde89d2f61155b636886272b45556957c8cef82a053c47e40aa7d495ab32148a/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3734353736343437353038303134373034342f313033333935363734303535363932323935302f4e65774d6f7573654c6f6f6b2e676966" alt="MouseLook">
             <br>
             <br>
-            <li class="changestitle">Physics Culling Velocity</li>
+            <li class="changestitle">SetPosition in motionActuator</li>
             <hr>
-            <p>Objects With Physics Culling Only Stop Physics When They Are Motionless.</p>
-            <img class="funcsch" src="/img/changelog/1.0/pysxculling.png" alt="Physics Culling">
-            <br>
-            <br>
-            <li class="changestitle">Object Physics Friction</li>
-            <hr>
-            <p>New Function On Object Physics.</p>
-            <img class="funcsch" src="/img/changelog/1.0/objfric.gif" alt="Object Friction">
-            <br>
-            <br>
-            <li class="changestitle">worldScalingObject Now Influence To obstacleSimulation</li>
-            <hr>
-            <p>Now Obstacle Simulation Size Influences With Object Scaling, Great For Objects Instantiated With Different Sizes.</p>
-            <img class="funcsch" src="/img/changelog/1.0/wssim.gif" alt="Obstacle Simulation">
-            <br>
-            <br>
-            <li class="changestitle">Reordering Components</li>
-            <hr>
-            <p>You Can Arrange The Order Of Components In The Object.</p>
-            <img class="funcsch" src="/img/changelog/1.0/reordercomp.gif" alt="Reordering Components">
-            <br>
-            <br>
-            <li class="changestitle">Components Header</li>
-            <hr>
-            <p>You Can Organize Your Components With Components Header.</p>
-            <img class="funcsch" src="/img/changelog/1.0/compheader.png" alt="Components Header">
-            <br>
-            <br>
-            <li class="changestitle">New Mouse Events (Logic Bricks)</li>
-            <hr>
-            <p>Mouse Side Buttons Are Now Available On Logic Bricks.</p>
-            <img class="funcsch" src="/img/changelog/1.0/mousevents.PNG" alt="Mouse Events">
-            <br>
-            <br>
-            <li class="changestitle">Repeat For In Delay Sensor</li>
-            <hr>
-            <p>Number Of Times The Sensor Will Repeat Before Stopping.</p>
-            <img class="funcsch" src="/img/changelog/1.0/repeatfor.PNG" alt="Repeat For">
+            <p>Useful for placing objects or the character in specific places.</p>
+            <img class="funcsch" src="https://camo.githubusercontent.com/0fa3bbadb88f328e9540824c4dc06b68f68f34d041a9307da395d41354ffe35c/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f313030303538313035313139313636383738372f313033323039333532363538383134393831302f4749465f31382d31302d323032325f32312d34382d33352e676966" alt="Set Position">
+            <img class="funcsch" src="https://camo.githubusercontent.com/fc7460bbd701b41f30170c7d6a9fcb2d0120ea97ee82b28936e92081b939e58b/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3438313033363831343533393239323637342f313033323131373735393930393331383635362f4749465f31382d31302d323032325f32332d32342d33312e676966" alt="Set Position">
             <br>
             <br>
           </ul>
           <ul class="artigoschanges">
-            <p><strong>API, Bug Fixes And Much More!</strong><br>
-            On RanGE GitHub Changelog</p>
+            <p><strong>Complete Changelog on GitHub!</strong><br>
+            Bug Fixes, Use Methods and Misc</p>
             <br>
-            <li class="downabout"><a class="downnow" target=”_blank” href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes-version-1.0">RanGE GitHub</a></li>
+            <li class="downabout"><a class="downnow" target=”_blank” href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes-version-1.2">RanGE GitHub</a></li>
           </ul>
         </div>
       </div>
