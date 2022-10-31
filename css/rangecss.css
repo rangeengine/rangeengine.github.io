@@ -14,8 +14,8 @@ body{
     margin: 0;
 }
 hr{
-	border-color: rgba(255, 83, 83, 0.322);
-	box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.178);
+	border-color: rgba(238, 88, 88, 0.322);
+	box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.068);
 }
 .logo{
 	max-width: 150px;
@@ -165,7 +165,9 @@ a.knowmore:hover{
 	margin: 3px;
 }
 .titsec{
-	margin-bottom: 10px;
+	margin: 0px;
+	text-align: left;
+	font-size: 40px;
 }
 .titsece{
 	margin-top: 10px;
@@ -179,8 +181,8 @@ a.knowmore:hover{
 /* ARTICLE */
 article{
 	background-color: rgba(0, 0, 0, 0.952);
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 10px;
+	padding-bottom: 20px;
 }
 .aboutxbge{
 	background-color: rgba(41, 41, 41, 0.753);
