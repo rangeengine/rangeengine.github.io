@@ -190,21 +190,17 @@ a.knowmore:hover{
 /* ARTICLE */
 article{
 	background-color: rgba(0, 0, 0, 0.952);
-	padding-top: 10px;
-	padding-bottom: 20px;
+	padding-top: 30px;
+	padding-bottom: 10px;
 }
 .artigos{
 	display: inline-flex;
 	max-width: 600px;
 	max-height: 400px;
 }
-.artigos:hover{
-	max-width: 695px;
-	max-height: 395px;
-}
 .aboutxbge{
 	transition: all 0.2s ease-in-out;
-	border-radius: 30px;
+	border-radius: 20px;
 	margin-left: 30px;
 	margin-right: 30px;
 	margin-bottom: 30px;
@@ -214,18 +210,15 @@ article{
 .articledesc{
 	cursor: default;
 	transition: all 0.2s ease-in-out;
-	background-color:rgba(48, 48, 48, 0.822);
+	background-color:rgba(44, 44, 44, 0.822);
 	padding: 10px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	border-color: rgba(211, 75, 75, 0.973);
 }
 .aboutxbge:hover .articledesc{
+	background-color: #442d2df8;
 	transition: all 0.2s ease-in;
 	padding-bottom: 15px;
-	border-style: solid;
-	border-width: 2px;
-	border-color: rgba(141, 50, 50, 0.973);
 }
 .funcs{
 	border-top-left-radius: 20px;
