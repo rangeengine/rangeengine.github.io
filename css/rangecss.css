@@ -366,12 +366,14 @@ footer{
 	margin-right: 10px;
 	margin-bottom: 30px;
 	display: inline-flex;
+	justify-content: center;
 }
 .downinfo{
 	display: inline-block;
 }
 .funcschc{
 	max-width: 40%;
+	height: 40%;
 	border-radius: 10px;
 }
 
