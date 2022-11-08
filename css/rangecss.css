@@ -114,7 +114,7 @@ a.suppus:hover{
 }
 #extbts{
 	margin-right: 0px;
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 }
 
 /* SECTION */
@@ -237,8 +237,7 @@ article{
 	text-decoration: none;
 }
 .learnmorearticle{
-	background-color: #381515fd;
-	/*background-color: #181818fd;*/
+	background-color: #171717;
 	display: flex;
 	justify-content: center;
 	width: 100%;
@@ -320,19 +319,6 @@ footer{
 .dclink{
 	display: inline-block;
 }
-@media (max-width: 500px){
-	.dclink, img, a{
-		max-width: 330px;
-		white-space: nowrap;
-	}
-	.dclink a{
-		padding-left: 142px;
-		padding-right: 142px;
-	}
-	.praav{
-		margin-top: 0px;
-	}
-}
 .artigoscontrib{
 	background-color: rgba(22, 22, 22, 0.753);
 	border-bottom-left-radius: 30px;
@@ -379,6 +365,10 @@ footer{
 	margin-right: 10px;
 	margin-bottom: 30px;
 	display: inline-flex;
+	justify-content: center;
+}
+.artcdown{
+	display: flex;
 	justify-content: center;
 }
 .funcschc{
@@ -441,11 +431,36 @@ footer{
 .releasename{
 	text-align: center;
 }
+@media (max-width: 500px){
+	.dclink, img, a{
+		max-width: 330px;
+		white-space: nowrap;
+	}
+	.dclink a{
+		padding-left: 142px;
+		padding-right: 142px;
+	}
+	.praav{
+		margin-top: 0px;
+	}
+	#extbts{
+		margin-right: 0px;
+		padding-bottom: 28px;
+	}
+}
+@media (max-width: 600px) {
+	.articlepatreon{
+		display: block;
+	}
+}
 @media (max-width: 850px) {
     .header {
         flex-direction: column;
         align-items: center;
     }
+	.artcdown{
+		display: inline-block;
+	}
     .togglebutton {
         display: flex;
 		cursor: pointer;
@@ -474,11 +489,6 @@ footer{
 	}
 	.apresentacao{
 		display: inline-block;
-	}
-	.artigoscontrib{
-		margin: 0;
-		margin-bottom: 30px;
-		padding-right: 0;
 	}
 	.articledownload{
 		display: inline-block;
