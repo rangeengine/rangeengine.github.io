@@ -112,6 +112,10 @@ a.suppus:hover{
 	margin-right: 30px;
 	padding-bottom: 25px;
 }
+#extbts{
+	margin-right: 0px;
+	padding-bottom: 0px;
+}
 
 /* SECTION */
 section{
@@ -233,8 +237,10 @@ article{
 	text-decoration: none;
 }
 .learnmorearticle{
-	background-color: #181818fd;
-	display: inline-block;
+	background-color: #381515fd;
+	/*background-color: #181818fd;*/
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	padding-top: 30px;
 	padding-bottom: 20px;
@@ -255,7 +261,6 @@ article{
 	margin-top: 12px;
 }
 .rangver{
-	margin-left: 5px;
 	max-width: 50px;
 	max-height: 50px;
 }
@@ -291,6 +296,11 @@ footer{
 	text-align: left;
 	display: inline-flex;
 }
+.articlepatreon{
+	display: flex;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, 0.952);
+}
 .linksites{
 	text-decoration: underline;
 	color: orange;
@@ -325,14 +335,17 @@ footer{
 }
 .artigoscontrib{
 	background-color: rgba(22, 22, 22, 0.753);
-	border-radius: 50px;
-	padding-top: 50px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	padding-top: 10px;
 	padding-bottom: 50px;
 	padding-left: 22px;
 	padding-right: 22px;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 30px;
+	max-width: 475px;
+	max-height: 356px;
 }
 .artigoschanges{
 	background-color: rgba(22, 22, 22, 0.753);
@@ -368,13 +381,18 @@ footer{
 	display: inline-flex;
 	justify-content: center;
 }
-.downinfo{
-	display: inline-block;
-}
 .funcschc{
-	max-width: 40%;
-	height: 40%;
+	max-width: 475px;
 	border-radius: 10px;
+}
+.titlesbox{
+	margin-left: 10px;
+	margin-right: 10px;
+	max-width: 479px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	padding: 20px;
+	background-color: rgba(70, 25, 25, 0.836);
 }
 
 /* CHANGELOG */
