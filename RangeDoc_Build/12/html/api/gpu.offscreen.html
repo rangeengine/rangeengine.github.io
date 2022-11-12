@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPU Off-Screen Buffer (gpu.offscreen) &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="GPU functions (gpu)" href="gpu.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GPU Off-Screen Buffer (gpu.offscreen)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpu.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpu.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpu.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpu.html#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="gpu.html">GPU functions (gpu)</a> &raquo;</li>
+      <li>GPU Off-Screen Buffer (gpu.offscreen)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/gpu.offscreen.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-gpu.offscreen">
+<span id="gpu-off-screen-buffer-gpu-offscreen"></span><h1>GPU Off-Screen Buffer (gpu.offscreen)<a class="headerlink" href="#module-gpu.offscreen" title="Permalink to this heading"></a></h1>
+<p>This module provides access to offscreen rendering functions.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draws an off-screen buffer and display it in the corner of the view.</span>
+<span class="kn">import</span> <span class="nn">bpy</span>
+<span class="kn">from</span> <span class="nn">bgl</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="k">class</span> <span class="nc">OffScreenDraw</span><span class="p">(</span><span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">Operator</span><span class="p">):</span>
+    <span class="n">bl_idname</span> <span class="o">=</span> <span class="s2">&quot;view3d.offscreen_draw&quot;</span>
+    <span class="n">bl_label</span> <span class="o">=</span> <span class="s2">&quot;View3D Offscreen Draw&quot;</span>
+
+    <span class="n">_handle_calc</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_handle_draw</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">is_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># manage draw handler</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">draw_callback_px</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="n">scene</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+        <span class="n">aspect_ratio</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">resolution_x</span> <span class="o">/</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">resolution_y</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_offscreen</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offscreen</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_opengl_draw</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span><span class="p">,</span> <span class="n">aspect_ratio</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">handle_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">_handle_draw</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">SpaceView3D</span><span class="o">.</span><span class="n">draw_handler_add</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">draw_callback_px</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">),</span>
+            <span class="s1">&#39;WINDOW&#39;</span><span class="p">,</span> <span class="s1">&#39;POST_PIXEL&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">handle_remove</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">_handle_draw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">SpaceView3D</span><span class="o">.</span><span class="n">draw_handler_remove</span><span class="p">(</span><span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">_handle_draw</span><span class="p">,</span> <span class="s1">&#39;WINDOW&#39;</span><span class="p">)</span>
+
+        <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">_handle_draw</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># off-screen buffer</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_setup_offscreen</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">gpu</span>
+        <span class="n">scene</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+        <span class="n">aspect_ratio</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">resolution_x</span> <span class="o">/</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="o">.</span><span class="n">resolution_y</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">offscreen</span> <span class="o">=</span> <span class="n">gpu</span><span class="o">.</span><span class="n">offscreen</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mi">512</span> <span class="o">/</span> <span class="n">aspect_ratio</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">offscreen</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">offscreen</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_update_offscreen</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">offscreen</span><span class="p">):</span>
+        <span class="n">scene</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">scene</span>
+        <span class="n">render</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">render</span>
+        <span class="n">camera</span> <span class="o">=</span> <span class="n">scene</span><span class="o">.</span><span class="n">camera</span>
+
+        <span class="n">modelview_matrix</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">matrix_world</span><span class="o">.</span><span class="n">inverted</span><span class="p">()</span>
+        <span class="n">projection_matrix</span> <span class="o">=</span> <span class="n">camera</span><span class="o">.</span><span class="n">calc_matrix_camera</span><span class="p">(</span>
+            <span class="n">render</span><span class="o">.</span><span class="n">resolution_x</span><span class="p">,</span>
+            <span class="n">render</span><span class="o">.</span><span class="n">resolution_y</span><span class="p">,</span>
+            <span class="n">render</span><span class="o">.</span><span class="n">pixel_aspect_x</span><span class="p">,</span>
+            <span class="n">render</span><span class="o">.</span><span class="n">pixel_aspect_y</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">offscreen</span><span class="o">.</span><span class="n">draw_view3d</span><span class="p">(</span>
+            <span class="n">scene</span><span class="p">,</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">space_data</span><span class="p">,</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">region</span><span class="p">,</span>
+            <span class="n">projection_matrix</span><span class="p">,</span>
+            <span class="n">modelview_matrix</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_opengl_draw</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="n">aspect_ratio</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        OpenGL code to draw a rectangle in the viewport</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">glDisable</span><span class="p">(</span><span class="n">GL_DEPTH_TEST</span><span class="p">)</span>
+
+        <span class="c1"># view setup</span>
+        <span class="n">glMatrixMode</span><span class="p">(</span><span class="n">GL_PROJECTION</span><span class="p">)</span>
+        <span class="n">glPushMatrix</span><span class="p">()</span>
+        <span class="n">glLoadIdentity</span><span class="p">()</span>
+
+        <span class="n">glMatrixMode</span><span class="p">(</span><span class="n">GL_MODELVIEW</span><span class="p">)</span>
+        <span class="n">glPushMatrix</span><span class="p">()</span>
+        <span class="n">glLoadIdentity</span><span class="p">()</span>
+
+        <span class="n">glOrtho</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+        <span class="n">gluLookAt</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="n">act_tex</span> <span class="o">=</span> <span class="n">Buffer</span><span class="p">(</span><span class="n">GL_INT</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">glGetIntegerv</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">act_tex</span><span class="p">)</span>
+
+        <span class="n">viewport</span> <span class="o">=</span> <span class="n">Buffer</span><span class="p">(</span><span class="n">GL_INT</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">glGetIntegerv</span><span class="p">(</span><span class="n">GL_VIEWPORT</span><span class="p">,</span> <span class="n">viewport</span><span class="p">)</span>
+
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">scale</span> <span class="o">*</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span> <span class="o">/</span> <span class="n">aspect_ratio</span><span class="p">)</span>
+
+        <span class="n">glViewport</span><span class="p">(</span><span class="n">viewport</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="n">glScissor</span><span class="p">(</span><span class="n">viewport</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+        <span class="c1"># draw routine</span>
+        <span class="n">glEnable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+
+        <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">texture</span><span class="p">)</span>
+
+        <span class="n">texco</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+        <span class="n">verco</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)]</span>
+
+        <span class="n">glPolygonMode</span><span class="p">(</span><span class="n">GL_FRONT_AND_BACK</span><span class="p">,</span> <span class="n">GL_FILL</span><span class="p">)</span>
+
+        <span class="n">glColor4f</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+        <span class="n">glBegin</span><span class="p">(</span><span class="n">GL_QUADS</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+            <span class="n">glTexCoord3f</span><span class="p">(</span><span class="n">texco</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">texco</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">glVertex2f</span><span class="p">(</span><span class="n">verco</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">verco</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">glEnd</span><span class="p">()</span>
+
+        <span class="c1"># restoring settings</span>
+        <span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="n">act_tex</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">glDisable</span><span class="p">(</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+
+        <span class="c1"># reset view</span>
+        <span class="n">glMatrixMode</span><span class="p">(</span><span class="n">GL_PROJECTION</span><span class="p">)</span>
+        <span class="n">glPopMatrix</span><span class="p">()</span>
+
+        <span class="n">glMatrixMode</span><span class="p">(</span><span class="n">GL_MODELVIEW</span><span class="p">)</span>
+        <span class="n">glPopMatrix</span><span class="p">()</span>
+
+        <span class="n">glViewport</span><span class="p">(</span><span class="n">viewport</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">glScissor</span><span class="p">(</span><span class="n">viewport</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">viewport</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="c1"># operator functions</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">poll</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;VIEW_3D&#39;</span>
+
+    <span class="k">def</span> <span class="nf">modal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="p">:</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="o">.</span><span class="n">tag_redraw</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;PASS_THROUGH&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">invoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">is_enabled</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cancel</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;FINISHED&#39;</span><span class="p">}</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_offscreen</span> <span class="o">=</span> <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">_setup_offscreen</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offscreen</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_texture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offscreen</span><span class="o">.</span><span class="n">color_texture</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">({</span><span class="s1">&#39;ERROR&#39;</span><span class="p">},</span> <span class="s2">&quot;Error initializing offscreen buffer. More details in the console&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;CANCELLED&#39;</span><span class="p">}</span>
+
+            <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">handle_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+            <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">is_enabled</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="p">:</span>
+                <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="o">.</span><span class="n">tag_redraw</span><span class="p">()</span>
+
+            <span class="n">context</span><span class="o">.</span><span class="n">window_manager</span><span class="o">.</span><span class="n">modal_handler_add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;RUNNING_MODAL&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">handle_remove</span><span class="p">()</span>
+        <span class="n">OffScreenDraw</span><span class="o">.</span><span class="n">is_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="p">:</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">area</span><span class="o">.</span><span class="n">tag_redraw</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">register_class</span><span class="p">(</span><span class="n">OffScreenDraw</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">unregister</span><span class="p">():</span>
+    <span class="n">bpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">unregister_class</span><span class="p">(</span><span class="n">OffScreenDraw</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">register</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>new(width, height, samples=0)</p>
+<blockquote>
+<div><p>Return a GPUOffScreen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param width</dt>
+<dd class="field-odd"><p>Horizontal dimension of the buffer.</p>
+</dd>
+<dt class="field-even">type width</dt>
+<dd class="field-even"><p>int`</p>
+</dd>
+<dt class="field-odd">param height</dt>
+<dd class="field-odd"><p>Vertical dimension of the buffer.</p>
+</dd>
+<dt class="field-even">type height</dt>
+<dd class="field-even"><p>int`</p>
+</dd>
+<dt class="field-odd">param samples</dt>
+<dd class="field-odd"><p>OpenGL samples to use for MSAA or zero to disable.</p>
+</dd>
+<dt class="field-even">type samples</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Newly created off-screen buffer.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">gpu.GPUOffscreen</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="gpu.offscreen.GPUOffscreen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gpu.offscreen.</span></span><span class="sig-name descname"><span class="pre">GPUOffscreen</span></span><a class="headerlink" href="#gpu.offscreen.GPUOffscreen" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">This</span> <span class="pre">object</span> <span class="pre">gives</span> <span class="pre">access</span> <span class="pre">to</span> <span class="pre">off</span> <span class="pre">screen</span> <span class="pre">buffers.</span></span></dt>
+<dd><p>bind(save=True)</p>
+<blockquote>
+<div><p>Bind the offscreen object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param save</dt>
+<dd class="field-odd"><p>save OpenGL current states.</p>
+</dd>
+<dt class="field-even">type save</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>draw_view3d(scene, view3d, region, modelview_matrix, projection_matrix)</p>
+<blockquote>
+<div><p>Draw the 3d viewport in the offscreen object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param scene</dt>
+<dd class="field-odd"><p>Scene to draw.</p>
+</dd>
+<dt class="field-even">type scene</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.types.Scene</span></code></p>
+</dd>
+<dt class="field-odd">param view3d</dt>
+<dd class="field-odd"><p>3D View to get the drawing settings from.</p>
+</dd>
+<dt class="field-even">type view3d</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.types.SpaceView3D</span></code></p>
+</dd>
+<dt class="field-odd">param region</dt>
+<dd class="field-odd"><p>Region of the 3D View.</p>
+</dd>
+<dt class="field-even">type region</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bpy.types.Region</span></code></p>
+</dd>
+<dt class="field-odd">param modelview_matrix</dt>
+<dd class="field-odd"><p>ModelView Matrix.</p>
+</dd>
+<dt class="field-even">type modelview_matrix</dt>
+<dd class="field-even"><p><a class="reference internal" href="mathutils.html#mathutils.Matrix" title="mathutils.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">mathutils.Matrix</span></code></a></p>
+</dd>
+<dt class="field-odd">param projection_matrix</dt>
+<dd class="field-odd"><p>Projection Matrix.</p>
+</dd>
+<dt class="field-even">type projection_matrix</dt>
+<dd class="field-even"><p><a class="reference internal" href="mathutils.html#mathutils.Matrix" title="mathutils.Matrix"><code class="xref py py-class docutils literal notranslate"><span class="pre">mathutils.Matrix</span></code></a></p>
+</dd>
+</dl>
+</div></blockquote>
+<p>free()</p>
+<blockquote>
+<div><p>Free the offscreen object
+The framebuffer, texture and render objects will no longer be accessible.</p>
+</div></blockquote>
+<p>unbind(restore=True)</p>
+<blockquote>
+<div><p>Unbind the offscreen object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param restore</dt>
+<dd class="field-odd"><p>restore OpenGL previous states.</p>
+</dd>
+<dt class="field-even">type restore</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gpu.offscreen.GPUOffscreen.color_texture">
+<span class="sig-name descname"><span class="pre">color_texture</span></span><a class="headerlink" href="#gpu.offscreen.GPUOffscreen.color_texture" title="Permalink to this definition"></a></dt>
+<dd><p>Color texture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gpu.offscreen.GPUOffscreen.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#gpu.offscreen.GPUOffscreen.height" title="Permalink to this definition"></a></dt>
+<dd><p>Texture height.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gpu.offscreen.GPUOffscreen.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#gpu.offscreen.GPUOffscreen.width" title="Permalink to this definition"></a></dt>
+<dd><p>Texture width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gpu.html" class="btn btn-neutral float-left" title="GPU functions (gpu)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

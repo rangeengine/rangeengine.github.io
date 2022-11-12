@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Near Sensor &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Property Sensor" href="property.html" />
+    <link rel="prev" title="Mouse Sensor" href="mouse.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Sensors</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Sensor Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#sensor-types">Sensor Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="actuator.html">Actuator Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="always.html">Always Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="armature.html">Armature Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="collision.html">Collision Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delay.html">Delay Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="joystick.html">Joystick Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="keyboard.html">Keyboard Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="message.html">Message Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mouse.html">Mouse Sensor</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Near Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property.html">Property Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="radar.html">Radar Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="random.html">Random Sensor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ray.html">Ray Sensor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../actuators/index.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Logic</a> &raquo;</li>
+          <li><a href="../index.html">Sensors</a> &raquo;</li>
+      <li>Near Sensor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/sensors/types/near.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="near-sensor">
+<span id="bpy-types-nearsensor"></span><h1>Near Sensor<a class="headerlink" href="#near-sensor" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.KX_NearSensor.html#KX_NearSensor" title="KX_NearSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_NearSensor</span></code></a>.</p>
+</div>
+<p>A <em>Near Sensor</em> detects objects that move to within a specific distance of themselves.
+It can filter objects with properties,
+like the <a class="reference internal" href="collision.html"><span class="doc">Collision sensor</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>The Near sensor can detect objects “through” other objects (walls, etc.).</p></li>
+<li><p>Objects must have “Actor” enabled to be detected.</p></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Near</em> sensor cannot detect soft bodies.
+This is a limitation in Bullet, the physics library used by the Game Engine.</p>
+</div>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/logic-sensors-types-near-node.png" src="../../../../_images/logic-sensors-types-near-node.png" />
+<p class="caption"><span class="caption-text">Near sensor.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="../introduction.html#game-engine-logic-sensors-common-options"><span class="std std-ref">Sensor Common Options</span></a> for common options.</p>
+<dl class="simple">
+<dt>Property</dt><dd><p>This field can be used to limit the sensor to look for only those objects with this property.</p>
+</dd>
+<dt>Distance</dt><dd><p>The number of Blender units it will detect objects within.</p>
+</dd>
+<dt>Reset</dt><dd><p>The distance the object needs to be to reset the sensor (send a <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> pulse).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mouse.html" class="btn btn-neutral float-left" title="Mouse Sensor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="property.html" class="btn btn-neutral float-right" title="Property Sensor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constraints Actuator &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Edit Object Actuator" href="edit_object.html" />
+    <link rel="prev" title="Camera Actuator" href="camera.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Actuators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Actuator Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#actuators-types">Actuators Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">Armature Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="action.html">Action Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camera.html">Camera Actuator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Constraints Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit_object.html">Edit Object Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filter_2d.html">Filter 2D Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.html">Game Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="message.html">Message Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mouse.html">Mouse Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="motion.html">Motion Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parent.html">Parent Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property.html">Property Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="random.html">Random Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scene.html">Scene Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="steering.html">Steering Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sound.html">Sound Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="state.html">State Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="visibility.html">Visibility Actuator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Logic</a> &raquo;</li>
+          <li><a href="../index.html">Actuators</a> &raquo;</li>
+      <li>Constraints Actuator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/actuators/types/constraint.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="constraints-actuator">
+<span id="bpy-types-constraintactuator"></span><h1>Constraints Actuator<a class="headerlink" href="#constraints-actuator" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.KX_ConstraintActuator.html#KX_ConstraintActuator" title="KX_ConstraintActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_ConstraintActuator</span></code></a>.</p>
+</div>
+<p>The <em>Constraints Actuator</em> adds a constraint to the location or orientation of an object.
+This is useful for controlling the physics of the object in-game.</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Constraint Mode</dt><dd><p>Constraint type to use. Each is described below.</p>
+</dd>
+</dl>
+<div class="section" id="force-field-constraint">
+<h3>Force Field Constraint<a class="headerlink" href="#force-field-constraint" title="Permalink to this heading"></a></h3>
+<p>Create a force field buffer zone along one axis of the object.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/logic-actuators-types-constraint-forcefield.png"><img alt="../../../../_images/logic-actuators-types-constraint-forcefield.png" src="../../../../_images/logic-actuators-types-constraint-forcefield.png" style="width: 271px;" /></a>
+<p class="caption"><span class="caption-text">Force Field Constraint.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Damping</dt><dd><p>Damping factor of the Fh spring force.</p>
+</dd>
+<dt>Distance</dt><dd><p>Height of Fh area.</p>
+</dd>
+<dt>Rot Fh</dt><dd><p>Make game object axis parallel to the normal of trigger object.</p>
+</dd>
+<dt>Direction</dt><dd><p>Axis in which to create force field (can be + or -, or None).</p>
+</dd>
+<dt>Force</dt><dd><p>Force value to be used.</p>
+</dd>
+<dt>N</dt><dd><p>When on, use a horizontal spring force on slopes.</p>
+</dd>
+<dt>M/P</dt><dd><p>Trigger on another Object will be either Material (M) or Property (P).</p>
+</dd>
+<dt>Property</dt><dd><p>Property/Material that triggers the Force Field constraint (blank for <strong>all</strong> Properties/Materials).</p>
+</dd>
+<dt>Per</dt><dd><p>Persistence button
+When on, force field constraint always looks at Property/Material;
+when off, turns itself off if it cannot find the Property/Material.</p>
+</dd>
+<dt>Time</dt><dd><p>Number of frames for which constraint remains active.</p>
+</dd>
+<dt>RotDamp</dt><dd><p>Damping factor for rotation.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="orientation-constraint">
+<h3>Orientation Constraint<a class="headerlink" href="#orientation-constraint" title="Permalink to this heading"></a></h3>
+<p>Constrain the specified axis in the Game to a specified direction in the World axis.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/logic-actuators-types-constraint-orientation.png"><img alt="../../../../_images/logic-actuators-types-constraint-orientation.png" src="../../../../_images/logic-actuators-types-constraint-orientation.png" style="width: 271px;" /></a>
+<p class="caption"><span class="caption-text">Orientation Constraint.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Direction</dt><dd><p>Game axis to be modified (X, Y, Z or none).</p>
+</dd>
+<dt>Damping</dt><dd><p>Delay (frames) of the constraint response.</p>
+</dd>
+<dt>Time</dt><dd><p>Time (frames) for the constraint to remain active.</p>
+</dd>
+<dt>Reference Direction</dt><dd><p>Reference direction (global coordinates) for the specified game axis.</p>
+</dd>
+<dt>Min Angle</dt><dd><p>Minimum angle for the axis modification.</p>
+</dd>
+<dt>Max Angle</dt><dd><p>Maximum angle for the axis modification.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="distance-constraint">
+<h3>Distance Constraint<a class="headerlink" href="#distance-constraint" title="Permalink to this heading"></a></h3>
+<p>Maintain the distance the Game Object has to be from a surface.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/logic-actuators-types-constraint-distance.jpg"><img alt="../../../../_images/logic-actuators-types-constraint-distance.jpg" src="../../../../_images/logic-actuators-types-constraint-distance.jpg" style="width: 271px;" /></a>
+<p class="caption"><span class="caption-text">Distance Constraint.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Direction</dt><dd><p>Axis Direction (X, Y, Z, -X, -Y, -Z, or None).</p>
+</dd>
+<dt>L</dt><dd><p>If on, use local axis (otherwise use World axis).</p>
+</dd>
+<dt>N</dt><dd><p>If on, orient the Game Object axis with the mesh normal.</p>
+</dd>
+<dt>Range</dt><dd><p>Maximum length of ray used to check for Material/Property on another game object.</p>
+</dd>
+<dt>Force Distance</dt><dd><p>Distance to be maintained between object and
+the Material/Property that triggers the <em>Distance Constraint</em>.</p>
+</dd>
+<dt>Damping</dt><dd><p>Delay (frames) of the constraint response.</p>
+</dd>
+<dt>M/P</dt><dd><p>Trigger on another Object will be either Material (M) or Property (P).</p>
+</dd>
+<dt>Property</dt><dd><p>Property/Material that triggers the Force Field constraint (blank for <strong>all</strong> Properties/Materials).</p>
+</dd>
+<dt>Per</dt><dd><p>Persistence button: When on, force field constraint always looks at Property/Material;
+when off, turns itself off if it cannot find the Property/Material.</p>
+</dd>
+<dt>Time</dt><dd><p>Number of frames for which constraint remains active.</p>
+</dd>
+<dt>Rotation Damping</dt><dd><p>Damping factor for rotation.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="location-constraint">
+<h3>Location Constraint<a class="headerlink" href="#location-constraint" title="Permalink to this heading"></a></h3>
+<p>Limit the position of the Game Object within one World Axis direction.
+To limit movement within an area or volume, use two or three constraints.</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/logic-actuators-types-constraint-location.png"><img alt="../../../../_images/logic-actuators-types-constraint-location.png" src="../../../../_images/logic-actuators-types-constraint-location.png" style="width: 271px;" /></a>
+<p class="caption"><span class="caption-text">Location Constraint.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Limit</dt><dd><p>Axis in which to apply limits (LocX, LocY, LocZ or none).</p>
+</dd>
+<dt>Min</dt><dd><p>Minimum limit in specified axis (Blender Units).</p>
+</dd>
+<dt>Max</dt><dd><p>Maximum limit in specified axis (Blender Units).</p>
+</dd>
+<dt>Damping</dt><dd><p>Delay (frames) of the constraint.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="camera.html" class="btn btn-neutral float-left" title="Camera Actuator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="edit_object.html" class="btn btn-neutral float-right" title="Edit Object Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

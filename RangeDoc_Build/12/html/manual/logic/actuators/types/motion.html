@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion Actuator &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Parent Actuator" href="parent.html" />
+    <link rel="prev" title="Mouse Actuator" href="mouse.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Actuators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Actuator Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#actuators-types">Actuators Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">Armature Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="action.html">Action Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="camera.html">Camera Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="constraint.html">Constraints Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit_object.html">Edit Object Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filter_2d.html">Filter 2D Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="game.html">Game Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="message.html">Message Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mouse.html">Mouse Actuator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Motion Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="parent.html">Parent Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property.html">Property Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="random.html">Random Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scene.html">Scene Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="steering.html">Steering Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sound.html">Sound Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="state.html">State Actuator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="visibility.html">Visibility Actuator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Logic</a> &raquo;</li>
+          <li><a href="../index.html">Actuators</a> &raquo;</li>
+      <li>Motion Actuator</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/actuators/types/motion.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="motion-actuator">
+<span id="actuator-motion"></span><span id="bpy-types-objectactuator"></span><h1>Motion Actuator<a class="headerlink" href="#motion-actuator" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.KX_ObjectActuator.html#KX_ObjectActuator" title="KX_ObjectActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_ObjectActuator</span></code></a>.</p>
+</div>
+<p>The <em>Motion Actuator</em> sets an object into motion. There are two modes of operation,
+Simple or Servo, in which the object can either teleport and rotate, or dynamically move.</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
+<dl>
+<dt>Motion Type</dt><dd><p>Determines the type of motion:</p>
+<dl class="simple">
+<dt>Simple Motion</dt><dd><p>Applies a change in location and/or rotation directly.</p>
+</dd>
+<dt>Servo Control</dt><dd><p>Sets a target speed, and also how quickly it reaches that speed.</p>
+</dd>
+<dt>Character Motion</dt><dd><p>TODO.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="simple-motion">
+<h2>Simple Motion<a class="headerlink" href="#simple-motion" title="Permalink to this heading"></a></h2>
+<p><em>Simple Motion</em> gives control over position and velocity,
+but does this as an instant displacement; the object never
+passes any of the coordinates between the start and end positions.
+This can interfere with the physical simulation of other objects,
+and can cause an object to go through another object.
+The <a class="reference internal" href="#servo-control">Servo Control</a> actuator does not suffer from this,
+since it produces physically correct velocities,
+and leaves updating the position to the physics simulation.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/logic-actuators-types-motion-simple.png" src="../../../../_images/logic-actuators-types-motion-simple.png" />
+<p class="caption"><span class="caption-text">Motion actuator for Simple Motion.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Loc</dt><dd><p>The object jumps the number of Blender units entered,
+each time a pulse is received.</p>
+</dd>
+<dt>Rot</dt><dd><p>The object rotates by the specified amount,
+each time a pulse is received.</p>
+</dd>
+<dt>L</dt><dd><p>Coordinates specified are Global (gray) or Local (white).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="servo-control">
+<h2>Servo Control<a class="headerlink" href="#servo-control" title="Permalink to this heading"></a></h2>
+<p>The Servo Control actuator influences the velocity of a game object by applying forces,
+resulting in correct behavior when colliding with other objects controlled by the physics simulation.
+The amount of force necessary is determined by a <a class="reference external" href="https://en.wikipedia.org/wiki/PID_controller">PID controller</a>,
+a type of controller that is often used in control systems.
+Only the positional velocity is influenced by this actuator;
+it does not control rotation at all, and it controls position only indirectly.</p>
+<p>Controlling the position is not necessary in that respect; that is
+left to a player moving the object via direction-type controls
+(such as the WASD keys in a first person shooter). In such a scenario,
+each direction-key sensor should be attached to a different Servo Control
+actuator setting a different target velocity.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To use the Servo Control actuator, it is necessary to set
+the object’s Physics Type to “Dynamic” or “Rigid Body”,
+and to mark the object as “Actor” in the same panel.
+This actuator does not work with the Character physics type.</p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../../../../_images/logic-actuators-types-motion-servo.png" src="../../../../_images/logic-actuators-types-motion-servo.png" />
+<p class="caption"><span class="caption-text">Servo Control.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Reference Object</dt><dd><p>Specifies the object which the actuator uses as a reference for the velocity.
+When set, it will use a velocity relative to that object
+instead of absolute (i.e. world-relative) velocity.
+Use this for a player object standing on a moving platform.</p>
+</dd>
+<dt>Linear Velocity</dt><dd><p>The target linear velocity for the object.</p>
+</dd>
+<dt>L</dt><dd><p>Determines whether the Linear Velocity specified are in Local
+(button depressed) or Global (button released) coordinates.</p>
+</dd>
+<dt>X, Y, Z force limits</dt><dd><p>Sets minimum and maximum limits for the force applied to the object.
+If disabled (i.e. X, Y or Z buttons are depressed) the force applied is unlimited.</p>
+</dd>
+</dl>
+<p>The following three coefficients determine the response to the <em>velocity error</em>,
+which is the difference between the target velocity and the object’s actual velocity.</p>
+<dl class="simple">
+<dt>Proportional Coefficient</dt><dd><p>This controls the reaction proportional to the velocity error.
+Small values cause smooth (but possibly too slow) changes in velocity.
+Higher values cause rapid changes, but may cause overshooting.</p>
+</dd>
+<dt>Integral Coefficient</dt><dd><p>This controls the reaction to the sum of errors so far. Using only
+the Proportional component results in a systematic velocity error
+if there is friction: some velocity delta is necessary to produce
+the force that compensates the friction. Using the Integral
+component suppresses this effect (the target velocity is achieved
+on average) but can create oscillations; the control will speed to
+compensate the initial velocity error. To avoid the oscillation,
+the Proportional component must be used with the Integral component
+(the Proportional component damps the control) This is why the GUI
+sets the Proportional Coefficient systematically when you change
+the Integral Coefficient.</p>
+</dd>
+<dt>Derivative Coefficient</dt><dd><p>Set the Derivative Coefficient. This dampens the acceleration when
+the target velocity is almost reached.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="character-motion">
+<h2>Character Motion<a class="headerlink" href="#character-motion" title="Permalink to this heading"></a></h2>
+<p>TODO.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mouse.html" class="btn btn-neutral float-left" title="Mouse Actuator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="parent.html" class="btn btn-neutral float-right" title="Parent Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

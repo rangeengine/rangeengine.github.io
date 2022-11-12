@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Keys (bge.events) &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Physics Constraints (bge.constraints)" href="bge.constraints.html" />
+    <link rel="prev" title="Video Texture (bge.texture)" href="bge.texture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bge.types.html">Game Types (bge.types)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.logic.html">Game Logic (bge.logic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.render.html">Rasterizer (bge.render)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.texture.html">Video Texture (bge.texture)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Game Keys (bge.events)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constants">Constants</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mouse-keys">Mouse Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alphabet-keys">Alphabet Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#number-keys">Number Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modifiers-keys">Modifiers Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrow-keys">Arrow Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numberpad-keys">Numberpad Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#function-keys">Function Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-keys">Other Keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bge.constraints.html">Physics Constraints (bge.constraints)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.app.html">Application Data (bge.app)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="bge.html">Range Game Engine Modules (bge)</a> &raquo;</li>
+      <li>Game Keys (bge.events)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/bge.events.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="game-keys-bge-events">
+<h1>Game Keys (bge.events)<a class="headerlink" href="#game-keys-bge-events" title="Permalink to this heading"></a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this heading"></a></h2>
+<p>This module holds key constants for the SCA_KeyboardSensor.</p>
+<span class="target" id="module-bge.events"></span><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a connected keyboard sensor to accept F1</span>
+<span class="kn">import</span> <span class="nn">bge</span>
+
+<span class="n">co</span> <span class="o">=</span> <span class="n">bge</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">getCurrentController</span><span class="p">()</span>
+<span class="c1"># &#39;Keyboard&#39; is a keyboard sensor</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">co</span><span class="o">.</span><span class="n">sensors</span><span class="p">[</span><span class="s2">&quot;Keyboard&quot;</span><span class="p">]</span>
+<span class="n">sensor</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">F1KEY</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do the all keys thing</span>
+<span class="kn">import</span> <span class="nn">bge</span>
+
+<span class="n">co</span> <span class="o">=</span> <span class="n">bge</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">getCurrentController</span><span class="p">()</span>
+<span class="c1"># &#39;Keyboard&#39; is a keyboard sensor</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">co</span><span class="o">.</span><span class="n">sensors</span><span class="p">[</span><span class="s2">&quot;Keyboard&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="nb">input</span> <span class="ow">in</span> <span class="n">sensor</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+     <span class="c1"># key[0] == bge.events.keycode = event.type, key[1] = input</span>
+     <span class="k">if</span> <span class="n">bge</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">KX_INPUT_JUST_ACTIVATED</span> <span class="ow">in</span> <span class="nb">input</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">WKEY</span><span class="p">:</span>
+                     <span class="c1"># Activate Forward!</span>
+             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">SKEY</span><span class="p">:</span>
+                     <span class="c1"># Activate Backward!</span>
+             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">AKEY</span><span class="p">:</span>
+                     <span class="c1"># Activate Left!</span>
+             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">DKEY</span><span class="p">:</span>
+                     <span class="c1"># Activate Right!</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The all keys thing without a keyboard sensor (but you will</span>
+<span class="c1"># need an always sensor with pulse mode on)</span>
+<span class="kn">import</span> <span class="nn">bge</span>
+
+<span class="c1"># Just shortening names here</span>
+<span class="n">keyboard</span> <span class="o">=</span> <span class="n">bge</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">keyboard</span>
+<span class="n">JUST_ACTIVATED</span> <span class="o">=</span> <span class="n">bge</span><span class="o">.</span><span class="n">logic</span><span class="o">.</span><span class="n">KX_INPUT_JUST_ACTIVATED</span>
+
+<span class="k">if</span> <span class="n">JUST_ACTIVATED</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">WKEY</span><span class="p">]</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activate Forward!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">JUST_ACTIVATED</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">SKEY</span><span class="p">]</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activate Backward!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">JUST_ACTIVATED</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">AKEY</span><span class="p">]</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activate Left!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">JUST_ACTIVATED</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="n">bge</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">DKEY</span><span class="p">]</span><span class="o">.</span><span class="n">queue</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Activate Right!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="bge.events.EventToString">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">EventToString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bge.events.EventToString" title="Permalink to this definition"></a></dt>
+<dd><p>Return the string name of a key event. Will raise a ValueError error if its invalid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>int</em>) – key event constant from <a class="reference internal" href="#module-bge.events" title="bge.events"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bge.events</span></code></a> or the keyboard sensor.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bge.events.EventToCharacter">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">EventToCharacter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bge.events.EventToCharacter" title="Permalink to this definition"></a></dt>
+<dd><p>Return the string name of a key event. Returns an empty string if the event cant be represented as a character.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>int</em>) – key event constant from <a class="reference internal" href="#module-bge.events" title="bge.events"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bge.events</span></code></a> or the keyboard sensor.</p></li>
+<li><p><strong>shift</strong> (<em>bool</em>) – set to true if shift is held.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this heading"></a></h2>
+<div class="section" id="mouse-keys">
+<span id="id1"></span><h3>Mouse Keys<a class="headerlink" href="#mouse-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTMOUSE</span></span><a class="headerlink" href="#bge.events.LEFTMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>116</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.MIDDLEMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">MIDDLEMOUSE</span></span><a class="headerlink" href="#bge.events.MIDDLEMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>117</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTMOUSE</span></span><a class="headerlink" href="#bge.events.RIGHTMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>118</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTTHUMBMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTTHUMBMOUSE</span></span><a class="headerlink" href="#bge.events.LEFTTHUMBMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>119</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTTHUMBMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTTHUMBMOUSE</span></span><a class="headerlink" href="#bge.events.RIGHTTHUMBMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>120</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.BUTTON6MOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">BUTTON6MOUSE</span></span><a class="headerlink" href="#bge.events.BUTTON6MOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>121</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.BUTTON7MOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">BUTTON7MOUSE</span></span><a class="headerlink" href="#bge.events.BUTTON7MOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>122</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.WHEELUPMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">WHEELUPMOUSE</span></span><a class="headerlink" href="#bge.events.WHEELUPMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>124</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.WHEELDOWNMOUSE">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">WHEELDOWNMOUSE</span></span><a class="headerlink" href="#bge.events.WHEELDOWNMOUSE" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>125</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.MOUSEX">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">MOUSEX</span></span><a class="headerlink" href="#bge.events.MOUSEX" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>126</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.MOUSEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">MOUSEY</span></span><a class="headerlink" href="#bge.events.MOUSEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>127</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="alphabet-keys">
+<span id="keyboard-keys"></span><h3>Alphabet Keys<a class="headerlink" href="#alphabet-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.AKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">AKEY</span></span><a class="headerlink" href="#bge.events.AKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>23</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.BKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">BKEY</span></span><a class="headerlink" href="#bge.events.BKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>24</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.CKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">CKEY</span></span><a class="headerlink" href="#bge.events.CKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>25</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.DKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">DKEY</span></span><a class="headerlink" href="#bge.events.DKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>26</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.EKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">EKEY</span></span><a class="headerlink" href="#bge.events.EKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>27</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.FKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">FKEY</span></span><a class="headerlink" href="#bge.events.FKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>28</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.GKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">GKEY</span></span><a class="headerlink" href="#bge.events.GKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>29</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.HKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">HKEY</span></span><a class="headerlink" href="#bge.events.HKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>30</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.IKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">IKEY</span></span><a class="headerlink" href="#bge.events.IKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>31</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.JKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">JKEY</span></span><a class="headerlink" href="#bge.events.JKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>32</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.KKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">KKEY</span></span><a class="headerlink" href="#bge.events.KKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>33</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LKEY</span></span><a class="headerlink" href="#bge.events.LKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>34</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.MKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">MKEY</span></span><a class="headerlink" href="#bge.events.MKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>35</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.NKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">NKEY</span></span><a class="headerlink" href="#bge.events.NKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>36</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.OKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">OKEY</span></span><a class="headerlink" href="#bge.events.OKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>37</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PKEY</span></span><a class="headerlink" href="#bge.events.PKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>38</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.QKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">QKEY</span></span><a class="headerlink" href="#bge.events.QKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>39</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RKEY</span></span><a class="headerlink" href="#bge.events.RKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>40</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SKEY</span></span><a class="headerlink" href="#bge.events.SKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>41</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.TKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">TKEY</span></span><a class="headerlink" href="#bge.events.TKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>42</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.UKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">UKEY</span></span><a class="headerlink" href="#bge.events.UKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>43</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.VKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">VKEY</span></span><a class="headerlink" href="#bge.events.VKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>44</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.WKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">WKEY</span></span><a class="headerlink" href="#bge.events.WKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>45</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.XKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">XKEY</span></span><a class="headerlink" href="#bge.events.XKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>46</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.YKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">YKEY</span></span><a class="headerlink" href="#bge.events.YKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>47</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ZKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ZKEY</span></span><a class="headerlink" href="#bge.events.ZKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>48</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="number-keys">
+<h3>Number Keys<a class="headerlink" href="#number-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ZEROKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ZEROKEY</span></span><a class="headerlink" href="#bge.events.ZEROKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>13</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ONEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ONEKEY</span></span><a class="headerlink" href="#bge.events.ONEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>14</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.TWOKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">TWOKEY</span></span><a class="headerlink" href="#bge.events.TWOKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>15</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.THREEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">THREEKEY</span></span><a class="headerlink" href="#bge.events.THREEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>16</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.FOURKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">FOURKEY</span></span><a class="headerlink" href="#bge.events.FOURKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>17</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.FIVEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">FIVEKEY</span></span><a class="headerlink" href="#bge.events.FIVEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>18</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SIXKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SIXKEY</span></span><a class="headerlink" href="#bge.events.SIXKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>19</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SEVENKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SEVENKEY</span></span><a class="headerlink" href="#bge.events.SEVENKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>20</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.EIGHTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">EIGHTKEY</span></span><a class="headerlink" href="#bge.events.EIGHTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>21</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.NINEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">NINEKEY</span></span><a class="headerlink" href="#bge.events.NINEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>22</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="modifiers-keys">
+<h3>Modifiers Keys<a class="headerlink" href="#modifiers-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.CAPSLOCKKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">CAPSLOCKKEY</span></span><a class="headerlink" href="#bge.events.CAPSLOCKKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>49</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTCTRLKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTCTRLKEY</span></span><a class="headerlink" href="#bge.events.LEFTCTRLKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>50</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTALTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTALTKEY</span></span><a class="headerlink" href="#bge.events.LEFTALTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>51</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTALTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTALTKEY</span></span><a class="headerlink" href="#bge.events.RIGHTALTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>52</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTCTRLKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTCTRLKEY</span></span><a class="headerlink" href="#bge.events.RIGHTCTRLKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>53</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTSHIFTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTSHIFTKEY</span></span><a class="headerlink" href="#bge.events.RIGHTSHIFTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>54</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTSHIFTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTSHIFTKEY</span></span><a class="headerlink" href="#bge.events.LEFTSHIFTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>55</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="arrow-keys">
+<h3>Arrow Keys<a class="headerlink" href="#arrow-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTARROWKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTARROWKEY</span></span><a class="headerlink" href="#bge.events.LEFTARROWKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>69</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.DOWNARROWKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">DOWNARROWKEY</span></span><a class="headerlink" href="#bge.events.DOWNARROWKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>70</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTARROWKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTARROWKEY</span></span><a class="headerlink" href="#bge.events.RIGHTARROWKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>71</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.UPARROWKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">UPARROWKEY</span></span><a class="headerlink" href="#bge.events.UPARROWKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>72</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="numberpad-keys">
+<h3>Numberpad Keys<a class="headerlink" href="#numberpad-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD0">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD0</span></span><a class="headerlink" href="#bge.events.PAD0" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>84</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD1">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD1</span></span><a class="headerlink" href="#bge.events.PAD1" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>77</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD2">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD2</span></span><a class="headerlink" href="#bge.events.PAD2" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>73</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD3">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD3</span></span><a class="headerlink" href="#bge.events.PAD3" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>78</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD4">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD4</span></span><a class="headerlink" href="#bge.events.PAD4" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>74</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD5">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD5</span></span><a class="headerlink" href="#bge.events.PAD5" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>79</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD6">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD6</span></span><a class="headerlink" href="#bge.events.PAD6" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>75</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD7">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD7</span></span><a class="headerlink" href="#bge.events.PAD7" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>80</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD8">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD8</span></span><a class="headerlink" href="#bge.events.PAD8" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>76</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAD9">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAD9</span></span><a class="headerlink" href="#bge.events.PAD9" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>71</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADPERIOD">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADPERIOD</span></span><a class="headerlink" href="#bge.events.PADPERIOD" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>82</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADSLASHKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADSLASHKEY</span></span><a class="headerlink" href="#bge.events.PADSLASHKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>83</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADASTERKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADASTERKEY</span></span><a class="headerlink" href="#bge.events.PADASTERKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>9</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADMINUS">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADMINUS</span></span><a class="headerlink" href="#bge.events.PADMINUS" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>85</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADENTER">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADENTER</span></span><a class="headerlink" href="#bge.events.PADENTER" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>86</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PADPLUSKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PADPLUSKEY</span></span><a class="headerlink" href="#bge.events.PADPLUSKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>87</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="function-keys">
+<h3>Function Keys<a class="headerlink" href="#function-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F1KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F1KEY</span></span><a class="headerlink" href="#bge.events.F1KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>88</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F2KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F2KEY</span></span><a class="headerlink" href="#bge.events.F2KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>89</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F3KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F3KEY</span></span><a class="headerlink" href="#bge.events.F3KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>90</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F4KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F4KEY</span></span><a class="headerlink" href="#bge.events.F4KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>91</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F5KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F5KEY</span></span><a class="headerlink" href="#bge.events.F5KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>92</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F6KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F6KEY</span></span><a class="headerlink" href="#bge.events.F6KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>93</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F7KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F7KEY</span></span><a class="headerlink" href="#bge.events.F7KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>94</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F8KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F8KEY</span></span><a class="headerlink" href="#bge.events.F8KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>95</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F9KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F9KEY</span></span><a class="headerlink" href="#bge.events.F9KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>96</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F10KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F10KEY</span></span><a class="headerlink" href="#bge.events.F10KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>97</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F11KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F11KEY</span></span><a class="headerlink" href="#bge.events.F11KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>98</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F12KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F12KEY</span></span><a class="headerlink" href="#bge.events.F12KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>99</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F13KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F13KEY</span></span><a class="headerlink" href="#bge.events.F13KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>100</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F14KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F14KEY</span></span><a class="headerlink" href="#bge.events.F14KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>101</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F15KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F15KEY</span></span><a class="headerlink" href="#bge.events.F15KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>102</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F16KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F16KEY</span></span><a class="headerlink" href="#bge.events.F16KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>103</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F17KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F17KEY</span></span><a class="headerlink" href="#bge.events.F17KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>104</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F18KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F18KEY</span></span><a class="headerlink" href="#bge.events.F18KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>105</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.F19KEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">F19KEY</span></span><a class="headerlink" href="#bge.events.F19KEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>106</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="other-keys">
+<h3>Other Keys<a class="headerlink" href="#other-keys" title="Permalink to this heading"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ACCENTGRAVEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ACCENTGRAVEKEY</span></span><a class="headerlink" href="#bge.events.ACCENTGRAVEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>63</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.BACKSLASHKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">BACKSLASHKEY</span></span><a class="headerlink" href="#bge.events.BACKSLASHKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>65</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.BACKSPACEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">BACKSPACEKEY</span></span><a class="headerlink" href="#bge.events.BACKSPACEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>59</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.COMMAKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">COMMAKEY</span></span><a class="headerlink" href="#bge.events.COMMAKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>10</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.DELKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">DELKEY</span></span><a class="headerlink" href="#bge.events.DELKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>60</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ENDKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ENDKEY</span></span><a class="headerlink" href="#bge.events.ENDKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>113</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.EQUALKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">EQUALKEY</span></span><a class="headerlink" href="#bge.events.EQUALKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>66</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ESCKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ESCKEY</span></span><a class="headerlink" href="#bge.events.ESCKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>56</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.HOMEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">HOMEKEY</span></span><a class="headerlink" href="#bge.events.HOMEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>110</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.INSERTKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">INSERTKEY</span></span><a class="headerlink" href="#bge.events.INSERTKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>109</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LEFTBRACKETKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LEFTBRACKETKEY</span></span><a class="headerlink" href="#bge.events.LEFTBRACKETKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>67</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.LINEFEEDKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">LINEFEEDKEY</span></span><a class="headerlink" href="#bge.events.LINEFEEDKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>58</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.MINUSKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">MINUSKEY</span></span><a class="headerlink" href="#bge.events.MINUSKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>11</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAGEDOWNKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAGEDOWNKEY</span></span><a class="headerlink" href="#bge.events.PAGEDOWNKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>112</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAGEUPKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAGEUPKEY</span></span><a class="headerlink" href="#bge.events.PAGEUPKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>111</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PAUSEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PAUSEKEY</span></span><a class="headerlink" href="#bge.events.PAUSEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>108</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.PERIODKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">PERIODKEY</span></span><a class="headerlink" href="#bge.events.PERIODKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>12</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.QUOTEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">QUOTEKEY</span></span><a class="headerlink" href="#bge.events.QUOTEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>62</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RIGHTBRACKETKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RIGHTBRACKETKEY</span></span><a class="headerlink" href="#bge.events.RIGHTBRACKETKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>68</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.RETKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">RETKEY</span></span><a class="headerlink" href="#bge.events.RETKEY" title="Permalink to this definition"></a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Deprecated, use <a class="reference internal" href="#bge.events.ENTERKEY" title="bge.events.ENTERKEY"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bge.events.ENTERKEY()</span></code></a> instead.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>7</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.ENTERKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">ENTERKEY</span></span><a class="headerlink" href="#bge.events.ENTERKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>7</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SEMICOLONKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SEMICOLONKEY</span></span><a class="headerlink" href="#bge.events.SEMICOLONKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>61</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SLASHKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SLASHKEY</span></span><a class="headerlink" href="#bge.events.SLASHKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>64</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.SPACEKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">SPACEKEY</span></span><a class="headerlink" href="#bge.events.SPACEKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>8</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="bge.events.TABKEY">
+<span class="sig-prename descclassname"><span class="pre">bge.events.</span></span><span class="sig-name descname"><span class="pre">TABKEY</span></span><a class="headerlink" href="#bge.events.TABKEY" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Value</dt>
+<dd class="field-odd"><p>57</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bge.texture.html" class="btn btn-neutral float-left" title="Video Texture (bge.texture)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bge.constraints.html" class="btn btn-neutral float-right" title="Physics Constraints (bge.constraints)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

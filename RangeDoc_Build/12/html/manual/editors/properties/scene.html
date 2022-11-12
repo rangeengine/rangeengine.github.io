@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scene &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="World" href="world.html" />
+    <link rel="prev" title="Stereo Camera" href="render_stereo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scene</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#obstacle-simulation">Obstacle Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#navigation-mesh">Navigation Mesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#level-of-detail">Level of Detail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python-console">Python Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Scene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#units">Units</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Editors</a> &raquo;</li>
+          <li><a href="index.html">Properties Editor</a> &raquo;</li>
+      <li>Scene</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/scene.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="scene">
+<h1>Scene<a class="headerlink" href="#scene" title="Permalink to this heading"></a></h1>
+<p>The <strong>Scene</strong> tab in <a class="reference internal" href="index.html"><span class="doc">Properties Editor</span></a> exposes
+options related to the current scene.</p>
+<div class="section" id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/editors-properties-scene-physics.png" src="../../../_images/editors-properties-scene-physics.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Physics panel.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>The <em>Physics</em> panel located in the <em>Scene</em> tab determine the type of physical rules
+that govern the current UPBGE scene, the gravity value to be used and some other options.</p>
+<dl>
+<dt>Physics Engine</dt><dd><p>Set the type of physics engine to use.</p>
+<dl class="simple">
+<dt>Bullet</dt><dd><p>The default physics engine, in active development. It handles movement and
+collision detection. The things that collide transfer momentum to the
+collided object.</p>
+</dd>
+<dt>None</dt><dd><p>No physics in use. Things are not affected by gravity and can fly about in a
+virtual space. Objects in motion stay in that motion.</p>
+</dd>
+</dl>
+</dd>
+<dt>Physics Solver</dt><dd><p>The physics constraints solver to use.</p>
+<dl class="simple">
+<dt>Sequential</dt><dd><p>Sequential physics solver, default solver.</p>
+</dd>
+<dt>NNGC</dt><dd><p>NNGC physics solver.</p>
+</dd>
+<dt>MLCP Dantzig</dt><dd><p>MLCP Dantzig physics solver.</p>
+</dd>
+<dt>MLCP Lemke</dt><dd><p>MLCP Lemke physics solver.</p>
+</dd>
+</dl>
+</dd>
+<dt>Gravity</dt><dd><p>The gravitational acceleration, m.s<sup>-2</sup> (in units of meters per squared
+second), of this world. Each object that is an actor has a mass and size slider. In
+conjunction with the frame rate, Blender uses this info to calculate how fast the
+object should accelerate downward.</p>
+</dd>
+<dt>Physics Steps</dt><dd><dl class="simple">
+<dt>Max</dt><dd><p>Sets the maximum number of physics steps per game frame if graphics slow down the
+game. Higher value allows physics to keep up with real-time.</p>
+</dd>
+<dt>Substeps</dt><dd><p>Sets the number of simulation sub-steps per physics time step. Higher value give
+better physics precision.</p>
+</dd>
+<dt>FPS</dt><dd><p>Set the nominal number of game frames per second. Physics fixed timestep = 1/fps,
+independently of actual frame rate.</p>
+</dd>
+</dl>
+</dd>
+<dt>Time Scale</dt><dd><p>Time scale to slow down or speed up animations and physics in game.</p>
+</dd>
+<dt>Logic Steps</dt><dd><dl class="simple">
+<dt>Max</dt><dd><p>Sets the maximum number of logic frame per game frame if graphics slows down the
+game, higher value allows better synchronization with physics.</p>
+</dd>
+</dl>
+</dd>
+<dt>Physics Deactivation</dt><dd><p>These settings control the threshold at which physics is deactivated. These settings
+help reducing the processing spent on Physics simulation during the game.</p>
+<dl class="simple">
+<dt>Linear Threshold</dt><dd><p>The speed limit under which a rigid body will go to sleep (stop moving) if it
+stays below the limits for a time equal or longer than the deactivation time
+(sleeping is disabled when deactivation time is set to 0).</p>
+</dd>
+<dt>Angular Threshold</dt><dd><p>Same as linear threshold, but for rotation limit (in rad/s).</p>
+</dd>
+<dt>Time</dt><dd><p>The amount of time in which the object must have motion below the thresholds for
+physics to be disabled (0.0 disables physics deactivation).</p>
+</dd>
+</dl>
+</dd>
+<dt>Culling</dt><dd><dl class="simple">
+<dt>Occlusion Culling</dt><dd><p>Use optimized Bullet DBVT tree for view frustum and occlusion culling (more
+efficient, but it can waste unnecessary CPU if the scene doesn’t have occluder
+objects).</p>
+</dd>
+<dt>Resolution</dt><dd><p>The size of the occlusion culling buffer in pixel, use higher value for better
+precision (slower). The optimized Bullet DBVT for view frustum and occlusion
+culling is activated internally by default.</p>
+</dd>
+</dl>
+</dd>
+<dt>Object Activity</dt><dd><dl class="simple">
+<dt>Activity Culling</dt><dd><p>Enable object activity culling in this scene. The culling options can be set
+individually by object on <strong>Activity Culling</strong> panel on
+<a class="reference internal" href="object.html"><span class="doc">Object tab</span></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="obstacle-simulation">
+<h2>Obstacle Simulation<a class="headerlink" href="#obstacle-simulation" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/editors-properties-scene-obstacle_simulation.png" src="../../../_images/editors-properties-scene-obstacle_simulation.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Obstacle Simulation panel.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+<p>Simulation used for obstacle avoidance in UPBGE, based on the RVO (Reciprocal Velocity
+Obstacles) principle. The aim is to prevent one or more actors colliding with obstacles.</p>
+<dl class="simple">
+<dt>Type</dt><dd><dl class="simple">
+<dt>None</dt><dd><p>Obstacle simulation is disabled, actors are not able to avoid obstacles.</p>
+</dd>
+<dt>RVO (cells)</dt><dd><p>Obstacle simulation is based on the
+<a class="reference external" href="http://gamma.cs.unc.edu/RVO/">RVO method</a> with cell sampling.</p>
+</dd>
+<dt>RVO (rays)</dt><dd><p>Obstacle simulation is based on the
+<a class="reference external" href="http://gamma.cs.unc.edu/RVO">RVO method</a> with ray sampling.</p>
+</dd>
+</dl>
+</dd>
+<dt>Level height</dt><dd><p>Max difference in heights of obstacles to enable their interaction. Used to define
+minimum margin between obstacles by height, when they are treated as those which are
+situated one above the other i.e. they does not influence to each other.</p>
+</dd>
+<dt>Visualization</dt><dd><p>Enable debug visualization for obstacle simulation.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="navigation-mesh">
+<h2>Navigation Mesh<a class="headerlink" href="#navigation-mesh" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id4">
+<img alt="../../../_images/editors-properties-scene-navigation_mesh.png" src="../../../_images/editors-properties-scene-navigation_mesh.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Navigation Mesh panel.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Rasterization</dt><dd><dl class="simple">
+<dt>Cell size</dt><dd><p>Rasterized cell size.</p>
+</dd>
+<dt>Cell height</dt><dd><p>Rasterized cell height.</p>
+</dd>
+</dl>
+</dd>
+<dt>Agent</dt><dd><dl class="simple">
+<dt>Height</dt><dd><p>Minimum height where the agent can still walk.</p>
+</dd>
+<dt>Radius</dt><dd><p>Radius of the agent.</p>
+</dd>
+<dt>Max climb</dt><dd><p>Maximum height between grid cells the agent can climb.</p>
+</dd>
+<dt>Max slope</dt><dd><p>Maximum walkable slope angle in degrees.</p>
+</dd>
+</dl>
+</dd>
+<dt>Region</dt><dd><dl class="simple">
+<dt>Min Region Size</dt><dd><p>Minimum regions size. Smaller regions will be deleted.</p>
+</dd>
+<dt>Merged Region Size</dt><dd><p>Minimum regions size. Smaller regions will be merged.</p>
+</dd>
+</dl>
+</dd>
+<dt>Partitioning</dt><dd><dl class="simple">
+<dt>Watershed</dt><dd><p>Classic Recast partitioning method generating the nicest tessellation.</p>
+</dd>
+<dt>Monotone</dt><dd><p>The fastest navmesh generation method, but may cause long thin polygons.</p>
+</dd>
+<dt>Layers</dt><dd><p>A reasonably fast method that produces better triangles than monotone partitioning.</p>
+</dd>
+</dl>
+</dd>
+<dt>Polygonization</dt><dd><dl class="simple">
+<dt>Max Edge Length</dt><dd><p>Maximum contour edge length.</p>
+</dd>
+<dt>Max Edge Error</dt><dd><p>Maximum distance error from contour to cells.</p>
+</dd>
+<dt>Vertices Per Poly</dt><dd><p>Max number of vertices per polygon.</p>
+</dd>
+</dl>
+</dd>
+<dt>Detail Mesh</dt><dd><dl class="simple">
+<dt>Sample Distance</dt><dd><p>Detail mesh sample spacing.</p>
+</dd>
+<dt>Max Sample Error</dt><dd><p>Detail mesh simplification max sample error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="level-of-detail">
+<h2>Level of Detail<a class="headerlink" href="#level-of-detail" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id5">
+<img alt="../../../_images/editors-properties-scene-level_of_detail.png" src="../../../_images/editors-properties-scene-level_of_detail.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Level of Detail panel.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+<dl>
+<dt>Hysteresis</dt><dd><p>Use LoD hysteresis settings for the current scene.</p>
+<dl class="simple">
+<dt>Slider from 0% to 100%</dt><dd><p>Minimum distance change required to transition to the previous level of detail.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="python-console">
+<h2>Python Console<a class="headerlink" href="#python-console" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id6">
+<img alt="../../../_images/editors-properties-scene-python_console.png" src="../../../_images/editors-properties-scene-python_console.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Python Console panel.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+<p>Enabling the panel’s checkbox allows to trigger an interactive Python console when the
+game is running through the specified shortcut.</p>
+<dl class="simple">
+<dt>Keys</dt><dd><p>Set the keys to be pressed in order to activate the Python console in game.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h2>Scene<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id7">
+<img alt="../../../_images/editors-properties-scene-scene.png" src="../../../_images/editors-properties-scene-scene.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Scene panel.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</div>
+<dl class="simple">
+<dt>Camera</dt><dd><p>Used to select which camera is used as the active camera. You can also set the active
+camera in the 3D View with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd>.</p>
+</dd>
+</dl>
+<dl id="scene-background-set">
+<dt>Background</dt><dd><p>Allows you to use a scene as a background, this is typically useful when you want to
+focus on animating the foreground for example, without background elements getting
+in the way.</p>
+<p>This scene can have its own animation, physics simulations, etc, but you will have to
+select it from the <em>Scene</em> data-block menu, if you want to edit any of its contents.</p>
+<p>Sets can themselves have a background set (they’re recursively included). So you can
+always make additions to existing scenes by using them as a background to a newly
+created scene where your additions are made.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This can also be used in combination with Linking to a Scene, where one blend-file
+contains the environment, which can be reused in many places.</p>
+</div>
+</dd>
+<dt>Camera</dt><dd><p>Active camera, used for rendering the scene.</p>
+</dd>
+<dt>Background</dt><dd><p>Background set scene.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this heading"></a></h2>
+<div class="figure align-default" id="id8">
+<img alt="../../../_images/editors-properties-scene-units.png" src="../../../_images/editors-properties-scene-units.png" />
+<p class="caption"><span class="caption-text">Scene tab’s Units panel.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</div>
+<dl>
+<dt>Unit Presets</dt><dd><p>Common unit scales to use.</p>
+</dd>
+<dt>Length</dt><dd><dl class="simple">
+<dt>None</dt><dd><p>Uses Blender Units.</p>
+</dd>
+<dt>Metric, Imperial</dt><dd><p>Standard unit of measurement for lengths.</p>
+</dd>
+</dl>
+</dd>
+<dt>Angle</dt><dd><p>Standard unit for angular measurement.</p>
+<p>Degrees, Radians</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you are using <em>Degrees</em>, the radian value is also displayed in the tooltip.</p>
+</div>
+</dd>
+<dt>Unit Scale</dt><dd><p>Scale factor to use when converting between Blender Units and <em>Metric</em>/<em>Imperial</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Usually you will want to use the <em>Length</em> presets to change to scale factor,
+as this does not require looking up values to use for conversion.</p>
+</div>
+</dd>
+<dt>Separate Units</dt><dd><p>When <em>Metric</em> or <em>Imperial</em> display units as multiple values,
+for example, “2.285m” will become “2m 28.5cm”.</p>
+</dd>
+</dl>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Imperial Units</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Full Name</p></th>
+<th class="head"><p>Short Name(s)</p></th>
+<th class="head"><p>Scale of a Meter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>thou</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mil</span></code></p></td>
+<td><p>0.0000254</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>inch</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code></p></td>
+<td><p>0.0254</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>foot, feet</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span></code>, <code class="docutils literal notranslate"><span class="pre">ft</span></code></p></td>
+<td><p>0.3048</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>yard</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">yd</span></code></p></td>
+<td><p>0.9144</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>chain</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch</span></code></p></td>
+<td><p>20.1168</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>furlong</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">fur</span></code></p></td>
+<td><p>201.168</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>mile</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mi</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>1609.344</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Metric Units</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Full Name</p></th>
+<th class="head"><p>Short Name(s)</p></th>
+<th class="head"><p>Scale of a Meter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>micrometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">um</span></code></p></td>
+<td><p>0.000001</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>millimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mm</span></code></p></td>
+<td><p>0.001</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>centimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">cm</span></code></p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>decimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">dm</span></code></p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>meter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>dekameter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">dam</span></code></p></td>
+<td><p>10.0</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>hectometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">hm</span></code></p></td>
+<td><p>100.0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>kilometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">km</span></code></p></td>
+<td><p>1000.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Audio</strong> panel settings in <strong>Scene</strong> tab don’t have effect in UPBGE.
+For audio settings, see
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/preferences/system.html">User Preferences</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="render_stereo.html" class="btn btn-neutral float-left" title="Stereo Camera" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="world.html" class="btn btn-neutral float-right" title="World" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

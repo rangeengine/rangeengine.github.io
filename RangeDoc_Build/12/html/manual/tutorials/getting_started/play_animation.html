@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playing An Animation &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Using Linked Libraries In Game" href="linked_libraries.html" />
+    <link rel="prev" title="Moving A Cube" href="move_object.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts.html">Basic Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="move_object.html">Moving A Cube</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Playing An Animation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#before-we-start">Before We Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-logic">The Logic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="linked_libraries.html">Using Linked Libraries In Game</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introducing_python/index.html">Introducing Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      <li>Playing An Animation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/tutorials/getting_started/play_animation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="playing-an-animation">
+<h1>Playing An Animation<a class="headerlink" href="#playing-an-animation" title="Permalink to this heading"></a></h1>
+<p>In games, animations can be used in many places other than characters - a sliding menu, a
+opening door, coins rotating, etc. In UPBGE, an animation can be played through the use
+of an <a class="reference internal" href="../../datablocks/action.html#datablock-action"><span class="std std-ref">Action</span></a>. This tutorial will show you how to play an animation in a
+object and the concept of animation layering, allowing you to play and blend multiple
+animations at once in a single object.</p>
+<div class="section" id="before-we-start">
+<h2>Before We Start<a class="headerlink" href="#before-we-start" title="Permalink to this heading"></a></h2>
+<p>Before we start using animations through logic, we need some animations. As we said before,
+UPBGE animations work through the use of <a class="reference internal" href="../../datablocks/action.html#datablock-action"><span class="std std-ref">Action</span></a>, so we need to set our
+default <strong>Dope Sheet</strong> editor from <em>Dope Sheet</em> mode to <em>Action Editor</em> mode. Now, assuming
+you already know how to make simple animations adding keyframes, we’ll make two simple
+actions on a cube of a total 50 frames each, with the following settings:</p>
+<ul class="simple">
+<li><p>Rotation action named <em>rotate</em>: No rotation at frame 0, 180° at <code class="docutils literal notranslate"><span class="pre">Z</span></code> axis on frame
+25, more 180° at <code class="docutils literal notranslate"><span class="pre">Z</span></code> axis on frame 50 (that is, a full 360°).</p></li>
+<li><p>Scaling action named <em>scale</em>: No scale at frame 0, double scale at frame 25 and no
+scale at frame 50 again.</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/tutorials-play_animation-action_editor.png" src="../../../_images/tutorials-play_animation-action_editor.png" />
+<p class="caption"><span class="caption-text"><em>Action Editor</em> showing each action.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>Note the transform channels: <em>rotate</em> action only have <em>Rotation</em> channels, and <em>scale</em>
+action only have <em>Scaling</em> channels. This is important to properly blend those actions
+later on, as having the same channels on both (even without an actual transform) may not
+have the expected result in the end.</p>
+</div>
+<div class="section" id="the-logic">
+<h2>The Logic<a class="headerlink" href="#the-logic" title="Permalink to this heading"></a></h2>
+<p>Now, go to the <a class="reference internal" href="../../editors/logic/logic_bricks.html#editor-logic-bricks"><span class="std std-ref">Logic Bricks Area</span></a> and do the following setup:</p>
+<ul class="simple">
+<li><p>Add two <a class="reference internal" href="../../logic/sensors/types/keyboard.html#sensor-keyboard"><span class="std std-ref">Keyboard Sensor</span></a> through the dropdown menu named <strong>Add Sensor</strong>.</p></li>
+<li><p>Add two <a class="reference internal" href="../../logic/controllers/types/and.html#controller-and"><span class="std std-ref">AND Controller</span></a> through the dropdown menu named <strong>Add Controller</strong>.</p></li>
+<li><p>Add two <a class="reference internal" href="../../logic/actuators/types/action.html#actuator-action"><span class="std std-ref">Action Actuator</span></a> through the dropdown menu named <strong>Add Actuator</strong>.</p></li>
+<li><p>Connect each brick by dragging and dropping one insert into another.</p></li>
+</ul>
+<p>Now we must fill some fields:</p>
+<ul class="simple">
+<li><p>On the <a class="reference internal" href="../../logic/sensors/types/keyboard.html#sensor-keyboard"><span class="std std-ref">Keyboard Sensor</span></a>, rename both, respectively, to <em>rotate</em> and <em>scale</em>, and
+set the field <em>Key</em> to, respectively, <kbd class="kbd docutils literal notranslate">A</kbd> and <kbd class="kbd docutils literal notranslate">S</kbd>.</p></li>
+<li><p>On the <a class="reference internal" href="../../logic/actuators/types/action.html#actuator-action"><span class="std std-ref">Action Actuator</span></a>, rename both, respectively, to <em>rotate</em> and <em>scale</em>, set
+the playback type to <em>Loop Stop</em>, the value to its respective actions, <em>End Frame</em> to 50
+and <em>Layer</em> to, respectively, 0 and 1.</p></li>
+</ul>
+<p>The setup should look somewhat like the figure below:</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/tutorials-play_animation-logic_editor_1.png" src="../../../_images/tutorials-play_animation-logic_editor_1.png" />
+<p class="caption"><span class="caption-text">The <a class="reference internal" href="../../editors/logic/logic_bricks.html#editor-logic-bricks"><span class="std std-ref">Logic Bricks Area</span></a> with the given logic set.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<p>Now, play the game by pressing <kbd class="kbd docutils literal notranslate">P</kbd> while focusing the <em>3D Viewport</em>. When you press
+<kbd class="kbd docutils literal notranslate">A</kbd> the cube should rotate, and when you press <kbd class="kbd docutils literal notranslate">A</kbd> the cube should scale. When
+pressing both buttons the cube will rotate and scale at the same time, blending both
+actions. This is only possible due to different animation layers being blended togheter.
+For a matter of testing, set the actuator <em>scale</em>’s <em>Layer</em> to 0, the same value from the
+actuator <em>rotate</em>. When you play the game, you can’t play both animations at the same time:
+the last triggered actuator overwrites the currently playing.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>This is how you play and blend animations using visual logic in UPBGE. There’s more to be
+discovered, like playback modes, blending and more, and this can be learnt from the
+<a class="reference internal" href="../../logic/actuators/types/action.html#actuator-action"><span class="std std-ref">Action Actuator</span></a> page.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="move_object.html" class="btn btn-neutral float-left" title="Moving A Cube" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linked_libraries.html" class="btn btn-neutral float-right" title="Using Linked Libraries In Game" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

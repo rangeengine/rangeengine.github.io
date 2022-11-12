@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Linked Libraries In Game &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Introducing Python" href="../introducing_python/index.html" />
+    <link rel="prev" title="Playing An Animation" href="play_animation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts.html">Basic Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="move_object.html">Moving A Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="play_animation.html">Playing An Animation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using Linked Libraries In Game</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#before-we-start">Before We Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linking-the-groups">Linking The Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-the-links">Managing the Links</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introducing_python/index.html">Introducing Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorials</a> &raquo;</li>
+          <li><a href="index.html">Getting Started</a> &raquo;</li>
+      <li>Using Linked Libraries In Game</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/tutorials/getting_started/linked_libraries.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="using-linked-libraries-in-game">
+<h1>Using Linked Libraries In Game<a class="headerlink" href="#using-linked-libraries-in-game" title="Permalink to this heading"></a></h1>
+<p><em>Linked Library</em> is a Blender feature that allows referencing a datablock from another
+blend file into the current one, allowing easier manipulation of common assets and better
+project management, as you only need to edit the original file to update all the
+references. UPBGE supports this Blender feature, specially group instances, which ones
+are fairly well integrated through Python. This tutorial aims to show how to use linked
+libraries, group instances and manage the links.</p>
+<div class="section" id="before-we-start">
+<h2>Before We Start<a class="headerlink" href="#before-we-start" title="Permalink to this heading"></a></h2>
+<p>To proceed with this tutorial, we need some base files first. On a directory, save three
+empty blend files: <em>game.blend</em> (which will contain the references from the libraries),
+<em>lib_character.blend</em> (which will contain the actual model of our character) and
+<em>lib_scenery.blend</em> (which will contain the actual model of our ground). We’ll edit the
+file <em>game.blend</em> later, first we must create the contents of our libraries.</p>
+<dl class="simple">
+<dt>lib_character.blend</dt><dd><p>Add an Monkey object, add it to a group (<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd>) and rename the group to <cite>player</cite>.</p>
+</dd>
+<dt>lib_scenery.blend</dt><dd><p>Add an Plane, scale it by 5 (so it have the size of 10x10), add it to a group
+(<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd>) and rename the group to <cite>ground</cite>.</p>
+</dd>
+</dl>
+<p>Both files should be set up somewhat like this:</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/tutorials-linked_libraries-base_files_1.png" src="../../../_images/tutorials-linked_libraries-base_files_1.png" />
+<p class="caption"><span class="caption-text">Split view of the two files.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</div>
+</div>
+<div class="section" id="linking-the-groups">
+<h2>Linking The Groups<a class="headerlink" href="#linking-the-groups" title="Permalink to this heading"></a></h2>
+<p>Now, we’ll create a blend file named <em>game.blend</em> on the same directory as our previous
+files. In this file, we’ll do the following procedures:</p>
+<ul class="simple">
+<li><p>Go to the <em>File</em> menu, click the option <em>Link</em>.</p></li>
+<li><p>Select the either <em>lib_character.blend</em> or <em>lib_scenery.blend</em>.</p></li>
+<li><p>Select the option <em>Group</em>.</p></li>
+<li><p>Select the corresponding group and double click it / click <em>Link from Library</em>.</p></li>
+</ul>
+<div class="figure align-default" id="id4">
+<img alt="../../../_images/tutorials-linked_libraries-linking_1.png" src="../../../_images/tutorials-linked_libraries-linking_1.png" />
+<p class="caption"><span class="caption-text">Linking procedures diagram.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</div>
+<p>If everything went right, you should see in the <em>3D Viewport</em> the group instances added.
+They are not editable as they are only <a class="reference internal" href="../../datablocks/empty.html#datablock-empty"><span class="std std-ref">Empty</span></a> objects referencing groups
+from the original files.</p>
+<div class="figure align-default" id="id5">
+<img alt="../../../_images/tutorials-linked_libraries-linking_2.png" src="../../../_images/tutorials-linked_libraries-linking_2.png" />
+<p class="caption"><span class="caption-text">Groups instanced on game.blend scene.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</div>
+<p>With the instances added, all you have to do is place them with the desired
+transformations, and if you need to edit all the placed instances, just edit the original
+file to update all the references. Pretty handy, isn’t it?</p>
+</div>
+<div class="section" id="managing-the-links">
+<h2>Managing the Links<a class="headerlink" href="#managing-the-links" title="Permalink to this heading"></a></h2>
+<p>If you rename or move any of your libraries to another folder, you will face a common
+problem: broken links. There are several ways to deal with this problem, and this section
+will present you the use of the <em>Outliner</em> to manage links (and <a class="reference internal" href="../../datablocks/index.html#datablock-index"><span class="std std-ref">Datablocks</span></a>).</p>
+<p>I have renamed the library files to <cite>LibCharacter</cite> and <cite>LibScenery</cite>, which are different
+names from the previous ones (with underlines and only lower case characters). When opening
+<cite>game.blend</cite>, the editor will complain about the non existing libraries, and our instances
+will be shown only as <a class="reference internal" href="../../datablocks/empty.html#datablock-empty"><span class="std std-ref">Empty</span></a> objects.</p>
+<div class="figure align-default" id="id6">
+<img alt="../../../_images/tutorials-linked_libraries-managing_1.png" src="../../../_images/tutorials-linked_libraries-managing_1.png" />
+<p class="caption"><span class="caption-text">Main file after libraries be renamed.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+<p>To fix this, we must go to the <em>Outliner</em> and select the <em>Blend File</em> mode. On this mode
+we’ll see all :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>datablock-index`s on our blend file.</p>
+<div class="figure align-default" id="id7">
+<img alt="../../../_images/tutorials-linked_libraries-managing_2.png" src="../../../_images/tutorials-linked_libraries-managing_2.png" />
+<p class="caption"><span class="caption-text"><em>Blend File</em> mode on the <em>Outliner</em>.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</div>
+<p>The important elements here are the references to our libraries at the bottom: they are
+being shown as cracked icons and their previous names. We have two choices to fix this issue:</p>
+<dl class="simple">
+<dt>Renaming the references</dt><dd><p>You only need to double click the references and provide the new names. If they are in another folder, you must provide the relative path.</p>
+</dd>
+<dt>Relocating the references</dt><dd><p>You only need to right click the references, select <em>Relocate</em> and select the corresponding file.</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id8">
+<img alt="../../../_images/tutorials-linked_libraries-managing_3.png" src="../../../_images/tutorials-linked_libraries-managing_3.png" />
+<p class="caption"><span class="caption-text">Broken references fix modes on the <em>Outliner</em>.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</div>
+<p>After fixing the broken references, their icons will change back to normal and the objects
+will be automatically updated in the <em>3D Viewport</em>.</p>
+<div class="figure align-default" id="id9">
+<img alt="../../../_images/tutorials-linked_libraries-managing_4.png" src="../../../_images/tutorials-linked_libraries-managing_4.png" />
+<p class="caption"><span class="caption-text">Fixed references and objects updated on the <em>3D Viewport</em>.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</div>
+<p>Understanding how to use and manage linked libraries is important to maintain a complex and
+healthy project environment. Much more can be achieved through the use of <a class="reference internal" href="../../../api/bge.logic.html#bge.logic.LibLoad" title="bge.logic.LibLoad"><code class="xref py py-class docutils literal notranslate"><span class="pre">bge.logic.LibLoad</span></code></a>,
+loading and unloading libraries dynamically using Python, but for simpler projects, linked
+libraries should do the job.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="play_animation.html" class="btn btn-neutral float-left" title="Playing An Animation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../introducing_python/index.html" class="btn btn-neutral float-right" title="Introducing Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

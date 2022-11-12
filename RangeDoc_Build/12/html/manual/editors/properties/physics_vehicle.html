@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Controller Physics &mdash; Range Game Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Materials" href="materials.html" />
+    <link rel="prev" title="Character Physics" href="physics_character.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Game Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="physics.html">Physics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="physics.html#id1">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#collision-bounds">Collision Bounds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#create-obstacle">Create Obstacle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Game Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Editors</a> &raquo;</li>
+          <li><a href="index.html">Properties Editor</a> &raquo;</li>
+          <li><a href="physics.html">Physics</a> &raquo;</li>
+      <li>Vehicle Controller Physics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/physics_vehicle.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="vehicle-controller-physics">
+<h1>Vehicle Controller Physics<a class="headerlink" href="#vehicle-controller-physics" title="Permalink to this heading"></a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The Vehicle Controller is a special type of physics object that the Physics Engine (bullet) recognizes.</p>
+<p>It is composed of a <em>rigid body</em> representing the chassis and a set of wheels that are set to <em>no collision</em>.
+Emphasizing the distinction between a Game Engine,
+Logical or Render object and its representation for the Physics Engine is important.</p>
+<p>To simulate a vehicle as a true rigid body, on top of also rigid body wheels,
+with a real suspension system made with joints, would be far too complicated and unstable.
+Cars and other vehicles are complicated mechanical devices and
+most often we do not want to simulate that, only that it ‘acts as expected’.
+The Vehicle Controller exists to provide a dedicated way of simulating a vehicle behavior
+without having to simulate all the physics that would actually happen in the real world.
+It abstracts the complexity away by providing a simple interface with tweakable parameters such as
+suspension force, damping and compression.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this heading"></a></h2>
+<p>Bullet’s approach to a vehicle controller is called a “Raycast Vehicle”.
+Collision detection for the wheels is approximated
+by ray casts and the tire friction is an anisotropic friction model.</p>
+<p>A raycast vehicle works by casting a ray for each wheel.
+Using the ray’s intersection point,
+we can calculate the suspension length and hence the suspension force that is then applied to the chassis,
+keeping it from hitting the ground. In effect, the vehicle chassis ‘floats’ along on the rays.</p>
+<p>The friction force is calculated for each wheel where the ray contacts the ground.
+This is applied as a sideways and forwards force.</p>
+<p>You can check Kester Maddock’s approach to vehicle simulation
+<a class="reference external" href="https://docs.google.com/document/d/18edpOwtGgCwNyvakS78jxMajCuezotCU_0iezcwiFQc/edit">here</a>.
+It includes some common problems, workarounds and tips and tricks.</p>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Permalink to this heading"></a></h2>
+<p>Currently the Vehicle Controller can only be used as a constraint via Python.
+There are plans to add it to the interface.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h3>
+<p>You should have a body acting as the chassis, set it as a ‘Rigid Body’.</p>
+<p>The wheels should be separate objects set to ‘No Collision’.
+The vehicle controller will calculate the collisions for you as rays so, if you set it to something else,
+it will calculate it twice in different ways and produce weird results.</p>
+</div>
+<div class="section" id="collisions">
+<h3>Collisions<a class="headerlink" href="#collisions" title="Permalink to this heading"></a></h3>
+<p>A cylinder is typically a good collision shape for the wheels.
+For the chassis, the shape should be rough, like a box.
+If the vehicle is very complicated,
+you should split it into simpler objects and parent those (with their collision shapes)
+to the vehicle controller so that they will follow it.
+If your vehicle even has moving bits (weapons, wrecking balls, trolleys, etc.)
+they should also be simulated separately and connected to the vehicle as a joint.</p>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading"></a></h3>
+<div class="section" id="assembling-the-vehicle">
+<h4>Assembling the Vehicle<a class="headerlink" href="#assembling-the-vehicle" title="Permalink to this heading"></a></h4>
+<p>The overall steps are:</p>
+<ol class="arabic simple">
+<li><p>Create a constraint for the vehicle and save its ID for future reference.</p></li>
+<li><p>Attach the wheels.</p></li>
+<li><p>Set wheel parameters: influence, stiffness, damping, compression and friction.</p></li>
+<li><p>Init variables.</p></li>
+</ol>
+<p>You can see an example in the file below.</p>
+</div>
+<div class="section" id="controlling-the-vehicle">
+<h4>Controlling the Vehicle<a class="headerlink" href="#controlling-the-vehicle" title="Permalink to this heading"></a></h4>
+<p>This is done in two parts and it should be modeled according to the desired behavior.
+You should think of your gameplay and research appropriate functions for the input.
+For instance, can the vehicle reverse? jump? drift?
+does it turn slowly? How much time does it take to brake or get to full speed?
+The first part is <em>response to keys</em>.
+Whenever the player presses a key, you should set a value accordingly, such as increase acceleration.
+Example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">events</span><span class="o">.</span><span class="n">UPARROWKEY</span><span class="p">:</span>
+    <span class="n">logic</span><span class="o">.</span><span class="n">car</span><span class="p">[</span><span class="s2">&quot;force&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>
+<span class="k">elif</span> <span class="n">key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">events</span><span class="o">.</span><span class="n">RIGHTARROWKEY</span><span class="p">:</span>
+    <span class="n">logic</span><span class="o">.</span><span class="n">car</span><span class="p">[</span><span class="s2">&quot;steer&quot;</span><span class="p">]</span> <span class="o">-=</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+<p>The second part is to <em>compute the movement</em> according to your functions:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## apply engine force ##</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">totalWheels</span><span class="p">):</span>
+    <span class="n">vehicle</span><span class="o">.</span><span class="n">applyEngineForce</span><span class="p">(</span><span class="n">logic</span><span class="o">.</span><span class="n">car</span><span class="p">[</span><span class="s2">&quot;force&quot;</span><span class="p">],</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="c1">## slowly ease off gas and center steering ##</span>
+<span class="n">logic</span><span class="o">.</span><span class="n">car</span><span class="p">[</span><span class="s2">&quot;steer&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">0.6</span>
+<span class="n">logic</span><span class="o">.</span><span class="n">car</span><span class="p">[</span><span class="s2">&quot;force&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">0.9</span>
+</pre></div>
+</div>
+<p>Both should be run each frame.</p>
+</div>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h3>
+<p>The following demo file has a minimal drivable car and was taken from the book:
+“Game Development with Blender” by Dalai Felinto and Mike Pan.</p>
+<p><a class="reference external" href="http://download.blender.org/documentation/GE/vehicle_controller_demo.zip">vehicle_controller_demo.zip</a>
+(last update 9 September 2014, tested with Blender 2.71)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="physics_character.html" class="btn btn-neutral float-left" title="Character Physics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="materials.html" class="btn btn-neutral float-right" title="Materials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
