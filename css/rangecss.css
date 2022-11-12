@@ -17,6 +17,9 @@ hr{
 	border-color: rgba(238, 88, 88, 0.322);
 	box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.068);
 }
+.text90{
+	font-size: 90%;
+}
 .logo{
 	max-width: 150px;
 	transition: all 0.15s ease-in;
