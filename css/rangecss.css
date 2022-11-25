@@ -102,9 +102,11 @@ a.suppus:hover{
 }
 .apresentacao{
 	display: inline-flex;
-	background-color: rgba(26, 26, 26, 0.6);
-	border-radius: 50px;
+	background-color: #0a0a0aa3;
+	border-radius: 20px;
 	padding: 20px;
+	outline-style: outset;
+	outline-color: #e22b2b80;
 }
 .downnabout{
 	margin-top: 25px;
@@ -186,8 +188,10 @@ a.knowmore:hover{
 	font-size: 40px;
 }
 .titsece{
+	font-family: Roboto, Arial, Helvetica, sans-serif;
+	font-size: 30px;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .articlechanges, h3, p{
 	text-decoration: none;
@@ -199,6 +203,18 @@ article{
 	background-color: rgba(0, 0, 0, 0.952);
 	padding-top: 30px;
 	padding-bottom: 10px;
+}
+#aprespags{
+	background-color: #0a0a0a7c;
+	padding: 20px 0 20px 0;
+	width: 100%;
+	justify-content: center;
+	border-radius: 0;
+	outline-style: outset;
+	outline-color: #ae2020ce;
+}
+#patrrowblue .patrdwnrow .patrart .patrtop{
+	background-color: #273a82b0;
 }
 .artigos{
 	display: inline-flex;
