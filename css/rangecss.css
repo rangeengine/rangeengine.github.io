@@ -60,6 +60,12 @@ hr{
 	z-index: 10000;
 	transition: all 0.25s ease-in-out;
 }
+#heacol{
+	background-color: #111111;
+}
+.heaul{
+	margin: 0;
+}
 .activeh{
 	background-color: #111111;
 }
@@ -73,11 +79,26 @@ a{
 	text-decoration: none;
 	color: white;
 }
+.searchbar{
+	padding: 6px 60px 6px 6px;
+	border: none;
+	margin-top: 8px;
+	margin-right: 5px;
+	border-radius: 5px;
+	font-size: 17px;
+	background-color: #252525ea;
+	color: #5c5c5c;
+	outline-style: solid;
+	outline-color: #474747ea;
+	outline-width: 2px;
+}
 .healinks{
 	text-decoration: none;
+	padding: 18px 5px 18px 5px;
+	border-radius: 5px;
 }
 .healinks:hover{
-	text-decoration: underline #fd4f4f;
+	background-color: #2c2c2cd2;
 }
 .headerlinks{
 	margin-right: 20px;
@@ -96,8 +117,10 @@ a.suppus:hover{
 	transition: all 0.20s ease-in-out;
 }
 .headerlis{
-	margin-left: 20px;
 	padding: 2px;
+	display: inline-flex;
+}
+.headerlisto{
 	display: inline-flex;
 }
 .apresentacao{
@@ -153,6 +176,15 @@ a.knowmore{
 a.knowmore:hover{
 	background-color: #4d4d4d00;
 	border-color: rgb(150, 150, 150);
+}
+.stobtdow{
+	color: rgb(170, 170, 170);
+	text-decoration: underline;
+	text-decoration-color: rgb(104, 104, 104);
+}
+.stobtdow:hover{
+	color: rgb(255, 255, 255);
+	text-decoration-color: rgb(255, 255, 255);
 }
 .indexsec{
 	display: block;
@@ -470,6 +502,7 @@ footer{
 .releasename{
 	text-align: center;
 }
+
 @media (max-width: 500px){
 	.dclink, img, a{
 		max-width: 330px;

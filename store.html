@@ -15,11 +15,10 @@
     <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="/js/responsivenav.js" defer></script>
-    <script src="/js/headercolor.js"></script>
   </head>
-  <body>
-    <header class="header">
-      <h1 class="title"><a href="/"><img class="logo" src="/img/RGE.png" alt="RanGELogo"/></a></h1>
+  <body style="background-color:rgb(62, 62, 62);background-image:none;">
+    <header class="header" id="heacol">
+      <h1 class="title"><a href="store"><img class="logo" src="/img/store/RGEStore.png" alt="RanGE Store"/></a><a href="/"><img class="logo" width="40px" src="/img/store/RGEHome.png" alt="Return Homepage"/></a></h1>
       <a class="togglebutton">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -27,45 +26,66 @@
       </a>
       <nav class="headerlinks">
         <ul class="heaul">
-          <li class="headerlis"><a class="healinks" href="/">Home</a></li>
-          <li class="headerlis"><a class="healinks" href="downloadpage">Download</a></li>
-          <li class="headerlis"><a class="healinks" href="changelog">Changelog</a></li>
-          <li class="headerlis"><a class="healinks" href="store">Store</a></li>
-          <li class="headerlis"><a class="healinks" href="apireleases">API</a></li>
-          <li class="headerlis"><a class="healinks" href="aboutus">Learn More</a></li>
-          <li class="headerlis"><a class="suppus" target=”_blank” href="https://patreon.com/user?u=62478788">Support</a></li>
+          <input type="text" class="searchbar" placeholder="Search for content">
+          <li class="headerlisto"><a class="healinks" href="">Templates</a></li>
+          <li class="headerlisto"><a class="healinks" href="">Addons</a></li>
+          <li class="headerlisto"><a class="healinks" href="">Scripts</a></li>
+          <li class="headerlisto"><a class="healinks" href="">Shaders</a></li>
+          <li class="headerlisto"><a class="healinks" href="">Tutorials</a></li>
+          <li class="headerlisto"><a class="suppus" target=”_blank” href="https://patreon.com/user?u=62478788">Support</a></li>
         </ul>
       </nav>
     </header>
-    <section class="downsec">
+    <section class="downsec" style="padding-bottom:20px;">
       <div class="apresentacao" id="aprespags">
         <div class="sobreoprojeto">
-          <h2 class="titsece">Store (Soon)</h2>
+          <h2 class="titsece">Range Engine Store (WIP)</h2>
+          <hr>
+          <p class="whatsxbge">In Range Engine Store You Can Find A Lot Of Content To Use On Your Game
+            <br>Ready To Use On Range Engine, Made By Community and Official Devs
+            <br>Don't Forget to Read The Description Of The Products To Learn More About Copyright Terms Of Each Product</p>
         </div>
       </div>
     </section>
-    <article>
-      <div class="chglogmenu">
-        <ul class="chgulmenu">
-          <h3 style="display:inline-block;padding:12px;">Category:</h3>
-          <li class="chgmli"><a>Templates</a></li>
-          <li class="chgmli"><a>Scripts</a></li>
-          <li class="chgmli"><a>Shaders</a></li>
-          <li class="chgmli"><a>Models</a></li>
-          <li class="chgmli"><a>Addons</a></li>
-          <li class="chgmli"><a>Tutorials</a></li>
-        </ul>
+    <article style="padding-top:0;background-color:rgba(11, 11, 11, 0.9);">
+      <h3 style="margin-bottom:20px;background-color:rgb(94, 18, 18);width:100%;padding:10px;">Popular in Range Engine Store</h3>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <img class="funcs" src="/img/store/wip.jpg" alt="FPS Template"/>
+          <div class="articledesc">
+            <h3>First Person Character</h3>
+            <p class="whatsxbge">Basic FPS Character Controller (Python Components)</p>
+            <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          </div>
+        </div>
       </div>
-      <div class="articlechanges" style="text-align: center;">
-        <div class="changelogdiv">
-          <div class="artigoschanges">
-            <h3><img style="max-width: 40%;" src="/img/store/RanGEStoreFont.png" alt="Range Store"></h3>
-            <hr>
-            <p style="font-size: 16px;"><i><b>Welcome to Range Engine Store!</b>
-            <br>In Range Engine Store You Can Find A Lot Of Content To Use On Your Game
-            <br>Ready To Use On Range Engine, Made By Community and Official Devs
-            <br>Don't Forget to Read The Description Of The Products To Learn More About Copyright Terms Of Each Product</i></p>
-            <hr>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <img class="funcs" src="/img/store/wip.jpg" alt="TPS Template"/>
+          <div class="articledesc">
+            <h3>Third Person Character</h3>
+            <p class="whatsxbge">Basic TPS Character Controller (Python Components)</p>
+            <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <img class="funcs" src="/img/store/wip.jpg" alt="Veicule Template"/>
+          <div class="articledesc">
+            <h3>Veicule Controller</h3>
+            <p class="whatsxbge">Basic Veicule Controller (Logic Bricks)</p>
+            <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <img class="funcs" src="/img/store/wip.jpg" alt="UPBGE To RanGE"/>
+          <div class="articledesc">
+            <h3>Switch a Project From UPBGE To RanGE</h3>
+            <p class="whatsxbge">Learn How To Switch Properly Your UPBGE Project To RanGE</p>
+            <a class="stobtdow" target=”_blank” href="https://www.youtube.com/watch?v=t6WWSVOg-Ek">⇢ YouTube</a>
           </div>
         </div>
       </div>
