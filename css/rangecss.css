@@ -79,7 +79,7 @@ a{
 	text-decoration: none;
 	color: white;
 }
-.searchbar{
+#searchbar{
 	padding: 6px 60px 6px 6px;
 	border: none;
 	margin-top: 8px;
@@ -87,7 +87,7 @@ a{
 	border-radius: 5px;
 	font-size: 17px;
 	background-color: #252525ea;
-	color: #5c5c5c;
+	color: #9e9e9e;
 	outline-style: solid;
 	outline-color: #474747ea;
 	outline-width: 2px;
@@ -201,6 +201,9 @@ a.knowmore:hover{
 .whatsxbge{
 	font-size: 13px;
 	margin: 3px;
+}
+.descpdt{
+	font-size: 13px;
 }
 @keyframes example{
 	from {color: rgba(0, 0, 0, 0);}

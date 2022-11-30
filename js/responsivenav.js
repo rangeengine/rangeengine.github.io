@@ -1,9 +1,9 @@
-var toggleButton = document.getElementsByClassName('togglebutton')[0];
-var navbarLinks = document.getElementsByClassName('headerlinks')[0];
-var toggleButtoon = document.getElementsByClassName('header')[0];
+const toggleButton = document.getElementsByClassName('togglebutton')[0]
+const navbarLinks = document.getElementsByClassName('headerlinks')[0]
+const toggleButtoon = document.getElementsByClassName('header')[0]
 
-toggleButton.addEventListener('click', function() {
-  navbarLinks.classList.toggle('active');
-  toggleButton.classList.toggle('active');
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+  toggleButton.classList.toggle('active')
   $('.header').addClass('activeh');
-});
+})
