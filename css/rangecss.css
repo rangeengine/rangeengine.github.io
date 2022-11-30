@@ -92,6 +92,10 @@ a{
 	outline-color: #474747ea;
 	outline-width: 2px;
 }
+.namepdt{
+	font-size: 14px;
+	font-style: normal;
+}
 .healinks{
 	text-decoration: none;
 	padding: 18px 5px 18px 5px;
