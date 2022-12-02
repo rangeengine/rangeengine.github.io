@@ -74,6 +74,7 @@ hr{
 	max-width: 100%;
 	margin-top: 15px;
 	margin-left: 20px;
+	display: flex;
 }
 a{
 	text-decoration: none;
@@ -182,13 +183,19 @@ a.knowmore:hover{
 	border-color: rgb(150, 150, 150);
 }
 .stobtdow{
-	color: rgb(170, 170, 170);
-	text-decoration: underline;
-	text-decoration-color: rgb(104, 104, 104);
+	font-size: 15px;
+	background-color: rgb(70, 70, 70);
+	border-radius: 5px;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	transition: all 0.15s ease-in;
 }
 .stobtdow:hover{
-	color: rgb(255, 255, 255);
-	text-decoration-color: rgb(255, 255, 255);
+	background-color: rgba(126, 126, 126, 0.13);
+	outline-color: rgb(167, 167, 167);
+	outline-width: 1px;
+	outline-style: solid;
+	transition: all 0.15s ease-in-out;
 }
 .indexsec{
 	display: block;
