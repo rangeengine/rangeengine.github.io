@@ -265,6 +265,14 @@ a.knowmore:hover{
 	text-align: left;
 	font-size: 40px;
 }
+.splashtitsec{
+	margin: 0px;
+	text-align: left;
+	font-size: 40px;
+	font-size: 500%;
+	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
 .titsece{
 	font-family: Roboto, Arial, Helvetica, sans-serif;
 	font-size: 30px;
@@ -278,7 +286,8 @@ a.knowmore:hover{
 
 /* ARTICLE */
 article{
-	background-color: rgba(0, 0, 0, 0.952);
+	background-color: rgba(0, 0, 0, 0.815);
+	backdrop-filter: blur(5px);
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
@@ -565,6 +574,9 @@ footer{
 }
 
 @media (max-width: 500px){
+	.splashtitsec{
+		font-size: 300%;
+	}
 	.dclink, img, a{
 		max-width: 330px;
 		white-space: nowrap;
