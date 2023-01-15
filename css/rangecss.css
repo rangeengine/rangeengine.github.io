@@ -4,12 +4,9 @@ body{
 	color: white;
 	font-family: Titillium Web, Arial, Helvetica, sans-serif;
 	font-size: 17px;
-	background-color: #2c2c2c;
+	background-color: #0c0c0c;
 	text-align: center;
 	margin: 0px;
-	background-image: url('../img/range14techdemo.webp');
-    background-size: cover;
-	background-repeat: no-repeat;
     height: 100vh;
     padding: 0;
     margin: 0;
@@ -51,8 +48,9 @@ hr{
 
 /* HEADER */
 .header{
-	background-color: transparent;
-	box-shadow: 10px;
+	background:linear-gradient(rgba(0, 0, 0, 0.342),rgba(0, 0, 0, 0.075));
+	backdrop-filter: blur(6px);
+	box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.11);
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
@@ -139,6 +137,11 @@ a.suppus:hover{
 .headerlisto{
 	display: inline-flex;
 }
+.splashhome{
+	display: inline-flex;
+	border-radius: 10px;
+	padding: 20px;
+}
 .apresentacao{
 	display: inline-flex;
 	background-color: #0a0a0aa3;
@@ -163,11 +166,11 @@ a.suppus:hover{
 
 /* SECTION */
 section{
-	background-color: rgba(0, 0, 0, 0.411);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 a.downnow{
-	background-color: rgb(255, 45, 45);
-	border-color: rgb(255, 45, 45);
+	background-color: rgb(223, 40, 40);
+	border-color: rgb(223, 40, 40);
 	border-style: solid;
 	border-radius: 5px;
 	border-width: 2px;
@@ -210,20 +213,36 @@ a.knowmore:hover{
 	outline-style: solid;
 	transition: all 0.15s ease-in-out;
 }
+.backvideo{
+    position: fixed; 
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -1000;
+    background: url('/img/posterback.jpg') no-repeat;
+    background-size: cover; 
+}
 .indexsec{
 	display: block;
 	padding-top: 280px;
 	padding-bottom: 220px;
-	background-color: 0, 0, 0, 0.5;
 }
 .downsec{
 	display: block;
 	padding-top: 100px;
 	padding-bottom: 50px;
-	background-color: 0, 0, 0, 0.5;
+}
+.storesec{
+	background-color: rgb(62, 62, 62);
+	background-image: url('/img/store/back12store.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .whatsxbge{
-	font-size: 13px;
+	font-size: 15px;
 	margin: 3px;
 }
 .descpdt{
