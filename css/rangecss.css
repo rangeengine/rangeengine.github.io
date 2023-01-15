@@ -582,6 +582,9 @@ footer{
 	}
 }
 @media (max-width: 600px) {
+	.splashhome{
+		display: block;
+	}
 	.articlepatreon{
 		display: block;
 	}
