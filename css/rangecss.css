@@ -58,6 +58,7 @@ hr{
 	width: 100%;
 	z-index: 10000;
 	transition: all 0.25s ease-in-out;
+	font-family: Roboto Condensed;
 }
 #heacol{
 	background-color: #111111;
@@ -130,6 +131,32 @@ a.suppus:hover{
 	background-color: rgba(197, 0, 0, 0);
 	transition: all 0.20s ease-in-out;
 }
+#to-wn{
+	background-color: rgb(45, 57, 230);
+	border-color: rgb(45, 57, 230);
+}
+#to-wn:hover{
+	background-color: transparent;
+}
+a.suppush{
+	text-decoration: none;
+	padding: 20px 5px 20px 5px;
+	border-style: solid;
+	border-block-start: transparent;
+	border-top-color: rgba(0,0,0,0);
+	border-bottom-color: rgb(182, 57, 57);
+	border-left: 0;
+	border-right: 0;
+	background: linear-gradient(#0000,#e00000a6);
+	transition: all 0.15s ease-in;
+}
+a.suppush:hover{
+	border-block-start: transparent;
+	border-top-color: rgba(0,0,0,0);
+	border-bottom-color: rgb(255, 255, 255);
+	background: linear-gradient(#0000,#ca4444bb);
+	transition: all 0.15s ease-in-out;
+}
 .headerlis{
 	padding: 0px 2px 0px 2px;
 	display: inline-flex;
@@ -162,6 +189,63 @@ a.suppus:hover{
 #extbts{
 	margin-right: 0px;
 	padding-bottom: 10px;
+}
+.dpdhbt{
+	text-decoration: none;
+	padding: 20px 5px 20px 5px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-left: 0;
+	border-right: 0;
+	background: #00000000;
+	transition: all 0.15s ease-in;
+}
+.dpdhbt:hover{
+	border-block-start: transparent;
+	border-top-color: rgba(0,0,0,0);
+	border-bottom-color: rgb(255, 255, 255);
+	background: linear-gradient(#0000,#ffffff38);
+	transition: all 0.15s ease-in-out;
+}
+.dropdownh{
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+}
+.dpdhitems{
+	display: none;
+	position: absolute;
+	min-width: 102px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+	z-index: 1;
+}
+.dropdownh:hover .dpdhitems{
+	margin-top: 23px;
+	display: grid;
+	width: 100%;
+}
+.dpdhitems a{
+	padding: 12px 6px;
+	backdrop-filter: blur(5px);
+	border-style: solid;
+	border-color: rgba(0,0,0,0);
+	border-left: 0;
+	border-right: 0;
+	background-color: #14141471;
+	transition: all 0.10s ease-in;
+}
+.dpdhitmsacol{
+	background-color: #141414cc;
+}
+.dpdhitmsacolhov{
+	background: linear-gradient(rgba(0, 0, 0, 0.514),#ffffff83);;
+}
+.dpdhitems a:hover{
+	border-block-start: transparent;
+	border-top-color: rgba(0,0,0,0);
+	border-bottom-color: rgb(255, 255, 255);
+	background: linear-gradient(rgba(0, 0, 0, 0.514),#ffffff38);
+	transition: all 0.10s ease-in-out;
 }
 
 /* SECTION */
@@ -272,6 +356,7 @@ a.knowmore:hover{
 	font-size: 500%;
 	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
+	text-shadow: 0px 0px 26px black;
 }
 .titsece{
 	font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -330,9 +415,36 @@ article{
 	transition: all 0.2s ease-in;
 	padding-bottom: 15px;
 }
+.articledescwn{
+	cursor: default;
+	transition: all 0.2s ease-in-out;
+	background-color:rgba(29, 29, 29, 0.822);
+	padding: 10px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+#articledescwnd{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+.articledescwn h3{
+	font-size: 28px;
+	font-family: Roboto Condensed;
+	text-transform: uppercase;
+}
+.aboutxbge:hover .articledescwn{
+	transition: all 0.2s ease-in;
+}
 .funcs{
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
+	max-width: 100%;
+	text-decoration: none;
+	margin-bottom: -7px;
+}
+.funcswn{
 	max-width: 100%;
 	text-decoration: none;
 	margin-bottom: -7px;
