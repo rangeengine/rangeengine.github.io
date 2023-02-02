@@ -126,6 +126,7 @@ a.suppus{
 	border-width: 2px;
 	padding: 5px;
 	transition: all 0.20s ease-in;
+	font-family: Roboto Condensed;
 }
 a.suppus:hover{
 	background-color: rgba(197, 0, 0, 0);
