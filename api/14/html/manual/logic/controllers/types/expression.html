@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expression Controller &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Python Controller" href="python.html" />
+    <link rel="prev" title="XNOR Controller" href="xnor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">Controller Editing</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#controller-types">Controller Types</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="and.html">AND Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="or.html">OR Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nand.html">NAND Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="nor.html">NOR Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xor.html">XOR Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="xnor.html">XNOR Controller</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Expression Controller</a></li>
+<li class="toctree-l4"><a class="reference internal" href="python.html">Python Controller</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../actuators/index.html">Actuators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Logic</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Controllers</a></li>
+      <li class="breadcrumb-item active">Expression Controller</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/manual/logic/controllers/types/expression.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="expression-controller">
+<span id="bpy-types-expressioncontroller"></span><h1>Expression Controller<a class="headerlink" href="#expression-controller" title="Permalink to this heading"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the Python reference of this logic brick in <a class="reference internal" href="../../../../api/bge.types.SCA_IController.html#SCA_IController" title="SCA_IController"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCA_IController</span></code></a>.</p>
+</div>
+<p>This controller evaluates a user written expression, and gives a positive (<code class="docutils literal notranslate"><span class="pre">TRUE</span></code>) output when
+The result of the expression is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, and
+The object is in the designated State.
+For all other conditions the controller gives a negative (<code class="docutils literal notranslate"><span class="pre">FALSE</span></code>) output.</p>
+<figure class="align-default" id="id1">
+<img alt="../../../../_images/logic-controllers-types-expression-node.png" src="../../../../_images/logic-controllers-types-expression-node.png" />
+<figcaption>
+<p><span class="caption-text">Expression Controller.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="expression">
+<h2>Expression<a class="headerlink" href="#expression" title="Permalink to this heading"></a></h2>
+<p>The expression, which is written in the field, can consist of variables,
+constants and operators. These must follow the rules laid out below.</p>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
+<p>You can use:</p>
+<ul class="simple">
+<li><p><em>sensors names</em>,</p></li>
+<li><p><em>properties</em>: assign a game property to an object and use it in a controller expression.</p></li>
+</ul>
+<p>These cannot contain blank spaces.</p>
+</section>
+<section id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this heading"></a></h2>
+<section id="mathematical-operations">
+<h3>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this heading"></a></h3>
+<p>Operators: <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code></p>
+<p>Returns: a number</p>
+<p>Examples: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">35</span> <span class="pre">/</span> <span class="pre">5</span></code></p>
+</section>
+<section id="logical-operations">
+<h3>Logical Operations<a class="headerlink" href="#logical-operations" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Comparison operators: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>Booleans operators: <code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code></p></li>
+</ul>
+<p>Returns: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Examples: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&gt;</span> <span class="pre">2</span> <span class="pre">(True)</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">AND</span> <span class="pre">0</span> <span class="pre">(False)</span></code></p>
+</section>
+</section>
+<section id="conditional-statement-if">
+<h2>Conditional Statement (if)<a class="headerlink" href="#conditional-statement-if" title="Permalink to this heading"></a></h2>
+<p>Use:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span> <span class="n">expression</span><span class="p">,</span> <span class="n">pulse_if_expression_is_true</span><span class="p">,</span> <span class="n">pulse_if_expression_is_false</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>If the controller evaluates <code class="docutils literal notranslate"><span class="pre">expression</span></code> to True:</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">pulse_if_expression_is_true</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the controller sends a positive pulse to the connected actuators.</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">pulse_if_expression_is_true</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the controller sends a negative pulse to the connected actuators.</p></li>
+</ul>
+<p>If the controller evaluates <code class="docutils literal notranslate"><span class="pre">expression</span></code> to False:</p>
+<ul class="simple">
+<li><p>if <code class="docutils literal notranslate"><span class="pre">pulse_if_expression_is_false</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the controller sends a positive pulse to the connected actuators.</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">pulse_if_expression_is_false</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the controller sends a negative pulse to the connected actuators.</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p>Given the object has a property <code class="docutils literal notranslate"><span class="pre">coins</span></code> equal to 30:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">coins</span> <span class="o">&gt;</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>returns <code class="docutils literal notranslate"><span class="pre">True</span></code> (the controller sends a positive pulse to the connected actuators).</p>
+<p>Given the object has:</p>
+<ul class="simple">
+<li><p>A sensor called <code class="docutils literal notranslate"><span class="pre">Key_Inserted</span></code> equal to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>A property named <code class="docutils literal notranslate"><span class="pre">Fuel</span></code> equal to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Key_Inserted</span> <span class="n">AND</span> <span class="n">Fuel</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Will return <code class="docutils literal notranslate"><span class="pre">False</span></code> (the controller sends a negative pulse to the connected actuators).</p>
+<p>This is the same as doing:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Key_Inserted</span> <span class="n">AND</span> <span class="n">Fuel</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Instead, you could do:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">Key_Inserted</span> <span class="n">AND</span> <span class="n">Fuel</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to return a positive pulse when <code class="docutils literal notranslate"><span class="pre">Key_Inserted</span> <span class="pre">AND</span> <span class="pre">Fuel</span></code> returns False.</p>
+<p>You can also do:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">((</span><span class="n">Key_Inserted</span> <span class="n">AND</span> <span class="n">Fuel</span><span class="p">)</span> <span class="n">OR</span> <span class="p">(</span><span class="n">coins</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">),</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This expression returns True,
+hence in this case the controller sends a positive pulse to the connected actuators.</p>
+</section>
+<section id="parts-of-the-expression-controller">
+<h2>Parts of the Expression Controller<a class="headerlink" href="#parts-of-the-expression-controller" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<img alt="../../../../_images/logic-controllers-types-expression-part.png" src="../../../../_images/logic-controllers-types-expression-part.png" />
+<figcaption>
+<p><span class="caption-text">The Expression to calculate.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>See <a class="reference internal" href="../editing.html#id1"><span class="std std-ref">standard controller parts</span></a> for descriptions of the remaining options.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="xnor.html" class="btn btn-neutral float-left" title="XNOR Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="python.html" class="btn btn-neutral float-right" title="Python Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

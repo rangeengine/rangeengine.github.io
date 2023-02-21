@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actuator Editing &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Armature Actuator" href="types/armature.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Logic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sensors/index.html">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../controllers/index.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Actuators</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Actuator Editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#column-heading">Column Heading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#object-heading">Object Heading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#actuators-types">Actuators Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Logic</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Actuators</a></li>
+      <li class="breadcrumb-item active">Actuator Editing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/logic/actuators/editing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="actuator-editing">
+<h1>Actuator Editing<a class="headerlink" href="#actuator-editing" title="Permalink to this heading"></a></h1>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/logic-actuators-editing-column.png" src="../../../_images/logic-actuators-editing-column.png" />
+<figcaption>
+<p><span class="caption-text">Actuator Column with a typical actuator.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Blender actuators can be set up and edited in the right-hand column of the Logic Panel.
+This page describes the general column controls,
+and also those parameters which are common to all individual actuator types.</p>
+<p>The image shows a typical actuator column with a single example actuator.
+At the top of this column, the column heading includes menus and buttons to control which of
+all the actuators in the current Game Logic are displayed.</p>
+<section id="column-heading">
+<h2>Column Heading<a class="headerlink" href="#column-heading" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/logic-actuators-editing-column1.png" src="../../../_images/logic-actuators-editing-column1.png" />
+<figcaption>
+<p><span class="caption-text">Actuator Column heading.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The column headings contain controls to set which actuators, and
+the level of detail given, in the actuator column.
+This is very useful for hiding unnecessary actuators,
+so that the necessary ones are visible and easier to reach.
+Both these can be controlled individually.</p>
+<p class="rubric">Actuators</p>
+<dl class="simple">
+<dt>Show Objects</dt><dd><p>Expands all objects.</p>
+</dd>
+<dt>Hide Objects</dt><dd><p>Collapses all objects to just a bar with their name.</p>
+</dd>
+<dt>Show Actuators</dt><dd><p>Expands all actuators.</p>
+</dd>
+<dt>Hide Actuators</dt><dd><p>Collapses all actuators to bars with their names.</p>
+</dd>
+</dl>
+<p>It is also possible to filter which actuators are viewed using the four heading buttons:</p>
+<dl class="simple">
+<dt>Sel</dt><dd><p>Shows all actuators for selected objects.</p>
+</dd>
+<dt>Act</dt><dd><p>Shows only actuators belonging to the active object.</p>
+</dd>
+<dt>Link</dt><dd><p>Shows actuators which have a link to a controller.</p>
+</dd>
+<dt>State</dt><dd><p>Only actuators connected to a controller with active states are shown.</p>
+</dd>
+</dl>
+</section>
+<section id="object-heading">
+<h2>Object Heading<a class="headerlink" href="#object-heading" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/logic-actuators-editing-column2.png" src="../../../_images/logic-actuators-editing-column2.png" />
+<figcaption>
+<p><span class="caption-text">Actuator Object heading.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the column list, actuators are grouped by object. By default,
+actuators for every selected object appear in the list,
+but this may be modified by the column heading filters.</p>
+<p>At the head of each displayed object sensor list, two entries appear:</p>
+<dl class="simple">
+<dt>Name</dt><dd><p>The name of the object.</p>
+</dd>
+<dt>Add</dt><dd><p>When clicked, a menu appears with the available actuator types.
+Selecting an entry adds a new actuator to the object.
+See <a class="reference internal" href="index.html"><span class="doc">Actuators</span></a> for list of available actuator types.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="types/armature.html" class="btn btn-neutral float-right" title="Armature Actuator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

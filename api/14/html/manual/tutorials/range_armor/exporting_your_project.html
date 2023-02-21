@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exporting your Project &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Editors" href="../../editors/index.html" />
+    <link rel="prev" title="Range Armor" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introducing_python/index.html">Introducing Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Range Armor</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Exporting your Project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup-the-scene">Setup The Scene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saving-the-file-as-range-protected-file-rasec">Saving the file as Range Protected File (RASEC)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-range-armor">Setup Range Armor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#importing-project-dll-s-and-player">Importing Project, Dll’s and Player</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup-the-project">Setup The Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-data">Building the Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exporting">Exporting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Tutorials</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Range Armor</a></li>
+      <li class="breadcrumb-item active">Exporting your Project</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/tutorials/range_armor/exporting_your_project.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exporting-your-project">
+<h1>Exporting your Project<a class="headerlink" href="#exporting-your-project" title="Permalink to this heading"></a></h1>
+<p>This tutorial will show you how to export properly a project using Range Armor,
+Be sure to follow all the steps to prevent fails and errors.</p>
+<section id="setup-the-scene">
+<h2>Setup The Scene<a class="headerlink" href="#setup-the-scene" title="Permalink to this heading"></a></h2>
+<p>Setup the project to the right scene and camera, the standalone will start from the scene
+and camera that your project is.</p>
+<figure class="align-default">
+<img alt="../../../_images/setupscene.png" src="../../../_images/setupscene.png" />
+</figure>
+</section>
+<section id="saving-the-file-as-range-protected-file-rasec">
+<h2>Saving the file as Range Protected File (RASEC)<a class="headerlink" href="#saving-the-file-as-range-protected-file-rasec" title="Permalink to this heading"></a></h2>
+<p>RASEC is the new file security system to Range Armor (Range Engine 1.4+)</p>
+<p>After the scene is setup, you need the save your file as a .rasec</p>
+<figure class="align-default">
+<img alt="../../../_images/rasec.png" src="../../../_images/rasec.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../../_images/saverasec.png" src="../../../_images/saverasec.png" />
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To organize better your project make a new folder and save the .rasec</p>
+</div>
+</section>
+<section id="setup-range-armor">
+<h2>Setup Range Armor<a class="headerlink" href="#setup-range-armor" title="Permalink to this heading"></a></h2>
+<p>Now you need to open Range Armor, you can find it in <strong>File</strong> or <strong>Info</strong> tab</p>
+<figure class="align-default">
+<img alt="../../../_images/openrarmor.png" src="../../../_images/openrarmor.png" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In Range Engine 1.2 you need to open Range Armor in Range Engine folder
+RangeEngine/YourSystem/1.2/rangearmor/</p>
+</div>
+<p>Now you need to create a <strong>New Project</strong></p>
+<figure class="align-default">
+<img alt="../../../_images/newproject.png" src="../../../_images/newproject.png" />
+</figure>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/creatingproject.png" src="../../../_images/creatingproject.png" />
+<figcaption>
+<p><span class="caption-text">Create a name to your project folder and click <strong>OK</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Create the project inside the folder you made to the .rasec file</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t try to create the project inside <strong>Program Files</strong> folder, otherwise it will fail</p>
+</div>
+</section>
+<section id="importing-project-dll-s-and-player">
+<h2>Importing Project, Dll’s and Player<a class="headerlink" href="#importing-project-dll-s-and-player" title="Permalink to this heading"></a></h2>
+<p>Range Armor require some files inside the new project folder you create, as your project File,
+some engine dll files and folders, and the blenderplayer</p>
+<p>When you create a Range Armor project, a folder is created with 4 folders in</p>
+<figure class="align-default">
+<img alt="../../../_images/folders.png" src="../../../_images/folders.png" />
+</figure>
+<dl class="simple">
+<dt>The folders is:</dt><dd><ul class="simple">
+<li><p><strong>Data</strong> (Your Project)</p></li>
+<li><p><strong>Engine</strong> (Engine files)</p></li>
+<li><p><strong>Icons</strong> (Custom Icons)</p></li>
+<li><p><strong>Launcher</strong> (Range Armor Files)</p></li>
+</ul>
+</dd>
+</dl>
+<section id="data-folder">
+<h3>Data Folder<a class="headerlink" href="#data-folder" title="Permalink to this heading"></a></h3>
+<p>First of all, move your project .rasec to the <strong>Data</strong> folder and delete the <strong>Example Game.range</strong></p>
+<figure class="align-default">
+<img alt="../../../_images/dataproject.png" src="../../../_images/dataproject.png" />
+</figure>
+</section>
+<section id="engine-folder">
+<h3>Engine Folder<a class="headerlink" href="#engine-folder" title="Permalink to this heading"></a></h3>
+<p>Now you need to move some files from the Range Engine release version to the <strong>Engine</strong> folder</p>
+<p>In this example the project will be exported to Windows x64, so you need to copy some Range Engine
+Windows x64 files to the <strong>Engine/Windows64</strong> folder</p>
+<figure class="align-default">
+<img alt="../../../_images/enginefiles.png" src="../../../_images/enginefiles.png" />
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you want to export to Windows/Linux x86/x64 you got to have
+this Range Engine releases downloaded</p>
+</div>
+</section>
+<section id="icons-folder">
+<h3>Icons Folder<a class="headerlink" href="#icons-folder" title="Permalink to this heading"></a></h3>
+<p>In this folder you can set custom icons to your project executable file, you just got to replace
+the stardard icons in the folder for your custom icons with the same name as the default icons</p>
+<figure class="align-default">
+<img alt="../../../_images/customicons.png" src="../../../_images/customicons.png" />
+</figure>
+</section>
+</section>
+<section id="setup-the-project">
+<h2>Setup The Project<a class="headerlink" href="#setup-the-project" title="Permalink to this heading"></a></h2>
+<p>Now go in <strong>Project</strong> panel in Range Armor, and do some settings</p>
+<dl class="simple">
+<dt>You need to change:</dt><dd><ul class="simple">
+<li><p>The project name</p></li>
+<li><p>Version</p></li>
+<li><p>.rasec file path (<strong>data</strong> folder)</p></li>
+</ul>
+</dd>
+</dl>
+<figure class="align-default">
+<img alt="../../../_images/setupproject.png" src="../../../_images/setupproject.png" />
+</figure>
+</section>
+<section id="building-the-data">
+<h2>Building the Data<a class="headerlink" href="#building-the-data" title="Permalink to this heading"></a></h2>
+<p>Now you must to go in <strong>Tasks</strong> tab and compile the data</p>
+<dl class="simple">
+<dt>You must compile the data in order:</dt><dd><ul class="simple">
+<li><p>Build Data</p></li>
+<li><p>Set Icons</p></li>
+</ul>
+</dd>
+</dl>
+<figure class="align-default">
+<img alt="../../../_images/builddata.png" src="../../../_images/builddata.png" />
+</figure>
+</section>
+<section id="exporting">
+<h2>Exporting<a class="headerlink" href="#exporting" title="Permalink to this heading"></a></h2>
+<p>Finally you just have to choose the platform you want to export your project</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want export to more platforms just choose <strong>All Platforms</strong></p>
+</div>
+<figure class="align-default">
+<img alt="../../../_images/exporting.png" src="../../../_images/exporting.png" />
+</figure>
+<p>When the export gets finished you can find you project in the <strong>Release</strong> folder</p>
+<figure class="align-default">
+<img alt="../../../_images/releasefolder.png" src="../../../_images/releasefolder.png" />
+</figure>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>Now your project is properly exported, you already can publish your game in online platforms
+without problems with security and licensing!</p>
+<figure class="align-default">
+<img alt="../../../_images/rangearmorexample.gif" src="../../../_images/rangearmorexample.gif" />
+</figure>
+<dl class="simple">
+<dt>Learn more about Range Armor licensing:</dt><dd><p><a class="reference external" href="../../release/licensing.html">Licensing of Games</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Range Armor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../editors/index.html" class="btn btn-neutral float-right" title="Editors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

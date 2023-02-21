@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KX_2DFilterManager(EXP_PyObjectPlus) &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="KX_2DFilterOffScreen(EXP_Value)" href="bge.types.KX_2DFilterOffScreen.html" />
+    <link rel="prev" title="KX_2DFilter(BL_Shader)" href="bge.types.KX_2DFilter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="bge.types.html">Game Types (bge.types)</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bge.types.html#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.html#categories">Categories</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="bge.types.html#index">Index</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ActionActuator.html">BL_ActionActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureActuator.html">BL_ArmatureActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureBone.html">BL_ArmatureBone(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureChannel.html">BL_ArmatureChannel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureConstraint.html">BL_ArmatureConstraint(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_ArmatureObject.html">BL_ArmatureObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_Shader.html">BL_Shader(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.BL_Texture.html">BL_Texture(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_ListValue.html">EXP_ListValue(EXP_PropValue)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_PropValue.html">EXP_PropValue(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_PyObjectPlus.html">EXP_PyObjectPlus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.EXP_Value.html">EXP_Value(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_2DFilter.html">KX_2DFilter(BL_Shader)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">KX_2DFilterManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_2DFilterOffScreen.html">KX_2DFilterOffScreen(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ArmatureSensor.html">KX_ArmatureSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BatchGroup.html">KX_BatchGroup(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BlenderMaterial.html">KX_BlenderMaterial(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_BoundingBox.html">KX_BoundingBox(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_Camera.html">KX_Camera(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CameraActuator.html">KX_CameraActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CharacterWrapper.html">KX_CharacterWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CollisionContactPoint.html">KX_CollisionContactPoint(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CollisionSensor.html">KX_CollisionSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ConstraintActuator.html">KX_ConstraintActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ConstraintWrapper.html">KX_ConstraintWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_CubeMap.html">KX_CubeMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_FontObject.html">KX_FontObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_GameActuator.html">KX_GameActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_GameObject.html">KX_GameObject(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LibLoadStatus.html">KX_LibLoadStatus(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LightObject.html">KX_LightObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LodLevel.html">KX_LodLevel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_LodManager.html">KX_LodManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_Mesh.html">KX_Mesh(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MouseActuator.html">KX_MouseActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MouseFocusSensor.html">KX_MouseFocusSensor(SCA_MouseSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_MovementSensor.html">KX_MovementSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NavMeshObject.html">KX_NavMeshObject(KX_GameObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NearSensor.html">KX_NearSensor(KX_CollisionSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NetworkMessageActuator.html">KX_NetworkMessageActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_NetworkMessageSensor.html">KX_NetworkMessageSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ObjectActuator.html">KX_ObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_ParentActuator.html">KX_ParentActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PlanarMap.html">KX_PlanarMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PolyProxy.html">KX_PolyProxy(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_PythonComponent.html">KX_PythonComponent(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_RadarSensor.html">KX_RadarSensor(KX_NearSensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_RaySensor.html">KX_RaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_AddObjectActuator.html">KX_SCA_AddObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_DynamicActuator.html">KX_SCA_DynamicActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_EndObjectActuator.html">KX_SCA_EndObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SCA_ReplaceMeshActuator.html">KX_SCA_ReplaceMeshActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_Scene.html">KX_Scene(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SceneActuator.html">KX_SceneActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SoundActuator.html">KX_SoundActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_StateActuator.html">KX_StateActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_SteeringActuator.html">KX_SteeringActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_TextureRenderer.html">KX_TextureRenderer(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_TrackToActuator.html">KX_TrackToActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VehicleWrapper.html">KX_VehicleWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VertexProxy.html">KX_VertexProxy(SCA_IObject)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_VisibilityActuator.html">KX_VisibilityActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.KX_WorldInfo.html">KX_WorldInfo(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_2DFilterActuator.html">SCA_2DFilterActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ANDController.html">SCA_ANDController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ActuatorSensor.html">SCA_ActuatorSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_AlwaysSensor.html">SCA_AlwaysSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_DelaySensor.html">SCA_DelaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IActuator.html">SCA_IActuator(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IController.html">SCA_IController(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ILogicBrick.html">SCA_ILogicBrick(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_IObject.html">SCA_IObject(EXP_Value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ISensor.html">SCA_ISensor(SCA_ILogicBrick)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_InputEvent.html">SCA_InputEvent(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_JoystickSensor.html">SCA_JoystickSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_KeyboardSensor.html">SCA_KeyboardSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_MouseSensor.html">SCA_MouseSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_NANDController.html">SCA_NANDController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_NORController.html">SCA_NORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_ORController.html">SCA_ORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PropertyActuator.html">SCA_PropertyActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PropertySensor.html">SCA_PropertySensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonController.html">SCA_PythonController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonJoystick.html">SCA_PythonJoystick(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonKeyboard.html">SCA_PythonKeyboard(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_PythonMouse.html">SCA_PythonMouse(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_RandomActuator.html">SCA_RandomActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_RandomSensor.html">SCA_RandomSensor(SCA_ISensor)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_VibrationActuator.html">SCA_VibrationActuator(SCA_IActuator)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_XNORController.html">SCA_XNORController(SCA_IController)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bge.types.SCA_XORController.html">SCA_XORController(SCA_IController)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bge.logic.html">Game Logic (bge.logic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.render.html">Rasterizer (bge.render)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.texture.html">Video Texture (bge.texture)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.events.html">Game Keys (bge.events)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.constraints.html">Physics Constraints (bge.constraints)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.app.html">Application Data (bge.app)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="bge.html">Range Game Engine Modules (bge)</a></li>
+          <li class="breadcrumb-item"><a href="bge.types.html">Game Types (bge.types)</a></li>
+      <li class="breadcrumb-item active">KX_2DFilterManager(EXP_PyObjectPlus)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/bge.types.KX_2DFilterManager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kx-2dfiltermanager-exp-pyobjectplus">
+<h1>KX_2DFilterManager(EXP_PyObjectPlus)<a class="headerlink" href="#kx-2dfiltermanager-exp-pyobjectplus" title="Permalink to this heading"></a></h1>
+<p>base class — <a class="reference internal" href="bge.types.EXP_PyObjectPlus.html#EXP_PyObjectPlus" title="EXP_PyObjectPlus"><code class="xref py py-class docutils literal notranslate"><span class="pre">EXP_PyObjectPlus</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="KX_2DFilterManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KX_2DFilterManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EXP_PyObjectPlus</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager" title="Permalink to this definition"></a></dt>
+<dd><p>2D filter manager used to add, remove and find filters in a scene.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.addFilter">
+<span class="sig-name descname"><span class="pre">addFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fragmentProgram</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.addFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Add a filter to the pass index <code class="xref py py-data docutils literal notranslate"><span class="pre">index</span></code>, type <code class="xref py py-data docutils literal notranslate"><span class="pre">type</span></code> and fragment program if custom filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>integer</em>) – The filter pass index.</p></li>
+<li><p><strong>type</strong> (<em>integer</em>) – <p>The filter type, one of:</p>
+<ul>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_BLUR" title="bge.logic.RAS_2DFILTER_BLUR"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_BLUR</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_DILATION" title="bge.logic.RAS_2DFILTER_DILATION"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_DILATION</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_EROSION" title="bge.logic.RAS_2DFILTER_EROSION"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_EROSION</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_SHARPEN" title="bge.logic.RAS_2DFILTER_SHARPEN"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_SHARPEN</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_LAPLACIAN" title="bge.logic.RAS_2DFILTER_LAPLACIAN"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_LAPLACIAN</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_PREWITT" title="bge.logic.RAS_2DFILTER_PREWITT"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_PREWITT</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_SOBEL" title="bge.logic.RAS_2DFILTER_SOBEL"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_SOBEL</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_GRAYSCALE" title="bge.logic.RAS_2DFILTER_GRAYSCALE"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_GRAYSCALE</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_SEPIA" title="bge.logic.RAS_2DFILTER_SEPIA"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_SEPIA</span></code></a></p></li>
+<li><p><a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_CUSTOMFILTER" title="bge.logic.RAS_2DFILTER_CUSTOMFILTER"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_CUSTOMFILTER</span></code></a></p></li>
+</ul>
+</p></li>
+<li><p><strong>fragmentProgram</strong> (<em>string</em>) – The filter shader fragment program.
+Used only if <code class="xref py py-data docutils literal notranslate"><span class="pre">type</span></code> is <a class="reference internal" href="bge.logic.html#bge.logic.RAS_2DFILTER_CUSTOMFILTER" title="bge.logic.RAS_2DFILTER_CUSTOMFILTER"><code class="xref py py-data docutils literal notranslate"><span class="pre">bge.logic.RAS_2DFILTER_CUSTOMFILTER</span></code></a>, if empty or not specified the filter is created without shader, waiting call to <a class="reference internal" href="bge.types.BL_Shader.html#BL_Shader.setSourceList" title="BL_Shader.setSourceList"><code class="xref py py-data docutils literal notranslate"><span class="pre">BL_Shader.setSourceList</span></code></a>. (optional)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The 2D Filter.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="bge.types.KX_2DFilter.html#KX_2DFilter" title="KX_2DFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_2DFilter</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.removeFilter">
+<span class="sig-name descname"><span class="pre">removeFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.removeFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Remove filter to the pass index <code class="xref py py-data docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>integer</em>) – The filter pass index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.getFilter">
+<span class="sig-name descname"><span class="pre">getFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.getFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Return filter to the pass index <code class="xref py py-data docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Warning</dt>
+<dd class="field-odd"><p>If the 2D Filter is added with a <a class="reference internal" href="bge.types.SCA_2DFilterActuator.html#SCA_2DFilterActuator" title="SCA_2DFilterActuator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SCA_2DFilterActuator</span></code></a>, the filter will
+be available only after the 2D Filter program is linked. The python script to get the filter
+has to be executed one frame later. A delay sensor can be used.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>index</strong> (<em>integer</em>) – The filter pass index.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The filter in the specified pass index or None.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="bge.types.KX_2DFilter.html#KX_2DFilter" title="KX_2DFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">KX_2DFilter</span></code></a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bge.types.KX_2DFilter.html" class="btn btn-neutral float-left" title="KX_2DFilter(BL_Shader)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bge.types.KX_2DFilterOffScreen.html" class="btn btn-neutral float-right" title="KX_2DFilterOffScreen(EXP_Value)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

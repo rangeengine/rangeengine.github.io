@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio System (aud) &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Math Types &amp; Utilities (mathutils)" href="mathutils.html" />
+    <link rel="prev" title="Application Data (bge.app)" href="bge.app.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Audio System (aud)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-sound-playback">Basic Sound Playback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aud.device"><code class="docutils literal notranslate"><span class="pre">device()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device">Device</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aud.Device"><code class="docutils literal notranslate"><span class="pre">Device</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.lock"><code class="docutils literal notranslate"><span class="pre">Device.lock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.play"><code class="docutils literal notranslate"><span class="pre">Device.play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.stopAll"><code class="docutils literal notranslate"><span class="pre">Device.stopAll()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.unlock"><code class="docutils literal notranslate"><span class="pre">Device.unlock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.channels"><code class="docutils literal notranslate"><span class="pre">Device.channels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.distance_model"><code class="docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.doppler_factor"><code class="docutils literal notranslate"><span class="pre">Device.doppler_factor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.format"><code class="docutils literal notranslate"><span class="pre">Device.format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.listener_location"><code class="docutils literal notranslate"><span class="pre">Device.listener_location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.listener_orientation"><code class="docutils literal notranslate"><span class="pre">Device.listener_orientation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.listener_velocity"><code class="docutils literal notranslate"><span class="pre">Device.listener_velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.rate"><code class="docutils literal notranslate"><span class="pre">Device.rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.speed_of_sound"><code class="docutils literal notranslate"><span class="pre">Device.speed_of_sound</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Device.volume"><code class="docutils literal notranslate"><span class="pre">Device.volume</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#factory">Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aud.Factory"><code class="docutils literal notranslate"><span class="pre">Factory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.file"><code class="docutils literal notranslate"><span class="pre">Factory.file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.sine"><code class="docutils literal notranslate"><span class="pre">Factory.sine()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.buffer"><code class="docutils literal notranslate"><span class="pre">Factory.buffer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.delay"><code class="docutils literal notranslate"><span class="pre">Factory.delay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.fadein"><code class="docutils literal notranslate"><span class="pre">Factory.fadein()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.fadeout"><code class="docutils literal notranslate"><span class="pre">Factory.fadeout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.filter"><code class="docutils literal notranslate"><span class="pre">Factory.filter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.highpass"><code class="docutils literal notranslate"><span class="pre">Factory.highpass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.join"><code class="docutils literal notranslate"><span class="pre">Factory.join()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.limit"><code class="docutils literal notranslate"><span class="pre">Factory.limit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.loop"><code class="docutils literal notranslate"><span class="pre">Factory.loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.lowpass"><code class="docutils literal notranslate"><span class="pre">Factory.lowpass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.mix"><code class="docutils literal notranslate"><span class="pre">Factory.mix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.pingpong"><code class="docutils literal notranslate"><span class="pre">Factory.pingpong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.pitch"><code class="docutils literal notranslate"><span class="pre">Factory.pitch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.reverse"><code class="docutils literal notranslate"><span class="pre">Factory.reverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.square"><code class="docutils literal notranslate"><span class="pre">Factory.square()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Factory.volume"><code class="docutils literal notranslate"><span class="pre">Factory.volume()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#handle">Handle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aud.Handle"><code class="docutils literal notranslate"><span class="pre">Handle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.pause"><code class="docutils literal notranslate"><span class="pre">Handle.pause()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.resume"><code class="docutils literal notranslate"><span class="pre">Handle.resume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.stop"><code class="docutils literal notranslate"><span class="pre">Handle.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.attenuation"><code class="docutils literal notranslate"><span class="pre">Handle.attenuation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.cone_angle_inner"><code class="docutils literal notranslate"><span class="pre">Handle.cone_angle_inner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.cone_angle_outer"><code class="docutils literal notranslate"><span class="pre">Handle.cone_angle_outer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.cone_volume_outer"><code class="docutils literal notranslate"><span class="pre">Handle.cone_volume_outer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.distance_maximum"><code class="docutils literal notranslate"><span class="pre">Handle.distance_maximum</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.distance_reference"><code class="docutils literal notranslate"><span class="pre">Handle.distance_reference</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.keep"><code class="docutils literal notranslate"><span class="pre">Handle.keep</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.location"><code class="docutils literal notranslate"><span class="pre">Handle.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.loop_count"><code class="docutils literal notranslate"><span class="pre">Handle.loop_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.orientation"><code class="docutils literal notranslate"><span class="pre">Handle.orientation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.pitch"><code class="docutils literal notranslate"><span class="pre">Handle.pitch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.position"><code class="docutils literal notranslate"><span class="pre">Handle.position</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.relative"><code class="docutils literal notranslate"><span class="pre">Handle.relative</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.status"><code class="docutils literal notranslate"><span class="pre">Handle.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.velocity"><code class="docutils literal notranslate"><span class="pre">Handle.velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.volume"><code class="docutils literal notranslate"><span class="pre">Handle.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.volume_maximum"><code class="docutils literal notranslate"><span class="pre">Handle.volume_maximum</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aud.Handle.volume_minimum"><code class="docutils literal notranslate"><span class="pre">Handle.volume_minimum</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#constants">Constants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DEVICE_JACK"><code class="docutils literal notranslate"><span class="pre">AUD_DEVICE_JACK</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DEVICE_NULL"><code class="docutils literal notranslate"><span class="pre">AUD_DEVICE_NULL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DEVICE_OPENAL"><code class="docutils literal notranslate"><span class="pre">AUD_DEVICE_OPENAL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DEVICE_SDL"><code class="docutils literal notranslate"><span class="pre">AUD_DEVICE_SDL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_EXPONENT"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_EXPONENT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_EXPONENT_CLAMPED"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_EXPONENT_CLAMPED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_INVALID"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_INVALID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_INVERSE"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_INVERSE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_INVERSE_CLAMPED"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_INVERSE_CLAMPED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_LINEAR"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_LINEAR</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_DISTANCE_MODEL_LINEAR_CLAMPED"><code class="docutils literal notranslate"><span class="pre">AUD_DISTANCE_MODEL_LINEAR_CLAMPED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_FLOAT32"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_FLOAT32</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_FLOAT64"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_FLOAT64</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_INVALID"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_INVALID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_S16"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_S16</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_S24"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_S24</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_S32"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_S32</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_FORMAT_U8"><code class="docutils literal notranslate"><span class="pre">AUD_FORMAT_U8</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_STATUS_INVALID"><code class="docutils literal notranslate"><span class="pre">AUD_STATUS_INVALID</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_STATUS_PAUSED"><code class="docutils literal notranslate"><span class="pre">AUD_STATUS_PAUSED</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_STATUS_PLAYING"><code class="docutils literal notranslate"><span class="pre">AUD_STATUS_PLAYING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aud.AUD_STATUS_STOPPED"><code class="docutils literal notranslate"><span class="pre">AUD_STATUS_STOPPED</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Audio System (aud)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/aud.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-aud">
+<span id="audio-system-aud"></span><h1>Audio System (aud)<a class="headerlink" href="#module-aud" title="Permalink to this heading"></a></h1>
+<p>This module provides access to the audaspace audio library.</p>
+<section id="basic-sound-playback">
+<h2>Basic Sound Playback<a class="headerlink" href="#basic-sound-playback" title="Permalink to this heading"></a></h2>
+<p>This script shows how to use the classes: <a class="reference internal" href="#aud.Device" title="aud.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>, <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> and
+<a class="reference internal" href="#aud.Handle" title="aud.Handle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handle</span></code></a>.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Basic Sound Playback</span>
+<span class="sd">++++++++++++++++++++</span>
+
+<span class="sd">This script shows how to use the classes: :class:`Device`, :class:`Factory` and</span>
+<span class="sd">:class:`Handle`.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">aud</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">aud</span><span class="o">.</span><span class="n">device</span><span class="p">()</span>
+<span class="c1"># load sound file (it can be a video file with audio)</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">aud</span><span class="o">.</span><span class="n">Factory</span><span class="p">(</span><span class="s1">&#39;music.ogg&#39;</span><span class="p">)</span>
+
+<span class="c1"># play the audio, this return a handle to control play/pause</span>
+<span class="n">handle</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="c1"># if the audio is not too big and will be used often you can buffer it</span>
+<span class="n">factory_buffered</span> <span class="o">=</span> <span class="n">aud</span><span class="o">.</span><span class="n">Factory</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+<span class="n">handle_buffered</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">factory_buffered</span><span class="p">)</span>
+
+<span class="c1"># stop the sounds (otherwise they play until their ends)</span>
+<span class="n">handle</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="n">handle_buffered</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.device">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.device" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Returns the application’s <a class="reference internal" href="#aud.Device" title="aud.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>The application’s <a class="reference internal" href="#aud.Device" title="aud.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a>.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p><a class="reference internal" href="#aud.Device" title="aud.Device"><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></a></p>
+</dd>
+</dl>
+</section>
+<section id="device">
+<h2>Device<a class="headerlink" href="#device" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aud.Device">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">Device</span></span><a class="headerlink" href="#aud.Device" title="Permalink to this definition"></a></dt>
+<dd><p>Device objects represent an audio output backend like OpenAL or SDL, but might also represent a file output or RAM buffer output.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Device.lock">
+<span class="sig-name descname"><span class="pre">lock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Device.lock" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Locks the device so that it’s guaranteed, that no samples are read from the streams until <a class="reference internal" href="#aud.Device.unlock" title="aud.Device.unlock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unlock()</span></code></a> is called.
+This is useful if you want to do start/stop/pause/resume some sounds at the same time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The device has to be unlocked as often as locked to be able to continue playback.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure the time between locking and unlocking is as short as possible to avoid clicks.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Device.play">
+<span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Device.play" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Plays a factory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factory</strong> (<a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a>) – The factory to play.</p></li>
+<li><p><strong>keep</strong> (<em>bool</em>) – See <a class="reference internal" href="#aud.Handle.keep" title="aud.Handle.keep"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Handle.keep</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The playback handle with which playback can be controlled with.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Handle" title="aud.Handle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Handle</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Device.stopAll">
+<span class="sig-name descname"><span class="pre">stopAll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Device.stopAll" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Stops all playing and paused sounds.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Device.unlock">
+<span class="sig-name descname"><span class="pre">unlock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Device.unlock" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Unlocks the device after a lock call, see <a class="reference internal" href="#aud.Device.lock" title="aud.Device.lock"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lock()</span></code></a> for details.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.channels">
+<span class="sig-name descname"><span class="pre">channels</span></span><a class="headerlink" href="#aud.Device.channels" title="Permalink to this definition"></a></dt>
+<dd><p>The channel count of the device.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.distance_model">
+<span class="sig-name descname"><span class="pre">distance_model</span></span><a class="headerlink" href="#aud.Device.distance_model" title="Permalink to this definition"></a></dt>
+<dd><p>The distance model of the device.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><cite>OpenAL documentation &lt;https://www.openal.org/documentation&gt;</cite></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.doppler_factor">
+<span class="sig-name descname"><span class="pre">doppler_factor</span></span><a class="headerlink" href="#aud.Device.doppler_factor" title="Permalink to this definition"></a></dt>
+<dd><p>The doppler factor of the device.
+This factor is a scaling factor for the velocity vectors in doppler calculation. So a value bigger than 1 will exaggerate the effect as it raises the velocity.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.format">
+<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#aud.Device.format" title="Permalink to this definition"></a></dt>
+<dd><p>The native sample format of the device.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.listener_location">
+<span class="sig-name descname"><span class="pre">listener_location</span></span><a class="headerlink" href="#aud.Device.listener_location" title="Permalink to this definition"></a></dt>
+<dd><p>The listeners’s location in 3D space, a 3D tuple of floats.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.listener_orientation">
+<span class="sig-name descname"><span class="pre">listener_orientation</span></span><a class="headerlink" href="#aud.Device.listener_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>The listener’s orientation in 3D space as quaternion, a 4 float tuple.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.listener_velocity">
+<span class="sig-name descname"><span class="pre">listener_velocity</span></span><a class="headerlink" href="#aud.Device.listener_velocity" title="Permalink to this definition"></a></dt>
+<dd><p>The listener’s velocity in 3D space, a 3D tuple of floats.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><a class="headerlink" href="#aud.Device.rate" title="Permalink to this definition"></a></dt>
+<dd><p>The sampling rate of the device in Hz.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.speed_of_sound">
+<span class="sig-name descname"><span class="pre">speed_of_sound</span></span><a class="headerlink" href="#aud.Device.speed_of_sound" title="Permalink to this definition"></a></dt>
+<dd><p>The speed of sound of the device.
+The speed of sound in air is typically 343.3 m/s.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Device.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#aud.Device.volume" title="Permalink to this definition"></a></dt>
+<dd><p>The overall volume of the device.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="factory">
+<h2>Factory<a class="headerlink" href="#factory" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aud.Factory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">Factory</span></span><a class="headerlink" href="#aud.Factory" title="Permalink to this definition"></a></dt>
+<dd><p>Factory objects are immutable and represent a sound that can be played simultaneously multiple times. They are called factories because they create reader objects internally that are used for playback.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.file">
+<span class="sig-name descname"><span class="pre">file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.file" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Creates a factory object of a sound file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>string</em>) – Path of the file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the file doesn’t exist or can’t be read you will not get an exception immediately, but when you try to start playback of that factory.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.sine">
+<span class="sig-name descname"><span class="pre">sine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">48000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.sine" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Creates a sine factory which plays a sine wave.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequency</strong> (<em>float</em>) – The frequency of the sine wave in Hz.</p></li>
+<li><p><strong>rate</strong> (<em>int</em>) – The sampling rate in Hz. It’s recommended to set this value to the playback device’s samling rate to avoid resamping.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.buffer">
+<span class="sig-name descname"><span class="pre">buffer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.buffer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Buffers a factory into RAM.
+This saves CPU usage needed for decoding and file access if the underlying factory reads from a file on the harddisk, but it consumes a lot of memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only known-length factories can be buffered.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Raw PCM data needs a lot of space, only buffer short factories.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.delay">
+<span class="sig-name descname"><span class="pre">delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.delay" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Delays by playing adding silence in front of the other factory’s data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>float</em>) – How many seconds of silence should be added before the factory.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.fadein">
+<span class="sig-name descname"><span class="pre">fadein</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.fadein" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Fades a factory in by raising the volume linearly in the given time interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – Time in seconds when the fading should start.</p></li>
+<li><p><strong>length</strong> (<em>float</em>) – Time in seconds how long the fading should last.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before the fade starts it plays silence.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.fadeout">
+<span class="sig-name descname"><span class="pre">fadeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.fadeout" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Fades a factory in by lowering the volume linearly in the given time interval.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – Time in seconds when the fading should start.</p></li>
+<li><p><strong>length</strong> (<em>float</em>) – Time in seconds how long the fading should last.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After the fade this factory plays silence, so that the length of the factory is not altered.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.filter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Filters a factory with the supplied IIR filter coefficients.
+Without the second parameter you’ll get a FIR filter.
+If the first value of the a sequence is 0 it will be set to 1 automatically.
+If the first value of the a sequence is neither 0 nor 1, all filter coefficients will be scaled by this value so that it is 1 in the end, you don’t have to scale yourself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>b</strong> (<em>sequence</em><em> of </em><em>float</em>) – The nominator filter coefficients.</p></li>
+<li><p><strong>a</strong> (<em>sequence</em><em> of </em><em>float</em>) – The denominator filter coefficients.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.highpass">
+<span class="sig-name descname"><span class="pre">highpass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.highpass" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Creates a second order highpass filter based on the transfer function H(s) = s^2 / (s^2 + s/Q + 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequency</strong> (<em>float</em>) – The cut off trequency of the highpass.</p></li>
+<li><p><strong>Q</strong> (<em>float</em>) – Q factor of the lowpass.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.join" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Plays two factories in sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>factory</strong> (<a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a>) – The factory to play second.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The two factories have to have the same specifications (channels and samplerate).</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.limit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Limits a factory within a specific start and end time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – Start time in seconds.</p></li>
+<li><p><strong>end</strong> (<em>float</em>) – End time in seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.loop">
+<span class="sig-name descname"><span class="pre">loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.loop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Loops a factory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>integer</em>) – How often the factory should be looped. Negative values mean endlessly.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a filter function, you might consider using <a class="reference internal" href="#aud.Handle.loop_count" title="aud.Handle.loop_count"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Handle.loop_count</span></code></a> instead.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.lowpass">
+<span class="sig-name descname"><span class="pre">lowpass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frequency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.lowpass" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Creates a second order lowpass filter based on the transfer function H(s) = 1 / (s^2 + s/Q + 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequency</strong> (<em>float</em>) – The cut off trequency of the lowpass.</p></li>
+<li><p><strong>Q</strong> (<em>float</em>) – Q factor of the lowpass.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.mix">
+<span class="sig-name descname"><span class="pre">mix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.mix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Mixes two factories.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>factory</strong> (<a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a>) – The factory to mix over the other.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The two factories have to have the same specifications (channels and samplerate).</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.pingpong">
+<span class="sig-name descname"><span class="pre">pingpong</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.pingpong" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Plays a factory forward and then backward.
+This is like joining a factory with its reverse.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.pitch">
+<span class="sig-name descname"><span class="pre">pitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.pitch" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Changes the pitch of a factory with a specific factor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>factor</strong> (<em>float</em>) – The factor to change the pitch with.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is done by changing the sample rate of the underlying factory, which has to be an integer, so the factor value rounded and the factor may not be 100 % accurate.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a filter function, you might consider using <a class="reference internal" href="#aud.Handle.pitch" title="aud.Handle.pitch"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Handle.pitch</span></code></a> instead.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.reverse">
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.reverse" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Plays a factory reversed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The factory has to have a finite length and has to be seekable. It’s recommended to use this only with factories    with fast and accurate seeking, which is not true for encoded audio files, such ones should be buffered using <a class="reference internal" href="#aud.Factory.buffer" title="aud.Factory.buffer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">buffer()</span></code></a> before being played reversed.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If seeking is not accurate in the underlying factory you’ll likely hear skips/jumps/cracks.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.square">
+<span class="sig-name descname"><span class="pre">square</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.square" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Makes a square wave out of an audio wave by setting all samples with a amplitude &gt;= threshold to 1, all &lt;= -threshold to -1 and all between to 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>threshold</strong> (<em>float</em>) – Threshold value over which an amplitude counts non-zero.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Factory.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aud.Factory.volume" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Changes the volume of a factory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>volume</strong> (<em>float</em>) – The new volume..</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The created <a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#aud.Factory" title="aud.Factory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Factory</span></code></a></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Should be in the range [0, 1] to avoid clipping.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a filter function, you might consider using <a class="reference internal" href="#aud.Handle.volume" title="aud.Handle.volume"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Handle.volume</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="handle">
+<h2>Handle<a class="headerlink" href="#handle" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aud.Handle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">Handle</span></span><a class="headerlink" href="#aud.Handle" title="Permalink to this definition"></a></dt>
+<dd><p>Handle objects are playback handles that can be used to control playback of a sound. If a sound is played back multiple times then there are as many handles.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Handle.pause">
+<span class="sig-name descname"><span class="pre">pause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Handle.pause" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Pauses playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether the action succeeded.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Handle.resume">
+<span class="sig-name descname"><span class="pre">resume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Handle.resume" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Resumes playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether the action succeeded.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="aud.Handle.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aud.Handle.stop" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<p>Stops playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Whether the action succeeded.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This makes the handle invalid.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.attenuation">
+<span class="sig-name descname"><span class="pre">attenuation</span></span><a class="headerlink" href="#aud.Handle.attenuation" title="Permalink to this definition"></a></dt>
+<dd><p>This factor is used for distance based attenuation of the source.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Device.distance_model" title="aud.Device.distance_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.cone_angle_inner">
+<span class="sig-name descname"><span class="pre">cone_angle_inner</span></span><a class="headerlink" href="#aud.Handle.cone_angle_inner" title="Permalink to this definition"></a></dt>
+<dd><p>The opening angle of the inner cone of the source. If the cone values of a source are set there are two (audible) cones with the apex at the <a class="reference internal" href="#aud.Handle.location" title="aud.Handle.location"><code class="xref py py-attr docutils literal notranslate"><span class="pre">location</span></code></a> of the source and with infinite height, heading in the direction of the source’s <a class="reference internal" href="#aud.Handle.orientation" title="aud.Handle.orientation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">orientation</span></code></a>.
+In the inner cone the volume is normal. Outside the outer cone the volume will be <a class="reference internal" href="#aud.Handle.cone_volume_outer" title="aud.Handle.cone_volume_outer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cone_volume_outer</span></code></a> and in the area between the volume will be interpolated linearly.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.cone_angle_outer">
+<span class="sig-name descname"><span class="pre">cone_angle_outer</span></span><a class="headerlink" href="#aud.Handle.cone_angle_outer" title="Permalink to this definition"></a></dt>
+<dd><p>The opening angle of the outer cone of the source.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Handle.cone_angle_inner" title="aud.Handle.cone_angle_inner"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cone_angle_inner</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.cone_volume_outer">
+<span class="sig-name descname"><span class="pre">cone_volume_outer</span></span><a class="headerlink" href="#aud.Handle.cone_volume_outer" title="Permalink to this definition"></a></dt>
+<dd><p>The volume outside the outer cone of the source.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Handle.cone_angle_inner" title="aud.Handle.cone_angle_inner"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cone_angle_inner</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.distance_maximum">
+<span class="sig-name descname"><span class="pre">distance_maximum</span></span><a class="headerlink" href="#aud.Handle.distance_maximum" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum distance of the source.
+If the listener is further away the source volume will be 0.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Device.distance_model" title="aud.Device.distance_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.distance_reference">
+<span class="sig-name descname"><span class="pre">distance_reference</span></span><a class="headerlink" href="#aud.Handle.distance_reference" title="Permalink to this definition"></a></dt>
+<dd><p>The reference distance of the source.
+At this distance the volume will be exactly <a class="reference internal" href="#aud.Handle.volume" title="aud.Handle.volume"><code class="xref py py-attr docutils literal notranslate"><span class="pre">volume</span></code></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Device.distance_model" title="aud.Device.distance_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.keep">
+<span class="sig-name descname"><span class="pre">keep</span></span><a class="headerlink" href="#aud.Handle.keep" title="Permalink to this definition"></a></dt>
+<dd><p>Whether the sound should be kept paused in the device when its end is reached.
+This can be used to seek the sound to some position and start playback again.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If this is set to true and you forget stopping this equals a memory leak as the handle exists until the device is destroyed.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.location">
+<span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#aud.Handle.location" title="Permalink to this definition"></a></dt>
+<dd><p>The source’s location in 3D space, a 3D tuple of floats.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.loop_count">
+<span class="sig-name descname"><span class="pre">loop_count</span></span><a class="headerlink" href="#aud.Handle.loop_count" title="Permalink to this definition"></a></dt>
+<dd><p>The (remaining) loop count of the sound. A negative value indicates infinity.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#aud.Handle.orientation" title="Permalink to this definition"></a></dt>
+<dd><p>The source’s orientation in 3D space as quaternion, a 4 float tuple.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.pitch">
+<span class="sig-name descname"><span class="pre">pitch</span></span><a class="headerlink" href="#aud.Handle.pitch" title="Permalink to this definition"></a></dt>
+<dd><p>The pitch of the sound.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.position">
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#aud.Handle.position" title="Permalink to this definition"></a></dt>
+<dd><p>The playback position of the sound in seconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.relative">
+<span class="sig-name descname"><span class="pre">relative</span></span><a class="headerlink" href="#aud.Handle.relative" title="Permalink to this definition"></a></dt>
+<dd><p>Whether the source’s location, velocity and orientation is relative or absolute to the listener.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#aud.Handle.status" title="Permalink to this definition"></a></dt>
+<dd><p>Whether the sound is playing, paused or stopped (=invalid).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.velocity">
+<span class="sig-name descname"><span class="pre">velocity</span></span><a class="headerlink" href="#aud.Handle.velocity" title="Permalink to this definition"></a></dt>
+<dd><p>The source’s velocity in 3D space, a 3D tuple of floats.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#aud.Handle.volume" title="Permalink to this definition"></a></dt>
+<dd><p>The volume of the sound.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.volume_maximum">
+<span class="sig-name descname"><span class="pre">volume_maximum</span></span><a class="headerlink" href="#aud.Handle.volume_maximum" title="Permalink to this definition"></a></dt>
+<dd><p>The maximum volume of the source.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Device.distance_model" title="aud.Device.distance_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="aud.Handle.volume_minimum">
+<span class="sig-name descname"><span class="pre">volume_minimum</span></span><a class="headerlink" href="#aud.Handle.volume_minimum" title="Permalink to this definition"></a></dt>
+<dd><p>The minimum volume of the source.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#aud.Device.distance_model" title="aud.Device.distance_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Device.distance_model</span></code></a></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aud.error">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#aud.error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DEVICE_JACK">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DEVICE_JACK</span></span><a class="headerlink" href="#aud.AUD_DEVICE_JACK" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 3</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DEVICE_NULL">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DEVICE_NULL</span></span><a class="headerlink" href="#aud.AUD_DEVICE_NULL" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 0</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DEVICE_OPENAL">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DEVICE_OPENAL</span></span><a class="headerlink" href="#aud.AUD_DEVICE_OPENAL" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 1</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DEVICE_SDL">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DEVICE_SDL</span></span><a class="headerlink" href="#aud.AUD_DEVICE_SDL" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 2</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_EXPONENT">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_EXPONENT</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_EXPONENT" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 5</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_EXPONENT_CLAMPED">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_EXPONENT_CLAMPED</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_EXPONENT_CLAMPED" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 6</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_INVALID">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_INVALID</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_INVALID" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 0</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_INVERSE">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_INVERSE</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_INVERSE" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 1</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_INVERSE_CLAMPED">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_INVERSE_CLAMPED</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_INVERSE_CLAMPED" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 2</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_LINEAR">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_LINEAR</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_LINEAR" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 3</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_DISTANCE_MODEL_LINEAR_CLAMPED">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_DISTANCE_MODEL_LINEAR_CLAMPED</span></span><a class="headerlink" href="#aud.AUD_DISTANCE_MODEL_LINEAR_CLAMPED" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 4</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_FLOAT32">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_FLOAT32</span></span><a class="headerlink" href="#aud.AUD_FORMAT_FLOAT32" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 36</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_FLOAT64">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_FLOAT64</span></span><a class="headerlink" href="#aud.AUD_FORMAT_FLOAT64" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 40</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_INVALID">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_INVALID</span></span><a class="headerlink" href="#aud.AUD_FORMAT_INVALID" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 0</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_S16">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_S16</span></span><a class="headerlink" href="#aud.AUD_FORMAT_S16" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 18</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_S24">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_S24</span></span><a class="headerlink" href="#aud.AUD_FORMAT_S24" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 19</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_S32">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_S32</span></span><a class="headerlink" href="#aud.AUD_FORMAT_S32" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 20</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_FORMAT_U8">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_FORMAT_U8</span></span><a class="headerlink" href="#aud.AUD_FORMAT_U8" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 1</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_STATUS_INVALID">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_STATUS_INVALID</span></span><a class="headerlink" href="#aud.AUD_STATUS_INVALID" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 0</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_STATUS_PAUSED">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_STATUS_PAUSED</span></span><a class="headerlink" href="#aud.AUD_STATUS_PAUSED" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 2</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_STATUS_PLAYING">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_STATUS_PLAYING</span></span><a class="headerlink" href="#aud.AUD_STATUS_PLAYING" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 1</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="aud.AUD_STATUS_STOPPED">
+<span class="sig-prename descclassname"><span class="pre">aud.</span></span><span class="sig-name descname"><span class="pre">AUD_STATUS_STOPPED</span></span><a class="headerlink" href="#aud.AUD_STATUS_STOPPED" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 3</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bge.app.html" class="btn btn-neutral float-left" title="Application Data (bge.app)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mathutils.html" class="btn btn-neutral float-right" title="Math Types &amp; Utilities (mathutils)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

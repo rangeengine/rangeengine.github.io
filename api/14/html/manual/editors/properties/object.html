@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Constraints" href="constraints.html" />
+    <link rel="prev" title="World" href="world.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#name">Name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#culling-bounding-volume">Culling Bounding Volume</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activity-culling">Activity Culling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#levels-of-detail">Levels of Detail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transform-and-delta-transform">Transform and Delta Transform</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relations">Relations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relations-extras">Relations Extras</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#display">Display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplication">Duplication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editors</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Properties Editor</a></li>
+      <li class="breadcrumb-item active">Object</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/object.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="object">
+<h1>Object<a class="headerlink" href="#object" title="Permalink to this heading"></a></h1>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/editors-properties-object.png" src="../../../_images/editors-properties-object.png" />
+<figcaption>
+<p><span class="caption-text">Object tab in Properties Editor.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <strong>Object</strong> tab from <a class="reference internal" href="index.html"><span class="doc">Properties Editor</span></a>
+exposes settings and properties related to the current object. These properties and
+settings can be position, rotation, level of detail, group options and so on. For more
+detailed info about this tab, see
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/index.html">Object properties</a>
+in Blender Manual.</p>
+<section id="name">
+<span id="editors-properties-object-object-name"></span><h2>Name<a class="headerlink" href="#name" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/editors-properties-object-name.png" src="../../../_images/editors-properties-object-name.png" />
+<figcaption>
+<p><span class="caption-text">Object’s name field in Object tab.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The object’s name will identify the object in most cases, specially in fields inside the
+Blender editors. In UPBGE, if two identical objects are added in game (for example, with
+an Add Object logic or instanced through a group), both objects will have the same name,
+differently from Blender which appends a number in a repeating object, so be aware that
+retrieving an object through its name may not work sometimes.
+Prefer using <strong>Game Properties</strong>, instead.</p>
+</section>
+<section id="culling-bounding-volume">
+<span id="editors-properties-object-culling-bounding-volume"></span><h2>Culling Bounding Volume<a class="headerlink" href="#culling-bounding-volume" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Predefined Bound</dt><dd><p>Predefined mesh bounding volume used when Auto Update Bound is disabled.</p>
+</dd>
+</dl>
+</section>
+<section id="activity-culling">
+<span id="editors-properties-object-activity-culling"></span><h2>Activity Culling<a class="headerlink" href="#activity-culling" title="Permalink to this heading"></a></h2>
+<p>UPBGE’s <strong>Activity Culling</strong> feature allows to disable object’s physics and logic based
+on the distance to the nearest camera. This allows better performance by not processing
+objects which are too far away.</p>
+<dl>
+<dt>Physics</dt><dd><p>Suspend physics of this object by its distance to nearest camera.</p>
+<dl class="simple">
+<dt>Physics Radius</dt><dd><p>Distance to begin suspend physics of this object</p>
+</dd>
+</dl>
+</dd>
+<dt>Logic</dt><dd><p>Suspend logic and animation of this object by its distance to nearest camera.</p>
+<dl class="simple">
+<dt>Logic Radius</dt><dd><p>Distance to begin suspend logic and animation of this object</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="levels-of-detail">
+<span id="editors-properties-object-lod"></span><h2>Levels of Detail<a class="headerlink" href="#levels-of-detail" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-levels_of_detail.png" src="../../../_images/editors-properties-object-levels_of_detail.png" />
+</figure>
+<p>When creating visual assets it is often desirable to have a high amount of detail in the
+asset for up close viewing. However, this high amount of detail is wasted if the object
+is viewed from a distance, and brings down the scene’s performance. To solve this, the
+asset can be swapped out at certain viewing distances. This is commonly referred to as
+a level of detail system. Each visual step of the asset is known as a level of detail.
+Levels of detail are most appropriate to use when you have a large scene where certain
+objects can be viewed both up close and from a distance.</p>
+<dl class="simple">
+<dt>Distance Factor</dt><dd><p>The factor applied to distance computed in LoD.</p>
+</dd>
+<dt>Add</dt><dd><p>Add a level of detail to this object</p>
+</dd>
+</dl>
+<section id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/editors-properties-object-levels_of_detail-tools.png" src="../../../_images/editors-properties-object-levels_of_detail-tools.png" />
+<figcaption>
+<p><span class="caption-text">Tools dropdown menu in Levels of Detail panel.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Some tools for making levels of detail easier to manage and create can be found from
+the select menu next to the add button in the Levels of Detail panel.</p>
+<dl>
+<dt>Set By Name</dt><dd><p>Searches the scene for specifically named objects and attempts to set them up as
+levels of detail on the currently selected object. The selected object must be the
+base level of detail (e.g. LOD0). This can be useful to quickly setup levels of
+detail on imported assets. In order to make use of this tool, your naming must be
+consistent, and each level must be prefixed or suffixed with “lodx” where x is the
+level that object is intended for. The case on “lod” must be consistent across all
+objects. Below are some example names that the tool will recognize.</p>
+<ul class="simple">
+<li><p>LOD0_Box, LOD1_Box, LOD2_Box</p></li>
+<li><p>Box.lod0, Box.lod1, Box.lod2</p></li>
+<li><p>LoD0box, LoD1box, LoD2box</p></li>
+</ul>
+</dd>
+<dt>Generate</dt><dd><p>This tool generates and sets up levels of details based on the selected object.
+Generation is done using the Decimate Modifier. Generation does not apply the
+modifier to allow further changing the settings. Generated objects are automatically
+named based on the level they are generated for. Below are some settings for the
+operator.</p>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-levels_of_detail-generation.png" src="../../../_images/editors-properties-object-levels_of_detail-generation.png" />
+</figure>
+<dl class="simple">
+<dt>Count</dt><dd><p>The number of levels desired after generation. This operator creates Count-1 new
+objects.</p>
+</dd>
+<dt>Target Size</dt><dd><p>The ratio setting for the Decimate Modifier on the last level of detail. The ratio
+settings for the other levels are determined by linear interpolation.</p>
+</dd>
+<dt>Package into Group</dt><dd><p>With this setting enabled the operator performs some extra tasks to make the asset
+ready for easy linking into a new file. The base object and all of its levels of
+detail are placed into a group based on the base object’s name. Levels other than
+the base are hidden for both the viewport and rendering. This simplifies the
+appearance of the system and does not affect the appearance of the base object.
+Finally, all levels are parented to the base object to remove clutter from the
+Outliner.</p>
+</dd>
+</dl>
+</dd>
+<dt>Clear All</dt><dd><p>Clears the level of detail settings from the current object.</p>
+</dd>
+</dl>
+</section>
+<section id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h3>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-levels_of_detail-settings.png" src="../../../_images/editors-properties-object-levels_of_detail-settings.png" />
+</figure>
+<p>Level of detail settings can be found in the Object settings when the renderer is set to
+Blender Game. In the Levels of Detail panel is a button to add a new level of detail to
+the current object. The settings for each level of detail are displayed in its own box.
+The exception to this is the base level of detail. This is automatically setup as the
+current object with a distance setting of 0. To remove a level of detail, click on the X
+button in the top right corner of the box of the level to be removed.</p>
+<dl class="simple">
+<dt>Object</dt><dd><p>The object to use for this level of detail.</p>
+</dd>
+<dt>Distance</dt><dd><p>The distance at which this level of detail becomes visible.</p>
+</dd>
+<dt>Use Mesh</dt><dd><p>When this option is enabled, the mesh from the level of detail object is used until a
+lower level of detail overrides it.</p>
+</dd>
+<dt>Use Material</dt><dd><p>When this option is enabled, the material from the level of detail object is used
+until a lower level of detail overrides it.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="transform-and-delta-transform">
+<span id="editors-properties-object-transforms"></span><h2>Transform and Delta Transform<a class="headerlink" href="#transform-and-delta-transform" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id4">
+<img alt="../../../_images/editors-properties-object-transforms.png" src="../../../_images/editors-properties-object-transforms.png" />
+<figcaption>
+<p><span class="caption-text">Object’s transform panels in Object tab.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <strong>Transform</strong> panel exposes the position, rotation and scale properties of the
+object, and the <strong>Delta Transform</strong> panel increments additional transformation values
+to <strong>Transform</strong> values. Note that these properties behave according to the
+object’s parent transform properties. However, this explanation is just a base to
+understand how the transformation values work in UPBGE. More info about the <strong>Transform</strong>
+panel can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/transforms.html">Transform Properties</a>.</p>
+<p>In UPBGE there are two types of transformation values for the object: the <em>World</em> and
+the <em>Local</em> properties. The <em>World</em> values are the transformation values relative to the
+center of the world, and the <em>Local</em> values are the transformation values relative to the
+object’s parent object. For example:</p>
+<ul class="simple">
+<li><p>An object with a <em>World Position</em> of <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> is literally at the center of the world.</p></li>
+<li><p>An object with a <em>Local Position</em> of <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> is at the same position of its parent, even if its parent is not at the center of the world.</p></li>
+</ul>
+<p>Be aware that, if the object doesn’t have a parent, the <em>Local</em> values behave the same as
+the <em>World</em> values.</p>
+<p>Technically, with the given information, the <strong>Transform</strong> panel works the same as the
+<em>Local</em> transform values, and the <strong>Delta Transform</strong> panel values are added to the
+<em>World</em> values of the object at game start.</p>
+</section>
+<section id="relations">
+<span id="editors-properties-object-relations"></span><h2>Relations<a class="headerlink" href="#relations" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-relations.png" src="../../../_images/editors-properties-object-relations.png" />
+</figure>
+<p>Exposes values of relations of current object to other objects, scene, etc. For detailed
+info about object relations, see
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/relations/index.html">Object Relations</a>.</p>
+<dl class="simple">
+<dt>Layers</dt><dd><p>The layers which the object is on the scene, multiple can be selected. The behavior is
+similar to Blender’s layers, as layers can keep the object hidden / shown or some
+actions can be applied only to objects in a specific layer (as lamps and shadows).
+Also, only objects in hidden layers can be added through logic. Detailed info about
+layers can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/relations/layers.html">Layers</a>.</p>
+</dd>
+<dt>Parent</dt><dd><p>The parent object of the current one. While the current object have a parent, its
+transformation values will be inherited from the parent. A parent may have multiple
+children, but the reverse is not true. The parenting behavior changes according to
+the selected mode in dropdown menu. Detailed info about parenting can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/relations/parents.html">Parenting Objects</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="relations-extras">
+<span id="editors-properties-object-relations-extras"></span><h2>Relations Extras<a class="headerlink" href="#relations-extras" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-relations_extras.png" src="../../../_images/editors-properties-object-relations_extras.png" />
+</figure>
+<p>Exposes some extra settings about object’s relationship. Detailed info about relations
+extras can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/relations/extras.html">Relations Extras</a>.</p>
+<dl>
+<dt>Slow Parent</dt><dd><p>Creates a delay in parent relationship. Useful to easily smooth movement for character
+cameras, for example.</p>
+<dl class="simple">
+<dt>Offset</dt><dd><p>The ammount of delay in Slow Parent.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="groups">
+<span id="editors-properties-object-groups"></span><h2>Groups<a class="headerlink" href="#groups" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-groups.png" src="../../../_images/editors-properties-object-groups.png" />
+</figure>
+<p>Groups have multiple uses in Blender, but in UPBGE its main use is to allow creating
+maintainable libraries for games through the use of
+<a class="reference internal" href="#editors-properties-object-duplication"><span class="std std-ref">dupli group instances</span></a>.
+Once one or several objects are added to a group, instances of this group can be added to
+the scene, and editing the original objects edits all the instances automatically in
+Blender. Detailed info about groups can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/relations/groups.html">Groups</a>.</p>
+</section>
+<section id="display">
+<span id="editors-properties-object-display"></span><h2>Display<a class="headerlink" href="#display" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-display.png" src="../../../_images/editors-properties-object-display.png" />
+</figure>
+<p>These settings (except for <em>Object Color</em>) don’t affect the current object in UPBGE, only
+does in <strong>3D Viewport</strong>. The exception, <em>Object Color</em>, can be used in game as value in
+material nodes, Python and material’s <em>Object Color</em> option. Detailed info about the
+<strong>Display</strong> panel can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/display.html">Display</a>.</p>
+</section>
+<section id="duplication">
+<span id="editors-properties-object-duplication"></span><h2>Duplication<a class="headerlink" href="#duplication" title="Permalink to this heading"></a></h2>
+<figure class="align-default">
+<img alt="../../../_images/editors-properties-object-duplication.png" src="../../../_images/editors-properties-object-duplication.png" />
+</figure>
+<p>Exposes several duplication modes, but the useful one in UPBGE is <em>Group</em>. When a group
+is selected in the dropdown menu, a group is instanced in the current object. By default,
+only empties are used in order to instance groups, but any kind of object can do it as
+well. More about dupli group instances uses in UPBGE on
+<a class="reference internal" href="#editors-properties-object-groups"><span class="std std-ref">Groups</span></a>. Detailed info about the
+dupli group feature can be found at
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/editors/3dview/object/properties/duplication/dupligroup.html">DupliGroup</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="world.html" class="btn btn-neutral float-left" title="World" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="constraints.html" class="btn btn-neutral float-right" title="Constraints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

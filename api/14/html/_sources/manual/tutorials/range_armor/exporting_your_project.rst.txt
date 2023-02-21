@@ -1,0 +1,160 @@
+======================
+Exporting your Project
+======================
+
+This tutorial will show you how to export properly a project using Range Armor,
+Be sure to follow all the steps to prevent fails and errors.
+
+---------------
+Setup The Scene
+---------------
+
+Setup the project to the right scene and camera, the standalone will start from the scene
+and camera that your project is.
+
+.. figure:: /manual/tutorials/range_armor/img/setupscene.png
+
+-----------------------------------------------
+Saving the file as Range Protected File (RASEC)
+-----------------------------------------------
+
+RASEC is the new file security system to Range Armor (Range Engine 1.4+)
+
+After the scene is setup, you need the save your file as a .rasec
+
+.. figure:: /manual/tutorials/range_armor/img/rasec.png
+
+.. figure:: /manual/tutorials/range_armor/img/saverasec.png
+
+.. tip::
+
+   To organize better your project make a new folder and save the .rasec
+
+-----------------
+Setup Range Armor
+-----------------
+
+Now you need to open Range Armor, you can find it in **File** or **Info** tab
+
+.. figure:: /manual/tutorials/range_armor/img/openrarmor.png
+
+.. warning::
+
+   In Range Engine 1.2 you need to open Range Armor in Range Engine folder
+   RangeEngine/YourSystem/1.2/rangearmor/
+
+Now you need to create a **New Project**
+
+.. figure:: /manual/tutorials/range_armor/img/newproject.png
+
+.. figure:: /manual/tutorials/range_armor/img/creatingproject.png
+
+   Create a name to your project folder and click **OK**
+
+.. tip::
+
+   Create the project inside the folder you made to the .rasec file
+
+.. warning::
+
+   Don't try to create the project inside **Program Files** folder, otherwise it will fail
+
+-----------------------------------
+Importing Project, Dll's and Player
+-----------------------------------
+
+Range Armor require some files inside the new project folder you create, as your project File,
+some engine dll files and folders, and the blenderplayer
+
+When you create a Range Armor project, a folder is created with 4 folders in
+
+.. figure:: /manual/tutorials/range_armor/img/folders.png
+
+The folders is:
+   - **Data** (Your Project)
+   - **Engine** (Engine files)
+   - **Icons** (Custom Icons)
+   - **Launcher** (Range Armor Files)
+
+Data Folder
+-----------
+
+First of all, move your project .rasec to the **Data** folder and delete the **Example Game.range**
+
+.. figure:: /manual/tutorials/range_armor/img/dataproject.png
+
+Engine Folder
+-------------
+
+Now you need to move some files from the Range Engine release version to the **Engine** folder
+
+In this example the project will be exported to Windows x64, so you need to copy some Range Engine
+Windows x64 files to the **Engine/Windows64** folder
+
+.. figure:: /manual/tutorials/range_armor/img/enginefiles.png
+
+.. warning::
+
+   If you want to export to Windows/Linux x86/x64 you got to have 
+   this Range Engine releases downloaded
+
+Icons Folder
+-------------
+
+In this folder you can set custom icons to your project executable file, you just got to replace
+the stardard icons in the folder for your custom icons with the same name as the default icons
+
+.. figure:: /manual/tutorials/range_armor/img/customicons.png
+
+-----------------
+Setup The Project
+-----------------
+
+Now go in **Project** panel in Range Armor, and do some settings
+
+You need to change:
+   - The project name
+   - Version
+   - .rasec file path (**data** folder)
+
+.. figure:: /manual/tutorials/range_armor/img/setupproject.png
+
+-----------------
+Building the Data
+-----------------
+
+Now you must to go in **Tasks** tab and compile the data
+
+You must compile the data in order:
+   - Build Data
+   - Set Icons
+
+.. figure:: /manual/tutorials/range_armor/img/builddata.png
+
+---------
+Exporting
+---------
+
+Finally you just have to choose the platform you want to export your project
+
+.. tip::
+
+   If you want export to more platforms just choose **All Platforms**
+
+.. figure:: /manual/tutorials/range_armor/img/exporting.png
+
+When the export gets finished you can find you project in the **Release** folder
+
+.. figure:: /manual/tutorials/range_armor/img/releasefolder.png
+
+----------
+Conclusion
+----------
+
+Now your project is properly exported, you already can publish your game in online platforms 
+without problems with security and licensing!
+
+.. figure:: /manual/tutorials/range_armor/img/rangearmorexample.gif
+
+Learn more about Range Armor licensing:
+   `Licensing of Games <../../release/licensing.html>`__

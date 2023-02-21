@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constraints &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Texture" href="texture.html" />
+    <link rel="prev" title="Object" href="object.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Constraints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rigid-body-joint-constraint">Rigid Body Joint Constraint</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editors</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Properties Editor</a></li>
+      <li class="breadcrumb-item active">Constraints</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/constraints.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="constraints">
+<h1>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading"></a></h1>
+<p>The <strong>Constraints</strong> tab in <strong>Properties</strong> editor exposes constraints setups for current
+object.</p>
+<p>Currently in UPBGE only the <em>Rigid Body Joint</em> constraint can be set through the user
+interface.</p>
+<section id="rigid-body-joint-constraint">
+<h2>Rigid Body Joint Constraint<a class="headerlink" href="#rigid-body-joint-constraint" title="Permalink to this heading"></a></h2>
+<p>The <em>Rigid Body Joint</em> constraint is very special, it is used by the physics part of
+UPBGE to simulate a joint between its owner and its target. It offers four joint types:
+hinge type, ball-and-socket type, cone-twist type, and generic six-<abbr title="Degrees of Freedom">DoF</abbr> type.</p>
+<p>The joint point and axes are defined and fixed relative to the owner. The target moves as
+if it were stuck to the center point of a stick, the other end of the stick rotating
+around the joint/pivot point.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order for this constraint to work properly, both objects
+(so the owner and the target object) need to have <em>Collision Bounds</em> enabled.</p>
+</div>
+<section id="options">
+<h3>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h3>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/editors-properties-constraints-rigid_body_joint.png" src="../../../_images/editors-properties-constraints-rigid_body_joint.png" />
+<figcaption>
+<p><span class="caption-text">Rigid Body Joint panel.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<dl>
+<dt>Target</dt><dd><p>Object used to select the constraints target, and is not functional (red state) when
+it has none.</p>
+</dd>
+<dt>Pivot Type</dt><dd><dl>
+<dt>Ball</dt><dd><p>Works like an ideal ball-and-socket joint, i.e. allows rotations around all axes
+like a shoulder joint.</p>
+</dd>
+<dt>Hinge</dt><dd><p>Works in one plane, like an elbow: the owner and target can only rotate around the
+X axis of the pivot (joint point).</p>
+<dl>
+<dt>Limits</dt><dd><figure class="align-default">
+<img alt="../../../_images/editors-properties-constraints-rigid_body_joint-hinge.png" src="../../../_images/editors-properties-constraints-rigid_body_joint-hinge.png" />
+</figure>
+<p>Angular limits for the X axis.</p>
+</dd>
+</dl>
+</dd>
+<dt>Cone Twist</dt><dd><p>Similar to <em>Ball</em>, this is a point-to-point joint with limits added for the cone
+and twist axis.</p>
+<dl>
+<dt>Limits</dt><dd><figure class="align-default">
+<img alt="../../../_images/editors-properties-constraints-rigid_body_joint-cone_twist.png" src="../../../_images/editors-properties-constraints-rigid_body_joint-cone_twist.png" />
+</figure>
+<p>Angular limits.</p>
+</dd>
+</dl>
+</dd>
+<dt>Generic 6DOF</dt><dd><p>Works like the <em>Ball</em> option, but the target is no longer constrained at a fixed
+distance from the pivot point, by default (hence the six degrees of freedom:
+rotation and translation around/along the three axes). In fact, there is no longer
+a joint by default, with this option, but it enables additional settings which
+allow you to restrict some of these DoF:</p>
+<dl>
+<dt>Limits</dt><dd><figure class="align-default">
+<img alt="../../../_images/editors-properties-constraints-rigid_body_joint-generic_6_dof.png" src="../../../_images/editors-properties-constraints-rigid_body_joint-generic_6_dof.png" />
+</figure>
+<p>Linear and angular limits for a given axis (of the pivot) in Blender Units and
+degrees respectively.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>Child Object</dt><dd><p>Normally, leave this blank. You can reset it to blank by right-clicking and selecting
+Reset to Default Value.</p>
+</dd>
+<dt>Linked Collision</dt><dd><p>When enabled, this will disable the collision detection between the owner and the
+target (in the physical engine of the BGE).</p>
+</dd>
+<dt>Display Pivot</dt><dd><p>When enabled, this will draw the pivot of the joint in the 3D Views. The most useful,
+especially with the <em>Generic 6DOF</em> joint type!</p>
+</dd>
+<dt>Use Breaking</dt><dd><p>Allow breaking of constraint on high impulse.</p>
+<dl class="simple">
+<dt>Breaking Impulse Threshold</dt><dd><p>Break constraint on impulse greater than threshold.</p>
+</dd>
+</dl>
+</dd>
+<dt>Pivot</dt><dd><p>These three numeric fields allow you to relocate the pivot point, <em>in the owner’s space</em>.</p>
+</dd>
+<dt>Axis</dt><dd><p>These three numeric fields allow you to rotate the pivot point, <em>in the owner’s space</em>.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="object.html" class="btn btn-neutral float-left" title="Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="texture.html" class="btn btn-neutral float-right" title="Texture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

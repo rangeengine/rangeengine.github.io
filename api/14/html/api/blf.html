@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Font Drawing (blf) &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GPU functions (gpu)" href="gpu.html" />
+    <link rel="prev" title="OpenGL Wrapper (bgl)" href="bgl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Font Drawing (blf)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#text-example">Text Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#blf.aspect"><code class="docutils literal notranslate"><span class="pre">aspect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.blur"><code class="docutils literal notranslate"><span class="pre">blur()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.clipping"><code class="docutils literal notranslate"><span class="pre">clipping()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.dimensions"><code class="docutils literal notranslate"><span class="pre">dimensions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.disable"><code class="docutils literal notranslate"><span class="pre">disable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.draw"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.enable"><code class="docutils literal notranslate"><span class="pre">enable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.load"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.position"><code class="docutils literal notranslate"><span class="pre">position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.rotation"><code class="docutils literal notranslate"><span class="pre">rotation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.shadow"><code class="docutils literal notranslate"><span class="pre">shadow()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.shadow_offset"><code class="docutils literal notranslate"><span class="pre">shadow_offset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.size"><code class="docutils literal notranslate"><span class="pre">size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.unload"><code class="docutils literal notranslate"><span class="pre">unload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.word_wrap"><code class="docutils literal notranslate"><span class="pre">word_wrap()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#constants">Constants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#blf.CLIPPING"><code class="docutils literal notranslate"><span class="pre">CLIPPING</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.KERNING_DEFAULT"><code class="docutils literal notranslate"><span class="pre">KERNING_DEFAULT</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.ROTATION"><code class="docutils literal notranslate"><span class="pre">ROTATION</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.SHADOW"><code class="docutils literal notranslate"><span class="pre">SHADOW</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blf.WORD_WRAP"><code class="docutils literal notranslate"><span class="pre">WORD_WRAP</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Font Drawing (blf)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/blf.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-blf">
+<span id="font-drawing-blf"></span><h1>Font Drawing (blf)<a class="headerlink" href="#module-blf" title="Permalink to this heading"></a></h1>
+<p>This module provides access to blenders text drawing functions.</p>
+<section id="text-example">
+<h2>Text Example<a class="headerlink" href="#text-example" title="Permalink to this heading"></a></h2>
+<p>Blender Game Engine example of using the blf module. For this module to work we
+need to use the OpenGL wrapper <a class="reference internal" href="bgl.html#module-bgl" title="bgl"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl</span></code></a> as well.</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Hello World Text Example</span>
+<span class="sd">++++++++++++++++++++++++</span>
+
+<span class="sd">Example of using the blf module. For this module to work we</span>
+<span class="sd">need to use the OpenGL wrapper :class:`~bgl` as well.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># import stand alone modules</span>
+<span class="kn">import</span> <span class="nn">bgl</span>
+<span class="kn">import</span> <span class="nn">blf</span>
+<span class="kn">import</span> <span class="nn">bpy</span>
+
+<span class="n">font_info</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;font_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;handler&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;init function - runs once&quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="c1"># Create a new font object, use external ttf file.</span>
+    <span class="n">font_path</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;//Zeyada.ttf&#39;</span><span class="p">)</span>
+    <span class="c1"># Store the font indice - to use later.</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">font_path</span><span class="p">):</span>
+        <span class="n">font_info</span><span class="p">[</span><span class="s2">&quot;font_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">blf</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">font_path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Default font.</span>
+        <span class="n">font_info</span><span class="p">[</span><span class="s2">&quot;font_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># set the font drawing routine to run every frame</span>
+    <span class="n">font_info</span><span class="p">[</span><span class="s2">&quot;handler&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bpy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">SpaceView3D</span><span class="o">.</span><span class="n">draw_handler_add</span><span class="p">(</span>
+        <span class="n">draw_callback_px</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="s1">&#39;WINDOW&#39;</span><span class="p">,</span> <span class="s1">&#39;POST_PIXEL&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">draw_callback_px</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Draw on the viewports&quot;&quot;&quot;</span>
+    <span class="c1"># BLF drawing routine</span>
+    <span class="n">font_id</span> <span class="o">=</span> <span class="n">font_info</span><span class="p">[</span><span class="s2">&quot;font_id&quot;</span><span class="p">]</span>
+    <span class="n">blf</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">font_id</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">blf</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">font_id</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span>
+    <span class="n">blf</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">font_id</span><span class="p">,</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.aspect">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">aspect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aspect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.aspect" title="Permalink to this definition"></a></dt>
+<dd><p>Set the aspect for drawing text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>aspect</strong> (<em>float</em>) – The aspect ratio for text drawing to use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.blur">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">blur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.blur" title="Permalink to this definition"></a></dt>
+<dd><p>Set the blur radius for drawing text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>radius</strong> (<em>int</em>) – The radius for blurring text (in pixels).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.clipping">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">clipping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.clipping" title="Permalink to this definition"></a></dt>
+<dd><p>Set the clipping, enable/disable using CLIPPING.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>xmin</strong> (<em>float</em>) – Clip the drawing area by these bounds.</p></li>
+<li><p><strong>ymin</strong> (<em>float</em>) – Clip the drawing area by these bounds.</p></li>
+<li><p><strong>xmax</strong> (<em>float</em>) – Clip the drawing area by these bounds.</p></li>
+<li><p><strong>ymax</strong> (<em>float</em>) – Clip the drawing area by these bounds.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.dimensions">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.dimensions" title="Permalink to this definition"></a></dt>
+<dd><p>Return the width and height of the text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>text</strong> (<em>string</em>) – the text to draw.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the width and height of the text.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple of 2 floats</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.disable">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">disable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.disable" title="Permalink to this definition"></a></dt>
+<dd><p>Disable option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>option</strong> (<em>int</em>) – One of ROTATION, CLIPPING, SHADOW or KERNING_DEFAULT.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.draw">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draw text in the current context.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>text</strong> (<em>string</em>) – the text to draw.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.enable">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.enable" title="Permalink to this definition"></a></dt>
+<dd><p>Enable option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>option</strong> (<em>int</em>) – One of ROTATION, CLIPPING, SHADOW or KERNING_DEFAULT.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.load">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.load" title="Permalink to this definition"></a></dt>
+<dd><p>Load a new font.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>string</em>) – the filename of the font.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the new font’s fontid or -1 if there was an error.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.position">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.position" title="Permalink to this definition"></a></dt>
+<dd><p>Set the position for drawing text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – X axis position to draw the text.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Y axis position to draw the text.</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Z axis position to draw the text.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.rotation">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.rotation" title="Permalink to this definition"></a></dt>
+<dd><p>Set the text rotation angle, enable/disable using ROTATION.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>angle</strong> (<em>float</em>) – The angle for text drawing to use.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.shadow">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">shadow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.shadow" title="Permalink to this definition"></a></dt>
+<dd><p>Shadow options, enable/disable using SHADOW .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>level</strong> (<em>int</em>) – The blur level, can be 3, 5 or 0.</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – Shadow color (red channel 0.0 - 1.0).</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Shadow color (green channel 0.0 - 1.0).</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – Shadow color (blue channel 0.0 - 1.0).</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – Shadow color (alpha channel 0.0 - 1.0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.shadow_offset">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">shadow_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.shadow_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Set the offset for shadow text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – Vertical shadow offset value in pixels.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Horizontal shadow offset value in pixels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.size">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.size" title="Permalink to this definition"></a></dt>
+<dd><p>Set the size and dpi for drawing text.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – Point size of the font.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em>) – dots per inch value to use for drawing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.unload">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">unload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.unload" title="Permalink to this definition"></a></dt>
+<dd><p>Unload an existing font.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>string</em>) – the filename of the font.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="blf.word_wrap">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">word_wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fontid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#blf.word_wrap" title="Permalink to this definition"></a></dt>
+<dd><p>Set the wrap width, enable/disable using WORD_WRAP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fontid</strong> (<em>int</em>) – The id of the typeface as returned by <a class="reference internal" href="#blf.load" title="blf.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">blf.load()</span></code></a>, for default font use 0.</p></li>
+<li><p><strong>wrap_width</strong> (<em>int</em>) – The width (in pixels) to wrap words at.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="blf.CLIPPING">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">CLIPPING</span></span><a class="headerlink" href="#blf.CLIPPING" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 2</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blf.KERNING_DEFAULT">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">KERNING_DEFAULT</span></span><a class="headerlink" href="#blf.KERNING_DEFAULT" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 8</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blf.ROTATION">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">ROTATION</span></span><a class="headerlink" href="#blf.ROTATION" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 1</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blf.SHADOW">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">SHADOW</span></span><a class="headerlink" href="#blf.SHADOW" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 4</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="blf.WORD_WRAP">
+<span class="sig-prename descclassname"><span class="pre">blf.</span></span><span class="sig-name descname"><span class="pre">WORD_WRAP</span></span><a class="headerlink" href="#blf.WORD_WRAP" title="Permalink to this definition"></a></dt>
+<dd><p>constant value 128</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bgl.html" class="btn btn-neutral float-left" title="OpenGL Wrapper (bgl)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gpu.html" class="btn btn-neutral float-right" title="GPU functions (gpu)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

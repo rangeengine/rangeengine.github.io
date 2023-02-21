@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Object" href="object.html" />
+    <link rel="prev" title="Scene" href="scene.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">World</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">World</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#environment-lighting">Environment Lighting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mist">Mist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="physics.html">Physics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editors</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Properties Editor</a></li>
+      <li class="breadcrumb-item active">World</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/world.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="world">
+<h1>World<a class="headerlink" href="#world" title="Permalink to this heading"></a></h1>
+<p><strong>World</strong> settings enable you to set some basic effects which affect all scenes throughout
+your game, so giving it a feeling of unity and continuity. These include ambient light,
+depth effects (mist), etc.</p>
+<section id="id1">
+<h2>World<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/editors-properties-world-world.png" src="../../../_images/editors-properties-world-world.png" />
+<figcaption>
+<p><span class="caption-text">World tab’s World panel.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>These color settings allow you to set some general lighting effects for your game.</p>
+<dl class="simple">
+<dt>Paper Sky</dt><dd><p>Flatten blend or texture coordinates.</p>
+</dd>
+<dt>Blend Sky</dt><dd><p>Render background with natural progression from horizon to zenith.</p>
+</dd>
+<dt>Real Sky</dt><dd><p>Render background with a real horizon, relative to the camera angle.</p>
+</dd>
+<dt>Horizon Color</dt><dd><p>The RGB color at the horizon; i.e. the color and intensity of any areas in the scene
+which are not filled explicitly.</p>
+</dd>
+<dt>Zenith Color</dt><dd><p>The RGB color at the zenith.</p>
+</dd>
+<dt>Ambient Color</dt><dd><p>Ambient light mimics an overall background illumination obtained from diffusing
+surfaces. Its general color and intensity are set by these controls.</p>
+</dd>
+<dt>Exposure</dt><dd><p>Ammount of exponential color correction for light.</p>
+</dd>
+<dt>Range</dt><dd><p>The color range that will be mapped to 0-1.</p>
+</dd>
+</dl>
+</section>
+<section id="environment-lighting">
+<h2>Environment Lighting<a class="headerlink" href="#environment-lighting" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/editors-properties-world-env_lighting.png" src="../../../_images/editors-properties-world-env_lighting.png" />
+<figcaption>
+<p><span class="caption-text">World tab’s Environment Lighting panel.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Environment Light</strong> provides light coming from all directions.</p>
+<p>Light is calculated with a ray-traced method which is the same as that used by Ambient
+Occlusion. The difference is that Environment lighting takes into account the “ambient”
+parameter of the material shading settings, which indicates the amount of ambient
+light/color that that material receives.</p>
+<p>Also, you can choose the environment color source (white, sky color, sky texture) and
+the light energy.</p>
+<dl class="simple">
+<dt>Energy</dt><dd><p>Defines the strength of environment light.</p>
+</dd>
+<dt>Environment Color</dt><dd><p>Defines where the color of the environment light comes from.</p>
+</dd>
+</dl>
+<p>Using both settings simultaneously produces better global lighting. It is good for
+mimicking the sky in outdoor lighting.</p>
+</section>
+<section id="mist">
+<h2>Mist<a class="headerlink" href="#mist" title="Permalink to this heading"></a></h2>
+<figure class="align-default" id="id4">
+<img alt="../../../_images/editors-properties-world-mist.png" src="../../../_images/editors-properties-world-mist.png" />
+<figcaption>
+<p><span class="caption-text">World tab’s Mist panel.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><em>Mist</em> can greatly enhance the illusion of depth in your rendering. To create <em>Mist</em>,
+UPBGE makes objects farther away more transparent (decreasing their Alpha value) so that
+they mix more of the background color with the object color. With <em>Mist</em> enabled, the
+further the object is away from the camera the less its alpha value will be.</p>
+<dl class="simple">
+<dt>Mist</dt><dd><p>Toggles mist on and off.</p>
+</dd>
+<dt>Falloff</dt><dd><p>Sets the shape of the falloff of the mist.</p>
+</dd>
+<dt>Start</dt><dd><p>The starting distance of the mist effect, measured from the camera. No misting will
+take place for objects closer than this distance.</p>
+</dd>
+<dt>Depth</dt><dd><p>The depth at which the opacity of objects falls to zero.</p>
+</dd>
+<dt>Minimum intensity</dt><dd><p>Overall minimum intensity of the mist effect.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="scene.html" class="btn btn-neutral float-left" title="Scene" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="object.html" class="btn btn-neutral float-right" title="Object" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

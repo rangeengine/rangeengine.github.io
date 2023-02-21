@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Body Physics &mdash; Range Engine Manual latest documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Occlude Object Physics" href="physics_occluder.html" />
+    <link rel="prev" title="Rigid Body Physics" href="physics_rigid_body.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Range Engine Manual
+            <img src="../../../_static/range_logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                latest
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Editors</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Properties Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="render.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture.html">Texture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="physics.html">Physics</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="physics.html#id1">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#collision-bounds">Collision Bounds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics.html#create-obstacle">Create Obstacle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../logic/index.html">Logic Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../datablocks/index.html">Datablocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../logic/index.html">Logic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release/index.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">About</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bge.html">Range Game Engine Modules (bge)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/bgl.html">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/gpu.html">GPU functions (gpu)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Range Engine Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editors</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Properties Editor</a></li>
+          <li class="breadcrumb-item"><a href="physics.html">Physics</a></li>
+      <li class="breadcrumb-item active">Soft Body Physics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/manual/editors/properties/physics_soft_body.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="soft-body-physics">
+<h1>Soft Body Physics<a class="headerlink" href="#soft-body-physics" title="Permalink to this heading"></a></h1>
+<p>The most advanced type of object in the Game Engine.
+Also, it is the most finicky. If you are used to the fun experimentation
+that comes from playing around with the non-BGE soft body simulations (such as Cloth),
+you will probably find a frustrating lack of options and exciting results.
+Do not despair, we are here to help you get some reasonable settings.</p>
+<p>Your setup will involve making sure you have sufficient geometry in the soft body’s mesh to
+support the deformation, as well as tweaking the options.</p>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>Actor</dt><dd><p>Enables detection by Near and Radar Sensors.</p>
+</dd>
+<dt>Ghost</dt><dd><p>Disables collisions completely, similar to No Collision.</p>
+</dd>
+<dt>Invisible</dt><dd><p>Does not display, the same as setting the object to unrendered
+(such as unchecking the camera icon in the Outliner).</p>
+</dd>
+<dt>Mass</dt><dd><p>Affects the reaction due to collision between objects –
+more massive objects have more inertia. Will also affect material force fields.
+Will also change behaviors if you are using the suspension and steering portions of Bullet physics.</p>
+</dd>
+<dt>Shape Match</dt><dd><p>Upon starting the Game Engine this will record the starting shape of the mesh as the “lowest energy” state.
+This means that the edges will have tension whenever they are flexed to some other form.
+This is set to on by default,
+and in this configuration turns the object into more of a thin sheet of metal rather than a cloth.</p>
+</dd>
+<dt>Threshold</dt><dd><p><a class="reference external" href="http://www.continuousphysics.com/Bullet/BulletFull/btSoftBody_8cpp_source.html#l01566">Linearly scales the pose match</a>.</p>
+<ul class="simple">
+<li><p>A threshold of 1.0 makes it behave like <em>Shape Match</em> on with a <em>Linear Stiffness</em> of 1.0.</p></li>
+<li><p>A threshold of 0.0 makes it behave like <em>Shape Match</em> off with a <em>Linear Stiffness</em> of 0.0.</p></li>
+</ul>
+</dd>
+<dt>Welding</dt><dd><p>TODO.</p>
+</dd>
+<dt>Position Iteration</dt><dd><p>Increase the accuracy at a linearly-increasing expense of time.
+The effect is visible especially with soft bodies that fall on sharp corners,
+though this can slow down even very simple scenes.</p>
+</dd>
+<dt>Linear Stiffness</dt><dd><p>Linear stiffness of the soft body links.
+This is most evident when you have <em>Shape Match</em> off, but it is also evident with it on.</p>
+</dd>
+<dt>Friction</dt><dd><p>Dynamic friction coefficient.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Margin</dt><dd><p>Small value makes the algorithm unstable.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Bending Constraint</dt><dd><p>Enable Bending Constraints.</p>
+</dd>
+</dl>
+<dl>
+<dt>Cluster Collision</dt><dd><p>Affects Collision sensors as well as physics.</p>
+<dl class="simple">
+<dt>Rigid to Soft Body</dt><dd><p>Enable cluster collisions between rigid and soft bodies.</p>
+</dd>
+<dt>Soft to Soft Body</dt><dd><p>Enable cluster collisions among soft bodies.</p>
+</dd>
+<dt>Iterations</dt><dd><p>Number of cluster iterations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>A very important configurable in the case of soft body interactions is
+<a class="reference internal" href="world.html"><span class="doc">World Properties</span></a>
+<span class="menuselection">‣ Physics ‣ Physics Steps ‣ Substeps</span>.</p></li>
+<li><p>Surprisingly, the more vertices you have in your hit object, the less likely the soft body is to react with it.
+If you try letting it hit a Plane, it might stop, but a subdivided Grid might fail.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Soft bodies do not work with the Collision, Touch, Near, and Radar logic brick sensors.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A common practice within the non-BGE Cloth simulator is to employ
+Force Fields to animate the cloth.
+These do not work in the BGE, so you will have to figure out a way to use Python
+(or perhaps plain Logic Bricks) to apply forces to the soft body objects.</p>
+</div>
+</section>
+<section id="goal-weights">
+<h2>Goal Weights<a class="headerlink" href="#goal-weights" title="Permalink to this heading"></a></h2>
+<p>TODO. See <a class="reference external" href="https://www.blender.org/api/blender_python_api_current/bpy.ops.curve.html#bpy.ops.curve.spline_weight_set">Python API</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="physics_rigid_body.html" class="btn btn-neutral float-left" title="Rigid Body Physics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="physics_occluder.html" class="btn btn-neutral float-right" title="Occlude Object Physics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
