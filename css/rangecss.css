@@ -172,11 +172,9 @@ a.suppush:hover{
 }
 .apresentacao{
 	display: inline-flex;
-	background-color: #0a0a0aa3;
+	background-color: #0a0a0a7c;
 	border-radius: 20px;
 	padding: 20px;
-	outline-style: outset;
-	outline-color: #e22b2b80;
 }
 .downnabout{
 	margin-top: 25px;
