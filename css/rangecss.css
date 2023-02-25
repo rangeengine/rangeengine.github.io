@@ -616,6 +616,11 @@ footer{
 	max-width: 475px;
 	border-radius: 10px;
 }
+.dprelpatr{
+	max-width: 400px;
+	margin-left: 10px;
+	border-radius: 10px;
+}
 .titlesbox{
 	margin-left: 10px;
 	margin-right: 10px;
@@ -770,6 +775,9 @@ footer{
 	.funcschc{
 		max-width: 80%;
 		border-radius: 10px;
+	}
+	.dprelpatr{
+		max-width: 80%;
 	}
 	.downinfo{
 		display: grid;
