@@ -40,8 +40,8 @@ Now you need to open Range Armor, you can find it in **File** or **Info** tab
 
 .. warning::
 
-   In Range Engine 1.2 you need to open Range Armor in Range Engine folder
-   RangeEngine/YourSystem/1.2/rangearmor/
+   In Range Engine 1.2 or all Linux releases you need to open Range Armor in Range Engine 
+   folder RangeEngine/YourSystem/1.2/rangearmor/
 
 Now you need to create a **New Project**
 

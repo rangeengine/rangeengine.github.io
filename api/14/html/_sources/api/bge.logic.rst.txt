@@ -483,6 +483,18 @@ Utility functions
 
    Prints GL Extension Info into the console
 
+.. function:: GraphicsCardVendor()
+
+   Get the active graphics card vendor
+
+   :rtype: string
+
+.. function:: GraphicsCardRenderer()
+
+   Get the active graphics card name
+
+   :rtype: string
+
 .. function:: PrintMemInfo()
 
    Prints engine statistics into the console
