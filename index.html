@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Range Engine</title>
-    <meta name="description" content="Range Engine Is an Light and Powerful Game Engine and 3D Software"/>
+    <meta name="description" content="Range Engine is an Light and Powerful Game Engine and 3D Software. Where you can make your own Models, Materials, Animations, and Publish Your Game"/>
     <meta name="theme-color" content="#f00000">
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Range Engine"/>
-    <meta property="og:description" content="Range Engine Is an Light and Powerful Game Engine and 3D Software"/>
+    <meta property="og:description" content="Range Engine is an Light and Powerful Game Engine and 3D Software. Where you can make your own Models, Materials, Animations, and Publish Your Game"/>
     <meta property="og:site_name" content="Range Engine"/>
     <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
 	  <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/rangecss.css"/>
+    <link rel="stylesheet" href="/css/sliders.css"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="/js/responsivenav.js" defer></script>
@@ -30,8 +32,11 @@
     </script>
   </head>
   <body>
+    <div id="loading">
+      <div></div>
+    </div>
     <header class="header">
-      <h1 class="title"><a href="/"><img class="logo" src="/img/RGE.png" alt="RanGELogo"/></a></h1>
+      <h1 class="title"><a href="/"><img class="logo" src="/img/RangeEngineExtendedLogo.png" alt="RanGELogo"/></a></h1>
       <a class="togglebutton">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,19 +44,19 @@
       </a>
       <nav class="headerlinks">
         <ul class="heaul">
-          <li class="headerlis"><a class="healinks" href="/">Home</a></li>
-          <li class="headerlis"><a class="healinks" href="downloadpage">Download</a></li>
+          <li class="headerlis"><a class="healinks" href="/"><i class="material-symbols-outlined">Home</i> Home</a></li>
+          <li class="headerlis"><a class="healinks" href="downloadpage"><i class="material-symbols-outlined">Download</i> Download</a></li>
           <li class="dropdownh">
-            <span class="dpdhbt">News ˅</span>
+            <span class="dpdhbt">News<span class="newcirclespan"></span> <i class="material-symbols-outlined">expand_more</i></span>
             <div class="dpdhitems">
-              <a href="whatsnew">What's New</a>
-              <a href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes">Changelog</a>
+              <a href="whatsnew"><i class="material-symbols-outlined">Celebration</i> What's New</a>
+              <a href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes"><i class="material-symbols-outlined">library_books</i> Changelog</a>
             </div>
           </li>
-          <li class="headerlis"><a class="healinks" href="store">Store</a></li>
-          <li class="headerlis"><a class="healinks" href="apireleases">API</a></li>
-          <li class="headerlis"><a class="healinks" href="learnmore">Learn More</a></li>
-          <li class="headerlis"><a class="suppush" target=”_blank” href="https://www.patreon.com/rangeengine">⛨ Support</a></li>
+          <li class="headerlis"><a class="healinks" href="store"><i class="material-symbols-outlined">Store</i> Store</a></li>
+          <li class="headerlis"><a class="healinks" href="apireleases"><i class="material-symbols-outlined">library_books</i> API</a></li>
+          <li class="headerlis"><a class="healinks" href="learnmore"><i class="material-symbols-outlined">contact_support</i> Learn More</a></li>
+          <li class="headerlis"><a class="suppush" target=”_blank” href="https://www.patreon.com/rangeengine"><i class="material-symbols-outlined">health_and_safety</i> Support</a></li>
         </ul>
       </nav>
     </header>
@@ -63,83 +68,131 @@
         <div class="sobreoprojeto">
           <h2 class="splashtitsec">Experience<br>Range Engine<p class="animbar">│</p></h2>
           <p class="whatsxbge" style="text-align:left;"><b>Range Engine</b> Is an Light and Powerful Game Engine and 3D Software<br>
-          Where You Can Make Your Models, Materials, And Publish Your Game.</p>
+          Where You Can Make Your Own Models, Materials, Animations, And Publish Your Game</p>
         </div>
         <div class="downnabout" style="margin-top:80px;font-family:Roboto Condensed;">
           <ul>
-            <li class="downabout"><a style="padding: 5px 10px 5px 10px;" class="downnow" href="downloadpage">⬇ Download Now</a></li>
-            <li class="downabout"><a style="padding: 5px 10px 5px 10px;" class="knowmore" href="learnmore">🕮 Learn More</a></li>
-            <li class="downabout" style="display:block;"><a style="padding: 5px 10px 5px 10px;" class="downnow" id="to-wn" href="whatsnew">🕫 What's New</a></li>
+            <li class="downabout"><a style="padding: 5px 10px 5px 10px;" class="downnow" href="downloadpage"><i class="material-symbols-outlined">Download</i> Download Now</a></li>
+            <li class="downabout"><a style="padding: 5px 10px 5px 10px;" class="knowmore" href="learnmore"><i class="material-symbols-outlined">contact_support</i> Learn More</a></li>
+            <li class="downabout" style="display:block;"><a style="padding: 5px 10px 5px 10px;" class="downnow" id="to-wn" href="whatsnew"><i class="material-symbols-outlined">Celebration</i> What's New</a></li>
           </ul>
         </div>
       </div>
     </div>
     </section>
-    <div class="rangverarticle" style="background-color:#1a1a1a;">
-      <div class="lmarticle">
-        <img class="rangver" style="max-width:100%;" src="/img/store/RGEStore.png" alt="RanGE Store Logo"/>
-        <a href="store" class="knowmore"><strong>Try Range Engine Store<p class="whatsxbge" style="display: inline;">(WIP)</p></strong></a>
+    <div class="home-splashrange">
+      <div style="display:inline-block;">
+        <h2>A RanGE of Possibilities</h2>
+        <p>Take a look at what Range Engine is capable to do</p>
+      </div>
+      <div class="anim-arrow">
+        <i class="material-symbols-outlined" style="font-size:60px;top:0px;">keyboard_double_arrow_down</i>
       </div>
     </div>
-    <article>
-      <div class="artigos">
-        <div class="aboutxbge">
-          <img class="funcs" src="/img/modeling.PNG" alt="Modeling Natively"/>
-          <div class="articledesc">
-            <h3>Make Your Own Models Natively</h3>
-            <p class="whatsxbge">You Can <b>Make The All Assets</b> You Need To Your Project
-            <br><b>Without Leaving Range Engine.</b></p>
+    <article style="padding:0 0 10px 0;background-color:rgba(11, 11, 11, 0.7);">
+      <div class="home-article"> <!--Artigo Principal do Article-->
+        <div class="art-articles"> <!--Sub Artigos-->
+          <div class="articles-cont"> <!--Conteúdo dos Artigos-->
+            <ul class="slider">
+              <li>
+                <input type="radio" id="slide1" name="slide" checked>
+                <label for="slide1" style="top:94%;"></label>
+                <img src="/img/sliders/obejctpaint.webp" alt="Object Paint">
+              </li>
+              <li>
+                <input type="radio" id="slide2" name="slide">
+                <label for="slide2"></label>
+                <img src="/img/sliders/modeltools.png" alt="Modelling Tools"/>
+              </li>
+            </ul>
+            <div class="h-article-description">
+              <h3>Powerfull Modelling Tools</h3>
+              <p>Based on Blender, you can <b>Make All The Assets, Animations, Effects<br>
+              and Envinorments</b> you need for your project <b>Without Leaving Range Engine</b>.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="artigos">
-        <div class="aboutxbge">
-          <img class="funcs" src="/img/codelanguages.png" alt="Coding"/>
-          <div class="articledesc">
-            <h3>Code With Python Or Visual Language</h3>
-            <p class="whatsxbge">Make Scripts With <b>Python 3.10</b> or <b>Visual Language</b>,
-            <br> Or Both Together. <i>(Cython and Bricky Nodes Coming Soon)</i></p>
+        <div class="art-articles">
+          <div class="articles-cont">
+            <div class="h-article-description">
+              <h3 style="text-align:right;">Code With Python Or Visual Language</h3>
+              <p style="text-align:right;">Range Engine makes coding looks easy, you can code with <b>Python 3.10</b><br>
+              or make visual scripting with <b>Visual Language</b>, you can also use both ways<br>together! <a class="linksites" href="whatsnew"><i>(Cython and Bricky Nodes Coming Soon)</i></a></p>
+            </div>
+            <ul class="slider">
+              <li>
+                <input type="radio" id="slide4" name="slide2" checked>
+                <label for="slide4"></label>
+                <img src="/img/sliders/codelanguages.png" alt="Logic Bricks and Python"/>
+                <li>
+                  <input type="radio" id="slide5" name="slide2">
+                  <label for="slide5"></label>
+                  <img src="/img/sliders/brickynodes.jpg" alt="Bricky Nodes"/>
+                </li>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      </article>
-      <article style="padding-top:0;">
-      <div class="artigos">
-        <div class="aboutxbge">
-          <img class="funcs" src="/img/materials.PNG" alt="Make Materials"/>
-          <div class="articledesc">
-            <h3>Make Your Materials</h3>
-            <p class="whatsxbge">In Range Engine You Can Use <b>Basic Materials</b>
-            <br> Or <b>Nodes</b> To Make Your Materials.</p>
+        <div class="art-articles">
+          <div class="articles-cont">
+            <ul class="slider">
+              <li>
+                <input type="radio" id="slide7" name="slide3" checked>
+                <label for="slide7"></label>
+                <img src="/img/sliders/materials.PNG" alt="Materials"/>
+              </li>
+              <li>
+                <input type="radio" id="slide8" name="slide3">
+                <label for="slide8"></label>
+                <img src="/img/sliders/pbrmaterials.png" alt="PBR Materials">
+              </li>
+            </ul>
+            <div class="h-article-description">
+              <h3>Beautiful Materials</h3>
+              <p>Make amazing envinorments with beautiful PBR materials, you can<br>
+              use your imagination to make advanced materials with <b>Shader Nodes Editor</b>.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="artigos">
-        <div class="aboutxbge">
-          <img class="funcs" src="/img/publishgame.png" alt="Publish Your Game"/>
-          <div class="articledesc">
-            <h3>Publish Your Game</h3>
-            <p class="whatsxbge">You Can Export And Publish Your Game <b>For Free
-            <br>With no license problems!</b></p>
+        <div class="art-articles">
+          <div class="articles-cont">
+            <div class="h-article-description">
+              <h3 style="text-align:right;">Publishing Projects</h3>
+              <p style="text-align:right;">Of course you want to show to everyone the amazing work you did,<br>
+              In Range Engine you can export and publish your game with safety,<br>optimization and <b>With no Taxes and License Problems!</b></p>
+            </div>
+            <ul class="slider">
+              <li>
+                <input type="radio" id="slide10" name="slide4" checked>
+                <label style="top:97%;" for="slide10"></label>
+                <img src="/img/sliders/futureends.webp" alt="The Future Ends"/>
+              </li>
+              <li>
+                <input type="radio" id="slide11" name="slide4">
+                <label for="slide11"></label>
+                <img src="/img/sliders/rangearmor.jpg" alt="Range Armor"/>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </article>
-    <div class="learnmorearticle">
+    <div class="learnmorearticle" style="background-image:url('img/backdivs.png');background-repeat: no-repeat;background-size: cover;text-shadow: 0px 0px 10px black;">
       <div class="lmrarticle">
-        <p><strong>Want To Learn More About Range Engine?</strong></p>
-        <p class="whatsxbge">Let us show you a bit more about the project</p>
+        <p><strong>Did you like Range Engine?</strong></p>
+        <p class="whatsxbge">Become a patron! You earn early access to releases and help the project keep on</p>
       </div>
       <div>
-        <ul>
-          <li class="downabout" style="padding:0;"><a class="knowmore" style="padding: 5px 10px 5px 10px;" href="learnmore">🕮 Learn More</a></li>
+        <ul style="font-family: Roboto Condensed, sans-serif;">
+          <li class="downabout" style="padding:0 0 5px 0;"><a class="suppus" style="padding: 5px 10px 5px 10px;" href="https://www.patreon.com/rangeengine"><i class="material-symbols-outlined">health_and_safety</i> Support</a></li>
+          <li class="downabout" style="padding:0;"><a style="padding: 5px 10px 5px 10px;" class="knowmore" href="learnmore"><i class="material-symbols-outlined">contact_support</i> Learn More</a></li>
         </ul>
       </div>
     </div>
     <footer>
       <div class="footerobjs">
         <div class="spanrange">
-          <span id="no_underline" class="ftlink">&copy; <span id="copyright-year"></span> - Range Engine</span>
+          <span id="no_underline" class="ftlink">&copy; 2022 - <span id="copyright-year"></span>, Range Engine</span>
           <script>
             $(document).ready(function() {
               document.getElementById('copyright-year').appendChild(
@@ -160,5 +213,13 @@
         </div>
       </div>
     </footer>
+    <!--Page Loading Ends Here-->
+    <script>
+      var loader = document.getElementById("loading");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+    <!---->
   </body>
 </html>

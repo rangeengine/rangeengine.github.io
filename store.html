@@ -21,6 +21,9 @@
     <script src="/js/searchbar.js"></script>
   </head>
   <body class="storesec">
+    <div id="loading">
+      <div></div>
+    </div>
     <header class="header" id="heacol">
       <h1 class="title"><a href="store"><img class="logo" src="/img/store/RGEStore.png" alt="RanGE Store"/></a><a href="/" title="Range Engine Home"><img class="logo" width="35px" src="/img/store/RGEHome.png" alt="Return Homepage"/></a></h1>
       <a class="togglebutton">
@@ -141,5 +144,13 @@
         </div>
       </div>
     </footer>
+    <!--Page Loading Ends Here-->
+    <script>
+      var loader = document.getElementById("loading");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+    <!---->
   </body>
 </html>
