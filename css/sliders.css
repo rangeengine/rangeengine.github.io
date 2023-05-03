@@ -73,5 +73,6 @@
 @media (max-width: 500px){
     .slider{
         height: 200px;
+        width: 80%;
     }
 }
