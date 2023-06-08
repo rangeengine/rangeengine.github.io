@@ -1,0 +1,2127 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Scene &#8212; Range Engine Manual latest documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="World" href="world.html" />
+    <link rel="prev" title="Stereo Camera" href="render_stereo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/range_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Range Engine Manual latest documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Manual
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../introduction/index.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../introduction/briefing.html">
+     Briefing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../introduction/deeper_look.html">
+     A Deeper Look
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../introduction/compatibility_notes.html">
+     Compatibility Notes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/index.html">
+   Tutorials
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorials/getting_started/index.html">
+     Getting Started
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/getting_started/basic_concepts.html">
+       Basic Concepts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/getting_started/move_object.html">
+       Moving A Cube
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/getting_started/play_animation.html">
+       Playing An Animation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/getting_started/linked_libraries.html">
+       Using Linked Libraries In Game
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorials/introducing_python/index.html">
+     Introducing Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/introducing_python/basic_concepts.html">
+       Basic Concepts
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/introducing_python/move_object.html">
+       Moving A Cube
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/introducing_python/play_animation.html">
+       Playing An Animation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/introducing_python/group_instances.html">
+       Dealing With Group Instances
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/introducing_python/python_component.html">
+       Setting Up A Python Component
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../tutorials/range_armor/index.html">
+     Range Armor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../tutorials/range_armor/exporting_your_project.html">
+       Exporting your Project
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Editors
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Properties Editor
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="render.html">
+       Render
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="render_stereo.html">
+         Stereo Camera
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Scene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="world.html">
+       World
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="object.html">
+       Object
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="constraints.html">
+       Constraints
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="texture.html">
+       Texture
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="physics.html">
+       Physics
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_no_collision.html">
+         No Collision Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_static.html">
+         Static Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_dynamic.html">
+         Dynamic Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_rigid_body.html">
+         Rigid Body Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_soft_body.html">
+         Soft Body Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_occluder.html">
+         Occlude Object Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_sensor.html">
+         Sensor Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_navigation_mesh.html">
+         Navigation Mesh Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_character.html">
+         Character Physics
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="physics_vehicle.html">
+         Vehicle Controller Physics
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="materials.html">
+       Materials
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="data.html">
+       Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../logic/index.html">
+     Logic Editor
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic/properties.html">
+       Properties Panel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic/logic_bricks.html">
+       Logic Bricks Area
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../logic/components.html">
+       Components Panel
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../datablocks/index.html">
+   Datablocks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/armature.html">
+     Armature
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/camera.html">
+     Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/empty.html">
+     Empty
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/group.html">
+     Group
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/lamp.html">
+     Lamp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/mesh.html">
+     Mesh
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../datablocks/object.html">
+     Object
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/mesh.html">
+       Mesh
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/text.html">
+       Text
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/armature.html">
+       Armature
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/empty.html">
+       Empty
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/camera.html">
+       Camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../datablocks/lamp.html">
+       Lamp
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/text.html">
+     Text
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/image.html">
+     Image
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/library.html">
+     Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/sound.html">
+     Sound
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/action.html">
+     Action
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/material.html">
+     Material
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/scene.html">
+     Scene
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/texture.html">
+     Texture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../datablocks/world.html">
+     World
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../logic/index.html">
+   Logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../logic/introduction.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../logic/sensors/index.html">
+     Sensors
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/introduction.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/editing.html">
+       Sensor Editing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/actuator.html">
+       Actuator Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/always.html">
+       Always Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/armature.html">
+       Armature Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/collision.html">
+       Collision Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/delay.html">
+       Delay Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/joystick.html">
+       Joystick Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/keyboard.html">
+       Keyboard Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/message.html">
+       Message Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/mouse.html">
+       Mouse Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/near.html">
+       Near Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/property.html">
+       Property Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/radar.html">
+       Radar Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/random.html">
+       Random Sensor
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/sensors/types/ray.html">
+       Ray Sensor
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../logic/controllers/index.html">
+     Controllers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/introduction.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/editing.html">
+       Controller Editing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/and.html">
+       AND Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/or.html">
+       OR Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/nand.html">
+       NAND Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/nor.html">
+       NOR Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/xor.html">
+       XOR Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/xnor.html">
+       XNOR Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/expression.html">
+       Expression Controller
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/controllers/types/python.html">
+       Python Controller
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../logic/actuators/index.html">
+     Actuators
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/introduction.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/editing.html">
+       Actuator Editing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/armature.html">
+       Armature Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/action.html">
+       Action Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/camera.html">
+       Camera Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/constraint.html">
+       Constraints Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/edit_object.html">
+       Edit Object Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/filter_2d.html">
+       Filter 2D Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/game.html">
+       Game Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/message.html">
+       Message Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/mouse.html">
+       Mouse Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/motion.html">
+       Motion Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/parent.html">
+       Parent Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/property.html">
+       Property Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/random.html">
+       Random Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/scene.html">
+       Scene Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/steering.html">
+       Steering Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/sound.html">
+       Sound Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/state.html">
+       State Actuator
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../logic/actuators/types/visibility.html">
+       Visibility Actuator
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../logic/properties.html">
+     Properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../logic/states.html">
+     States
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../release/index.html">
+   Release
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../release/licensing.html">
+     Licensing of Games
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../release/performance.html">
+     Performance Considerations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../release/blender_player.html">
+     Standalone Player
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../release/release_procedure.html">
+     Release Procedure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../about/index.html">
+   About
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../about/introduction.html">
+     Introduction to the Range Manual
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../about/license.html">
+     License
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../about/whats_new.html">
+     What’s New
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  API Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api/bge.html">
+   Range Game Engine Modules (bge)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../api/bge.types.html">
+     Game Types (bge.types)
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+    <label for="toctree-checkbox-20">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ActionActuator.html">
+       BL_ActionActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ArmatureActuator.html">
+       BL_ArmatureActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ArmatureBone.html">
+       BL_ArmatureBone(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ArmatureChannel.html">
+       BL_ArmatureChannel(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ArmatureConstraint.html">
+       BL_ArmatureConstraint(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_ArmatureObject.html">
+       BL_ArmatureObject(KX_GameObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_Shader.html">
+       BL_Shader(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.BL_Texture.html">
+       BL_Texture(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.EXP_ListValue.html">
+       EXP_ListValue(EXP_PropValue)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.EXP_PropValue.html">
+       EXP_PropValue(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.EXP_PyObjectPlus.html">
+       EXP_PyObjectPlus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.EXP_Value.html">
+       EXP_Value(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_2DFilter.html">
+       KX_2DFilter(BL_Shader)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_2DFilterManager.html">
+       KX_2DFilterManager(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_2DFilterOffScreen.html">
+       KX_2DFilterOffScreen(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_ArmatureSensor.html">
+       KX_ArmatureSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_BatchGroup.html">
+       KX_BatchGroup(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_BlenderMaterial.html">
+       KX_BlenderMaterial(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_BoundingBox.html">
+       KX_BoundingBox(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_Camera.html">
+       KX_Camera(KX_GameObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_CameraActuator.html">
+       KX_CameraActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_CharacterWrapper.html">
+       KX_CharacterWrapper(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_CollisionContactPoint.html">
+       KX_CollisionContactPoint(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_CollisionSensor.html">
+       KX_CollisionSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_ConstraintActuator.html">
+       KX_ConstraintActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_ConstraintWrapper.html">
+       KX_ConstraintWrapper(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_CubeMap.html">
+       KX_CubeMap(KX_TextureRenderer)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_FontObject.html">
+       KX_FontObject(KX_GameObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_GameActuator.html">
+       KX_GameActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_GameObject.html">
+       KX_GameObject(SCA_IObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_LibLoadStatus.html">
+       KX_LibLoadStatus(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_LightObject.html">
+       KX_LightObject(KX_GameObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_LodLevel.html">
+       KX_LodLevel(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_LodManager.html">
+       KX_LodManager(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_Mesh.html">
+       KX_Mesh(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_MouseActuator.html">
+       KX_MouseActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_MouseFocusSensor.html">
+       KX_MouseFocusSensor(SCA_MouseSensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_MovementSensor.html">
+       KX_MovementSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_NavMeshObject.html">
+       KX_NavMeshObject(KX_GameObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_NearSensor.html">
+       KX_NearSensor(KX_CollisionSensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_NetworkMessageActuator.html">
+       KX_NetworkMessageActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_NetworkMessageSensor.html">
+       KX_NetworkMessageSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_ObjectActuator.html">
+       KX_ObjectActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_ParentActuator.html">
+       KX_ParentActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_PlanarMap.html">
+       KX_PlanarMap(KX_TextureRenderer)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_PolyProxy.html">
+       KX_PolyProxy(SCA_IObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_PythonComponent.html">
+       KX_PythonComponent(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_RadarSensor.html">
+       KX_RadarSensor(KX_NearSensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_RaySensor.html">
+       KX_RaySensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SCA_AddObjectActuator.html">
+       KX_SCA_AddObjectActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SCA_DynamicActuator.html">
+       KX_SCA_DynamicActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SCA_EndObjectActuator.html">
+       KX_SCA_EndObjectActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SCA_ReplaceMeshActuator.html">
+       KX_SCA_ReplaceMeshActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_Scene.html">
+       KX_Scene(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SceneActuator.html">
+       KX_SceneActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SoundActuator.html">
+       KX_SoundActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_StateActuator.html">
+       KX_StateActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_SteeringActuator.html">
+       KX_SteeringActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_TextureRenderer.html">
+       KX_TextureRenderer(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_TrackToActuator.html">
+       KX_TrackToActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_VehicleWrapper.html">
+       KX_VehicleWrapper(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_VertexProxy.html">
+       KX_VertexProxy(SCA_IObject)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_VisibilityActuator.html">
+       KX_VisibilityActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.KX_WorldInfo.html">
+       KX_WorldInfo(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_2DFilterActuator.html">
+       SCA_2DFilterActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_ANDController.html">
+       SCA_ANDController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_ActuatorSensor.html">
+       SCA_ActuatorSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_AlwaysSensor.html">
+       SCA_AlwaysSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_DelaySensor.html">
+       SCA_DelaySensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_IActuator.html">
+       SCA_IActuator(SCA_ILogicBrick)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_IController.html">
+       SCA_IController(SCA_ILogicBrick)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_ILogicBrick.html">
+       SCA_ILogicBrick(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_IObject.html">
+       SCA_IObject(EXP_Value)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_ISensor.html">
+       SCA_ISensor(SCA_ILogicBrick)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_InputEvent.html">
+       SCA_InputEvent(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_JoystickSensor.html">
+       SCA_JoystickSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_KeyboardSensor.html">
+       SCA_KeyboardSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_MouseSensor.html">
+       SCA_MouseSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_NANDController.html">
+       SCA_NANDController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_NORController.html">
+       SCA_NORController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_ORController.html">
+       SCA_ORController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PropertyActuator.html">
+       SCA_PropertyActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PropertySensor.html">
+       SCA_PropertySensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PythonController.html">
+       SCA_PythonController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PythonJoystick.html">
+       SCA_PythonJoystick(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PythonKeyboard.html">
+       SCA_PythonKeyboard(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_PythonMouse.html">
+       SCA_PythonMouse(EXP_PyObjectPlus)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_RandomActuator.html">
+       SCA_RandomActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_RandomSensor.html">
+       SCA_RandomSensor(SCA_ISensor)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_VibrationActuator.html">
+       SCA_VibrationActuator(SCA_IActuator)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_XNORController.html">
+       SCA_XNORController(SCA_IController)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../api/bge.types.SCA_XORController.html">
+       SCA_XORController(SCA_IController)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.logic.html">
+     Game Logic (bge.logic)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.render.html">
+     Rasterizer (bge.render)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.texture.html">
+     Video Texture (bge.texture)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.events.html">
+     Game Keys (bge.events)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.constraints.html">
+     Physics Constraints (bge.constraints)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/bge.app.html">
+     Application Data (bge.app)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../api/aud.html">
+   Audio System (aud)
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api/mathutils.html">
+   Math Types &amp; Utilities (mathutils)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+  <label for="toctree-checkbox-21">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/mathutils.bvhtree.html">
+     BVHTree Utilities (mathutils.bvhtree)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/mathutils.geometry.html">
+     Geometry Utilities (mathutils.geometry)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/mathutils.interpolate.html">
+     Interpolation Utilities (mathutils.interpolate)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/mathutils.kdtree.html">
+     KDTree Utilities (mathutils.kdtree)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/mathutils.noise.html">
+     Noise Utilities (mathutils.noise)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../api/bgl.html">
+   OpenGL Wrapper (bgl)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../api/blf.html">
+   Font Drawing (blf)
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../api/gpu.html">
+   GPU functions (gpu)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+  <label for="toctree-checkbox-22">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../api/gpu.offscreen.html">
+     GPU Off-Screen Buffer (gpu.offscreen)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/manual/editors/properties/scene.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physics">
+   Physics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obstacle-simulation">
+   Obstacle Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigation-mesh">
+   Navigation Mesh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#level-of-detail">
+   Level of Detail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-console">
+   Python Console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Scene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#units">
+   Units
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Scene</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#physics">
+   Physics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obstacle-simulation">
+   Obstacle Simulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigation-mesh">
+   Navigation Mesh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#level-of-detail">
+   Level of Detail
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-console">
+   Python Console
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Scene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#units">
+   Units
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="scene">
+<h1>Scene<a class="headerlink" href="#scene" title="Permalink to this headline">#</a></h1>
+<p>The <strong>Scene</strong> tab in <a class="reference internal" href="index.html"><span class="doc">Properties Editor</span></a> exposes
+options related to the current scene.</p>
+<section id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/editors-properties-scene-physics.png" src="../../../_images/editors-properties-scene-physics.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Physics panel.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <em>Physics</em> panel located in the <em>Scene</em> tab determine the type of physical rules
+that govern the current UPBGE scene, the gravity value to be used and some other options.</p>
+<dl>
+<dt>Physics Engine</dt><dd><p>Set the type of physics engine to use.</p>
+<dl class="simple">
+<dt>Bullet</dt><dd><p>The default physics engine, in active development. It handles movement and
+collision detection. The things that collide transfer momentum to the
+collided object.</p>
+</dd>
+<dt>None</dt><dd><p>No physics in use. Things are not affected by gravity and can fly about in a
+virtual space. Objects in motion stay in that motion.</p>
+</dd>
+</dl>
+</dd>
+<dt>Physics Solver</dt><dd><p>The physics constraints solver to use.</p>
+<dl class="simple">
+<dt>Sequential</dt><dd><p>Sequential physics solver, default solver.</p>
+</dd>
+<dt>NNGC</dt><dd><p>NNGC physics solver.</p>
+</dd>
+<dt>MLCP Dantzig</dt><dd><p>MLCP Dantzig physics solver.</p>
+</dd>
+<dt>MLCP Lemke</dt><dd><p>MLCP Lemke physics solver.</p>
+</dd>
+</dl>
+</dd>
+<dt>Gravity</dt><dd><p>The gravitational acceleration, m.s<sup>-2</sup> (in units of meters per squared
+second), of this world. Each object that is an actor has a mass and size slider. In
+conjunction with the frame rate, Blender uses this info to calculate how fast the
+object should accelerate downward.</p>
+</dd>
+<dt>Physics Steps</dt><dd><dl class="simple">
+<dt>Max</dt><dd><p>Sets the maximum number of physics steps per game frame if graphics slow down the
+game. Higher value allows physics to keep up with real-time.</p>
+</dd>
+<dt>Substeps</dt><dd><p>Sets the number of simulation sub-steps per physics time step. Higher value give
+better physics precision.</p>
+</dd>
+<dt>FPS</dt><dd><p>Set the nominal number of game frames per second. Physics fixed timestep = 1/fps,
+independently of actual frame rate.</p>
+</dd>
+</dl>
+</dd>
+<dt>Time Scale</dt><dd><p>Time scale to slow down or speed up animations and physics in game.</p>
+</dd>
+<dt>Logic Steps</dt><dd><dl class="simple">
+<dt>Max</dt><dd><p>Sets the maximum number of logic frame per game frame if graphics slows down the
+game, higher value allows better synchronization with physics.</p>
+</dd>
+</dl>
+</dd>
+<dt>Physics Deactivation</dt><dd><p>These settings control the threshold at which physics is deactivated. These settings
+help reducing the processing spent on Physics simulation during the game.</p>
+<dl class="simple">
+<dt>Linear Threshold</dt><dd><p>The speed limit under which a rigid body will go to sleep (stop moving) if it
+stays below the limits for a time equal or longer than the deactivation time
+(sleeping is disabled when deactivation time is set to 0).</p>
+</dd>
+<dt>Angular Threshold</dt><dd><p>Same as linear threshold, but for rotation limit (in rad/s).</p>
+</dd>
+<dt>Time</dt><dd><p>The amount of time in which the object must have motion below the thresholds for
+physics to be disabled (0.0 disables physics deactivation).</p>
+</dd>
+</dl>
+</dd>
+<dt>Culling</dt><dd><dl class="simple">
+<dt>Occlusion Culling</dt><dd><p>Use optimized Bullet DBVT tree for view frustum and occlusion culling (more
+efficient, but it can waste unnecessary CPU if the scene doesn’t have occluder
+objects).</p>
+</dd>
+<dt>Resolution</dt><dd><p>The size of the occlusion culling buffer in pixel, use higher value for better
+precision (slower). The optimized Bullet DBVT for view frustum and occlusion
+culling is activated internally by default.</p>
+</dd>
+</dl>
+</dd>
+<dt>Object Activity</dt><dd><dl class="simple">
+<dt>Activity Culling</dt><dd><p>Enable object activity culling in this scene. The culling options can be set
+individually by object on <strong>Activity Culling</strong> panel on
+<a class="reference internal" href="object.html"><span class="doc">Object tab</span></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="obstacle-simulation">
+<h2>Obstacle Simulation<a class="headerlink" href="#obstacle-simulation" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/editors-properties-scene-obstacle_simulation.png" src="../../../_images/editors-properties-scene-obstacle_simulation.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Obstacle Simulation panel.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Simulation used for obstacle avoidance in UPBGE, based on the RVO (Reciprocal Velocity
+Obstacles) principle. The aim is to prevent one or more actors colliding with obstacles.</p>
+<dl class="simple">
+<dt>Type</dt><dd><dl class="simple">
+<dt>None</dt><dd><p>Obstacle simulation is disabled, actors are not able to avoid obstacles.</p>
+</dd>
+<dt>RVO (cells)</dt><dd><p>Obstacle simulation is based on the
+<a class="reference external" href="http://gamma.cs.unc.edu/RVO/">RVO method</a> with cell sampling.</p>
+</dd>
+<dt>RVO (rays)</dt><dd><p>Obstacle simulation is based on the
+<a class="reference external" href="http://gamma.cs.unc.edu/RVO">RVO method</a> with ray sampling.</p>
+</dd>
+</dl>
+</dd>
+<dt>Level height</dt><dd><p>Max difference in heights of obstacles to enable their interaction. Used to define
+minimum margin between obstacles by height, when they are treated as those which are
+situated one above the other i.e. they does not influence to each other.</p>
+</dd>
+<dt>Visualization</dt><dd><p>Enable debug visualization for obstacle simulation.</p>
+</dd>
+</dl>
+</section>
+<section id="navigation-mesh">
+<h2>Navigation Mesh<a class="headerlink" href="#navigation-mesh" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id4">
+<img alt="../../../_images/editors-properties-scene-navigation_mesh.png" src="../../../_images/editors-properties-scene-navigation_mesh.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Navigation Mesh panel.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Rasterization</dt><dd><dl class="simple">
+<dt>Cell size</dt><dd><p>Rasterized cell size.</p>
+</dd>
+<dt>Cell height</dt><dd><p>Rasterized cell height.</p>
+</dd>
+</dl>
+</dd>
+<dt>Agent</dt><dd><dl class="simple">
+<dt>Height</dt><dd><p>Minimum height where the agent can still walk.</p>
+</dd>
+<dt>Radius</dt><dd><p>Radius of the agent.</p>
+</dd>
+<dt>Max climb</dt><dd><p>Maximum height between grid cells the agent can climb.</p>
+</dd>
+<dt>Max slope</dt><dd><p>Maximum walkable slope angle in degrees.</p>
+</dd>
+</dl>
+</dd>
+<dt>Region</dt><dd><dl class="simple">
+<dt>Min Region Size</dt><dd><p>Minimum regions size. Smaller regions will be deleted.</p>
+</dd>
+<dt>Merged Region Size</dt><dd><p>Minimum regions size. Smaller regions will be merged.</p>
+</dd>
+</dl>
+</dd>
+<dt>Partitioning</dt><dd><dl class="simple">
+<dt>Watershed</dt><dd><p>Classic Recast partitioning method generating the nicest tessellation.</p>
+</dd>
+<dt>Monotone</dt><dd><p>The fastest navmesh generation method, but may cause long thin polygons.</p>
+</dd>
+<dt>Layers</dt><dd><p>A reasonably fast method that produces better triangles than monotone partitioning.</p>
+</dd>
+</dl>
+</dd>
+<dt>Polygonization</dt><dd><dl class="simple">
+<dt>Max Edge Length</dt><dd><p>Maximum contour edge length.</p>
+</dd>
+<dt>Max Edge Error</dt><dd><p>Maximum distance error from contour to cells.</p>
+</dd>
+<dt>Vertices Per Poly</dt><dd><p>Max number of vertices per polygon.</p>
+</dd>
+</dl>
+</dd>
+<dt>Detail Mesh</dt><dd><dl class="simple">
+<dt>Sample Distance</dt><dd><p>Detail mesh sample spacing.</p>
+</dd>
+<dt>Max Sample Error</dt><dd><p>Detail mesh simplification max sample error.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="level-of-detail">
+<h2>Level of Detail<a class="headerlink" href="#level-of-detail" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id5">
+<img alt="../../../_images/editors-properties-scene-level_of_detail.png" src="../../../_images/editors-properties-scene-level_of_detail.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Level of Detail panel.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<dl>
+<dt>Hysteresis</dt><dd><p>Use LoD hysteresis settings for the current scene.</p>
+<dl class="simple">
+<dt>Slider from 0% to 100%</dt><dd><p>Minimum distance change required to transition to the previous level of detail.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+<section id="python-console">
+<h2>Python Console<a class="headerlink" href="#python-console" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id6">
+<img alt="../../../_images/editors-properties-scene-python_console.png" src="../../../_images/editors-properties-scene-python_console.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Python Console panel.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Enabling the panel’s checkbox allows to trigger an interactive Python console when the
+game is running through the specified shortcut.</p>
+<dl class="simple">
+<dt>Keys</dt><dd><p>Set the keys to be pressed in order to activate the Python console in game.</p>
+</dd>
+</dl>
+</section>
+<section id="id1">
+<h2>Scene<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id7">
+<img alt="../../../_images/editors-properties-scene-scene.png" src="../../../_images/editors-properties-scene-scene.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Scene panel.</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Camera</dt><dd><p>Used to select which camera is used as the active camera. You can also set the active
+camera in the 3D View with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd>.</p>
+</dd>
+</dl>
+<dl id="scene-background-set">
+<dt>Background</dt><dd><p>Allows you to use a scene as a background, this is typically useful when you want to
+focus on animating the foreground for example, without background elements getting
+in the way.</p>
+<p>This scene can have its own animation, physics simulations, etc, but you will have to
+select it from the <em>Scene</em> data-block menu, if you want to edit any of its contents.</p>
+<p>Sets can themselves have a background set (they’re recursively included). So you can
+always make additions to existing scenes by using them as a background to a newly
+created scene where your additions are made.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This can also be used in combination with Linking to a Scene, where one blend-file
+contains the environment, which can be reused in many places.</p>
+</div>
+</dd>
+<dt>Camera</dt><dd><p>Active camera, used for rendering the scene.</p>
+</dd>
+<dt>Background</dt><dd><p>Background set scene.</p>
+</dd>
+</dl>
+</section>
+<section id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="id8">
+<img alt="../../../_images/editors-properties-scene-units.png" src="../../../_images/editors-properties-scene-units.png" />
+<figcaption>
+<p><span class="caption-text">Scene tab’s Units panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<dl>
+<dt>Unit Presets</dt><dd><p>Common unit scales to use.</p>
+</dd>
+<dt>Length</dt><dd><dl class="simple">
+<dt>None</dt><dd><p>Uses Blender Units.</p>
+</dd>
+<dt>Metric, Imperial</dt><dd><p>Standard unit of measurement for lengths.</p>
+</dd>
+</dl>
+</dd>
+<dt>Angle</dt><dd><p>Standard unit for angular measurement.</p>
+<p>Degrees, Radians</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When you are using <em>Degrees</em>, the radian value is also displayed in the tooltip.</p>
+</div>
+</dd>
+<dt>Unit Scale</dt><dd><p>Scale factor to use when converting between Blender Units and <em>Metric</em>/<em>Imperial</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Usually you will want to use the <em>Length</em> presets to change to scale factor,
+as this does not require looking up values to use for conversion.</p>
+</div>
+</dd>
+<dt>Separate Units</dt><dd><p>When <em>Metric</em> or <em>Imperial</em> display units as multiple values,
+for example, “2.285m” will become “2m 28.5cm”.</p>
+</dd>
+</dl>
+<table class="table" id="id9">
+<caption><span class="caption-text">Imperial Units</span><a class="headerlink" href="#id9" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Full Name</p></th>
+<th class="head"><p>Short Name(s)</p></th>
+<th class="head"><p>Scale of a Meter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>thou</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mil</span></code></p></td>
+<td><p>0.0000254</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>inch</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code></p></td>
+<td><p>0.0254</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>foot, feet</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">'</span></code>, <code class="docutils literal notranslate"><span class="pre">ft</span></code></p></td>
+<td><p>0.3048</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>yard</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">yd</span></code></p></td>
+<td><p>0.9144</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>chain</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch</span></code></p></td>
+<td><p>20.1168</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>furlong</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">fur</span></code></p></td>
+<td><p>201.168</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>mile</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mi</span></code>, <code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>1609.344</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="id10">
+<caption><span class="caption-text">Metric Units</span><a class="headerlink" href="#id10" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Full Name</p></th>
+<th class="head"><p>Short Name(s)</p></th>
+<th class="head"><p>Scale of a Meter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>micrometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">um</span></code></p></td>
+<td><p>0.000001</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>millimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">mm</span></code></p></td>
+<td><p>0.001</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>centimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">cm</span></code></p></td>
+<td><p>0.01</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>decimeter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">dm</span></code></p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>meter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">m</span></code></p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>dekameter</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">dam</span></code></p></td>
+<td><p>10.0</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>hectometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">hm</span></code></p></td>
+<td><p>100.0</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>kilometer</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">km</span></code></p></td>
+<td><p>1000.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Audio</strong> panel settings in <strong>Scene</strong> tab don’t have effect in UPBGE.
+For audio settings, see
+<a class="reference external" href="https://docs.blender.org/manual/en/dev/preferences/system.html">User Preferences</a>.</p>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="render_stereo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Stereo Camera</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="world.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">World</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Range Engine<br/>
+  
+      &copy; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
