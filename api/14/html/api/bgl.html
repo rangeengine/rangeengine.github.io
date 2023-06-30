@@ -1,103 +1,586 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenGL Wrapper (bgl) &mdash; Range Engine Manual latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>OpenGL Wrapper (bgl) &#8212; Range Engine Manual latest documentation</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/bgl';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Font Drawing (blf)" href="blf.html" />
-    <link rel="prev" title="Noise Utilities (mathutils.noise)" href="mathutils.noise.html" /> 
-</head>
+    <link rel="prev" title="Noise Utilities (mathutils.noise)" href="mathutils.noise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Range Engine Manual
-            <img src="../_static/range_logo.png" class="logo" alt="Logo"/>
-          </a>
-              <div class="version">
-                latest
-              </div>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Manual</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/editors/index.html">Editors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/logic/index.html">Logic</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/release/index.html">Release</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../manual/about/index.html">About</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OpenGL Wrapper (bgl)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#bgl.Buffer"><code class="docutils literal notranslate"><span class="pre">Buffer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bgl.Buffer.dimensions"><code class="docutils literal notranslate"><span class="pre">Buffer.dimensions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bgl.Buffer.to_list"><code class="docutils literal notranslate"><span class="pre">Buffer.to_list()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a></li>
-</ul>
-
-        </div>
-      </div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
     </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Range Engine Manual</a>
-      </nav>
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">OpenGL Wrapper (bgl)</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/api/bgl.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/range_logo.png" class="logo__image only-dark" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/range_logo.png" class="logo__image only-light" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Manual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/introduction/index.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction/briefing.html">Briefing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction/deeper_look.html">A Deeper Look</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction/compatibility_notes.html">Compatibility Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/tutorials/getting_started/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/getting_started/basic_concepts.html">Basic Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/getting_started/move_object.html">Moving A Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/getting_started/play_animation.html">Playing An Animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/getting_started/linked_libraries.html">Using Linked Libraries In Game</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/tutorials/introducing_python/index.html">Introducing Python</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/introducing_python/basic_concepts.html">Basic Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/introducing_python/move_object.html">Moving A Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/introducing_python/play_animation.html">Playing An Animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/introducing_python/group_instances.html">Dealing With Group Instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/introducing_python/python_component.html">Setting Up A Python Component</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/tutorials/range_armor/index.html">Range Armor</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/tutorials/range_armor/exporting_your_project.html">Exporting your Project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/editors/index.html">Editors</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/editors/properties/index.html">Properties Editor</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../manual/editors/properties/render.html">Render</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/render_stereo.html">Stereo Camera</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/scene.html">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/world.html">World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/object.html">Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/constraints.html">Constraints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/texture.html">Texture</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../manual/editors/properties/physics.html">Physics</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_no_collision.html">No Collision Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_static.html">Static Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_dynamic.html">Dynamic Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_rigid_body.html">Rigid Body Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_soft_body.html">Soft Body Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_occluder.html">Occlude Object Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_sensor.html">Sensor Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_navigation_mesh.html">Navigation Mesh Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_character.html">Character Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../manual/editors/properties/physics_vehicle.html">Vehicle Controller Physics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/materials.html">Materials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/properties/data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/editors/logic/index.html">Logic Editor</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/logic/properties.html">Properties Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/logic/logic_bricks.html">Logic Bricks Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/editors/logic/components.html">Components Panel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/datablocks/index.html">Datablocks</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/armature.html">Armature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/empty.html">Empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/group.html">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/lamp.html">Lamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/mesh.html">Mesh</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/datablocks/object.html">Object</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/mesh.html">Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/armature.html">Armature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/empty.html">Empty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/camera.html">Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/datablocks/lamp.html">Lamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/text.html">Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/library.html">Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/sound.html">Sound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/action.html">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/material.html">Material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/texture.html">Texture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/datablocks/world.html">World</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/logic/index.html">Logic</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/logic/introduction.html">Introduction</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/logic/sensors/index.html">Sensors</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/editing.html">Sensor Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/actuator.html">Actuator Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/always.html">Always Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/armature.html">Armature Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/collision.html">Collision Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/delay.html">Delay Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/joystick.html">Joystick Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/keyboard.html">Keyboard Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/message.html">Message Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/mouse.html">Mouse Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/near.html">Near Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/property.html">Property Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/radar.html">Radar Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/random.html">Random Sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/sensors/types/ray.html">Ray Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/logic/controllers/index.html">Controllers</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/editing.html">Controller Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/and.html">AND Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/or.html">OR Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/nand.html">NAND Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/nor.html">NOR Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/xor.html">XOR Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/xnor.html">XNOR Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/expression.html">Expression Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/controllers/types/python.html">Python Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../manual/logic/actuators/index.html">Actuators</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/editing.html">Actuator Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/armature.html">Armature Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/action.html">Action Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/camera.html">Camera Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/constraint.html">Constraints Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/edit_object.html">Edit Object Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/filter_2d.html">Filter 2D Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/game.html">Game Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/message.html">Message Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/mouse.html">Mouse Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/motion.html">Motion Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/parent.html">Parent Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/property.html">Property Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/random.html">Random Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/scene.html">Scene Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/steering.html">Steering Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/sound.html">Sound Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/state.html">State Actuator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/logic/actuators/types/visibility.html">Visibility Actuator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/logic/properties.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/logic/states.html">States</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/release/index.html">Release</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/release/licensing.html">Licensing of Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/release/performance.html">Performance Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/release/blender_player.html">Standalone Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/release/release_procedure.html">Release Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/about/index.html">About</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/about/introduction.html">Introduction to the Range Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/about/license.html">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/about/whats_new.html">What’s New</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="bge.html">Range Game Engine Modules (bge)</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="bge.types.html">Game Types (bge.types)</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ActionActuator.html">BL_ActionActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ArmatureActuator.html">BL_ArmatureActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ArmatureBone.html">BL_ArmatureBone(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ArmatureChannel.html">BL_ArmatureChannel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ArmatureConstraint.html">BL_ArmatureConstraint(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_ArmatureObject.html">BL_ArmatureObject(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_Shader.html">BL_Shader(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.BL_Texture.html">BL_Texture(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.EXP_ListValue.html">EXP_ListValue(EXP_PropValue)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.EXP_PropValue.html">EXP_PropValue(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.EXP_PyObjectPlus.html">EXP_PyObjectPlus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.EXP_Value.html">EXP_Value(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_2DFilter.html">KX_2DFilter(BL_Shader)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_2DFilterManager.html">KX_2DFilterManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_2DFilterOffScreen.html">KX_2DFilterOffScreen(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_AnimationEventsManager.html">KX_AnimationEventsManager(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_ArmatureSensor.html">KX_ArmatureSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_BatchGroup.html">KX_BatchGroup(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_BlenderMaterial.html">KX_BlenderMaterial(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_BoundingBox.html">KX_BoundingBox(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_Camera.html">KX_Camera(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_CameraActuator.html">KX_CameraActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_CharacterWrapper.html">KX_CharacterWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_CollisionContactPoint.html">KX_CollisionContactPoint(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_CollisionSensor.html">KX_CollisionSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_ConstraintActuator.html">KX_ConstraintActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_ConstraintWrapper.html">KX_ConstraintWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_CubeMap.html">KX_CubeMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_FontObject.html">KX_FontObject(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_GameActuator.html">KX_GameActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_GameObject.html">KX_GameObject(SCA_IObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_LibLoadStatus.html">KX_LibLoadStatus(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_LightObject.html">KX_LightObject(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_LodLevel.html">KX_LodLevel(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_LodManager.html">KX_LodManager(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_Mesh.html">KX_Mesh(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_MouseActuator.html">KX_MouseActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_MouseFocusSensor.html">KX_MouseFocusSensor(SCA_MouseSensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_MovementSensor.html">KX_MovementSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_NavMeshObject.html">KX_NavMeshObject(KX_GameObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_NearSensor.html">KX_NearSensor(KX_CollisionSensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_NetworkMessageActuator.html">KX_NetworkMessageActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_NetworkMessageSensor.html">KX_NetworkMessageSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_ObjectActuator.html">KX_ObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_ParentActuator.html">KX_ParentActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_PlanarMap.html">KX_PlanarMap(KX_TextureRenderer)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_PolyProxy.html">KX_PolyProxy(SCA_IObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_PythonComponent.html">KX_PythonComponent(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_RadarSensor.html">KX_RadarSensor(KX_NearSensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_RaySensor.html">KX_RaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SCA_AddObjectActuator.html">KX_SCA_AddObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SCA_DynamicActuator.html">KX_SCA_DynamicActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SCA_EndObjectActuator.html">KX_SCA_EndObjectActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SCA_ReplaceMeshActuator.html">KX_SCA_ReplaceMeshActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_Scene.html">KX_Scene(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SceneActuator.html">KX_SceneActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SoundActuator.html">KX_SoundActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_StateActuator.html">KX_StateActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_SteeringActuator.html">KX_SteeringActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_TextureRenderer.html">KX_TextureRenderer(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_TrackToActuator.html">KX_TrackToActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_VehicleWrapper.html">KX_VehicleWrapper(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_VertexProxy.html">KX_VertexProxy(SCA_IObject)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_VisibilityActuator.html">KX_VisibilityActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.KX_WorldInfo.html">KX_WorldInfo(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_2DFilterActuator.html">SCA_2DFilterActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_ANDController.html">SCA_ANDController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_ActuatorSensor.html">SCA_ActuatorSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_AlwaysSensor.html">SCA_AlwaysSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_DelaySensor.html">SCA_DelaySensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_IActuator.html">SCA_IActuator(SCA_ILogicBrick)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_IController.html">SCA_IController(SCA_ILogicBrick)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_ILogicBrick.html">SCA_ILogicBrick(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_IObject.html">SCA_IObject(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_ISensor.html">SCA_ISensor(SCA_ILogicBrick)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_InputEvent.html">SCA_InputEvent(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_JoystickSensor.html">SCA_JoystickSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_KeyboardSensor.html">SCA_KeyboardSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_MouseSensor.html">SCA_MouseSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_NANDController.html">SCA_NANDController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_NORController.html">SCA_NORController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_ORController.html">SCA_ORController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PropertyActuator.html">SCA_PropertyActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PropertySensor.html">SCA_PropertySensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PythonController.html">SCA_PythonController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PythonJoystick.html">SCA_PythonJoystick(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PythonKeyboard.html">SCA_PythonKeyboard(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_PythonMouse.html">SCA_PythonMouse(EXP_PyObjectPlus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_RandomActuator.html">SCA_RandomActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_RandomSensor.html">SCA_RandomSensor(SCA_ISensor)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_VibrationActuator.html">SCA_VibrationActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_XNORController.html">SCA_XNORController(SCA_IController)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bge.types.SCA_XORController.html">SCA_XORController(SCA_IController)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bge.logic.html">Game Logic (bge.logic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.render.html">Rasterizer (bge.render)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.texture.html">Video Texture (bge.texture)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.events.html">Game Keys (bge.events)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.constraints.html">Physics Constraints (bge.constraints)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bge.app.html">Application Data (bge.app)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aud.html">Audio System (aud)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="mathutils.html">Math Types &amp; Utilities (mathutils)</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.bvhtree.html">BVHTree Utilities (mathutils.bvhtree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.geometry.html">Geometry Utilities (mathutils.geometry)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.interpolate.html">Interpolation Utilities (mathutils.interpolate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.kdtree.html">KDTree Utilities (mathutils.kdtree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mathutils.noise.html">Noise Utilities (mathutils.noise)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">OpenGL Wrapper (bgl)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blf.html">Font Drawing (blf)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="gpu.html">GPU functions (gpu)</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gpu.offscreen.html">GPU Off-Screen Buffer (gpu.offscreen)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/api/bgl.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
   </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OpenGL Wrapper (bgl)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer"><code class="docutils literal notranslate"><span class="pre">Buffer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer.dimensions"><code class="docutils literal notranslate"><span class="pre">Buffer.dimensions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer.to_list"><code class="docutils literal notranslate"><span class="pre">Buffer.to_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section id="module-bgl">
-<span id="opengl-wrapper-bgl"></span><h1>OpenGL Wrapper (bgl)<a class="headerlink" href="#module-bgl" title="Permalink to this heading"></a></h1>
+<span id="opengl-wrapper-bgl"></span><h1>OpenGL Wrapper (bgl)<a class="headerlink" href="#module-bgl" title="Permalink to this heading">#</a></h1>
 <p>This module wraps OpenGL constants and functions, making them available from
 within Blender Python.</p>
 <p>The complete list can be retrieved from the module itself, by listing its
@@ -124,7 +607,7 @@ for example.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glAccum.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>op</strong> (<em>Enumerated constant</em>) – The accumulation buffer operation.</p></li>
 <li><p><strong>value</strong> (<em>float</em>) – a value used in the accumulation buffer operation.</p></li>
@@ -142,7 +625,7 @@ for example.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glAlphaFunc.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>Enumerated constant</em>) – Specifies the alpha comparison function.</p></li>
 <li><p><strong>ref</strong> (<em>float</em>) – The reference value that incoming alpha values are compared to.
@@ -161,7 +644,7 @@ Clamped between 0 and 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glAreTexturesResident.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Specifies the number of textures to be queried.</p></li>
 <li><p><strong>textures</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object I{type GL_INT}) – Specifies an array containing the names of the textures to be queried</p></li>
@@ -182,7 +665,7 @@ returned in the corresponding element of residences.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glBegin.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies the primitive that will be create from vertices between
 glBegin and glEnd.</p>
 </dd>
@@ -198,7 +681,7 @@ glBegin and glEnd.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glBindTexture.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the target to which the texture is bound.</p></li>
 <li><p><strong>texture</strong> (<em>unsigned int</em>) – Specifies the name of a texture.</p></li>
@@ -216,7 +699,7 @@ glBegin and glEnd.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glBitmap.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>height</strong> (<em>width</em><em>,</em>) – Specify the pixel width and height of the bitmap image.</p></li>
 <li><p><strong>yorig</strong> (<em>xorig</em><em>,</em>) – Specify the location of the origin in the bitmap image. The origin is measured
@@ -238,7 +721,7 @@ the bitmap is drawn.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glBlendFunc.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sfactor</strong> (<em>Enumerated constant</em>) – Specifies how the red, green, blue, and alpha source blending factors are
 computed.</p></li>
@@ -258,7 +741,7 @@ blending factors are computed.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCallList.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>list</strong> (<em>unsigned int</em>) – Specifies the integer name of the display list to be executed.</p>
 </dd>
 </dl>
@@ -273,7 +756,7 @@ blending factors are computed.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCallLists.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Specifies the number of display lists to be executed.</p></li>
 <li><p><strong>type</strong> (<em>Enumerated constant</em>) – Specifies the type of values in lists.</p></li>
@@ -294,7 +777,7 @@ depending on the value of type.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClear.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<em>Enumerated constant</em><em>(</em><em>s</em><em>)</em>) – Bitwise OR of masks that indicate the buffers to be cleared.</p>
 </dd>
 </dl>
@@ -309,7 +792,7 @@ depending on the value of type.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClearAccum.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>red</em><em>, </em><em>green</em><em>, </em><em>blue</em><em>,</em>) – Specify the red, green, blue, and alpha values used when the
 accumulation buffer is cleared. The initial values are all 0.</p>
 </dd>
@@ -325,7 +808,7 @@ accumulation buffer is cleared. The initial values are all 0.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClearColor.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>red</em><em>, </em><em>green</em><em>, </em><em>blue</em><em>,</em>) – Specify the red, green, blue, and alpha values used when the
 color buffers are cleared. The initial values are all 0.</p>
 </dd>
@@ -341,7 +824,7 @@ color buffers are cleared. The initial values are all 0.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClearDepth.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>depth</strong> (<em>int</em>) – Specifies the depth value used when the depth buffer is cleared.
 The initial value is 1.</p>
 </dd>
@@ -357,7 +840,7 @@ The initial value is 1.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClearIndex.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>c</strong> (<em>float</em>) – Specifies the index used when the color index buffers are cleared.
 The initial value is 0.</p>
 </dd>
@@ -373,7 +856,7 @@ The initial value is 0.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClearStencil.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>s</strong> (<em>int</em>) – Specifies the index used when the stencil buffer is cleared. The initial value is 0.</p>
 </dd>
 </dl>
@@ -388,7 +871,7 @@ The initial value is 0.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glClipPlane.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plane</strong> (<em>Enumerated constant</em>) – Specifies which clipping plane is being positioned.</p></li>
 <li><p><strong>equation</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object I{type GL_FLOAT}(double)) – Specifies the address of an array of four double- precision
@@ -412,7 +895,7 @@ glColor4uiv, glColor4usv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glColor.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>blue</strong> (<em>red</em><em>, </em><em>green</em><em>,</em>) – Specify new red, green, and blue values for the current color.</p></li>
 <li><p><strong>alpha</strong> – Specifies a new alpha value for the current color. Included only in the
@@ -431,7 +914,7 @@ four-argument glColor4 commands. (With ‘4’ colors only)</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glColorMask.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>alpha</strong> (<em>red</em><em>, </em><em>green</em><em>, </em><em>blue</em><em>,</em>) – Specify whether red, green, blue, and alpha can or cannot be
 written into the frame buffer. The initial values are all GL_TRUE, indicating that the
 color components can be written.</p>
@@ -448,7 +931,7 @@ color components can be written.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glColorMaterial.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face</strong> (<em>Enumerated constant</em>) – Specifies whether front, back, or both front and back material parameters should
 track the current color.</p></li>
@@ -467,7 +950,7 @@ track the current color.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCopyPixels.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>x</em><em>,</em>) – Specify the window coordinates of the lower left corner of the rectangular
 region of pixels to be copied.</p></li>
@@ -484,7 +967,7 @@ Both must be non-negative.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCopyTexImage2D.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the target texture.</p></li>
 <li><p><strong>level</strong> (<em>int</em>) – Specifies the level-of-detail number. Level 0 is the base image level.
@@ -514,7 +997,7 @@ texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCullFace.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies whether front- or back-facing facets are candidates for culling.</p>
 </dd>
 </dl>
@@ -529,7 +1012,7 @@ texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteLists.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>list</strong> (<em>unsigned int</em>) – Specifies the integer name of the first display list to delete</p></li>
 <li><p><strong>range</strong> (<em>int</em>) – Specifies the number of display lists to delete</p></li>
@@ -547,7 +1030,7 @@ texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteTextures.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Specifies the number of textures to be deleted</p></li>
 <li><p><strong>textures</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> I{GL_INT}) – Specifies an array of textures to be deleted</p></li>
@@ -565,7 +1048,7 @@ texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDepthFunc.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>func</strong> (<em>Enumerated constant</em>) – Specifies the depth comparison function.</p>
 </dd>
 </dl>
@@ -580,7 +1063,7 @@ texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDepthMask.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>flag</strong> (<em>int</em><em> (</em><em>boolean</em><em>)</em>) – Specifies whether the depth buffer is enabled for writing. If flag is GL_FALSE,
 depth buffer writing is disabled. Otherwise, it is enabled. Initially, depth buffer
 writing is enabled.</p>
@@ -597,7 +1080,7 @@ writing is enabled.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDepthRange.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>zNear</strong> (<em>int</em>) – Specifies the mapping of the near clipping plane to window coordinates.
 The initial value is 0.</p></li>
@@ -617,7 +1100,7 @@ The initial value is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cap</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant indicating a GL capability.</p>
 </dd>
 </dl>
@@ -632,7 +1115,7 @@ The initial value is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDrawBuffer.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies up to four color buffers to be drawn into.</p>
 </dd>
 </dl>
@@ -647,7 +1130,7 @@ The initial value is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDrawPixels.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>height</strong> (<em>width</em><em>,</em>) – Specify the dimensions of the pixel rectangle to be
 written into the frame buffer.</p></li>
@@ -669,7 +1152,7 @@ written into the frame buffer.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEdgeFlag.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>flag</strong> (<em>Depends</em><em> of </em><em>function prototype</em>) – Specifies the current edge flag value.The initial value is GL_TRUE.</p>
 </dd>
 </dl>
@@ -684,7 +1167,7 @@ written into the frame buffer.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEnable.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cap</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant indicating a GL capability.</p>
 </dd>
 </dl>
@@ -721,7 +1204,7 @@ glEvalCoord2dv, glEvalCoord2fv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEvalCoord.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>u</strong> (<em>Depends on function prototype.</em>) – Specifies a value that is the domain coordinate u to the basis function defined
 in a previous glMap1 or glMap2 command. If the function prototype ends in ‘v’ then
@@ -744,7 +1227,7 @@ in a previous glMap2 command. This argument is not present in a glEvalCoord1 com
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEvalMesh.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mode</strong> (<em>Enumerated constant</em>) – In glEvalMesh1, specifies whether to compute a one-dimensional
 mesh of points or lines.</p></li>
@@ -764,7 +1247,7 @@ mesh of points or lines.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glEvalPoint.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>i</strong> (<em>int</em>) – Specifies the integer value for grid domain variable i.</p></li>
 <li><p><strong>j</strong> (<em>int</em><em> (</em><em>only with '2' prototypes</em><em>)</em>) – Specifies the integer value for grid domain variable j (glEvalPoint2 only).</p></li>
@@ -782,7 +1265,7 @@ mesh of points or lines.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glFeedbackBuffer.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>size</strong> (<em>int</em>) – Specifies the maximum number of values that can be written into buffer.</p></li>
 <li><p><strong>type</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant that describes the information that
@@ -823,7 +1306,7 @@ will be returned for each vertex.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glFog.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies a single-valued fog parameter. If the function prototype
 ends in ‘v’ specifies a fog parameter.</p></li>
@@ -844,7 +1327,7 @@ only a single value.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glFrontFace.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies the orientation of front-facing polygons.</p>
 </dd>
 </dl>
@@ -859,7 +1342,7 @@ only a single value.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glFrustum.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>right</strong> (<em>left</em><em>,</em>) – Specify the coordinates for the left and right vertical
 clipping planes.</p></li>
@@ -881,7 +1364,7 @@ Both distances must be positive.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGenLists.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>range</strong> (<em>int</em>) – Specifies the number of contiguous empty display lists to be generated.</p>
 </dd>
 </dl>
@@ -896,7 +1379,7 @@ Both distances must be positive.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGenTextures.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Specifies the number of textures name to be generated.</p></li>
 <li><p><strong>textures</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object I{type GL_INT}) – Specifies an array in which the generated textures names are stored.</p></li>
@@ -915,7 +1398,7 @@ Both distances must be positive.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGet.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the parameter value to be returned.</p></li>
 <li><p><strong>param</strong> (<em>Depends on function prototype.</em>) – Returns the value or values of the specified parameter.</p></li>
@@ -933,7 +1416,7 @@ Both distances must be positive.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetClipPlane.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>plane</strong> (<em>Enumerated constant</em>) – Specifies a clipping plane. The number of clipping planes depends on the
 implementation, but at least six clipping planes are supported. They are identified by
@@ -965,7 +1448,7 @@ plane equation of plane in eye coordinates. The initial value is (0, 0, 0, 0).</
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetLight.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>light</strong> (<em>Enumerated constant</em>) – Specifies a light source. The number of possible lights depends on the
 implementation, but at least eight lights are supported. They are identified by symbolic
@@ -987,7 +1470,7 @@ names of the form GL_LIGHTi where 0 &lt; i &lt; GL_MAX_LIGHTS.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetMap.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of a map.</p></li>
 <li><p><strong>query</strong> (<em>Enumerated constant</em>) – Specifies which parameter to return.</p></li>
@@ -1007,7 +1490,7 @@ names of the form GL_LIGHTi where 0 &lt; i &lt; GL_MAX_LIGHTS.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetMaterial.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face</strong> (<em>Enumerated constant</em>) – Specifies which of the two materials is being queried.
 representing the front and back materials, respectively.</p></li>
@@ -1028,7 +1511,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetPixelMap.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>map</strong> (<em>Enumerated constant</em>) – Specifies the name of the pixel map to return.</p></li>
 <li><p><strong>values</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. Depends on function prototype.) – Returns the pixel map contents.</p></li>
@@ -1046,7 +1529,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetPolygonStipple.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object I{type GL_BYTE}) – Returns the stipple pattern. The initial value is all 1’s.</p>
 </dd>
 </dl>
@@ -1061,7 +1544,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetString.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant.</p>
 </dd>
 </dl>
@@ -1077,7 +1560,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexEnv.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies a texture environment. Must be GL_TEXTURE_ENV.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of a texture environment parameter.</p></li>
@@ -1097,7 +1580,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexGen.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coord</strong> (<em>Enumerated constant</em>) – Specifies a texture coordinate.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the value(s) to be returned.</p></li>
@@ -1116,7 +1599,7 @@ representing the front and back materials, respectively.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexImage.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies which texture is to be obtained.</p></li>
 <li><p><strong>level</strong> (<em>int</em>) – Specifies the level-of-detail number of the desired image.
@@ -1140,7 +1623,7 @@ type specified by type</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexLevelParameter.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the target texture.</p></li>
 <li><p><strong>level</strong> (<em>int</em>) – Specifies the level-of-detail number of the desired image.
@@ -1162,7 +1645,7 @@ Level 0 is the base image level. Level n is the nth mipmap reduction image.</p><
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetTexParameter.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the target texture.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name the target texture.</p></li>
@@ -1181,7 +1664,7 @@ Level 0 is the base image level. Level n is the nth mipmap reduction image.</p><
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glHint.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant indicating the behavior to be
 controlled.</p></li>
@@ -1201,7 +1684,7 @@ controlled.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIndex.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>c</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. Depends on function prototype.) – Specifies a pointer to a one element array that contains the new value for
 the current color index.</p>
 </dd>
@@ -1217,7 +1700,7 @@ the current color index.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIndexMask.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<em>int</em>) – Specifies a bit mask to enable and disable the writing of individual bits
 in the color index buffers.
 Initially, the mask is all 1’s.</p>
@@ -1244,7 +1727,7 @@ Initially, the mask is all 1’s.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIsEnabled.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cap</strong> (<em>Enumerated constant</em>) – Specifies a constant representing a GL capability.</p>
 </dd>
 </dl>
@@ -1259,7 +1742,7 @@ Initially, the mask is all 1’s.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIsList.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>list</strong> (<em>unsigned int</em>) – Specifies a potential display-list name.</p>
 </dd>
 </dl>
@@ -1274,7 +1757,7 @@ Initially, the mask is all 1’s.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIsTexture.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>texture</strong> (<em>unsigned int</em>) – Specifies a value that may be the name of a texture.</p>
 </dd>
 </dl>
@@ -1290,7 +1773,7 @@ Initially, the mask is all 1’s.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLight.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>light</strong> (<em>Enumerated constant</em>) – Specifies a light. The number of lights depends on the implementation,
 but at least eight lights are supported. They are identified by symbolic names of the
@@ -1314,7 +1797,7 @@ parameter pname of light source light will be set to.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLightModel.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies a single-value light model parameter.</p></li>
 <li><p><strong>param</strong> (<em>Depends on function prototype.</em>) – Specifies the value that param will be set to. If function prototype ends in ‘v’
@@ -1333,7 +1816,7 @@ specifies a pointer to the value or values that param will be set to.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLineStipple.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> (<em>int</em>) – Specifies a multiplier for each bit in the line stipple pattern.
 If factor is 3, for example, each bit in the pattern is used three times before
@@ -1356,7 +1839,7 @@ pattern is all 1’s.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLineWidth.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>width</strong> (<em>float</em>) – Specifies the width of rasterized lines. The initial value is 1.</p>
 </dd>
 </dl>
@@ -1371,7 +1854,7 @@ pattern is all 1’s.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glListBase.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>base</strong> (<em>unsigned int</em>) – Specifies an integer offset that will be added to glCallLists
 offsets to generate display-list names. The initial value is 0.</p>
 </dd>
@@ -1398,7 +1881,7 @@ offsets to generate display-list names. The initial value is 0.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLoadMatrix.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>m</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. Depends on function prototype.) – Specifies a pointer to 16 consecutive values, which are used as the elements
 of a 4x4 column-major matrix.</p>
 </dd>
@@ -1414,7 +1897,7 @@ of a 4x4 column-major matrix.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLoadName.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>unsigned int</em>) – Specifies a name that will replace the top value on the name stack.</p>
 </dd>
 </dl>
@@ -1429,7 +1912,7 @@ of a 4x4 column-major matrix.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLogicOp.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>opcode</strong> (<em>Enumerated constant</em>) – Specifies a symbolic constant that selects a logical operation.</p>
 </dd>
 </dl>
@@ -1445,7 +1928,7 @@ of a 4x4 column-major matrix.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMap1.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the kind of values that are generated by the evaluator.</p></li>
 <li><p><strong>u1</strong><strong>,</strong><strong>u2</strong> – Specify a linear mapping of u, as presented to glEvalCoord1, to ^, t
@@ -1472,7 +1955,7 @@ occupy contiguous memory locations.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMap2.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the kind of values that are generated by the evaluator.</p></li>
 <li><p><strong>u1</strong><strong>,</strong><strong>u2</strong> – Specify a linear mapping of u, as presented to glEvalCoord2, to ^, t
@@ -1512,7 +1995,7 @@ Must be positive. The initial value is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMapGrid.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>un</strong> (<em>int</em>) – Specifies the number of partitions in the grid range interval
 [u1, u2]. Must be positive.</p></li>
@@ -1535,7 +2018,7 @@ Must be positive. The initial value is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMaterial.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face</strong> (<em>Enumerated constant</em>) – Specifies which face or faces are being updated. Must be one of:</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the single-valued material parameter of the face
@@ -1557,7 +2040,7 @@ pname will be set to.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMatrixMode.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies which matrix stack is the target for subsequent matrix operations.</p>
 </dd>
 </dl>
@@ -1573,7 +2056,7 @@ pname will be set to.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glMultMatrix.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>m</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. Depends on function prototype.) – Points to 16 consecutive values that are used as the elements of a 4x4 column
 major matrix.</p>
 </dd>
@@ -1589,7 +2072,7 @@ major matrix.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glNewList.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>list</strong> (<em>unsigned int</em>) – Specifies the display list name</p></li>
 <li><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies the compilation mode.</p></li>
@@ -1609,7 +2092,7 @@ Normal3s, Normal3sv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glNormal.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nz</strong> (<em>nx</em><em>, </em><em>ny</em><em>,</em>) – Specify the x, y, and z coordinates of the new current normal.
 The initial value of the current normal is the unit vector, (0, 0, 1).</p></li>
@@ -1629,7 +2112,7 @@ of the new current normal.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glOrtho.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>right</strong> (<em>left</em><em>,</em>) – Specify the coordinates for the left and
 right vertical clipping planes.</p></li>
@@ -1651,7 +2134,7 @@ depth clipping planes. These values are negative if the plane is to be behind th
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPassThrough.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>token</strong> (<em>float</em>) – Specifies a marker value to be placed in the feedback
 buffer following a GL_PASS_THROUGH_TOKEN.</p>
 </dd>
@@ -1668,7 +2151,7 @@ buffer following a GL_PASS_THROUGH_TOKEN.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPixelMap.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>map</strong> (<em>Enumerated constant</em>) – Specifies a symbolic map name.</p></li>
 <li><p><strong>mapsize</strong> (<em>int</em>) – Specifies the size of the map being defined.</p></li>
@@ -1688,7 +2171,7 @@ buffer following a GL_PASS_THROUGH_TOKEN.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPixelStore.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the parameter to be set.
 Six values affect the packing of pixel data into memory.
@@ -1709,7 +2192,7 @@ Six more affect the unpacking of pixel data from memory.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPixelTransfer.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the pixel transfer parameter to be set.</p></li>
 <li><p><strong>param</strong> (<em>Depends on function prototype.</em>) – Specifies the value that pname is set to.</p></li>
@@ -1727,7 +2210,7 @@ Six more affect the unpacking of pixel data from memory.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPixelZoom.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>yfactor</strong> (<em>xfactor</em><em>,</em>) – Specify the x and y zoom factors for pixel write operations.</p>
 </dd>
 </dl>
@@ -1742,7 +2225,7 @@ Six more affect the unpacking of pixel data from memory.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPointSize.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>size</strong> (<em>float</em>) – Specifies the diameter of rasterized points. The initial value is 1.</p>
 </dd>
 </dl>
@@ -1757,7 +2240,7 @@ Six more affect the unpacking of pixel data from memory.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonMode.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>face</strong> (<em>Enumerated constant</em>) – Specifies the polygons that mode applies to.
 Must be GL_FRONT for front-facing polygons, GL_BACK for back- facing
@@ -1778,7 +2261,7 @@ The initial value is GL_FILL for both front- and back- facing polygons.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>factor</strong> (<em>float</em>) – Specifies a scale factor that is used to create a variable depth
 offset for each polygon. The initial value is 0.</p></li>
@@ -1798,7 +2281,7 @@ constant depth offset. The initial value is 0.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonStipple.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object I{type GL_BYTE}) – Specifies a pointer to a 32x32 stipple pattern that will be unpacked
 from memory in the same way that glDrawPixels unpacks pixels.</p>
 </dd>
@@ -1854,7 +2337,7 @@ from memory in the same way that glDrawPixels unpacks pixels.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPrioritizeTextures.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>n</strong> (<em>int</em>) – Specifies the number of textures to be prioritized.</p></li>
 <li><p><strong>textures</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> I{type GL_INT}) – Specifies an array containing the names of the textures to be prioritized.</p></li>
@@ -1875,7 +2358,7 @@ by the corresponding element of textures.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPushAttrib.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<em>Enumerated constant</em><em>(</em><em>s</em><em>)</em>) – Specifies a mask that indicates which attributes to save.</p>
 </dd>
 </dl>
@@ -1890,7 +2373,7 @@ by the corresponding element of textures.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPushClientAttrib.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<em>Enumerated constant</em><em>(</em><em>s</em><em>)</em>) – Specifies a mask that indicates which attributes to save.</p>
 </dd>
 </dl>
@@ -1915,7 +2398,7 @@ by the corresponding element of textures.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glPushName.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>unsigned int</em>) – Specifies a name that will be pushed onto the name stack.</p>
 </dd>
 </dl>
@@ -1935,7 +2418,7 @@ glRasterPos4dv, glRasterPos4fv, glRasterPos4iv, glRasterPos4sv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glRasterPos.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>w</strong> (<em>x</em><em>, </em><em>y</em><em>, </em><em>z</em><em>,</em>) – Specify the x,y,z, and w object coordinates (if present) for the
 raster position.  If function prototype ends in ‘v’ specifies a pointer to an array of two,
 three, or four elements, specifying x, y, z, and w coordinates, respectively.</p>
@@ -1970,7 +2453,7 @@ so a X of 10 will not always offset 10 pixels as you would expect.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glReadBuffer.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies a color buffer.</p>
 </dd>
 </dl>
@@ -1985,7 +2468,7 @@ so a X of 10 will not always offset 10 pixels as you would expect.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glReadPixels.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>x</em><em>,</em>) – Specify the window coordinates of the first pixel that is read
 from the frame buffer. This location is the lower left corner of a rectangular
@@ -2010,7 +2493,7 @@ height of one correspond to a single pixel.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glRect.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y1</strong> (<em>x1</em><em>,</em>) – Specify one vertex of a rectangle</p></li>
 <li><p><strong>y2</strong> (<em>x2</em><em>,</em>) – Specify the opposite vertex of the rectangle</p></li>
@@ -2030,7 +2513,7 @@ to the opposite vertex of the rectangle</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glRenderMode.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies the rasterization mode.</p>
 </dd>
 </dl>
@@ -2046,7 +2529,7 @@ to the opposite vertex of the rectangle</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glRotate.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>angle</strong> (<em>Depends on function prototype.</em>) – Specifies the angle of rotation in degrees.</p></li>
 <li><p><strong>z</strong> (<em>x</em><em>, </em><em>y</em><em>,</em>) – Specify the x, y, and z coordinates of a vector respectively.</p></li>
@@ -2065,7 +2548,7 @@ to the opposite vertex of the rectangle</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glScale.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>x</em><em>, </em><em>y</em><em>,</em>) – Specify scale factors along the x, y, and z axes, respectively.</p>
 </dd>
 </dl>
@@ -2080,7 +2563,7 @@ to the opposite vertex of the rectangle</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glScissor.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>x</em><em>,</em>) – Specify the lower left corner of the scissor box. Initially (0, 0).</p></li>
 <li><p><strong>height</strong> (<em>width</em>) – Specify the width and height of the scissor box. When a
@@ -2100,7 +2583,7 @@ dimensions of that window.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glSelectBuffer.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>size</strong> (<em>int</em>) – Specifies the size of buffer</p></li>
 <li><p><strong>buffer</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> I{type GL_INT}) – Returns the selection data</p></li>
@@ -2118,7 +2601,7 @@ dimensions of that window.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glShadeModel.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>Enumerated constant</em>) – Specifies a symbolic value representing a shading technique.</p>
 </dd>
 </dl>
@@ -2133,7 +2616,7 @@ dimensions of that window.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man/docbook4/xhtml/glStencilFunc.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>Enumerated constant</em>) – Specifies the test function.</p></li>
 <li><p><strong>ref</strong> (<em>int</em>) – Specifies the reference value for the stencil test. ref is clamped
@@ -2155,7 +2638,7 @@ the stored stencil value when the test is done. The initial value is all 1’s.<
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glStencilMask.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mask</strong> (<em>unsigned int</em>) – Specifies a bit mask to enable and disable writing of individual bits
 in the stencil planes. Initially, the mask is all 1’s.</p>
 </dd>
@@ -2171,7 +2654,7 @@ in the stencil planes. Initially, the mask is all 1’s.</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glStencilOp.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fail</strong> (<em>Enumerated constant</em>) – Specifies the action to take when the stencil test fails.
 The initial value is GL_KEEP.</p></li>
@@ -2203,7 +2686,7 @@ glTexCoord4dv, glTexCoord4fv, glTexCoord4iv, glTexCoord4sv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexCoord.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>q</strong> (<em>s</em><em>, </em><em>t</em><em>, </em><em>r</em><em>,</em>) – Specify s, t, r, and q texture coordinates. Not all parameters are
 present in all forms of the command.</p></li>
@@ -2224,7 +2707,7 @@ which in turn specify the s, t, r, and q texture coordinates.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexEnv.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies a texture environment. Must be GL_TEXTURE_ENV.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of a single-valued texture environment
@@ -2247,7 +2730,7 @@ symbolic constant or an RGBA color</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexGen.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coord</strong> (<em>Enumerated constant</em>) – Specifies a texture coordinate.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of the texture- coordinate generation function.</p></li>
@@ -2270,7 +2753,7 @@ for the texture-coordinate generation function specified by pname.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage1D.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the target texture.</p></li>
 <li><p><strong>level</strong> (<em>int</em>) – Specifies the level-of-detail number. Level 0 is the base image level.
@@ -2297,7 +2780,7 @@ at least 64 texels wide. The height of the 1D texture image is 1.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexImage2D.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the target texture.</p></li>
 <li><p><strong>level</strong> (<em>int</em>) – Specifies the level-of-detail number. Level 0 is the base image level.
@@ -2328,7 +2811,7 @@ least 64 texels high.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTexParameter.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target</strong> (<em>Enumerated constant</em>) – Specifies the target texture.</p></li>
 <li><p><strong>pname</strong> (<em>Enumerated constant</em>) – Specifies the symbolic name of a single-valued texture parameter.</p></li>
@@ -2349,7 +2832,7 @@ a pointer to an array where the value or values of pname are stored.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glTranslate.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>z</strong> (<em>x</em><em>, </em><em>y</em><em>,</em>) – Specify the x, y, and z coordinates of a translation vector.</p>
 </dd>
 </dl>
@@ -2368,7 +2851,7 @@ glVertex4fv, glVertex4iv, glVertex4sv}</p>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glVertex.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>w</strong> (<em>x</em><em>, </em><em>y</em><em>, </em><em>z</em><em>,</em>) – Specify x, y, z, and w coordinates of a vertex. Not all parameters
 are present in all forms of the command.</p></li>
@@ -2390,7 +2873,7 @@ x, y, and z; and of a four-element array, x, y, z, and w.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glViewport.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>x</em><em>,</em>) – Specify the lower left corner of the viewport rectangle,
 in pixels. The initial value is (0,0).</p></li>
@@ -2411,7 +2894,7 @@ dimensions of that window.</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluPerspective.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluPerspective.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fovY</strong> (<em>double</em>) – Specifies the field of view angle, in degrees, in the y direction.</p></li>
 <li><p><strong>aspect</strong> (<em>double</em>) – Specifies the aspect ratio that determines the field of view in the x direction.
@@ -2432,7 +2915,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluLookAt.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluLookAt.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>eyez</strong> (<em>eyex</em><em>, </em><em>eyey</em><em>,</em>) – Specifies the position of the eye point.</p></li>
 <li><p><strong>centerz</strong> (<em>centerx</em><em>, </em><em>centery</em><em>,</em>) – Specifies the position of the reference point.</p></li>
@@ -2451,7 +2934,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluOrtho2D.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluOrtho2D.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>right</strong> (<em>left</em><em>,</em>) – Specify the coordinates for the left and right vertical clipping planes.</p></li>
 <li><p><strong>top</strong> (<em>bottom</em><em>,</em>) – Specify the coordinates for the bottom and top horizontal clipping planes.</p></li>
@@ -2469,7 +2952,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluPickMatrix.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluPickMatrix.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>x</em><em>,</em>) – Specify the center of a picking region in window coordinates.</p></li>
 <li><p><strong>height</strong> (<em>width</em><em>,</em>) – Specify the width and height, respectively, of the picking region in window coordinates.</p></li>
@@ -2488,7 +2971,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluProject.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluProject.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objz</strong> (<em>objx</em><em>, </em><em>objy</em><em>,</em>) – Specify the object coordinates.</p></li>
 <li><p><strong>modelMatrix</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. [double]) – Specifies the current modelview matrix (as from a glGetDoublev call).</p></li>
@@ -2509,7 +2992,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/gluUnProject.xml">https://www.opengl.org/sdk/docs/man2/xhtml/gluUnProject.xml</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>winz</strong> (<em>winx</em><em>, </em><em>winy</em><em>,</em>) – Specify the window coordinates to be mapped.</p></li>
 <li><p><strong>modelMatrix</strong> (<a class="reference internal" href="#bgl.Buffer" title="bgl.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">bgl.Buffer</span></code></a> object. [double]) – Specifies the current modelview matrix (as from a glGetDoublev call).</p></li>
@@ -2530,7 +3013,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glUseProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>program</strong> (<em>int</em>) – Specifies the handle of the program object whose executables are to be used as part of current rendering state.</p>
 </dd>
 </dl>
@@ -2545,7 +3028,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glValidateProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>program</strong> (<em>int</em>) – Specifies the handle of the program object to be validated.</p>
 </dd>
 </dl>
@@ -2560,7 +3043,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glLinkProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>program</strong> (<em>int</em>) – Specifies the handle of the program object to be linked.</p>
 </dd>
 </dl>
@@ -2575,7 +3058,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glActiveTexture.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>texture</strong> (<em>int</em>) – Constant in <code class="docutils literal notranslate"><span class="pre">GL_TEXTURE0</span></code> 0 - 8</p>
 </dd>
 </dl>
@@ -2590,7 +3073,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glAttachShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>program</strong> (<em>int</em>) – Specifies the program object to which a shader object will be attached.</p></li>
 <li><p><strong>shader</strong> (<em>int</em>) – Specifies the shader object that is to be attached.</p></li>
@@ -2608,7 +3091,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCompileShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shader</strong> (<em>int</em>) – Specifies the shader object to be compiled.</p>
 </dd>
 </dl>
@@ -2623,10 +3106,10 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCreateProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The new program or zero if an error occurs.</p>
 </dd>
 </dl>
@@ -2641,7 +3124,7 @@ The aspect ratio is the ratio of x (width) to y (height).</p></li>
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glCreateShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shaderType</strong> (Specifies the type of shader to be created.
 Must be one of <code class="docutils literal notranslate"><span class="pre">GL_VERTEX_SHADER</span></code>,
 <code class="docutils literal notranslate"><span class="pre">GL_TESS_CONTROL_SHADER</span></code>,
@@ -2649,10 +3132,10 @@ Must be one of <code class="docutils literal notranslate"><span class="pre">GL_V
 <code class="docutils literal notranslate"><span class="pre">GL_GEOMETRY_SHADER</span></code>,
 or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHADER</span></code>.) – </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>0 if an error occurs.</p>
 </dd>
 </dl>
@@ -2667,7 +3150,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>program</strong> (<em>int</em>) – Specifies the program object to be deleted.</p>
 </dd>
 </dl>
@@ -2682,7 +3165,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDeleteShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shader</strong> (<em>int</em>) – Specifies the shader object to be deleted.</p>
 </dd>
 </dl>
@@ -2697,7 +3180,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glDetachShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>program</strong> (<em>int</em>) – Specifies the program object from which to detach the shader object.</p></li>
 <li><p><strong>shader</strong> (<em>int</em>) – pecifies the program object from which to detach the shader object.</p></li>
@@ -2715,7 +3198,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetAttachedShaders.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>program</strong> (<em>int</em>) – Specifies the program object to be queried.</p></li>
 <li><p><strong>maxCount</strong> (<em>int</em>) – Specifies the size of the array for storing the returned object names.</p></li>
@@ -2735,7 +3218,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgramInfoLog.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>program</strong> (<em>int</em>) – Specifies the program object whose information log is to be queried.</p></li>
 <li><p><strong>maxLength</strong> (<em>int</em>) – Specifies the size of the character buffer for storing the returned information log.</p></li>
@@ -2755,7 +3238,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderInfoLog.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shader</strong> (<em>int</em>) – Specifies the shader object whose information log is to be queried.</p></li>
 <li><p><strong>maxLength</strong> (<em>int</em>) – Specifies the size of the character buffer for storing the returned information log.</p></li>
@@ -2775,7 +3258,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>program</strong> (<em>int</em>) – Specifies the program object to be queried.</p></li>
 <li><p><strong>pname</strong> (<em>int</em>) – Specifies the object parameter.</p></li>
@@ -2794,7 +3277,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIsShader.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>shader</strong> (<em>int</em>) – Specifies a potential shader object.</p>
 </dd>
 </dl>
@@ -2809,7 +3292,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glIsProgram.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>program</strong> (<em>int</em>) – Specifies a potential program object.</p>
 </dd>
 </dl>
@@ -2824,7 +3307,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man2/xhtml/glGetShaderSource.xml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shader</strong> (<em>int</em>) – Specifies the shader object to be queried.</p></li>
 <li><p><strong>bufSize</strong> (<em>int</em>) – Specifies the size of the character buffer for storing the returned source code string.</p></li>
@@ -2844,7 +3327,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 <p><a class="reference external" href="https://www.opengl.org/sdk/docs/man/html/glShaderSource.xhtml">OpenGL Docs</a></p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shader</strong> (<em>int</em>) – Specifies the handle of the shader object whose source code is to be replaced.</p></li>
 <li><p><strong>shader_string</strong> (<em>string</em>) – The shader string.</p></li>
@@ -2855,7 +3338,7 @@ or <code class="docutils literal notranslate"><span class="pre">GL_FRAGMENT_SHAD
 
 <dl class="py class">
 <dt class="sig sig-object py" id="bgl.Buffer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bgl.</span></span><span class="sig-name descname"><span class="pre">Buffer</span></span><a class="headerlink" href="#bgl.Buffer" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bgl.</span></span><span class="sig-name descname"><span class="pre">Buffer</span></span><a class="headerlink" href="#bgl.Buffer" title="Permalink to this definition">#</a></dt>
 <dd><p>The Buffer object is simply a block of memory that is delineated and initialized by the
 user. Many OpenGL functions return data to a C-style pointer, however, because this
 is not possible in python the Buffer object can be used to this end. Wherever pointer
@@ -2877,13 +3360,13 @@ which will be zeroed by default.</p>
 </div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="bgl.Buffer.dimensions">
-<span class="sig-name descname"><span class="pre">dimensions</span></span><a class="headerlink" href="#bgl.Buffer.dimensions" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">dimensions</span></span><a class="headerlink" href="#bgl.Buffer.dimensions" title="Permalink to this definition">#</a></dt>
 <dd><p>The number of dimensions of the Buffer.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="bgl.Buffer.to_list">
-<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bgl.Buffer.to_list" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">to_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bgl.Buffer.to_list" title="Permalink to this definition">#</a></dt>
 <dd><p>The contents of the Buffer as a python list.</p>
 </dd></dl>
 
@@ -2895,7 +3378,7 @@ Only the type of argument to store in the buffer and the dimensions of the buffe
 are necessary. Buffers are zeroed by default unless a template is supplied, in
 which case the buffer is initialized to the template.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>int</em>) – The format to store data in. The type should be one of
 GL_BYTE, GL_SHORT, GL_INT, or GL_FLOAT.</p></li>
@@ -2910,10 +3393,10 @@ of the dimension to the left. i.e. [10,2] is a 10 element array each with 2 sub-
 the Buffer. If a template is not passed in all fields will be initialized to 0.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>Buffer object</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The newly created buffer as a PyObject.</p>
 </dd>
 </dl>
@@ -2924,34 +3407,109 @@ the Buffer. If a template is not passed in all fields will be initialized to 0.<
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="mathutils.noise.html" class="btn btn-neutral float-left" title="Noise Utilities (mathutils.noise)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="blf.html" class="btn btn-neutral float-right" title="Font Drawing (blf)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+                </article>
+              
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="mathutils.noise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Noise Utilities (mathutils.noise)</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="blf.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Font Drawing (blf)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
 
-</body>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer"><code class="docutils literal notranslate"><span class="pre">Buffer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer.dimensions"><code class="docutils literal notranslate"><span class="pre">Buffer.dimensions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bgl.Buffer.to_list"><code class="docutils literal notranslate"><span class="pre">Buffer.to_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Range Engine
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright This page is licensed under a CC-BY-SA 4.0 Int. License..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>
