@@ -1,15 +1,18 @@
 @font-face {
     font-family: "Roboto";
-    src: url("Roboto-Regular.ttf");
+    src: url("RobotoCondensed-Regular.ttf");
 }
-body pre{
-    font-family: "Roboto";
+body{
+    font-family: "Roboto Condensed";
+}
+pre{
+    font-family: "Roboto Condensed";
 }
 code{
-    font-family: "Roboto";
+    font-family: "Roboto Condensed";
 }
 .sig{
-    font-family: "Roboto";
+    font-family: "Roboto Condensed";
 }
 a{
     color: #c72c2c;
