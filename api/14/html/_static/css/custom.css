@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("Roboto-Regular.ttf");
+}
+body pre{
+    font-family: "Roboto";
+}
+code{
+    font-family: "Roboto";
+}
+.sig{
+    font-family: "Roboto";
+}
+a{
+    color: #c72c2c;
+}
+a:hover{
+    color: #db5c5c;
+    text-decoration: none;
+}
+a:checked{
+    color: #db5c5c;
+}
+html[data-theme="dark"] img:not(.only-dark):not(.dark-light) {
+    filter: none;
+}
+/*Sidebar*/
+nav.bd-links li > a:hover{
+    color: #db5c5c;
+}
+.navbar-nav li a:focus, .navbar-nav li a:hover, .navbar-nav li.current > a {
+    color: #de2222;
+}.navbar-nav li a:focus, .navbar-nav li a:hover, .navbar-nav li.current > a:hover {
+    color: #db5c5c;
+}
+nav.bd-links .active:hover > a, nav.bd-links .active > a {
+    color: #de2222;
+}
+.prev-next-area a p.prev-next-title {
+    color: #de2222;
+}
+/*Funções*/
+.sig-name, code{
+    color: #de2222;
+}
+pre{
+    border: 0;
+    font-size: 15px;
+}
+html[data-theme="dark"] .highlight .c1 {
+    color: #ababab;
+}
+html[data-theme="dark"] .highlight .mi {
+    color: #51b2fd;
+}
+html[data-theme="dark"] .highlight .k {
+    color: #6ebf26;
+  }
+html[data-theme="dark"] .highlight .kc {
+    color: #6ebf26;
+}
+html[data-theme="dark"] .highlight .kn {
+    color: #6ebf26;
+}
+html[data-theme="dark"] .highlight .mf {
+    color: #51b2fd;
+}
+html[data-theme="dark"] .highlight .bp {
+    color: #51b2fd;
+}
+html[data-theme="dark"] .highlight .o {
+    color: #979797;
+}
