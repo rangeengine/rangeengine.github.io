@@ -13,7 +13,7 @@ tutorials to certain tasks and the Python API for game logic programming
 with detailed information (and examples in some cases).
 
 
-`Visit the Range Engine website <https://rangeengine.tech/>`__!
+🌐 `Visit the Range Engine website <https://rangeengine.tech/>`__
 
 .. toctree::
    :maxdepth: 2
