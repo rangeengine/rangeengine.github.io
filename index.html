@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="Range Engine"/>
     <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
 	  <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
@@ -129,15 +129,20 @@
         <i class="material-symbols-outlined" style="font-size:60px;top:0px;">keyboard_double_arrow_down</i>
       </div>
     </div>
-    <article style="padding:0 0 10px 0;background-color:rgba(11, 11, 11, 0.7);">
+    <article style="padding:0 0 10px 0;background-color:rgba(39,39,39);">
       <div class="home-article"> <!--Artigo Principal do Article-->
         <div class="art-articles"> <!--Sub Artigos-->
           <div class="articles-cont"> <!--Conteúdo dos Artigos-->
+            <div class="h-article-description">
+              <h3 style="text-align:right;">Powerfull Modelling Tools</h3>
+              <p style="text-align:right;">Based on Blender, With Range Engine you can <b>Model and Sculpt you own Assets,<br> Make Materials and Textures,
+              create high detailed Animations<br> And build breathtaking levels with advanced tools and modificators.</b></p>
+            </div>
             <ul class="slider">
               <li>
                 <input type="radio" id="slide1" name="slide" checked>
                 <label for="slide1"></label>
-                <img src="/img/sliders/objectpencil.gif" alt="Object Paint">
+                <img src="/img/sliders/objectpencil.webp" alt="Object Paint">
               </li>
               <li>
                 <input type="radio" id="slide2" name="slide">
@@ -145,11 +150,6 @@
                 <img src="/img/sliders/modeltools.png" alt="Modelling Tools"/>
               </li>
             </ul>
-            <div class="h-article-description">
-              <h3>Powerfull Modelling Tools</h3>
-              <p>Based on Blender, you can <b>Make All The Assets, Animations, Effects<br>
-              and Envinorments</b> you need for your project <b>Without Leaving Range Engine</b>.</p>
-            </div>
           </div>
         </div>
         <div class="art-articles">
@@ -168,7 +168,7 @@
             </ul>
             <div class="h-article-description">
               <h3>Beautiful Materials</h3>
-              <p>Make amazing envinorments with beautiful PBR materials, you can<br>
+              <p>Make amazing environments with beautiful PBR materials, you can<br>
               use your imagination to make advanced materials with <b>Shader Nodes Editor</b>.</p>
             </div>
           </div>
@@ -196,11 +196,6 @@
         </div>
         <div class="art-articles">
           <div class="articles-cont">
-            <div class="h-article-description">
-              <h3 style="text-align:right;">Publishing Projects</h3>
-              <p style="text-align:right;">Of course you want to show to everyone the amazing work you did,<br>
-              In Range Engine you can export and publish your game with safety,<br>optimization and <b>With no Taxes and License Problems!</b></p>
-            </div>
             <ul class="slider">
               <li>
                 <input type="radio" id="slide10" name="slide4" checked>
@@ -213,6 +208,11 @@
                 <img src="/img/sliders/rangearmor.jpg" alt="Range Armor"/>
               </li>
             </ul>
+            <div class="h-article-description">
+              <h3>Publishing Projects</h3>
+              <p>Of course you want to show to everyone the amazing work you did,<br>
+              In Range Engine you can export and publish your game with safety,<br>optimization and <b>With no Taxes and Licensing Problems!</b></p>
+            </div>
           </div>
         </div>
       </div>
@@ -223,9 +223,21 @@
         <p class="whatsxbge">Become a patron! You earn early access to releases, gifts and help the project keep on</p>
       </div>
       <div>
-        <ul style="font-family: Roboto Condensed, sans-serif;">
-          <li class="downabout" style="padding:0 0 5px 0;"><a class="suppus" style="padding: 5px 10px 5px 10px;" href="https://www.patreon.com/rangeengine"><i class="material-symbols-outlined">health_and_safety</i> Support</a></li>
-          <li class="downabout" style="padding:0;"><a style="padding: 5px 10px 5px 10px;" class="knowmore" href="learnmore"><i class="material-symbols-outlined">contact_support</i> Learn More</a></li>
+        <ul style="margin:0;">
+          <div class="splash-links">
+            <div class="spl-link-button">
+              <div class="spl-link-ico" id="spl-link-button-small">
+                <i class="material-symbols-outlined">health_and_safety</i>
+              </div>
+              <a id="spl-link-button-small" target="_blank" href="https://www.patreon.com/rangeengine">Patreon</a>
+            </div>
+            <div class="spl-link-button" id="link-button-grey">
+              <div class="spl-link-ico" style="background-color:rgb(100, 100, 100);" id="spl-link-button-small">
+                <i class="material-symbols-outlined">contact_support</i>
+              </div>
+              <a style="background-color:rgba(145, 145, 145, 0.21);" id="spl-link-button-small" target="_blank" href="learnmore">Learn More</a>
+            </div>
+          </div>
         </ul>
       </div>
     </div>

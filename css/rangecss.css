@@ -464,8 +464,7 @@ a.knowmore:hover{
 
 /* HOMEPAGE SPLASH */
 .home-splashrange{
-	background-color: #35141499;
-	backdrop-filter: blur(3px);
+	background-color: #181818;
 	font-family: Roboto Condensed, sans-serif;
 	padding: 10px 0 10px 0;
 	width: 100%;
@@ -503,6 +502,7 @@ a.knowmore:hover{
 	transition: all 0.15s ease-in-out;
 }
 .spl-link-button a{
+	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
 	padding: 15px;
 	background-color: rgba(188, 36, 36, 0.21);
 	letter-spacing: -1px;
@@ -541,12 +541,12 @@ a.knowmore:hover{
 	display: inline-flex;
 	background-color: #0c0c0cb9;
 	padding: 10px 0 10px 0;
-	border-radius: 20px;
+	border-radius: 10px;
 	transition: all 0.15s ease-in;
 }
 .articles-cont:hover{
 	padding: 12px 0 12px 0;
-	box-shadow: 0px 0px 0px 5px rgba(228, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 4px rgba(228, 0, 0, 0.5);
 	transition: all 0.15s ease-in-out;
 }
 .h-article-description{
@@ -555,7 +555,8 @@ a.knowmore:hover{
 }
 .h-article-description h3{
 	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
-	font-size: 30px;
+	font-size: 35px;
+	letter-spacing: -2px;
 	text-transform: uppercase;
 	text-align: left;
 }
@@ -574,8 +575,7 @@ a.knowmore:hover{
 
 /* ARTICLE */
 article{
-	background-color: rgba(0, 0, 0, 0.815);
-	backdrop-filter: blur(5px);
+	background-color: rgb(15, 15, 15);
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
@@ -771,7 +771,7 @@ footer{
 	display: inline-block;
 }
 .artigoscontrib{
-	background-color: rgba(22, 22, 22, 0.753);
+	background-color: rgb(22, 22, 22);
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	padding-top: 10px;
@@ -846,7 +846,7 @@ footer{
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	padding: 20px;
-	background-color: rgba(70, 25, 25, 0.836);
+	background-color: rgb(70, 25, 25);
 }
 /*SUPPORTERS MURAL*/
 .supp-mural{
