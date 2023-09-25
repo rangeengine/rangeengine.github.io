@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Range Engine</title>
-    <meta name="description" content="Learn more about the development and goals of Range Engine"/>
+    <meta name="description" content="Take a look at some features Range Engine is bringing and working to next versions"/>
     <meta name="theme-color" content="#002fe6">
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="About Range Engine"/>
-    <meta property="og:description" content="Learn more about the development and goals of Range Engine"/>
+    <meta property="og:title" content="What's New? - Range Engine"/>
+    <meta property="og:description" content="Take a look at some features Range Engine is bringing and working to next versions"/>
     <meta property="og:site_name" content="Range Engine"/>
     <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
 	  <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/rangecss.css"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="/js/responsivenav.js" defer></script>
-    <script src="/js/headercolor.js"></script>
+    <script>
+      $(document).on('scroll', function(){
+        if ( $(window).scrollTop() > 400) {
+          $('.header').addClass('activeh');
+        } else {
+          $('.header').removeClass('activeh');
+        }
+      });
+    </script>
   </head>
   <body>
+    <div id="loading">
+      <div></div>
+    </div>
     <header class="header">
       <h1 class="title"><a href="/"><img class="logo" src="/img/RangeEngineExtendedLogo.png" alt="RanGELogo"/></a></h1>
       <a class="togglebutton">
@@ -47,92 +59,102 @@
         </ul>
       </nav>
     </header>
-    <section class="downsec">
+    <section class="indexsec" style="padding-top:150px;padding-bottom:100px;">
       <video class="backvideo" poster="/img/posterback.jpg" preload="" autoplay="" muted="" playsinline="" loop="">
         <source src="/img/Background_RangeWebsite.mp4" type="video/mp4">
       </video>
-      <div class="apresentacao" id="aprespags">
+      <div class="splashhome">
         <div class="sobreoprojeto">
-          <h2 class="titsece">What's Range Engine?</h2>
-          <p class="whatsxbge"><b>Let us show you a bit about Range Engine</b></p>
-        </div>
+          <p class="splashtitsec" style="font-size:25px;letter-spacing:-1px;">Let us show you a bit</p>
+          <h1 class="splashtitsec">About Range Engine</h1>
+          <!--hr>
+          <h2 class="splashtitsec" style="font-size:25px;letter-spacing:-1px;">Some commom doubts about Range Engine</h2-->
       </div>
+    </div>
     </section>
-    <article style="padding:0 0 0 0;" id="patrrowblue">
-      <div class="patrdwnrow">
-        <div class="patrart">
-          <h3 class="patrtop">About Range Engine:</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90">Range Engine Is a Light And Powerful Game Engine And 3D Software, Made Based On Blender Game Engine
-              With Improvements From <a class="linksites" target=”_blank” href="https://upbge.org">UPBGE</a>.</p>
-            </div>
-          </div>
+    <article style="padding-top:10px;background-color: rgba(0, 0, 0, 0.52);backdrop-filter: blur(5px);">
+      <div class="about-clps">
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Is Range Engine Free?</button>
+          <div class="clps-cont">
+            <p>Range Engine Is Free And Open Source, you don't pay for downloading, using and publish your game for sale, you also don't need to pay taxes regardless of how much you earn with your project. 
+              However, if you want access to the latest early access versions, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a>. With this support we can expand our team to make the engine have constant updates.</p>
+          </div> 
         </div>
-        <div class="patrart">
-          <h3 class="patrtop">Why Should I Use Range Engine?</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90">Range Engine Brings a Ton Of New Features And Is Under Constant Updates That
-              Will Make The Software Better and Updated.</p>
-              <br>
-            </div>
-          </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Why should I choose Range Engine over other engines?</button>
+          <div class="clps-cont">
+            <p>Range Engine has the proposal of being a game engine for indie developers, designed with important features
+              to make the game development fluent and efficient. The terms of Range Engine have no bureaucracy compared to other engines 
+              that abuse indie developers with absurd fees and high machine requirements.</p>
+          </div> 
         </div>
-      </div>
-      <div class="patrdwnrow">
-        <div class="patrart">
-          <h3 class="patrtop">Can I Switch My UPBGE 2x Game To RanGE?</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90">For Sure! RanGE Engine Is Fully Compatible With UPBGE 2x<br>
-              (It's Recommended To Make a Backup Of Your Project<br>
-              And Change The <b>.blend</b> Extension From <b>.range</b> Before Switch Your Project To RanGE.)</p>
-            </div>
-          </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Is Range Engine easy to use?</button>
+          <div class="clps-cont">
+            <p>Yes, Range Engine has been designed for indie developers in mind, the learning curve is short and dynamic! If you already use Blender, it's halfway to learn Range Engine.</p>
+          </div> 
         </div>
-        <div class="patrart">
-          <h3 class="patrtop">Is Range Engine Free?</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90">Range Engine Is Free And Open Source, But At The Start We're Doing a Collaboration Campaign<br>
-              On Patreon To Make RanGE Keep Updating, So The Early Access and Latest Range Engine Releases Is Only Available For Supporters At The Moment.</p>
-              <p class="whatsxbge" style="margin:0;">Legal terms as the GPL has already been discussed, everything is in compliance.</p>
-              <br>
-            </div>
-          </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Do I need a powerful computer to run Range Engine?</button>
+          <div class="clps-cont">
+            <p>No, you don't even need a dedicated video card to work on Range Engine! Just have a computer with Windows 8.1/10/11 or Linux and a GPU with support for OpenGL 3.2 and you'll be able to use it.</p>
+          </div> 
         </div>
-      </div>
-      <div class="patrdwnrow">
-        <div class="patrart">
-          <h3 class="patrtop">Want To Clear Your Doubts?</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90" style="margin-bottom:5px;">Join In Our Official Discord Server:</p>
-              <div class="dclink">
-              <img src="/img/discord.PNG" alt="Discord Server">
-              <br>
-              <a class="joindc" href="https://discord.gg/PV6bAvUFq3">Join In</a>
-              </div>
-              <br>
-              <br>
-            </div>
-          </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Does Range Engine have good graphics?</button>
+          <div class="clps-cont">
+            <p>Yes, You can make any graphic style in Range Engine, from cartoon to realistic. The engine can also handle meshes with a high number of triangles and high resolution textures.</p>
+          </div> 
         </div>
-        <div class="patrart">
-          <h3 class="patrtop">Check Our YouTube Channel</h3>
-          <div class="patrtext">
-            <div class="patrnames">
-              <p class="text90">Updates, Announcements and Tutorials about Range Engine in our Official Youtube channel.</p>
-              <div class="dclink">
-                <img style="max-width:70%;" src="/img/rangeyoutube.PNG" alt="Range Youtube">
-              </div>
-              <a style="padding:10px 15px 10px 15px;color:black;font-family:roboto;font-size:15px;background-color:rgb(235, 235, 235);border-radius:50px;" target="_blank" href="https://youtube.com/@rangeengine">Subscribe</a>
-            </div>
-          </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Which is the programming language of Range Engine?</button>
+          <div class="clps-cont">
+            <p>The game functions of Range Engine are written in Python 3.10.9.</p>
+          </div> 
+        </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">On which platforms does Range Engine work and export?</button>
+          <div class="clps-cont">
+            <p>Currently only Windows and Linux, but we have plans to expand to macOS.</p>
+          </div> 
+        </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">How can I learn Range Engine?</button>
+          <div class="clps-cont">
+            <p>Currently the engine lack of original educational material, as the team is small and the engine launched recently.
+              Actually you can use old BGE/UPBGE tutorials to learn Range Engine, if you want to know from where to start you can ask us through the official <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>, 
+              you just need to tell us your doubts and we'll be there to help you. As our community is growing every day we are officially developing a series of tutorials on the <a class="alink" target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg">Range Engine YouTube Channel</a> explaining every point of the engine and teaching how to make an game from scratch.</p>
+          </div> 
+        </div>
+        <div class="about-clps-cont">
+          <button type="button" class="clps-bt">Can I contribute to the development of Range Engine?</button>
+          <div class="clps-cont">
+            <p>The constant development of Range Engine is possible because the community support, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a> or make donations with <a class="alink" style="cursor:pointer;" title="contact@rangeengine.tech">PayPal</a>.
+              The Patrons also have a bunch of advantages by supporting the project, like early access releases, exclusive Range Engine products, exclusive chats and role on the <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>. 
+            </p>
+          </div> 
         </div>
       </div>
     </article>
+    <script>
+      var coll = document.getElementsByClassName("clps-bt");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active_clps");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            content.style.padding = '0px 15px';
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.padding = '10px 15px';
+          } 
+        });
+      }
+    </script>
     <footer>
       <div class="footerobjs">
         <div class="spanrange">
@@ -147,15 +169,21 @@
             });
           </script>
         </div>
-        <div class="ftlinks">
-          <ul>
-            <li><a class="ftlink" target=”_blank” href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes">Wiki</a></li>
-            <li><a class="ftlink" target=”_blank” href="https://patreon.com/user?u=62478788">Patreon</a></li>
-            <li><a class="ftlink" target=”_blank” href="https://discord.gg/PV6bAvUFq3">Discord</a></li>
-            <li><a class="ftlink" target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg">YouTube</a></li>
-          </ul>
+        <div class="footer-links">
+          <a target=”_blank” href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes"><img class="footer-links-icon" src="/img/icons/github.svg"></a>
+          <a target=”_blank” href="https://www.patreon.com/rangeengine"><img class="footer-links-icon" src="/img/icons/patreon.svg"></a>
+          <a target=”_blank” href="https://discord.gg/PV6bAvUFq3"><img class="footer-links-icon" src="/img/icons/discord.svg"></a>
+          <a target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg"><img class="footer-links-icon" src="/img/icons/youtube.svg"></a>
         </div>
       </div>
     </footer>
+    <!--Page Loading Ends Here-->
+    <script>
+      var loader = document.getElementById("loading");
+      window.addEventListener("load", function(){
+        loader.style.display = "none";
+      })
+    </script>
+    <!---->
   </body>
 </html>

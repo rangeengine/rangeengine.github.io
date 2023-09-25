@@ -40,8 +40,15 @@ body{
 }
 /**/
 hr{
-	border-color: rgba(238, 88, 88, 0.322);
-	box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.068);
+	/*border-color: rgba(238, 88, 88, 0.322);*/
+	border-color: rgb(224, 224, 224);
+  	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.247);
+  	margin: 5px;
+}
+.alink{
+	text-decoration: underline;
+	color: #ff2727;
+	text-decoration-color: #ff27279a;
 }
 .material-symbols-outlined {
   font-variation-settings:
@@ -719,15 +726,34 @@ footer{
 	background-color: #0c0c0c;
 	margin: 0px;
 	width: 100%;
+	padding: 18px 0px;
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .footerobjs{
-	display: inline-flex;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 .spanrange{
-	padding-right: 500px;
-	padding-top: 40px;
 	font-style: italic;
 	font-size: 13px;
+}
+.footer-links{
+	display: inline-flex;
+	align-items: center;
+}
+.footer-links a{
+	padding: 5px;
+	margin: 5px;
+	display: flex;
+}
+.footer-links-icon{
+	height: 25px;
+	width: 25px;
+	filter: invert() contrast(70%);
+}
+.footer-links a:hover .footer-links-icon{
+	filter: invert();
 }
 .ftlinks{
 	font-size: 13px;
@@ -981,6 +1007,61 @@ footer{
 	text-align: center;
 }
 
+/*LEARN MORE*/
+.about-clps{
+	display: inline-block;
+	margin: 0 100px;
+	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+}
+.about-clps-cont{
+	margin: 5px 0px;
+}
+.clps-bt{
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 15px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 17px;
+	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
+	border-radius: 5px;
+	transition: all 0.2s ease-out;
+}
+.active_clps, .clps-bt:hover {
+	background-color: #ccc;
+}
+.active_clps{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	transition: all 0.2s ease-out;
+}
+.clps-cont{
+	padding: 0 15px;
+	background-color: rgb(48, 48, 48);
+	max-height: 0;
+	overflow: hidden;
+	text-align: left;
+	font-size: 15px;
+	transition: max-height 0.2s ease-out;
+	transition: padding 0.2s ease-out;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.clps-bt:after{
+	content: /*'\02795'*/'\02c5';
+	font-weight: bold;
+	font-size: 15px;
+	color: rgb(0, 0, 0);
+	float: right;
+	margin-left: 5px;
+}
+.active_clps:after{
+	content: /*"\2796"*/'\02c4';
+}
+
 @media (max-width: 500px){
 	.splashtitsec{
 		font-size: 410%;
@@ -1022,6 +1103,9 @@ footer{
 	}
 	.patrart{
 		width: 100%;
+	}
+	.about-clps{
+		margin: 0 10px;
 	}
 }
 @media (max-width: 850px) {
