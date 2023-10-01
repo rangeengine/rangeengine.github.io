@@ -2,7 +2,7 @@ import http.server, socketserver, subprocess
 
 IP = "localhost"
 PORT = 80
-sections = ["/404", "/apireleases", "/changelog", "/changelog10", "/downloadpage", "/learnmore", "/store", "/whatsnew"]
+sections = ["/404", "/apireleases", "/changelog", "/changelog10", "/downloadpage", "/faq", "/store", "/whatsnew"]
 
 class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):

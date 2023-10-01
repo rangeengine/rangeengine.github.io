@@ -721,13 +721,25 @@ article{
 	background-color:rgba(44, 44, 44, 0.822);
 	padding-bottom: 10px;
 }
+.sponsors-home a img{
+	border-radius: 3px;
+	outline-style: solid;
+	outline-width: 0px;
+	outline-color: white;
+	transition: all 0.05s ease-in-out;
+}
+.sponsors-home a img:hover{
+	outline-width: 2px;
+	outline-color: #717171;
+	transition: all 0.05s ease-in-out;
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.137);
+}
 /* FOOTER */
 footer{
 	background-color: #0c0c0c;
 	margin: 0px;
 	width: 100%;
 	padding: 18px 0px;
-	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .footerobjs{
 	display: flex;
