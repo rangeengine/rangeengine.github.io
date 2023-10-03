@@ -727,6 +727,7 @@ article{
 	outline-width: 0px;
 	outline-color: white;
 	transition: all 0.05s ease-in-out;
+	max-width: 15%;
 }
 .sponsors-home a img:hover{
 	outline-width: 2px;
@@ -1199,7 +1200,12 @@ footer{
 		padding-top: 180px;
 		padding-bottom: 40px;
 	}
-}
-@media (max-width: 2000px) {
-
+	.sponsors-home a img{
+		max-width: 40%;
+	}
+	.h-article-description{
+		margin-left: 20px;
+		margin-top: 20px;
+		margin-right: 20px;
+	}
 }
