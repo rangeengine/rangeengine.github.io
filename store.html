@@ -13,102 +13,108 @@
     <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
 	  <meta name="twitter:card" content="summary_large_image">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/rangecss.css"/>
+    <link rel="stylesheet" href="/css/store.css"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="/js/responsivenav.js" defer></script>
     <script src="/js/searchbar.js"></script>
   </head>
-  <body class="storesec">
+  <body id="storebody">
     <div id="loading">
       <div></div>
     </div>
-    <header class="header" id="heacol">
-      <h1 class="title"><a href="store"><img class="logo" src="/img/store/RGEStore.png" alt="RanGE Store"/></a><a href="/" title="Range Engine Home"><img class="logo" width="35px" src="/img/store/RGEHome.png" alt="Return Homepage"/></a></h1>
-      <a class="togglebutton">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <nav class="headerlinks">
-        <ul class="heaul" style="cursor:pointer;">
-          <input type="text" id="searchbar" onkeyup="searchBar()" placeholder="Search for content">
-          <li class="headerlisto"><a class="healinks" onclick="writeTSB()">Templates</a></li>
-          <li class="headerlisto"><a class="healinks" onclick="writeASB()">Addons</a></li>
-          <li class="headerlisto"><a class="healinks" onclick="writeSSB()">Scripts</a></li>
-          <li class="headerlisto"><a class="healinks" onclick="writeSHSB()">Shaders</a></li>
-          <li class="headerlisto"><a class="suppush" target=”_blank” href="https://patreon.com/user?u=62478788">⛨ Support</a></li>
-        </ul>
-      </nav>
+    <header class="header" style="background-color:#353535;display:block;">
+      <div style="display:flex;justify-content:space-between;">
+        <h1 class="title"><a href="store"><img class="logo" src="/img/store/RangeEngineStoreLogo.png" alt="Range Engine Store"/></a><p style="font-size:15px;font-weight:lighter;color:#ffffff2e;font-family:Titillium Web, Arial, Helvetica, sans-serif;cursor:default;">Beta</p><!--a href="/" title="Range Engine Home"><img class="logo" width="35px" src="/img/store/RGEHome.png" alt="Return Homepage"/></a--></h1>
+        <input type="text" id="searchbar" onkeyup="searchBar()" placeholder="🔍︎ Search...">
+      </div>
+      <div style="background-color:#393939;width:100%;">
+        <nav>
+          <ul style="display:inline-flex;padding:0;margin:5px 0px;">
+            <li><a class="storetags" onclick="writeTSB()">Templates</a></li>
+            <li><a class="storetags" onclick="writeCSB()">Components</a></li>
+            <li><a class="storetags" onclick="writeASB()">Addons</a></li>
+            <li><a class="storetags" onclick="writeSSB()">Scripts</a></li>
+            <li><a class="storetags" onclick="writeSHSB()">Shaders</a></li>
+            <li><a class="storetags" onclick="writeASSB()">Assets</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <section class="downsec" style="padding-bottom:20px;background:none;">
-      <div class="apresentacao" id="aprespags">
+    <section id="storesec">
+      <div class="splashhome">
         <div class="sobreoprojeto">
-          <h2 class="titsece">Range Engine Store (WIP)</h2>
-          <hr>
-          <p class="whatsxbge">In Range Engine Store you can find a lot of content to use in your projects
-            <br>That are ready to use on Range Engine, made by the community and official devs
-            <br><i>(Don't forget to read the description of the products to learn more about copyright terms of each product)</i></p>
+          <h1 class="splashtitsec" style="font-size:500%;">Range Engine Store (Beta)</h1>
+          <p class="splashtitsec" style="font-size:18px;letter-spacing:-1px;text-align:left;text-transform:none;text-shadow: 0 0 20px black;">Range Engine Store is the best place to find a lot of ready to use Range Engine content<br>for your projects, made by the community and official devs!</p>
         </div>
       </div>
+      <div style="padding:5%;"></div>
     </section>
-    <article id="storearti" style="padding-top:0;background-color:rgba(11, 11, 11, 0.9);">
-      <h3 style="margin-bottom:20px;background-color:rgb(94, 18, 18);width:100%;padding:10px 0 10px 0;">↑ Popular in Range Engine Store</h3>
+    <!--Page Loading Ends Here-->
+    <script>
+      var loader = document.getElementById("loading");
+      window.addEventListener("load", function(){loader.style.display = "none";})
+    </script>
+    <!---->
+    <article style="padding-top:0;background-color: rgb(28, 27, 27);">
+      <h3 style="margin-bottom:20px;background-color:rgb(117, 42, 42);width:100%;padding:5px 0 5px 0;font-family:Roboto Condensed, Arial, Helvetica, sans-serif;">↑ Recently Released</h3>
+      <!--p class="no-results">No results found...</p-->
       <div class="storeitems">
         <div class="artigos">
-          <div class="aboutxbge">
-            <img class="funcs" src="/img/store/wip.jpg" alt="FPS Template"/>
-            <div class="articledesc">
-              <p class="namepdt"><b>First Person Character</b><br>
-              Basic FPS Character Controller Template (Python Components)</p>
-              <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          <div class="item-pdt" pdt-id="001">
+            <img class="img-pdt" src="/img/store/wip.jpg" alt="FPS Template"/>
+            <div class="descbox-pdt">
+              <p class="name-pdt"><b>First Person Character</b><br>
+              Basic FPS Character Controller Template</p>
+              <p class="class-pdt">(Python Component - Template)</p>
             </div>
           </div>
         </div>
         <div class="artigos">
-          <div class="aboutxbge">
-            <img class="funcs" src="/img/store/wip.jpg" alt="TPS Template"/>
-            <div class="articledesc">
-              <p class="namepdt"><b>Third Person Character</b><br>
-              Basic Third Person Character Controller Template (Python Components)</p>
-              <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          <div class="item-pdt" pdt-id="002">
+            <img class="img-pdt" src="/img/store/wip.jpg" alt="TPS Template"/>
+            <div class="descbox-pdt">
+              <p class="name-pdt"><b>Third Person Character</b><br>
+              Basic Third Person Character Controller Template</p>
+              <p class="class-pdt">(Python Component - Template)</p>
             </div>
           </div>
         </div>
         <div class="artigos">
-          <div class="aboutxbge">
-            <img class="funcs" src="/img/store/wip.jpg" alt="Vehicle Template"/>
-            <div class="articledesc">
-              <p class="namepdt"><b>Vehicle Controller</b><br>
-              Basic Vehicle Controller Template (Python Components)</p>
-              <a class="stobtdow" target=”_blank” href="">⇢ Download</a>
+          <div class="item-pdt" pdt-id="003">
+            <img class="img-pdt" src="/img/store/wip.jpg" alt="Vehicle Template"/>
+            <div class="descbox-pdt">
+              <p class="name-pdt"><b>Vehicle Controller</b><br>
+              Basic Vehicle Controller Template</p>
+              <p class="class-pdt">(Python Component - Template)</p>
             </div>
           </div>
         </div>
         <div class="artigos">
-          <div class="aboutxbge">
-            <img class="funcs" src="/store/addons/thumbs/bgeppfilters.jpg" alt="BGE Post Process"/>
-            <div class="articledesc">
-              <p class="namepdt"><b>BGE Post Process Filters</b><br>
+          <div class="item-pdt" pdt-id="004">
+            <img class="img-pdt" src="/store/addons/data/thumbs/BGE_Post-Process_RangeEngine.jpg" alt="BGE Post Process"/>
+            <div class="descbox-pdt">
+              <p class="name-pdt"><b>BGE Post Process Filters</b><br>
               GLSL Post Processing Shaders Addon</p>
-              <a class="stobtdow" target=”_blank” href="/store/addons/BGE_Post-Process_RangeEngine12.zip">⇢ Download</a>
+              <p class="class-pdt">(Addon - Shader)</p>
+            </div>
+          </div>
+        </div>
+        <div class="artigos">
+          <div class="item-pdt" pdt-id="005">
+            <img class="img-pdt" src="/img/store/wip.jpg" alt="Inputs Helper"/>
+            <div class="descbox-pdt">
+              <p class="name-pdt"><b>Inputs Helper</b><br>
+              Basic FPS Character Controller Template</p>
+              <p class="class-pdt">(Addon - Script)</p>
             </div>
           </div>
         </div>
       </div>
     </article>
-    <div class="learnmorearticle">
-      <div class="lmrarticle">
-        <p><b>Want To Learn More About Range Engine?</b></p>
-        <p class="whatsxbge">Let us show you a bit more about the project</p>
-      </div>
-      <div>
-        <ul>
-          <li class="downabout" style="padding:0;"><a class="knowmore" href="learnmore">Learn More</a></li>
-        </ul>
-      </div>
-    </div>
+    <script src="/store/data.js"></script>
     <footer style="height:60%;">
       <div class="footerobjs">
         <div class="spanrange">
@@ -131,13 +137,5 @@
         </div>
       </div>
     </footer>
-    <!--Page Loading Ends Here-->
-    <script>
-      var loader = document.getElementById("loading");
-      window.addEventListener("load", function(){
-        loader.style.display = "none";
-      })
-    </script>
-    <!---->
   </body>
 </html>
