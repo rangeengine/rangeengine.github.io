@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Range Engine - News</title>
+        <meta name="description" content="We’re moving forward with some big changes! Range Engine 1.5 is finally among us. Take a look at the new features!"/> <!-- News Description -->
+        <meta name="theme-color" content="#f00000">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Range Engine 1.5 Is Out!"/> <!-- News Title -->
+        <meta property="og:description" content="We’re moving forward with some big changes! Range Engine 1.5 is finally among us. Take a look at the new features!"/> <!-- News Description -->
+        <meta property="og:site_name" content="Range Engine"/>
+        <meta property="og:image" content="https://rangeengine.tech//img/range15splash.png"/> <!-- News Image -->
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="/css/rangecss.css"/>
+        <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <script>
+            $(function(){
+                $("#header").load("../../header.html");
+                $("#footer").load("../../footer.html");
+            });
+        </script>
+    </head>
+    <body id="news-body">
+        <div id="header"></div>
+        <div class="news-article">
+            <div class="news-article-content">
+                <img class="nac-banner" src="/img/range15splash.png" alt=""> <!-- News Image -->
+                <div class="news-article-info">
+                    <h1>Range Engine 1.5 Is Out!</h1> <!-- News Title -->
+                    <p style="color:rgb(87, 87, 87);margin-bottom:20px;">26 November 2023</p> <!-- News Date -->
+                    <hr style="border-color:rgb(80, 80, 80);margin:20px 0;box-shadow:none;">
+                    <p>We’re moving forward with some big changes! Range Engine 1.5 is finally among us and we can't believe you're going to let it pass you by. Work everyday with passion and
+                        determination is what makes Range Engine grow so fast and bring so many great features, so let us share with you what we've been working these last months.
+                    </p> <!-- News Text -->
+                    <h2>Some new features:</h2> <!-- Topic Title -->
+                    <ul class="news-list"> <!-- List -->
+                        <li>New Sky Shader <p>The Sky Shader got a big update, now there is sun in the sky and its strong light on the horizon, it also has Nadir and Ground Color.</p></li>
+                        <li>Foliage Shader <p>Perfect for leaves, grass or any object, Foliage Shader uses the GPU to simulate wind. It is extremely optimized and easy to configure.</p></li>
+                        <li>Realtime Viewport Nodes <p>Viewport now supports real-time viewing of nodes. It helps to improve development time as you can see the changes without needing to start the game.</p></li>
+                        <li>Sound Updates <p>Added full support for speaker object with new options to control the sounds. The audio library has also received a major update.</p></li>
+                        <li>Support for ORM textures <p>ORM textures consume less memory and are faster compared to traditional approaches as it has 3 textures combined in only one image.</p></li>
+                        <li>Custom Mouse Cursor <p>You can easily custom you in-game mouse cursor, with no workarounds needed.</p></li>
+                        <li>Import Range <p><b>import bge</b> has been deprecated, it helps to change the engine identity and in some cases the scripts licensing.</p></li>
+                    </ul>
+                    <h3>See all the changes with gifs and examples in the <a class="alink" target="_blank" href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes-version-1.5">Release Notes</a></h3>
+                    <h2 style="font-size:35px;">Don’t miss out!<br>Support now on <a style="color:rgb(228, 42, 42);" target="_blank" href="https://www.patreon.com/rangeengine">Patreon</a> and download Range Engine 1.5</h2>
+                    <h2>Moving Forward</h2>
+                    <div class="ltsnw-news" style="width:100%;">
+                        <div>
+                          <a class="ltsnw-hl-item" href="/news/11_2023/getting-ready-to-range-16.html">
+                            <img src="/news/11_2023/thumbs/gettingreadytoreange16.jpg" alt="">
+                            <div class="ltsnw-hl-item-desc">
+                              <h3>Getting Ready To Range 1.6</h3>
+                              <p>Learn more about the goals to Range Engine 1.6 and what<br>things it will change.</p>
+                              <p class="ltsnw-newsdate">News Date: 26/11/2023</p>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </body>
+</html>

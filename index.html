@@ -56,14 +56,21 @@
           <li class="headerlis"><i class="material-symbols-outlined">Store</i><a class="healinks" href="store"> Store</a></li>
           <li class="headerlis"><i class="material-symbols-outlined">library_books</i><a class="healinks" href="apireleases"> API</a></li>
           <li class="headerlis"><i class="material-symbols-outlined">live_help</i><a class="healinks" href="faq"> FAQ</a></li>
-          <li class="headerlissupp"><i class="material-symbols-outlined">health_and_safety</i><a class="suppush" target=”_blank” href="https://www.patreon.com/rangeengine"> Support</a></li>
+          <li class="dropdownh">
+            <span class="dpdhbt" id="dpdhbtsupp"><i class="material-symbols-outlined">health_and_safety</i> Support <i class="material-symbols-outlined">expand_more</i></span>
+            <div class="dpdhitems">
+              <a href="https://www.patreon.com/rangeengine" target="_blank"><img class="footer-links-icon" src="/img/icons/patreon.svg" style="width:20px;height:20px;margin-right:5px;"></img> Patreon</a>
+              <a href="mailto:contact@rangeengine.tech"><img class="footer-links-icon" src="/img/icons/paypal.svg" style="width:20px;height:20px;margin-right:5px;"></img> PayPal</a>
+            </div>
+          </li>
         </ul>
       </nav>
     </header>
-    <section class="indexsec" style="padding-top:220px;padding-bottom:170px;">
+    <section class="indexsec" style="padding-top:15%;padding-bottom:15%;">
       <video class="backvideo" poster="/img/posterback.jpg" preload="" autoplay="" muted="" playsinline="" loop="">
         <source src="/img/Background_RangeWebsite.mp4" type="video/mp4">
       </video>
+      <script src="/js/parallax.js"></script>
       <div class="splashhome">
         <div>
           <h2 class="splashtitsec">Experience Range Engine<p class="animbar">│</p></h2>
@@ -96,45 +103,58 @@
       </div>
     </div>
     </section>
-    <!--LATEST NEWS-->
-    <!--article>
-      <h2 style="font-family:Roboto Condensed,sans-serif;">Latest News</h2>
-      <div class="artigos">
-        <div class="aboutxbge" style="padding:2px;" id="newsarticle">
+    <div class="ltsnw-article">
+      <h2 class="ltsnw-title"><i style="padding:10px;background-color:#373737;"></i>Latest News:</h2>
+      <div class="ltsnw-items">
+        <div class="ltsnw-highlight">
+          <a class="ltsnw-highlight-item" href="news/11_2023/range-engine-15-is-out.html">
+            <div>
+              <img src="/img/range15splash.png" alt="">
+            </div>
+            <div class="ltsnw-highlight-desc">
+              <h3>Range Engine 1.5 Is Out!</h3>
+              <p>The last release before the big update is already available on Patreon.</p>
+              <p class="ltsnw-newsdate">News Date: 26/11/2023</p>
+            </div>
+          </a>
+        </div>
+        <div class="ltsnw-news">
           <div>
-            <img class="funcswn" style="border-radius:10px;" src="/img/range14splash.png" alt="Range Engine 1.4"/>
-          <div class="articledescwn" style="background-color:transparent;text-align:left;padding-left:0;">
-            <h3>Range Engine 1.4 Is Released!</h3>
-            <p class="whatsxbge">The final version of Range Engine 1.4 is already available for early access on Patreon</p>
+            <a class="ltsnw-hl-item" href="/news/11_2023/getting-ready-to-range-16.html">
+              <img src="news/11_2023/thumbs/gettingreadytoreange16.jpg" alt="">
+              <div class="ltsnw-hl-item-desc">
+                <h3>Getting Ready To Range 1.6</h3>
+                <p>Learn more about the goals to Range Engine 1.6 and what<br>things it will bring.</p>
+                <p class="ltsnw-newsdate">News Date: 26/11/2023</p>
+              </div>
+            </a>
+            <!--a class="ltsnw-hl-item" href="news/11_2023/range-store-is-now-on-beta.html">
+              <img src="news/11_2023/thumbs/rangestorebeta.jpg" alt="">
+              <div class="ltsnw-hl-item-desc">
+                <h3>Range Store Is Now On Beta</h3>
+                <p>The store is under a fully rework to bring a modern look and<br>better user experience.</p>
+                <p class="ltsnw-newsdate">News Date: 26/11/2023</p>
+              </div>
+            </a-->
           </div>
         </div>
-      </div>
-      <div class="artigos">
-        <div class="aboutxbge" style="padding:2px;" id="newsarticle">
-          <div>
-            <img class="funcswn" style="border-radius:10px;" src="/img/range14splash.png" alt="Range Engine 1.4"/>
-          <div class="articledescwn" style="background-color:transparent;text-align:left;padding-left:0;">
-            <h3>Range Engine 1.4 Is Released!</h3>
-            <p class="whatsxbge">The final version of Range Engine 1.4 is already available for early access on Patreon</p>
-          </div>
-        </div>
-      </div>
-    </article-->
-    <div class="home-splashrange">
-      <div style="display:inline-block;">
-        <h2>An Engine of Possibilities</h2>
-        <p>Take a look at what Range Engine is capable to do</p>
-      </div>
-      <div class="anim-arrow">
-        <i class="material-symbols-outlined" style="font-size:60px;top:0px;">keyboard_double_arrow_down</i>
       </div>
     </div>
-    <article style="padding:0 0 10px 0;background-color:rgba(39,39,39);">
+    <div class="indexsec" style="padding-top:90px;padding-bottom:90px;background-color:#0f0f0fe0;backdrop-filter:blur(10px);">
+      <div class="splashhome">
+        <div class="sobreoprojeto">
+          <p class="splashtitsec" style="font-size:25px;letter-spacing:-1px;display:block;">Experience an</p>
+          <h2 class="splashtitsec">Engine of Possibilities</h2>
+          <p class="splashtitsec" style="font-size:19px;letter-spacing:-1px;display:block;">Take a look in what Range Engine is capable to do</p>
+      </div>
+    </div>
+  </div>
+    <article style="padding:0 0 10px 0;background-color:#181818/*rgba(39,39,39)*/;">
       <div class="home-article"> <!--Artigo Principal do Article-->
         <div class="art-articles"> <!--Sub Artigos-->
           <div class="articles-cont"> <!--Conteúdo dos Artigos-->
             <div class="h-article-description">
-              <h3 style="text-align:right;">Powerfull Modelling Tools</h3>
+              <h3 style="text-align:right;">Powerful Modelling Tools</h3>
               <p style="text-align:right;">Based on Blender, With Range Engine you can <b>Model and Sculpt you own Assets,<br> Make Materials and Textures,
               create high detailed Animations<br> And build breathtaking levels with advanced tools and modificators.</b></p>
             </div>
@@ -168,7 +188,7 @@
             </ul>
             <div class="h-article-description">
               <h3>Beautiful Materials</h3>
-              <p>Make amazing environments with beautiful PBR materials, you can<br>
+              <p>Make amazing environments with <b>beautiful PBR materials</b>, you can<br>
               use your imagination to make advanced materials with <b>Shader Nodes Editor</b>.</p>
             </div>
           </div>
@@ -178,7 +198,7 @@
             <div class="h-article-description">
               <h3 style="text-align:right;">Code With Python Or Visual Language</h3>
               <p style="text-align:right;">Range Engine makes coding looks easy, you can code with <b>Python 3.10</b><br>
-              or make visual scripting with <b>Visual Language</b>, you can also use both ways<br>together! <a class="linksites" href="whatsnew"><i>(Cython and Range Nodes Coming Soon)</i></a></p>
+              or make visual scripting with <b>Visual Language</b>, you can also use both ways<br>together! <a class="alink" href="whatsnew">(Cython and Range Nodes Coming Soon)</a></p>
             </div>
             <ul class="slider">
               <li>
