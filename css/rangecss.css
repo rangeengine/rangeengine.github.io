@@ -638,6 +638,7 @@ a.knowmore:hover{
 .ltsnw-hl-item-desc p{
 	letter-spacing: -1px;
 	white-space: initial;
+	font-family: Roboto Condensed, Arial, Helvetica, sans-serif!important;
 }
 .ltsnw-newsdate{
 	cursor: default;
@@ -1140,6 +1141,9 @@ footer{
 	text-align: left;
 	font-size: 18px;
 }
+.news-article-info p{
+	font-family: Montserrat;
+}
 .news-article-info h1{
 	font-size: 50px;
 	font-size: 50px;
@@ -1160,6 +1164,12 @@ footer{
 	border-radius: 5px;
 	box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.25);
 }
+.nac-img{
+	width: 90%;
+	border-radius: 5px;
+	margin: 4% 0 4% 0;
+	box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.20);
+}
 .news-list{
 	list-style: square;
 	font-size: 20px;
@@ -1168,7 +1178,7 @@ footer{
 	margin: 5px 0;
 }
 .news-list li p{
-	font-size: 16px;
+	font-size: 15px;
 }
 u{
 	text-decoration-color: #707070;
