@@ -1,10 +1,11 @@
 // Database URLs
 const pdtUrls = {
-    '001': '/store/templates/first_person_character.html',
-    '002': '/store/templates/third_person_character.html',
-    '003': '/store/templates/vehicle_controller.html',
-    '004': '/store/addons/bge_post_processing_filters.html',
-    '005': '/store/addons/inputs_helper.html',
+    '000': '/store/templates/first_person_character.html',
+    '001': '/store/templates/third_person_character.html',
+    '002': '/store/templates/vehicle_controller.html',
+    '003': '/store/addons/bge_post_processing_filters.html',
+    '004': '/store/addons/inputs_helper.html',
+    '005': '/store/templates/sprite_animation.html'
 };
 
 //Store URL
