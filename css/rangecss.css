@@ -1162,7 +1162,7 @@ footer{
 .nac-banner{
 	width: 100%;
 	border-radius: 5px;
-	box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.25);
 }
 .nac-img{
 	width: 90%;
