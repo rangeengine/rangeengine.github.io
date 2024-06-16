@@ -31,7 +31,7 @@ with detailed information (and examples in some cases).
    :maxdepth: 2
    :caption: API Reference
    
-   api/bge
+   api/Range
    api/aud
    api/mathutils
    api/bgl
