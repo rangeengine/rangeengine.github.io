@@ -29,7 +29,7 @@ for (let pdtItem in pdtUrls) {
             pdtIframe.src = pdtUrls[pdtItem];
 
             // Iframe Style
-            Object.assign(pdtIframe.style, {borderRadius:'10px',width:'90%',height:'80%',top:'14%',left:'5%',position:'fixed',zIndex:'10000',boxShadow:'0px 0px 20px 5px black'});
+            Object.assign(pdtIframe.style, {borderRadius:'10px',width:'90%',height:'80%',top:'14%',left:'5%',position:'fixed',zIndex:'10000',boxShadow:'0px 0px 20px 5px rgba(0,0,0,0.5)'});
             pdtIframe.frameBorder = '0';
 
             document.body.insertBefore(pdtIframe, document.body.firstChild);

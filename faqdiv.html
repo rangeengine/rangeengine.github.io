@@ -1,0 +1,83 @@
+<article style="padding-top:10px;background-color: rgba(0, 0, 0, 0.52);backdrop-filter: blur(5px);">
+  <div class="about-clps">
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Is Range Engine Free?</button>
+      <div class="clps-cont">
+        <p>Range Engine Is Free And Open Source, you don't pay for downloading, using and publish your game for sale, you also don't need to pay taxes regardless of how much you earn with your project. 
+          However, if you want access to the latest early access versions, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a>. With this support we can expand our team to make the engine have constant updates.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Why should I choose Range Engine over other engines?</button>
+      <div class="clps-cont">
+        <p>Range Engine has the proposal of being a game engine for indie developers, designed with important features
+          to make the game development fluent and efficient. The terms of Range Engine have no bureaucracy compared to other engines 
+          that abuse indie developers with absurd fees and high machine requirements.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Is Range Engine easy to use?</button>
+      <div class="clps-cont">
+        <p>Yes, Range Engine has been designed for indie developers in mind, the learning curve is short and dynamic! If you already use Blender, it's halfway to learn Range Engine.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Do I need a powerful computer to run Range Engine?</button>
+      <div class="clps-cont">
+        <p>No, you don't even need a dedicated video card to work on Range Engine! Just have a computer with Windows 8.1/10/11 or Linux and a GPU with support for OpenGL 3.3 and you'll be able to use it.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Does Range Engine have good graphics?</button>
+      <div class="clps-cont">
+        <p>Yes, You can make any graphic style in Range Engine, from cartoon to realistic. The engine can also handle meshes with a high number of triangles and high resolution textures.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Which is the programming language of Range Engine?</button>
+      <div class="clps-cont">
+        <p>The game functions of Range Engine are written in Python 3.11.7.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">On which platforms does Range Engine work and export?</button>
+      <div class="clps-cont">
+        <p>Currently only Windows and Linux, but we have plans to expand to macOS.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">How can I learn Range Engine?</button>
+      <div class="clps-cont">
+        <p>Currently the engine lack of original educational material, as the team is small and the engine launched recently.
+          Actually you can use old BGE/UPBGE tutorials to learn Range Engine, if you want to know from where to start you can ask us through the official <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>, 
+          you just need to tell us your doubts and we'll be there to help you. As our community is growing every day we are officially developing a series of tutorials on the <a class="alink" target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg">Range Engine YouTube Channel</a> explaining every point of the engine and teaching how to make an game from scratch.</p>
+      </div> 
+    </div>
+    <div class="about-clps-cont">
+      <button type="button" class="clps-bt">Can I contribute to the development of Range Engine?</button>
+      <div class="clps-cont">
+        <p>The constant development of Range Engine is possible because the community support, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a> or make donations with <a class="alink" style="cursor:pointer;" title="contact@rangeengine.tech">PayPal (contact@rangeengine.tech)</a>.
+          The Patrons also have a bunch of advantages by supporting the project, like early access releases, exclusive Range Engine products, exclusive chats and role on the <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>. 
+        </p>
+      </div> 
+    </div>
+  </div>
+</article>
+<script>
+  var coll = document.getElementsByClassName("clps-bt");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active_clps");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+        content.style.padding = '0px 15px';
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding = '10px 15px';
+      } 
+    });
+  }
+</script>

@@ -15,56 +15,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/rangecss.css"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="/js/responsivenav.js" defer></script>
     <script>
-      $(document).on('scroll', function(){
-        if ( $(window).scrollTop() > 400) {
-          $('.header').addClass('activeh');
-        } else {
-          $('.header').removeClass('activeh');
-        }
+      $(function(){
+          $("#header").load("../../header.html");
+          $("#footer").load("../../footer.html");
       });
     </script>
+    <script>
+      $(document).on('scroll', function(){
+        if ( $(window).scrollTop() > 400) {$('.header').addClass('activeh');}
+        else {$('.header').removeClass('activeh');}
+      });
+    </script>
+    <script src="/js/responsivenav.js" defer></script>
   </head>
   <body>
     <div id="loading">
       <div></div>
     </div>
-    <header class="header">
-      <h1 class="title"><a href="/"><img class="logo" src="/img/RangeEngineExtendedLogo.png" alt="RanGELogo"/></a></h1>
-      <a class="togglebutton">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <nav class="headerlinks">
-        <ul class="heaul">
-          <li class="headerlis"><i class="material-symbols-outlined">Home</i><a class="healinks" href="/"> Home</a></li>
-          <li class="headerlis"><i class="material-symbols-outlined">Download</i><a class="healinks" href="downloadpage"> Download</a></li>
-          <li class="dropdownh">
-            <span class="dpdhbt">News<span class="newcirclespan"></span> <i class="material-symbols-outlined">expand_more</i></span>
-            <div class="dpdhitems">
-              <a href="whatsnew"><i class="material-symbols-outlined">Celebration</i> What's New</a>
-              <a href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes"><i class="material-symbols-outlined">library_books</i> Changelog</a>
-            </div>
-          </li>
-          <li class="headerlis"><i class="material-symbols-outlined">Store</i><a class="healinks" href="store"> Store</a></li>
-          <li class="headerlis"><i class="material-symbols-outlined">library_books</i><a class="healinks" href="apireleases"> API</a></li>
-          <li class="headerlis"><i class="material-symbols-outlined">live_help</i><a class="healinks" href="faq"> FAQ</a></li>
-          <li class="dropdownh">
-            <span class="dpdhbt" id="dpdhbtsupp"><i class="material-symbols-outlined">health_and_safety</i> Support <i class="material-symbols-outlined">expand_more</i></span>
-            <div class="dpdhitems">
-              <a href="https://www.patreon.com/rangeengine" target="_blank"><img class="footer-links-icon" src="/img/icons/patreon.svg" style="width:20px;height:20px;margin-right:5px;"></img> Patreon</a>
-              <a href="mailto:contact@rangeengine.tech"><img class="footer-links-icon" src="/img/icons/paypal.svg" style="width:20px;height:20px;margin-right:5px;"></img> PayPal</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header"></div>
     <section class="indexsec" style="padding-top:150px;padding-bottom:100px;">
       <video class="backvideo" poster="/img/posterback.jpg" preload="" autoplay="" muted="" playsinline="" loop="">
         <source src="/img/Background_RangeWebsite.mp4" type="video/mp4">
@@ -74,7 +46,7 @@
         <div class="sobreoprojeto">
           <p class="splashtitsec" style="font-size:25px;letter-spacing:-1px;">Range Engine, But...</p>
           <h1 class="splashtitsec">What's New?</h1>
-          <p class="splashtitsec" style="font-size:18px;letter-spacing:-1px;">Take a look in some of the new engine features</p>
+          <p class="splashtitsec" style="font-size:18px;letter-spacing:-1px;">Take a look in just some of the new engine features</p>
       </div>
     </div>
     </section>
@@ -96,48 +68,94 @@
           <div class="articledescwn" id="articledescwnd">
             <h3>PBR <p style="display:inline;font-size:20px;">(Physically Based Rendering)</p></h3>
           </div>
-          <img class="funcswn" src="/img/whatsnew/pbr.jpg" alt="PBR"/>
+          <img class="funcswn" src="/img/whatsnew/pbr.gif" alt="PBR"/>
           <div class="articledescwn">
             <p>Graphics rendering technique <b>based on the physical principles of light and reflection</b>, <b>The goal is to produce realistic images</b> that are consistent with the laws of physics, including the <b>behavior of light on different surfaces and lighting conditions</b>.</p>
           </div>
         </div>
       </div>
-      </article>
-      <article style="padding-top:0;">
-        <div class="artigos">
-          <div class="aboutxbge">
-            <div class="articledescwn" id="articledescwnd">
-              <h3>Range Armor Security</h3>
-            </div>
-            <img class="funcswn" src="/img/sliders/rangearmor.jpg" alt="Range Armor Security"/>
-            <div class="articledescwn">
-              <p>With Range Armor you can export your project <b>with 3 steps security</b>,
-              You can also sell and distribute your project <b>without licensing problems!</b></p>
-            </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Range Armor Security</h3>
+          </div>
+          <img class="funcswn" src="/img/sliders/rangearmor.jpg" alt="Range Armor Security"/>
+          <div class="articledescwn">
+            <p>With Range Armor you can export your project <b>with 3 steps security</b>,
+            You can also sell and distribute your project <b>without licensing problems!</b></p>
           </div>
         </div>
-        <div class="artigos">
-          <div class="aboutxbge">
-            <div class="articledescwn" id="articledescwnd">
-              <h3>New Interface</p></h3>
-            </div>
-            <img class="funcswn" src="/img/range15splash.png" alt="New Interface"/>
-            <div class="articledescwn">
-              <p>One of the most important things to an engine is the interface, it needs to be comfortable and easy to use, <b>The interface</b> is constantly being re-designed to make the game development <n>easy and efficient</b>.</p>
-            </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Reworked Interface</p></h3>
+          </div>
+          <img class="funcswn" src="/img/RangeEngine15aSplash.png" alt="Reworked Interface"/>
+          <div class="articledescwn">
+            <p>One of the most important things to an engine is the interface, it needs to be comfortable and easy to use, <b>The interface</b> is constantly being re-designed to make the game development <n>easy and efficient</b>.</p>
           </div>
         </div>
+      </div>
     </article>
     <article style="padding-top:0;">
       <div class="artigos">
         <div class="aboutxbge">
           <div class="articledescwn" id="articledescwnd">
-            <h3>Python 3.10.9</h3>
+            <h3>Sky Shaders</h3>
           </div>
-          <img class="funcswn" src="/img/whatsnew/python3109.jpg" alt="Python 3.10.9"/>
+          <img class="funcswn" src="/img/whatsnew/skyshader.gif" alt="Sky Shaders"/>
+          <div class="articledescwn">
+            <p>Range Engine has one of the most advanced Sky Shaders in a game engine, <b>simulating 
+            the real life sky behaviour, including Day/Night Cycle with real-time Python functions, and stars!</b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Sound Reverb</h3>
+          </div>
+          <img class="funcswn" src="/img/whatsnew/soundreverb.png" alt="Sound Reverb"/>
+          <div class="articledescwn">
+            <p>Sound Reverb creates a realistic sense of space and environment by simulating how sound reflects off surrounding surfaces, enhancing the player immersion.</p>
+          </div>
+        </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Foliage Shader</h3>
+          </div>
+          <img class="funcswn" src="/img/whatsnew/FoliageShaderDemo.gif" alt="Foliage Shader"/>
+          <div class="articledescwn">
+            <p>Foliage shader via GPU, delivering the best performance possible. In addition to being quick and easy to configure in any object.</p>
+          </div>
+        </div>
+      </div>
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Input System</h3>
+          </div>
+          <img class="funcswn" src="/img/whatsnew/inputsystem.png" alt="Input System"/>
+          <div class="articledescwn">
+            <p>The Input System manages player interactions by processing various controls, like keyboard, mouse, and gamepad. <b>Reducing and optimizing massively the character code.</b></p>
+            </div>
+        </div>
+      </div>
+    </article>
+    <article style="padding-top:0;">
+      <div class="artigos">
+        <div class="aboutxbge">
+          <div class="articledescwn" id="articledescwnd">
+            <h3>Python 3.11.7</h3>
+          </div>
+          <img class="funcswn" src="/img/whatsnew/python3109.jpg" alt="Python 3.11.7"/>
           <div class="articledescwn">
             <p>Python is one of the most popular languages, which is very 
-            intuitive and easy to learn, <b>Python 3.10.9 is already available in Range</b>, and Python 3.11 soon!
+            intuitive and easy to learn, <b>Python 3.11.7 is already available in Range Engine, even more faster than the previous Python 3.10.9!</b>
             </p>
           </div>
         </div>
@@ -147,14 +165,12 @@
           <div class="articledescwn" id="articledescwnd">
             <h3>Realtime Viewport</h3>
           </div>
-          <img class="funcswn" src="/img/whatsnew/realtimeviewport.png" alt="Realtime Viewport"/>
+          <img class="funcswn" src="/img/whatsnew/realtimeviewport.gif" alt="Realtime Viewport"/>
           <div class="articledescwn">
             <p>To make the game development more dynamic the engine need to be fast, we're working to <b>make the viewport graphically more similar to the game mode porting new filters and making the nodes setup work in realtime</b>.</p>
           </div>
         </div>
       </div>
-    </article>
-    <article>
       <div class="artigos">
         <div class="aboutxbge">
           <div class="articledescwn" id="articledescwnd">
@@ -197,17 +213,70 @@
         </ul>
       </div>
     </div>
-    <section class="indexsec" style="padding-top:100px;padding-bottom:80px;">
+    <!--section class="indexsec" style="width:100%;padding:100px 0 100px 0;">
       <div class="splashhome">
         <div class="sobreoprojeto">
           <p class="splashtitsec" style="font-size:25px;letter-spacing:-1px;">And...</p>
           <h2 class="splashtitsec">What's Next?</h2>
           <p class="splashtitsec" style="font-size:16px;letter-spacing:-1px;">Some features we're planning and working on</p>
+        </div>
       </div>
-    </div>
-    </section>
-    <article>
-      <div class="artigos">
+    </section-->
+    <style>
+      .nextver{
+        padding:0 0 0 0;
+        background-image:url(/img/whatsnew/range20showcase.png);
+        background-size:60%;
+        background-position:0 80%;
+        background-repeat:no-repeat;
+        display:inline-flex;
+        width:100%;
+      }
+      .nextvertri{
+        width:50%;
+        border-top:600px inset transparent;
+        border-right:200px inset #161616;
+        box-shadow: inset 2px 2px black;
+      }
+      .nextvertxt{
+        background-color:#161616;
+        width:50%;
+        padding:100px 0 100px 0;
+        font-family:Rubik;
+      }
+      @media (max-width: 900px){
+        .nextver{
+          display: inline-block;
+          background-size: 240%;
+          background-position:70% 0%;
+        }
+        .nextvertri{
+          border-top: 0px inset transparent;
+          border-right: 0px inset transparent;
+        }
+        .nextvertxt{
+          background-color: #161616b2;
+          width:100%;
+        }
+      }
+    </style>
+    <article class="nextver">
+      <div class="nextvertri"></div>
+      <div class="nextvertxt">
+        <p>The next step:</p>
+        <h2 style="font-size:350%;letter-spacing:-5px;margin:0;background:-webkit-linear-gradient(45deg,#e62f2f,#757575);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Range Engine 2+</h2>
+        <ul style="font-size:150%;text-align:right;display:inline-block;">
+          <li>New Rendering Engine</li>
+          <li>OpenGL 3.3</li>
+          <li>Range Nodes</li>
+          <li>GPU Skinning</li>
+          <li>Built-in Online</li>
+          <li>Collections & Asset Browser</li>
+          <li>Improved Modelling Tools</li>
+        </ul>
+        <p style="font-size:180%;text-transform:uppercase;letter-spacing:5px;padding:10px 0 10px 0;background:-webkit-linear-gradient(90deg,#ff3232,#757575);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Coming 2025</p>
+      </div>
+      <!--div class="artigos">
         <div class="aboutxbge">
           <div class="articledescwn" id="articledescwnd">
             <h3>OpenGL Update</h3>
@@ -252,7 +321,7 @@
             <p class="whatsxbge">Range Nodes plans to bring an brand new <b>nodes workspace</b>, enabling you to <b>make easy, complex and optimized logics</b>.</p>
             </div>
         </div>
-      </div>
+      </div-->
     </article>
     <div class="learnmorearticle" style="background-image:url('img/backdivs.png');background-repeat: no-repeat;background-size: cover;text-shadow: 0px 0px 10px black;">
       <div class="lmrarticle">
@@ -278,28 +347,7 @@
         </ul>
       </div>
     </div>
-    <footer>
-      <div class="footerobjs">
-        <div class="spanrange">
-          <span id="no_underline" class="ftlink">&copy; 2022 - <span id="copyright-year"></span>, Range Engine</span>
-          <script>
-            $(document).ready(function() {
-              document.getElementById('copyright-year').appendChild(
-                document.createTextNode(
-                  new Date().getFullYear()
-                )
-              );
-            });
-          </script>
-        </div>
-        <div class="footer-links">
-          <a target=”_blank” href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes"><img class="footer-links-icon" src="/img/icons/github.svg"></a>
-          <a target=”_blank” href="https://www.patreon.com/rangeengine"><img class="footer-links-icon" src="/img/icons/patreon.svg"></a>
-          <a target=”_blank” href="https://discord.gg/PV6bAvUFq3"><img class="footer-links-icon" src="/img/icons/discord.svg"></a>
-          <a target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg"><img class="footer-links-icon" src="/img/icons/youtube.svg"></a>
-        </div>
-      </div>
-    </footer>
+    <div id="footer"></div>
     <!--Page Loading Ends Here-->
     <script>
       var loader = document.getElementById("loading");
