@@ -597,6 +597,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-settings">Game Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-orientation">Face Orientation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foliage-shader">Foliage Shader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-viewport-shader-vp-shader">Custom Viewport Shader (VP Shader)</a></li>
 </ul>
             </nav>
         </div>
@@ -621,7 +622,7 @@ document.write(`
 <p>This panel contains properties that control how the object surfaces
 that use the material are rendered in real-time by the Range Engine.</p>
 <dl>
-<dt>Backface Cull</dt><dd><p>Hide the back-faces of objects rendered with this material.
+<dt>Backface Culling</dt><dd><p>Hide the back-faces of objects rendered with this material.
 If “Off”, both sides of the surface are visible (at the expense of lower rendering speed).
 Note that this setting is applied per material and not per face; e.g.
 if the material is applied to a cube, only the back and front faces of the cube are visible,
@@ -674,9 +675,65 @@ of faces to which the material is applied.</p>
 </dd>
 <dt>Foliage Turbulence:</dt><dd><p>Motion cycle speed</p>
 </dd>
-<dt>Foliage Randomizer:</dt><dd><p>How much the object will be distorted in the movement</p>
+<dt>Grass:</dt><dd><p>Lock the vertices under the object origin</p>
 </dd>
 </dl>
+</div></blockquote>
+</section>
+<section id="custom-viewport-shader-vp-shader">
+<h2>Custom Viewport Shader (VP Shader)<a class="headerlink" href="#custom-viewport-shader-vp-shader" title="Permalink to this heading">#</a></h2>
+<p>This module shows the usage and parameters that can be used to create custom shaders for materials, they are compatible with the editor and game engine runtime.</p>
+<blockquote>
+<div><figure class="align-default">
+<img alt="../../../_images/VP_Shaders.png" src="../../../_images/VP_Shaders.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to change the Vertex and Fragment shader of the material.</p>
+</div>
+<p>Vertex Code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">vertex</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">VERTEX</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>All Vertex parameters:</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vec3</span><span class="w"> </span><span class="n">VERTEX</span><span class="p">;</span>
+<span class="n">vec3</span><span class="w"> </span><span class="n">NORMAL</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">TIME</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Fragment Code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">fragment</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">ALBEDO</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vec3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>All Fragment parameters:</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">float</span><span class="w"> </span><span class="n">VERTEX_ID</span><span class="p">,</span><span class="w"> </span><span class="n">OBJECT_INDEX</span><span class="p">,</span><span class="w"> </span><span class="n">MATERIAL_INDEX</span><span class="p">,</span><span class="w"> </span><span class="n">RANDOM_INDEX</span><span class="p">;</span>
+<span class="kt">float</span><span class="w">      </span><span class="n">TIME</span><span class="p">,</span><span class="w">      </span><span class="n">IOR</span><span class="p">,</span><span class="w"> </span><span class="n">FRESNEL</span><span class="p">,</span><span class="w">     </span><span class="n">EMIT</span><span class="p">,</span><span class="w">   </span><span class="n">ALPHA</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">WORLD_ENERGY</span><span class="p">,</span><span class="w"> </span><span class="n">MIST_START</span><span class="p">,</span><span class="w"> </span><span class="n">MIST_END</span><span class="p">,</span><span class="w"> </span><span class="n">MIST_MIN</span><span class="p">,</span><span class="w"> </span><span class="n">MIST_TYPE</span><span class="p">;</span>
+<span class="n">vec2</span><span class="w"> </span><span class="n">UV</span><span class="p">;</span>
+<span class="n">vec3</span><span class="w"> </span><span class="n">ALBEDO</span><span class="p">,</span><span class="w"> </span><span class="n">SPECULAR_RGB</span><span class="p">,</span><span class="w"> </span><span class="n">EMIT_RGB</span><span class="p">,</span><span class="w">   </span><span class="n">ORCO</span><span class="p">,</span><span class="w"> </span><span class="n">NORMAL</span><span class="p">,</span><span class="w"> </span><span class="n">VIEW</span><span class="p">,</span><span class="w"> </span><span class="n">OBJECT_POS</span><span class="p">,</span><span class="w"> </span><span class="n">CAMERA_POS</span><span class="p">;</span>
+<span class="n">vec3</span><span class="w"> </span><span class="n">MIST_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">HORIZON_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">ZENITH_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">GROUND_COLOR</span><span class="p">;</span>
+<span class="n">vec4</span><span class="w"> </span><span class="n">TANGENT</span><span class="p">,</span><span class="w"> </span><span class="n">VERTEX_COLOR</span><span class="p">,</span><span class="w"> </span><span class="n">OBJECT_COLOR</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">ROUGHNESS</span><span class="p">,</span><span class="w"> </span><span class="n">METALLIC</span><span class="p">,</span><span class="w"> </span><span class="n">DIFFUSE</span><span class="p">,</span><span class="w"> </span><span class="n">SPECULAR</span><span class="p">,</span><span class="w"> </span><span class="n">AMBIENT</span><span class="p">;</span>
+<span class="n">mat4</span><span class="w"> </span><span class="n">MODEL_MATRIX</span><span class="p">,</span><span class="w"> </span><span class="n">VIEW_MATRIX</span><span class="p">,</span><span class="w"> </span><span class="n">INV_VIEW_MATRIX</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Basic shader, use the .vert or .frag extension to enable the material shader compile button.</p>
+<figure class="align-default">
+<img alt="../../../_images/VP_Shaders_Vert.png" src="../../../_images/VP_Shaders_Vert.png" />
+</figure>
+<figure class="align-default">
+<img alt="../../../_images/VP_Shaders_Frag.png" src="../../../_images/VP_Shaders_Frag.png" />
+</figure>
 </div></blockquote>
 </section>
 </section>
@@ -728,6 +785,7 @@ of faces to which the material is applied.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-settings">Game Settings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#face-orientation">Face Orientation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foliage-shader">Foliage Shader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-viewport-shader-vp-shader">Custom Viewport Shader (VP Shader)</a></li>
 </ul>
   </nav></div>
 

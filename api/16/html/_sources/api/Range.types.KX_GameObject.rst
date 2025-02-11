@@ -1188,6 +1188,24 @@ base class --- :class:`SCA_IObject`
       :arg frame: The frame to set the action to
       :type frame: float
 
+   .. method:: setActionLayerWeight(layer=0, weight=0.0)
+
+      Set the weight of the layer compared to others.
+
+      :arg layer: The layer where you want to set the frame, default to 0 if no value passed.
+      :type layer: integer
+      :arg weight: Layer Weight
+      :type frame: float
+
+   .. method:: setActionLayerSpeed(layer=0, speed=0.0)
+
+      Set current action speed.
+
+      :arg layer: The layer where you want to set the frame, default to 0 if no value passed.
+      :type layer: integer
+      :arg speed: speed
+      :type frame: float
+
    .. method:: isPlayingAction([layer])
 
       Checks to see if there is an action playing in the given layer.

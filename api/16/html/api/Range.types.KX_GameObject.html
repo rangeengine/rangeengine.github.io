@@ -703,6 +703,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.getActionFrame"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.getActionFrame()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.getActionName"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.getActionName()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionFrame"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionLayerWeight"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionLayerWeight()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionLayerSpeed"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionLayerSpeed()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.isPlayingAction"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.isPlayingAction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.addDebugProperty"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.addDebugProperty()</span></code></a></li>
 </ul>
@@ -2446,6 +2448,34 @@ If there is no hit or the hit object is not a static mesh, None is returned as 4
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="KX_GameObject.setActionLayerWeight">
+<span class="sig-name descname"><span class="pre">setActionLayerWeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_GameObject.setActionLayerWeight" title="Permalink to this definition">#</a></dt>
+<dd><p>Set the weight of the layer compared to others.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layer</strong> (<em>integer</em>) – The layer where you want to set the frame, default to 0 if no value passed.</p></li>
+<li><p><strong>weight</strong> – Layer Weight</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_GameObject.setActionLayerSpeed">
+<span class="sig-name descname"><span class="pre">setActionLayerSpeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_GameObject.setActionLayerSpeed" title="Permalink to this definition">#</a></dt>
+<dd><p>Set current action speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layer</strong> (<em>integer</em>) – The layer where you want to set the frame, default to 0 if no value passed.</p></li>
+<li><p><strong>speed</strong> – speed</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="KX_GameObject.isPlayingAction">
 <span class="sig-name descname"><span class="pre">isPlayingAction</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#KX_GameObject.isPlayingAction" title="Permalink to this definition">#</a></dt>
 <dd><p>Checks to see if there is an action playing in the given layer.</p>
@@ -2633,6 +2663,8 @@ If there is no hit or the hit object is not a static mesh, None is returned as 4
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.getActionFrame"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.getActionFrame()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.getActionName"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.getActionName()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionFrame"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionFrame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionLayerWeight"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionLayerWeight()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.setActionLayerSpeed"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.setActionLayerSpeed()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.isPlayingAction"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.isPlayingAction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_GameObject.addDebugProperty"><code class="docutils literal notranslate"><span class="pre">KX_GameObject.addDebugProperty()</span></code></a></li>
 </ul>

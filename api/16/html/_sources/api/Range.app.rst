@@ -11,7 +11,7 @@ Module to access application values that remain unchanged during runtime.
    The Range Engine version as a tuple of 3 ints, eg. (1, 4, 100).
 
    .. note:: Version tuples can be compared simply with (in)equality symbols;
-             for example, ``(1, 4, 100) <= (1, 4, 100)`` returns True (lexical order).
+             for example, ``(1, 6, 100) <= (1, 6, 100)`` returns True (lexical order).
 
    :type: tuple of three ints
 
