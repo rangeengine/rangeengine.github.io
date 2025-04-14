@@ -361,6 +361,8 @@
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_LodLevel.html">KX_LodLevel(EXP_PyObjectPlus)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_LodManager.html">KX_LodManager(EXP_PyObjectPlus)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_Mesh.html">KX_Mesh(EXP_Value)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Range.types.KX_MeshBuilder.html">KX_MeshBuilder(KX_MeshBuilder)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Range.types.KX_MeshBuilderSlot.html">KX_MeshBuilderSlot(KX_MeshBuilderSlot)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_MouseActuator.html">KX_MouseActuator(SCA_IActuator)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_MouseFocusSensor.html">KX_MouseFocusSensor(SCA_MouseSensor)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_MovementSensor.html">KX_MovementSensor(SCA_ISensor)</a></li>
@@ -385,6 +387,7 @@
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_Scene.html">KX_Scene(EXP_PyObjectPlus)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_SceneActuator.html">KX_SceneActuator(SCA_IActuator)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_SoundActuator.html">KX_SoundActuator(SCA_IActuator)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Range.types.KX_Speaker.html">KX_Speaker(SCA_IObject)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_StateActuator.html">KX_StateActuator(SCA_IActuator)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_SteeringActuator.html">KX_SteeringActuator(SCA_IActuator)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.types.KX_TextureRenderer.html">KX_TextureRenderer(EXP_Value)</a></li>
@@ -595,6 +598,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.addFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.addFilter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.removeFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.removeFilter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.getFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.getFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeTonemapValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeTonemapValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeBloomValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeBloomValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeLightScatterValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeLightScatterValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeSSRValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeSSRValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeSSAOValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeSSAOValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.fxaa"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.fxaa()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeVignetteValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeVignetteValues()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -683,6 +693,119 @@ has to be executed one frame later. A delay sensor can be used.</p>
 </dl>
 </dd></dl>
 
+<section id="shaders">
+<h2>Shaders<a class="headerlink" href="#shaders" title="Permalink to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeTonemapValues">
+<span class="sig-name descname"><span class="pre">changeTonemapValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saturation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeTonemapValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the Tonemap shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – change exposure.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – change gamma.</p></li>
+<li><p><strong>saturation</strong> (<em>float</em>) – change saturation.</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – change temperature.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeBloomValues">
+<span class="sig-name descname"><span class="pre">changeBloomValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeBloomValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the Bloom shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – change intensity.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – change threshold.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeLightScatterValues">
+<span class="sig-name descname"><span class="pre">changeLightScatterValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeLightScatterValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the Light Scattering shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – change step_max.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – change step_size.</p></li>
+<li><p><strong>gamma</strong> – change threshold.</p></li>
+<li><p><strong>gamma</strong> – change intensity.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeSSRValues">
+<span class="sig-name descname"><span class="pre">changeSSRValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeSSRValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the SSR shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – change step_max.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – change bias.</p></li>
+<li><p><strong>gamma</strong> – change max_distance.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeSSAOValues">
+<span class="sig-name descname"><span class="pre">changeSSAOValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attenuation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_gi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gi_irradiance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeSSAOValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the SSAO shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>samples</strong> (<em>float</em>) – change samples.</p></li>
+<li><p><strong>strength</strong> (<em>float</em>) – change strength.</p></li>
+<li><p><strong>distance</strong> (<em>float</em>) – change distance.</p></li>
+<li><p><strong>attenuation</strong> (<em>float</em>) – change attenuation.</p></li>
+<li><p><strong>use_gi</strong> (<em>bool</em>) – enanble/disable SSAO Global Illumination.</p></li>
+<li><p><strong>attenuation</strong> – change SSAO Global Illumination irradiance.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.fxaa">
+<span class="sig-name descname"><span class="pre">fxaa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.fxaa" title="Permalink to this definition">#</a></dt>
+<dd><p>Enable/Disable fxaa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enabled</strong> (<em>bool</em>) – enable/disable fxaa</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KX_2DFilterManager.changeVignetteValues">
+<span class="sig-name descname"><span class="pre">changeVignetteValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enabled</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KX_2DFilterManager.changeVignetteValues" title="Permalink to this definition">#</a></dt>
+<dd><p>Changes the parameters of the Vignetter shader.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enabled</strong> (<em>bool</em>) – enable/disable shader</p></li>
+<li><p><strong>exposure</strong> (<em>float</em>) – change size.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – change radius.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 </dd></dl>
 
 </section>
@@ -735,6 +858,13 @@ has to be executed one frame later. A delay sensor can be used.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.addFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.addFilter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.removeFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.removeFilter()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.getFilter"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.getFilter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeTonemapValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeTonemapValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeBloomValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeBloomValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeLightScatterValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeLightScatterValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeSSRValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeSSRValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeSSAOValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeSSAOValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.fxaa"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.fxaa()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#KX_2DFilterManager.changeVignetteValues"><code class="docutils literal notranslate"><span class="pre">KX_2DFilterManager.changeVignetteValues()</span></code></a></li>
 </ul>
 </li>
 </ul>

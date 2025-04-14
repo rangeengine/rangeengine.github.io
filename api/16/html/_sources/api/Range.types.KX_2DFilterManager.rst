@@ -52,3 +52,119 @@ base class --- :class:`EXP_PyObjectPlus`
       :type index: integer
       :return: The filter in the specified pass index or None.
       :rtype: :class:`KX_2DFilter` or None
+
+   *******
+   Shaders
+   *******
+
+   .. method:: changeTonemapValues(enabled, exposure, gamma, saturation, temperature)
+
+      Changes the parameters of the Tonemap shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg exposure: change exposure.
+      :type exposure: float
+
+      :arg gamma: change gamma.
+      :type gamma: float
+
+      :arg saturation: change saturation.
+      :type saturation: float
+
+      :arg temperature: change temperature.
+      :type temperature: float
+
+   .. method:: changeBloomValues(enabled, intensity, threshold)
+
+      Changes the parameters of the Bloom shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg exposure: change intensity.
+      :type exposure: float
+
+      :arg gamma: change threshold.
+      :type gamma: float
+
+   .. method:: changeLightScatterValues(enabled, step_max, step_size, threshold, intensity)
+
+      Changes the parameters of the Light Scattering shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg exposure: change step_max.
+      :type exposure: float
+
+      :arg gamma: change step_size.
+      :type gamma: float
+
+      :arg gamma: change threshold.
+      :type gamma: float
+
+      :arg gamma: change intensity.
+      :type gamma: float
+
+   .. method:: changeSSRValues(enabled, step_max, bias, max_distance)
+
+      Changes the parameters of the SSR shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg exposure: change step_max.
+      :type exposure: float
+
+      :arg gamma: change bias.
+      :type gamma: float
+
+      :arg gamma: change max_distance.
+      :type gamma: float
+
+   .. method:: changeSSAOValues(enabled, samples, strength, distance, attenuation, use_gi=0, gi_irradiance=0)
+
+      Changes the parameters of the SSAO shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg samples: change samples.
+      :type samples: float
+
+      :arg strength: change strength.
+      :type strength: float
+
+      :arg distance: change distance.
+      :type distance: float
+
+      :arg attenuation: change attenuation.
+      :type attenuation: float
+
+      :arg use_gi: enanble/disable SSAO Global Illumination.
+      :type use_gi: bool
+
+      :arg attenuation: change SSAO Global Illumination irradiance.
+      :type attenuation: float
+
+   .. method:: fxaa(enabled)
+
+      Enable/Disable fxaa.
+
+      :arg enabled: enable/disable fxaa
+      :type enabled: bool
+
+   .. method:: changeVignetteValues(enabled, size, radius)
+
+      Changes the parameters of the Vignetter shader.
+
+      :arg enabled: enable/disable shader
+      :type enabled: bool
+
+      :arg exposure: change size.
+      :type exposure: float
+
+      :arg gamma: change radius.
+      :type gamma: float

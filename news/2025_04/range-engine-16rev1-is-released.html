@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Range Engine - News</title>
+        <meta name="description" content="The Range Engine 1.6 LTS just got even better! We've just released our first improved version!"/> <!-- News Description -->
+        <meta name="theme-color" content="#f00000">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Range Engine 1.6 Rev 1 Is Released!"/> <!-- News Title -->
+        <meta property="og:description" content="The Range Engine 1.6 LTS just got even better! We've just released our first improved version!"/> <!-- News Description -->
+        <meta property="og:site_name" content="Range Engine - News"/>
+        <meta property="og:image" content="https://rangeengine.tech//news/2025_01/thumbs/RangeEngine16Announcement.png"/> <!-- News Image -->
+        <meta name="twitter:card" content="summary_large_image">
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <script>
+            $(function(){
+                $("head").load("../../headnews.html");
+                $("#header").load("../../header.html");
+                $("#footer").load("../../footer.html");
+            });
+        </script>
+    </head>
+    <body id="news-body">
+        <div id="header"></div>
+        <div class="news-article">
+            <div class="news-article-content">
+                <img class="nac-banner" src="/news/2025_04/thumbs/RangeEngine16Rev1Announcement.png" alt="Range Engine 1.6 Rev1 Announcement"> <!-- News Image -->
+                <div class="news-article-info">
+                    <h1>Range Engine 1.6 Rev 1 Is Released!</h1> <!-- News Title -->
+                    <p style="color:rgb(87, 87, 87);margin-bottom:20px;">13 April 2025</p> <!-- News Date -->
+                    <hr style="border-color:rgb(80, 80, 80);margin:20px 0;box-shadow:none;">
+                    <p>The Range Engine 1.6 LTS just got even better! We've just released our first improved version, full of tweaks and improvements that makes the difference.</p> <!-- News Text -->
+                    <h2>Some of the improvements and new features:</h2> <!-- Topic Title -->
+                        <ul class="news-list">
+                            <li>Cascaded Shadow Maps<p>A crucial technique for rendering high-quality shadows in large-scale environments, balancing performance and detail across varying distances from the camera.</p></li>
+                            <li>PostFX Improvements<p>We've enhanced the post-processing effects. SSR has a better quality with Binary Search, now the game engine uses Alchemy AO with a performance improvement up to ~60%, Tonemaps now have Saturation and Temperature, and more advanced optimizations.</p></li>
+                            <li>Screen Space Irradiance<p></p></li>
+                            <li>Vignette<p></p></li>
+                            <li>Exponential Height Fog and Mist Improvements<p></p></li>
+                            <li>Debug Mode Improvements<p>Now you can move, rotate and scale objects with a in-game manipulator, And also change the object color and transparency.</p></li>
+                        </ul>
+                    </ul>
+                    <h3>See all the changes with gifs and examples in the <a class="alink" target="_blank" href="https://github.com/rangeengine/Range-Engine-Wiki/wiki/Release-notes-version-1.6rev1">Release Notes</a></h3>
+                    
+                    <h2>The Next Months:</h3>
+                    <p>Probably a big question is when Range Engine 1.6 will be out of early access, also when the Range GameJam will start. Thinking on that we decided to end the early access some days before the game jam starts to give some time to the people that didn't joined the early access to learn the new features and use it in the jam to finish it quickly and with quality</p>
+                    <br>
+                    <p>The Range Engine 1.6 public release and Range GameJam theme voting is planned to April 26 2025, so stay tuned for more information, thank you!</p>
+                    <h2 style="font-size:35px;">Support now on <a style="color:rgb(228, 42, 42);" target="_blank" href="https://www.patreon.com/rangeengine">Patreon</a> and get your early access to Range Engine 1.6 Rev 1</h2>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </body>
+</html>

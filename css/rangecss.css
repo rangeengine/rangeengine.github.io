@@ -132,8 +132,8 @@ a.knowmore:hover{
 }
 .indexsec{
 	display: block;
-	padding-top: 300px;
-	padding-bottom: 300px;
+	padding-top: 17%;
+	padding-bottom: 17%;
 }
 .downsec{
 	display: block;
@@ -168,7 +168,7 @@ a.knowmore:hover{
 	letter-spacing: -7px;
 	font-family: Roboto Condensed, Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	text-shadow: 0px 0px 40px #00000063;
+	text-shadow: 0px 0px 40px #ffffff34;
 	cursor: default;
 	align-items: center;
 	display: flex;
