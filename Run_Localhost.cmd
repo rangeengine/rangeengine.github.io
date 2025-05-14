@@ -1,8 +1,6 @@
 @echo off
-
-SET PATH=C:\Users\\AppData\Local\Programs\Python\Python312
+FOR /F "tokens=*" %%i IN ('where python') DO SET PYTHON_PATH=%%i
+FOR %%i IN ("%PYTHON_PATH%") DO SET PYTHON_DIR=%%~dpi
 SET PY_SCRIPT="Run_Localhost.py"
-
-python %PY_SCRIPT%
-
+"%PYTHON_PATH%" %PY_SCRIPT%
 pause
