@@ -9,18 +9,48 @@
     <meta property="og:title" content="Range Engine - 404"/>
     <meta property="og:description" content="Range Engine Is a Light And Powerful Game Engine And 3D Software"/>
     <meta property="og:site_name" content="404"/>
-    <meta property="og:image" content="https://rangeengine.tech//img/RanGEs.png"/>
-    <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
+    <meta property="og:image" content="https://rangeengine.tech//img/webp/RanGEs.webp"/>
+    <link rel="shortcut icon" href="/img/webp/favicon.webp"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header_footer.css"/>
-    <link rel="stylesheet" href="/css/rangecss.css"/>
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="/css/style.min.css"/>
     <script>
-      $(function(){
-          $("#header").load("../../header.html");
-          $("#footer").load("../../footer.html");
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const updateCopyrightYear = () => {
+        const yearElement = document.getElementById('copyright-year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        } else {
+          console.error("DEBUG: Elemento 'copyright-year' não foi encontrado no DOM.");
+        }
+      };
+
+      const loadHTML = (selector, url, callback) => {
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
+            }
+            return response.text();
+          })
+          .then(data => {
+            const element = document.querySelector(selector);
+            if (element) {
+              element.innerHTML = data;
+              if (callback) {
+                setTimeout(callback, 0);
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Falha ao carregar HTML:', error);
+          });
+      };
+
+      loadHTML('#header', '/header.html');
+      loadHTML('#footer', '/footer.html', updateCopyrightYear);
+    });  
     </script>
   </head>
   <body style="padding:0;margin:0;text-align:center;background-size:cover;background:#171717;">

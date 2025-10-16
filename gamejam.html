@@ -10,22 +10,52 @@
     <meta property="og:title" content="Range Engine"/>
     <meta property="og:description" content="Range Engine is an Light and Powerful Game Engine and 3D Software. Where you can make your own Models, Materials, Animations, and Publish Your Game"/>
     <meta property="og:site_name" content="Range Engine"/>
-    <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
+    <meta property="og:image" content="https://rangeengine.tech//img/webp/ogp_splash.webp"/>
 	  <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header_footer.css"/>
-    <link rel="stylesheet" href="/css/rangecss.css"/>
+    <link rel="stylesheet" href="/css/style.min.css"/>
     <link rel="stylesheet" href="/css/gamejamcss.css"/>
-    <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="shortcut icon" href="/img/webp/favicon.webp" />
     <script>
-      $(function(){
-          $("#header").load("../../header.html");
-          $("#footer").load("../../footer.html");
-      });
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const updateCopyrightYear = () => {
+        const yearElement = document.getElementById('copyright-year');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        } else {
+          console.error("DEBUG: Elemento 'copyright-year' não foi encontrado no DOM.");
+        }
+      };
+
+      const loadHTML = (selector, url, callback) => {
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
+            }
+            return response.text();
+          })
+          .then(data => {
+            const element = document.querySelector(selector);
+            if (element) {
+              element.innerHTML = data;
+              if (callback) {
+                setTimeout(callback, 0);
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Falha ao carregar HTML:', error);
+          });
+      };
+
+      loadHTML('#header', '/header.html');
+      loadHTML('#footer', '/footer.html', updateCopyrightYear);
+    });
     </script>
     <!--script src="/js/countdown.js"></script-->
   </head>
@@ -35,10 +65,10 @@
     </div>
     <div id="header"></div>
     <section class="indexsec">
-      <video class="backvideo" style="filter:blur(5px);" poster="/img/gamejam/2025/gamejamback.png" preload="" autoplay="" muted="" playsinline="" loop=""></video>
+      <video class="backvideo" style="filter:blur(5px);" poster="/img/gamejam/2025/gamejamback.png" loading="lazy" preload="" autoplay="" muted="" playsinline="" loop=""></video>
       <script src="/js/parallax.js"></script>
       <div style="display: inline-block;width: 100%;">
-        <h1 class="jam-current"><img src="/img/RanGEs.png" style="width:20%;position:absolute;z-index:-1;margin: -6% 0 0 -10%;opacity:80%;">Range GameJam 1</h1>
+        <h1 class="jam-current"><img src="/img/webp/RanGEs.webp" style="width:20%;position:absolute;z-index:-1;margin: -6% 0 0 -10%;opacity:80%;">Range GameJam 1</h1>
         <h2 class="jam-theme">Soon....</h2>
         <!--h2 class="jam-theme">Theme Reveal:</h2>
         <div class="counter-block-divs">
