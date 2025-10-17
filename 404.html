@@ -14,44 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css"/>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-      const updateCopyrightYear = () => {
-        const yearElement = document.getElementById('copyright-year');
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        } else {
-          console.error("DEBUG: Elemento 'copyright-year' não foi encontrado no DOM.");
-        }
-      };
-
-      const loadHTML = (selector, url, callback) => {
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
-            }
-            return response.text();
-          })
-          .then(data => {
-            const element = document.querySelector(selector);
-            if (element) {
-              element.innerHTML = data;
-              if (callback) {
-                setTimeout(callback, 0);
-              }
-            }
-          })
-          .catch(error => {
-            console.error('Falha ao carregar HTML:', error);
-          });
-      };
-
-      loadHTML('#header', 'header.html');
-      loadHTML('#footer', 'footer.html', updateCopyrightYear);
-    });  
-    </script>
+    <script src="js/main.js"></script>
   </head>
   <body style="padding:0;margin:0;text-align:center;background-size:cover;background:#171717;">
     <div id="header"></div>

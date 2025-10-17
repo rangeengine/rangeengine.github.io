@@ -13,49 +13,10 @@
     <meta property="og:image" content="https://rangeengine.tech/img/webp/ogp_splash.webp"/>
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css"/>
     <link rel="shortcut icon" href="img/webp/favicon.webp" />
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-      const updateCopyrightYear = () => {
-        const yearElement = document.getElementById('copyright-year');
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        } else {
-          console.error("DEBUG: Elemento 'copyright-year' não foi encontrado no DOM.");
-        }
-      };
-
-      const loadHTML = (selector, url, callback) => {
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
-            }
-            return response.text();
-          })
-          .then(data => {
-            const element = document.querySelector(selector);
-            if (element) {
-              element.innerHTML = data;
-              if (callback) {
-                setTimeout(callback, 0);
-              }
-            }
-          })
-          .catch(error => {
-            console.error('Falha ao carregar HTML:', error);
-          });
-      };
-
-      loadHTML('#header', 'header.html');
-      loadHTML('#footer', 'footer.html', updateCopyrightYear);
-    });  
-    </script>
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <div id="loading">
@@ -63,10 +24,10 @@
     </div>
     <div id="header"></div>
     <section class="downsec" style="margin-bottom:-15px;">
-      <video class="backvideo" poster="img/webp/posterback.webp" preload="" autoplay="" muted="" playsinline="" loop="">
+      <video class="backvideo" poster="img/webp/posterback.webp" autoplay muted playsinline loop preload="none">
         <source src="img/Background_RangeWebsite.mp4" type="video/mp4">
       </video>
-      <script src="/js/parallax.js"></script>
+      <script src="/js/parallax.js" defer></script>
       <div class="apresentacao" style="font-family:Roboto Condensed;background-color:transparent;align-items:center;">
         <div class="sobreoprojeto">
           <h2 class="titsec" style="font-size:240%;letter-spacing:-3px;text-align:center;text-shadow:0px 0px 40px #00000063;">RANGE ENGINE 1.6 REV 2 IS AVAILABLE ON PATREON</h2><!--RANGE ENGINE 2.0 IS UNDER DEVELOPMENT!-->

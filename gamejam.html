@@ -13,50 +13,11 @@
     <meta property="og:image" content="https://rangeengine.tech/img/webp/ogp_splash.webp"/>
 	  <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css"/>
     <link rel="stylesheet" href="css/gamejamcss.css"/>
     <link rel="shortcut icon" href="img/webp/favicon.webp" />
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-      const updateCopyrightYear = () => {
-        const yearElement = document.getElementById('copyright-year');
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        } else {
-          console.error("DEBUG: Elemento 'copyright-year' não foi encontrado no DOM.");
-        }
-      };
-
-      const loadHTML = (selector, url, callback) => {
-        fetch(url)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`Erro ao carregar ${url}: ${response.statusText}`);
-            }
-            return response.text();
-          })
-          .then(data => {
-            const element = document.querySelector(selector);
-            if (element) {
-              element.innerHTML = data;
-              if (callback) {
-                setTimeout(callback, 0);
-              }
-            }
-          })
-          .catch(error => {
-            console.error('Falha ao carregar HTML:', error);
-          });
-      };
-
-      loadHTML('#header', 'header.html');
-      loadHTML('#footer', 'footer.html', updateCopyrightYear);
-    });
-    </script>
+    <script src="js/main.js" defer></script>
     <!--script src="/js/countdown.js"></script-->
   </head>
   <body onload="updateClock()">

@@ -65,9 +65,7 @@
 </article>
 <script>
   var coll = document.getElementsByClassName("clps-bt");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
+  for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active_clps");
       var content = this.nextElementSibling;
