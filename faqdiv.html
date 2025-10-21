@@ -4,7 +4,7 @@
       <button type="button" class="clps-bt">Is Range Engine Free?</button>
       <div class="clps-cont">
         <p>Range Engine Is Free And Open Source, you don't pay for downloading, using and publish your game for sale, you also don't need to pay taxes regardless of how much you earn with your project. 
-          However, if you want access to the latest early access versions, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a>. With this support we can expand our team to make the engine have constant updates.</p>
+         However, if you want access to the latest early access versions, you can support us on <a class="alink" target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/rangeengine">Patreon</a>. With this support we can expand our team to make the engine have constant updates.</p>
       </div> 
     </div>
     <div class="about-clps-cont">
@@ -50,13 +50,13 @@
       <div class="clps-cont">
         <p>Currently the engine lack of original educational material, as the team is small and the engine launched recently.
           Actually you can use old BGE/UPBGE tutorials to learn Range Engine, if you want to know from where to start you can ask us through the official <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>, 
-          you just need to tell us your doubts and we'll be there to help you. As our community is growing every day we are officially developing a series of tutorials on the <a class="alink" target=”_blank” href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg">Range Engine YouTube Channel</a> explaining every point of the engine and teaching how to make an game from scratch.</p>
+          you just need to tell us your doubts and we'll be there to help you. As our community is growing every day we are officially developing a series of tutorials on the <a class="alink" target="_blank" rel="noopener noreferrer" href="https://youtube.com/channel/UCWLwYxekuvOVaMsquS3OgPg">Range Engine YouTube Channel</a> explaining every point of the engine and teaching how to make an game from scratch.</p>
       </div> 
     </div>
     <div class="about-clps-cont">
       <button type="button" class="clps-bt">Can I contribute to the development of Range Engine?</button>
       <div class="clps-cont">
-        <p>The constant development of Range Engine is possible because the community support, you can support us on <a class="alink" target=”_blank” href="https://www.patreon.com/rangeengine">Patreon</a> or make donations with <a class="alink" style="cursor:pointer;" title="contact@rangeengine.tech">PayPal (contact@rangeengine.tech)</a>.
+        <p>The constant development of Range Engine is possible because the community support, you can support us on <a class="alink" target="_blank" rel="noopener noreferrer" href="https://www.patreon.com/rangeengine">Patreon</a> or make donations with <a class="alink" style="cursor:pointer;" title="contact@rangeengine.tech">PayPal (contact@rangeengine.tech)</a>.
           The Patrons also have a bunch of advantages by supporting the project, like early access releases, exclusive Range Engine products, exclusive chats and role on the <a class="alink" href="https://discord.gg/PV6bAvUFq3">Range Engine Discord</a>. 
         </p>
       </div> 
@@ -65,9 +65,7 @@
 </article>
 <script>
   var coll = document.getElementsByClassName("clps-bt");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
+  for (let i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active_clps");
       var content = this.nextElementSibling;

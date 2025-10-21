@@ -10,23 +10,14 @@
     <meta property="og:title" content="Range Engine"/>
     <meta property="og:description" content="Range Engine is an Light and Powerful Game Engine and 3D Software. Where you can make your own Models, Materials, Animations, and Publish Your Game"/>
     <meta property="og:site_name" content="Range Engine"/>
-    <meta property="og:image" content="https://rangeengine.tech//img/ogp_splash.jpg"/>
+    <meta property="og:image" content="https://rangeengine.tech/img/webp/ogp_splash.webp"/>
 	  <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header_footer.css"/>
-    <link rel="stylesheet" href="/css/rangecss.css"/>
-    <link rel="stylesheet" href="/css/gamejamcss.css"/>
-    <link rel="shortcut icon" href="/img/favicon.png" type="x-png"/>
-    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script>
-      $(function(){
-          $("#header").load("../../header.html");
-          $("#footer").load("../../footer.html");
-      });
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/gamejamcss.css"/>
+    <link rel="shortcut icon" href="img/webp/favicon.webp" />
+    <script src="js/main.js" defer></script>
     <!--script src="/js/countdown.js"></script-->
   </head>
   <body onload="updateClock()">
@@ -35,10 +26,10 @@
     </div>
     <div id="header"></div>
     <section class="indexsec">
-      <video class="backvideo" style="filter:blur(5px);" poster="/img/gamejam/2025/gamejamback.png" preload="" autoplay="" muted="" playsinline="" loop=""></video>
-      <script src="/js/parallax.js"></script>
+    <video class="backvideo" style="filter:blur(5px);" poster="img/gamejam/2025/gamejamback.png" loading="lazy" preload="metadata" autoplay muted playsinline loop></video>
+    <script src="js/parallax.js" defer></script>
       <div style="display: inline-block;width: 100%;">
-        <h1 class="jam-current"><img src="/img/RanGEs.png" style="width:20%;position:absolute;z-index:-1;margin: -6% 0 0 -10%;opacity:80%;">Range GameJam 1</h1>
+        <h1 class="jam-current"><img src="img/webp/RanGEs.webp" alt="Range Engine logo" loading="lazy" decoding="async" style="width:20%;position:absolute;z-index:-1;margin: -6% 0 0 -10%;opacity:80%;">Range GameJam 1</h1>
         <h2 class="jam-theme">Soon....</h2>
         <!--h2 class="jam-theme">Theme Reveal:</h2>
         <div class="counter-block-divs">
@@ -89,7 +80,7 @@
         background-color: #00000000;
       }
       .clps-bt::after {
-        content: image-set('/img/arrow_down.svg');
+        content: image-set('img/arrow_down.svg');
         font-weight: bold;
         font-size: 15px;
         color: rgb(0, 0, 0);
@@ -101,7 +92,7 @@
         background-color: #ffffff25;
       }
       .active_clps::after {
-        content: image-set('/img/arrow_down.svg');
+        content: image-set('img/arrow_down.svg');
         rotate: 180deg;
         margin: -4px 5px 0 0;
         transition: all 0.15s ease-in;
@@ -237,7 +228,7 @@
           </div>
           <div style="width:50%;display:inline-block;background-color:var(--sec_place);box-shadow: 5px 5px 10px 2px #00000025;">
             <a href="#">
-              <img src="/img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
+              <img src="img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
               <div style="padding: 2% 4%;background:var(--sec_place);">
                 <h3> </h3>
                 <p>By:  </p>
@@ -252,7 +243,7 @@
           </div>
           <div style="width:50%;display:inline-block;background-color:var(--first_place);box-shadow: 5px 5px 10px 2px #00000025;">
             <a href="#">
-              <img src="/img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
+              <img src="img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
               <div style="padding: 2% 4%;background:var(--first_place);">
                 <h3> </h3>
                 <p>By:  </p>
@@ -267,7 +258,7 @@
           </div>
           <div style="width:50%;display:inline-block;background-color:var(--third_place);box-shadow: 5px 5px 10px 2px #00000025;">
             <a href="#">
-              <img src="/img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
+              <img src="img/gamejam/2025/featured-games/ .png" alt=" " style="width:100%;height:auto;">
               <div style="padding: 2% 4%;background:var(--third_place);">
                 <h3> </h3>
                 <p>By:  </p>
@@ -283,7 +274,7 @@
       <div class="featured-games-tab">
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -292,7 +283,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -301,7 +292,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -310,7 +301,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -319,7 +310,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -330,7 +321,7 @@
       <div class="featured-games-tab">
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -339,7 +330,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -348,7 +339,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -357,7 +348,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -366,7 +357,7 @@
         </div>
         <div class="featured-game">
           <a href="#">
-            <img src="/img/gamejam/2025/featured-games/ .png" alt=" ">
+            <img src="img/gamejam/2025/featured-games/ .png" alt=" ">
             <div>
               <h3> </h3>
               <p>By:  </p>
@@ -378,10 +369,10 @@
     <article class="jam-live-artc">
       <div class="jam-live-desc">
         <p>Watch the official playthrough<br> of all games in the <b style="font-size:50px;">Range Engine Channel</b><br> on youtube.</p>
-        <img src="/img/icons/youtube.svg">
+          <img src="img/icons/youtube.svg" alt="YouTube" loading="lazy" decoding="async">
         <p style="font-size:20px;"><br><br><i>The playthroughs will be recorded and streamed after the end of the gamejam.</i></p>
       </div>
-      <iframe width="660" height="415" src="https://www.youtube.com/embed/lE0R1E__4xY?si=qb6EfdFlRu4T4_Uz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="660" height="415" loading="lazy" src="https://www.youtube.com/embed/lE0R1E__4xY?si=qb6EfdFlRu4T4_Uz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </article>
     <div id="footer"></div>
     <!--Page Loading Ends Here-->

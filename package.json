@@ -1,0 +1,13 @@
+{
+  "name": "rangeengine-website",
+  "version": "1.0.0",
+  "scripts": {
+    "minify-css": "type css\\rangecss.css css\\splash.css css\\header_footer.css css\\sliders.css | npx cssnano-cli > css\\style.min.css",
+    "convert-webp-folders": "node convert-images.js"
+  },
+  "devDependencies": {
+    "cssnano-cli": "^1.0.5",
+    "imagemin-cli": "^8.0.0",
+    "imagemin-webp": "^8.0.0"
+  }
+}
