@@ -9,10 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function initFaqAccordion() {
     var coll = document.getElementsByClassName("clps-bt");
-    if (coll.length === 0) {
-      return;
-    }
-        
+    if (coll.length === 0) return;
+
     for (let i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active_clps");
@@ -28,6 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function initResponsiveNav() {
+    const toggle = document.querySelector('.togglebutton');
+    const nav = document.querySelector('.headerlinks');
+    if (!toggle || !nav) return;
+
+    const OPEN_CLASS = 'active';
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      nav.classList.toggle(OPEN_CLASS);
+      toggle.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove(OPEN_CLASS);
+        toggle.classList.remove('active');
+      }
+    });
+
+    document.querySelectorAll('.dropdownh .dpdhbt').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const items = btn.closest('.dropdownh')?.querySelector('.dpdhitems');
+        if (items) items.classList.toggle('active');
+      });
+    });
+  }
+
   const loadHTML = (selector, url, callback) => {
     const element = document.querySelector(selector);
     if (element) {
@@ -35,9 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.ok ? response.text() : Promise.reject('File not found.'))
         .then(data => {
           element.innerHTML = data;
-          if (callback) {
-            callback();
-          }
+          if (callback) callback();
         })
         .catch(error => {
           console.error(`Failed to load ${url}:`, error);
@@ -45,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  loadHTML('#header', 'header.html');
+  loadHTML('#header', 'header.html', initResponsiveNav);
   loadHTML('#footer', 'footer.html', updateCopyrightYear);
   loadHTML('#faq', 'faqdiv.html', initFaqAccordion);
 });
