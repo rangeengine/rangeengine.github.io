@@ -55,17 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const resolveToRoot = (url) => {
+    if (/^https?:\/\//i.test(url)) return url;
+    return url.startsWith('/') ? url : `/${url}`;
+  };
+
   const loadHTML = (selector, url, callback) => {
     const element = document.querySelector(selector);
     if (element) {
-      fetch(url)
+      const finalUrl = resolveToRoot(url);
+      fetch(finalUrl, { cache: 'no-store' })
         .then(response => response.ok ? response.text() : Promise.reject('File not found.'))
         .then(data => {
           element.innerHTML = data;
           if (callback) callback();
         })
         .catch(error => {
-          console.error(`Failed to load ${url}:`, error);
+          console.error(`Failed to load ${finalUrl}:`, error);
         });
     }
   };
