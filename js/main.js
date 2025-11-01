@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  loadHTML('#header', 'header.html', initResponsiveNav);
-  loadHTML('#footer', 'footer.html', updateCopyrightYear);
-  loadHTML('#faq', 'faqdiv.html', initFaqAccordion);
+  loadHTML('#header', '/header.html', initResponsiveNav);
+  loadHTML('#footer', '/footer.html', updateCopyrightYear);
+  loadHTML('#faq', '/faqdiv.html', initFaqAccordion);
 });
