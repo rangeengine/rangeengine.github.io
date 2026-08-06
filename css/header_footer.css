@@ -122,9 +122,9 @@ a.suppush{
 	border-right: 0;
 	background: #00000000;
 	transition: all 0.15s ease-in;
+	border-block-start: transparent;
 }
 .headerlis:hover{
-	border-block-start: transparent;
 	border-top-color: rgba(0,0,0,0);
 	border-bottom-color: rgb(255, 255, 255);
 	background: linear-gradient(#0000,#ffffff38);
@@ -243,6 +243,7 @@ a.suppush{
 	transition: all 0.10s ease-in;
 	display: flex;
 	justify-content: center;
+	border-block-start: transparent;
 }
 .dpdhitmsacol{
 	background-color: #141414cc;
@@ -251,7 +252,6 @@ a.suppush{
 	background: linear-gradient(rgba(0, 0, 0, 0.514),#ffffff83);;
 }
 .dpdhitems a:hover{
-	border-block-start: transparent;
 	border-top-color: rgba(0,0,0,0);
 	border-bottom-color: rgb(255, 255, 255);
 	background: linear-gradient(rgba(0, 0, 0, 0.514),#ffffff38);
